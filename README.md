@@ -24,6 +24,7 @@ https://docs.google.com/document/d/1P3W-0vnKLaZoj_bbXeEh4LVYDO4odhWKN2DmchHonUE/
 ## Environment setup
 
 See `requirements.txt`. To set up:
+Python version : Python 3.13.5
 
 \`\`\`
 python3 -m venv venv
