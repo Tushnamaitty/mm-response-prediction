@@ -15,6 +15,12 @@ for multiple myeloma patients using the MMRF CoMMpass dataset.
 All modeling/labeling/preprocessing decisions are logged here before implementation:
 https://docs.google.com/document/d/1P3W-0vnKLaZoj_bbXeEh4LVYDO4odhWKN2DmchHonUE/edit?tab=t.0
 
+## Branching convention
+
+- `main` is always stable — no direct commits.
+- Create a branch per task: `<folder>-<short-description>` (e.g. `modeling-baseline-logreg`)
+- Open a Pull Request to merge into `main`; get at least one review before merging.
+
 ## Environment setup
 
 See `requirements.txt`. To set up:
