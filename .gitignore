@@ -218,3 +218,14 @@ __marimo__/
 .streamlit/secrets.toml
 
 data_raw/
+
+# Project data files
+data_pipeline/processed/
+*.tsv
+*.csv
+
+# BioMart cache
+*.sqlite
+
+# Downloaded third-party binaries
+tools/gdc-client/gdc-client_2.3_Windows_x64/
