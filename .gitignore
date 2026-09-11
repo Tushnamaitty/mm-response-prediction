@@ -229,3 +229,5 @@ data_pipeline/processed/
 
 # Downloaded third-party binaries
 tools/gdc-client/gdc-client_2.3_Windows_x64/
+
+data/
