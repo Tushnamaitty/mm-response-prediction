@@ -1,7 +1,7 @@
 import pandas as pd
 import gseapy as gp
 
-expr = pd.read_csv("data_raw/rnaseq/expression_matrix_tpm_symbols.csv", index_col=0)
+expr = pd.read_csv("data/rna/expression_matrix_tpm_symbols.csv", index_col=0)
 
 # ssGSEA expects a genes x samples matrix (which we have) with gene symbols as index
 ss = gp.ssgsea(
@@ -20,4 +20,4 @@ pathway_scores = ss.res2d.pivot(index='Name', columns='Term', values='ES')
 print(pathway_scores.shape)
 print(pathway_scores.head())
 
-pathway_scores.to_csv("data_raw/rnaseq/pathway_scores_hallmark.csv")
+pathway_scores.to_csv("data/rna/pathway_scores_hallmark.csv")
