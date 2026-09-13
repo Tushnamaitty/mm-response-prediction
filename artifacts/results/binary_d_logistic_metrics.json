@@ -10,107 +10,107 @@
   "n_patients_val": 154,
   "n_patients_test": 155,
   "best_params": {
-    "C": 1.0
+    "C": 0.01
   },
   "cv_results": [
     {
       "params": {
         "C": 0.01
       },
-      "mean": 0.27738427258766285,
-      "std": 0.010488712313016754,
+      "mean": 0.4733169988400694,
+      "std": 0.0166140837137686,
       "fold_scores": [
-        0.2935604448751773,
-        0.2851451768299577,
-        0.26835029494058316,
-        0.27414587606961927,
-        0.26571957022297676
+        0.46989977583924425,
+        0.46146418340820083,
+        0.482791492410268,
+        0.45253553941085634,
+        0.49989400313177773
       ]
     },
     {
       "params": {
         "C": 0.1
       },
-      "mean": 0.27591388390657934,
-      "std": 0.01002535914341616,
+      "mean": 0.45977562839369773,
+      "std": 0.0173623239410147,
       "fold_scores": [
-        0.2900673139714759,
-        0.28351432880454447,
-        0.2703942049739061,
-        0.27420815737621357,
-        0.26138541440675667
+        0.45339103193896346,
+        0.44881891317217343,
+        0.47690947230969144,
+        0.43693542348757475,
+        0.4828233010600854
       ]
     },
     {
       "params": {
         "C": 1.0
       },
-      "mean": 0.27760470903891754,
-      "std": 0.0107882581017406,
+      "mean": 0.45126469946038766,
+      "std": 0.01689572917607394,
       "fold_scores": [
-        0.29274226294748773,
-        0.2857074994779016,
-        0.26779994121423917,
-        0.27798413793524757,
-        0.26378970361971193
+        0.4445740277270767,
+        0.4462395409506765,
+        0.47332714990854896,
+        0.42587959798429964,
+        0.4663031807313363
       ]
     },
     {
       "params": {
         "C": 10.0
       },
-      "mean": 0.2768138984043988,
-      "std": 0.010259522907467698,
+      "mean": 0.4440497532790027,
+      "std": 0.024666024932636067,
       "fold_scores": [
-        0.29030339143478046,
-        0.2876618552500413,
-        0.26777130781602604,
-        0.2729020849506536,
-        0.26543085257049276
+        0.44327547802948286,
+        0.44566068776212703,
+        0.4715625213424194,
+        0.39921503394498803,
+        0.46053504531599593
       ]
     }
   ],
   "seed": 42,
   "val_metrics": {
-    "auprc": 0.24266964015593323,
-    "auroc": 0.6143347084845172,
-    "brier_score": 0.1482702316659566,
-    "sensitivity": 0.7830508474576271,
-    "specificity": 0.3724340175953079,
-    "precision": 0.2125114995400184,
-    "recall": 0.7830508474576271,
-    "f1": 0.3342981186685962,
-    "threshold_used": 0.15,
+    "auprc": 0.43166783233742717,
+    "auroc": 0.747137034643869,
+    "brier_score": 0.12902976062640095,
+    "sensitivity": 0.5525423728813559,
+    "specificity": 0.8218475073313783,
+    "precision": 0.4014778325123153,
+    "recall": 0.5525423728813559,
+    "f1": 0.46504992867332384,
+    "threshold_used": 0.3,
     "confusion_matrix": [
       [
-        508,
-        856
+        1121,
+        243
       ],
       [
-        64,
-        231
+        132,
+        163
       ]
     ],
     "n": 1659
   },
   "test_metrics_PRELIMINARY": {
-    "auprc": 0.24133145196844946,
-    "auroc": 0.6059879895308085,
-    "brier_score": 0.14837765301916378,
-    "sensitivity": 0.8101983002832861,
-    "specificity": 0.3189600507292327,
-    "precision": 0.21029411764705883,
-    "recall": 0.8101983002832861,
-    "f1": 0.3339171044950379,
-    "threshold_used": 0.15,
+    "auprc": 0.4858308620024519,
+    "auroc": 0.7891683028520823,
+    "brier_score": 0.1203889260083336,
+    "sensitivity": 0.5184135977337111,
+    "specificity": 0.8636651870640456,
+    "precision": 0.45979899497487436,
+    "recall": 0.5184135977337111,
+    "f1": 0.4873501997336884,
+    "threshold_used": 0.3,
     "confusion_matrix": [
       [
-        503,
-        1074
+        1362,
+        215
       ],
       [
-        67,
-        286
+        170,
+        183
       ]
     ],
     "n": 1930,
@@ -118,66 +118,66 @@
   },
   "test_auprc_bootstrap_ci_PRELIMINARY": {
     "n_resamples_used": 200,
-    "mean": 0.24410298570091676,
-    "ci_lower_2.5": 0.21752644651798575,
-    "ci_upper_97.5": 0.274939391454436
+    "mean": 0.4909240845283315,
+    "ci_lower_2.5": 0.43404436238173105,
+    "ci_upper_97.5": 0.5350811299437686
   },
   "calibration_curve": {
     "prob_true": [
-      0.08290155440414508,
-      0.12953367875647667,
-      0.13989637305699482,
-      0.15025906735751296,
-      0.17616580310880828,
-      0.18652849740932642,
-      0.23834196891191708,
-      0.20207253886010362,
-      0.22797927461139897,
-      0.29533678756476683
+      0.03626943005181347,
+      0.04145077720207254,
+      0.05699481865284974,
+      0.09326424870466321,
+      0.09844559585492228,
+      0.11917098445595854,
+      0.16062176165803108,
+      0.2849740932642487,
+      0.30569948186528495,
+      0.6321243523316062
     ],
     "prob_pred": [
-      0.0670840047636534,
-      0.11052503936069129,
-      0.13958695730276052,
-      0.15960947906532436,
-      0.17646669554566563,
-      0.192428846872626,
-      0.2102593879245439,
-      0.23214973039019293,
-      0.2648243224151515,
-      0.36275903898069384
+      0.025526158991728345,
+      0.04774562285146799,
+      0.06384012995430291,
+      0.0825672163313074,
+      0.10949338883246197,
+      0.14296029068455868,
+      0.19181091095057168,
+      0.2622386241573916,
+      0.37721683030060055,
+      0.6038123774744122
     ]
   },
   "feature_importance_top30": {
-    "ordinal_response__vt_disease_response_ordinal": 0.00982819543903294,
-    "numeric__pct_plasma_cells_bm": 0.008435638782250744,
-    "numeric__age_at_diagnosis": 0.006937166801921778,
-    "numeric__qol_fatigue": 0.00618983019864276,
-    "numeric__qol_physical_functioning": 0.004007519162510508,
-    "numeric__qol_side_effects_treatment": 0.003934304446093467,
-    "numeric__hemoglobin_days_since_previous": 0.003610424998033079,
-    "numeric__b2m_change": 0.0024526817381715534,
-    "numeric__calcium_days_since_previous": 0.0024515471485975363,
-    "numeric__b2m_previous": 0.0023838793777387307,
-    "numeric__weight_at_diagnosis_kg": 0.0023400827977591594,
-    "numeric__b2m_current": 0.0023134148910715527,
-    "numeric__hemoglobin_current": 0.0020580241847039243,
-    "numeric__m_protein_current": 0.0020579953298334817,
-    "numeric__ldh_current": 0.0017101616799040905,
-    "numeric__m_protein_previous": 0.0016234366398795406,
-    "numeric__kappa_flc_days_since_previous": 0.0013399361584845529,
-    "numeric__ldh_previous": 0.0013388745361765217,
-    "numeric__lambda_flc_days_since_previous": 0.0013184420406058743,
-    "numeric__ldh_change": 0.0012935870133083686,
-    "numeric__albumin_days_since_previous": 0.0010890672807452747,
-    "numeric__qol_disease_symptoms": 0.001086109890966671,
-    "numeric__qol_pain": 0.0010778544672229787,
-    "numeric__hemoglobin_change": 0.0010358191988252136,
-    "object_boolean__subject_had_signs_symptoms_False": 0.0010231598337707936,
-    "numeric__G2-M Checkpoint": 0.0009419487105664582,
-    "object_boolean__lytic_bone_lesion_False": 0.0008779600846952046,
-    "numeric__line_duration_so_far": 0.0008663799475571944,
-    "object_boolean__had_transfusion_False": 0.0008442139229455446,
-    "object_boolean__had_radiation_therapy_False": 0.0008106133224362676
+    "ordinal_response__vt_disease_response_ordinal": 1.0302280166213165,
+    "numeric__vt_days_to_visit": 0.13709409019925628,
+    "clean_boolean__current_line_is_active": 0.13524609838329202,
+    "numeric__hemoglobin_days_since_previous": 0.116027665534492,
+    "categorical_high_card__current_regimen_name_elotuzumab_lenalidomide_prednisone": 0.10548170989032847,
+    "numeric__n_prior_lines_completed": 0.10000394818142937,
+    "numeric__m_protein_previous": 0.09861293451326146,
+    "numeric__Hedgehog Signaling": 0.09719985676266635,
+    "numeric__age_at_diagnosis": 0.0951281087299812,
+    "clean_boolean__prior_exposure_chemo": 0.08950381928270967,
+    "numeric__Reactive Oxygen Species Pathway": 0.08438649859376969,
+    "clean_boolean__currently_on_pi": 0.0836377337641459,
+    "numeric__Myogenesis": 0.08289616298527412,
+    "numeric__Apical Junction": 0.08165884241298274,
+    "clean_boolean__prior_exposure_steroid": 0.07874321968452082,
+    "numeric__kappa_flc_current": 0.07588245689259987,
+    "numeric__Glycolysis": 0.07570808516213862,
+    "numeric__Fatty Acid Metabolism": 0.0745669783747069,
+    "clean_boolean__has_prior_allo_transplant": 0.0740766258363916,
+    "numeric__pct_plasma_cells_bm": 0.07388335825769096,
+    "numeric__Inflammatory Response": 0.07382808924132063,
+    "categorical_high_card__current_regimen_name_bendamustine_bortezomib_dexamethasone": 0.07357158704360596,
+    "numeric__G2-M Checkpoint": 0.07334925619289831,
+    "numeric__Xenobiotic Metabolism": 0.07277313541510959,
+    "categorical_high_card__current_regimen_categories_pi_cd38_imid": 0.07154523017096687,
+    "numeric__Unfolded Protein Response": 0.07108392156027954,
+    "categorical_high_card__current_regimen_name_pomalidomide": 0.07071763740107442,
+    "numeric__cmmc_number": 0.07037364753336747,
+    "numeric__Myc Targets V1": 0.06984112916732421,
+    "clean_boolean__has_hypertension_or_chf": 0.06925987044544872
   }
 }
