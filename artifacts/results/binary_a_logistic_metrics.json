@@ -1,0 +1,183 @@
+{
+  "task": "binary",
+  "model_stage": "a",
+  "algorithm": "logistic",
+  "tag": "",
+  "n_train": 8709,
+  "n_val": 1659,
+  "n_test": 1930,
+  "n_patients_train": 709,
+  "n_patients_val": 154,
+  "n_patients_test": 155,
+  "best_params": {
+    "C": 0.01
+  },
+  "cv_results": [
+    {
+      "params": {
+        "C": 0.01
+      },
+      "mean": 0.46236181677804644,
+      "std": 0.014185908573385496,
+      "fold_scores": [
+        0.4588941218627314,
+        0.44330647357378306,
+        0.4707484228252683,
+        0.4542508615465829,
+        0.4846092040818668
+      ]
+    },
+    {
+      "params": {
+        "C": 0.1
+      },
+      "mean": 0.46116513362565303,
+      "std": 0.014896743548538939,
+      "fold_scores": [
+        0.45475161454593227,
+        0.44414890024081444,
+        0.4624992586421255,
+        0.45588825515597436,
+        0.48853763954341856
+      ]
+    },
+    {
+      "params": {
+        "C": 1.0
+      },
+      "mean": 0.45979754926372973,
+      "std": 0.015415522643619898,
+      "fold_scores": [
+        0.44456295756429653,
+        0.44176486177109076,
+        0.46519209642631715,
+        0.46340494255750286,
+        0.48406288799944147
+      ]
+    },
+    {
+      "params": {
+        "C": 10.0
+      },
+      "mean": 0.454947905870585,
+      "std": 0.023572736561540696,
+      "fold_scores": [
+        0.4645554624673698,
+        0.4435346838802093,
+        0.4197673123842116,
+        0.4556346188544743,
+        0.4912474517666602
+      ]
+    }
+  ],
+  "seed": 42,
+  "val_metrics": {
+    "auprc": 0.41719028909673994,
+    "auroc": 0.7321897211591033,
+    "brier_score": 0.1286950278487638,
+    "sensitivity": 0.5016949152542373,
+    "specificity": 0.8357771260997068,
+    "precision": 0.3978494623655914,
+    "recall": 0.5016949152542373,
+    "f1": 0.44377811094452774,
+    "threshold_used": 0.3,
+    "confusion_matrix": [
+      [
+        1140,
+        224
+      ],
+      [
+        147,
+        148
+      ]
+    ],
+    "n": 1659
+  },
+  "test_metrics_PRELIMINARY": {
+    "auprc": 0.4742954527639651,
+    "auroc": 0.7859887440023999,
+    "brier_score": 0.12174502992484652,
+    "sensitivity": 0.509915014164306,
+    "specificity": 0.8782498414711477,
+    "precision": 0.4838709677419355,
+    "recall": 0.509915014164306,
+    "f1": 0.496551724137931,
+    "threshold_used": 0.3,
+    "confusion_matrix": [
+      [
+        1385,
+        192
+      ],
+      [
+        173,
+        180
+      ]
+    ],
+    "n": 1930,
+    "PRELIMINARY": true
+  },
+  "test_auprc_bootstrap_ci_PRELIMINARY": {
+    "n_resamples_used": 200,
+    "mean": 0.4782556263988158,
+    "ci_lower_2.5": 0.4447427330344928,
+    "ci_upper_97.5": 0.5171353749194002
+  },
+  "calibration_curve": {
+    "prob_true": [
+      0.06217616580310881,
+      0.046632124352331605,
+      0.02072538860103627,
+      0.07253886010362694,
+      0.11398963730569948,
+      0.15544041450777202,
+      0.15025906735751296,
+      0.26424870466321243,
+      0.34196891191709844,
+      0.6010362694300518
+    ],
+    "prob_pred": [
+      0.04378808715747029,
+      0.07151659308071683,
+      0.08280391070668283,
+      0.09525373451814596,
+      0.11694992336705569,
+      0.14855585956434925,
+      0.18252195494676607,
+      0.24930435942108473,
+      0.35447290906319334,
+      0.5378887042855005
+    ]
+  },
+  "feature_importance_top30": {
+    "ordinal_response__vt_disease_response_ordinal": 0.7375581525409143,
+    "numeric__m_protein_current": 0.10023978013677425,
+    "object_boolean__lytic_bone_lesion_False": 0.07833300070897405,
+    "object_boolean__had_esa_False": 0.07654366210515703,
+    "object_boolean__had_wbc_growth_factor_False": 0.07606958573682558,
+    "object_boolean__had_radiation_therapy_False": 0.07374954643573599,
+    "object_boolean__had_transfusion_False": 0.07318330051167905,
+    "object_boolean__subject_had_signs_symptoms_False": 0.07200418573197138,
+    "object_boolean__had_anticoagulation_missing": 0.07144756282415599,
+    "object_boolean__had_radiation_therapy_missing": 0.07144756282415599,
+    "object_boolean__had_opioid_missing": 0.07144756282415599,
+    "object_boolean__had_dialysis_missing": 0.07144756282415599,
+    "object_boolean__had_esa_missing": 0.07144756282415599,
+    "object_boolean__had_wbc_growth_factor_missing": 0.0714475628231389,
+    "object_boolean__had_bisphosphonate_missing": 0.0714475628231389,
+    "object_boolean__had_tumor_lysis_meds_missing": 0.0714475628231389,
+    "object_boolean__had_transfusion_missing": 0.0714475628231389,
+    "object_boolean__had_opioid_False": 0.06988557495861865,
+    "object_boolean__had_dialysis_False": 0.06925959175962143,
+    "object_boolean__had_tumor_lysis_meds_False": 0.06669677510492424,
+    "object_boolean__soft_tissue_plasmacytoma_single_False": 0.06096007069698165,
+    "object_boolean__renal_insufficiency_False": 0.05288194024916612,
+    "object_boolean__spinal_cord_compression_False": 0.05271440244204128,
+    "object_boolean__soft_tissue_plasmacytoma_multi_missing": 0.05123812898481675,
+    "object_boolean__amyloidosis_missing": 0.05123812898481675,
+    "object_boolean__renal_insufficiency_missing": 0.051238128983671125,
+    "object_boolean__hypercalcemia_missing": 0.051238128983671125,
+    "object_boolean__soft_tissue_plasmacytoma_single_missing": 0.051238128983671125,
+    "object_boolean__anemia_missing": 0.051238128983671125,
+    "object_boolean__bone_pain_missing": 0.051238128983671125
+  }
+}

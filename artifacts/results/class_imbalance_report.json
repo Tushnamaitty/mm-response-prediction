@@ -1,0 +1,42 @@
+{
+  "binary": {
+    "train": {
+      "n": 8709,
+      "improved_rate": 0.18819611895740038
+    },
+    "val": {
+      "n": 1659,
+      "improved_rate": 0.17781796262808922
+    },
+    "test": {
+      "n": 1930,
+      "improved_rate": 0.18290155440414507
+    }
+  },
+  "multiclass": {
+    "train": {
+      "very_good_partial_response": 3641,
+      "partial_response": 1340,
+      "stable_disease": 1319,
+      "complete_response": 1180,
+      "progressive_disease": 1134,
+      "stringent_complete_response": 925
+    },
+    "val": {
+      "very_good_partial_response": 630,
+      "complete_response": 288,
+      "progressive_disease": 268,
+      "stable_disease": 232,
+      "partial_response": 224,
+      "stringent_complete_response": 191
+    },
+    "test": {
+      "very_good_partial_response": 775,
+      "partial_response": 444,
+      "stable_disease": 248,
+      "progressive_disease": 244,
+      "complete_response": 200,
+      "stringent_complete_response": 168
+    }
+  }
+}

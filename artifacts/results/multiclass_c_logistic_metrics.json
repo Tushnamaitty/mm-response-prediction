@@ -1,0 +1,313 @@
+{
+  "task": "multiclass",
+  "model_stage": "c",
+  "algorithm": "logistic",
+  "tag": "",
+  "n_train": 9539,
+  "n_val": 1833,
+  "n_test": 2079,
+  "n_patients_train": 716,
+  "n_patients_val": 154,
+  "n_patients_test": 155,
+  "best_params": {
+    "C": 0.01
+  },
+  "cv_results": [
+    {
+      "params": {
+        "C": 0.01
+      },
+      "mean": 0.17384562534001202,
+      "std": 0.007918387005263462,
+      "fold_scores": [
+        0.177941115231514,
+        0.168938238041899,
+        0.18094261445805868,
+        0.16064001998858665,
+        0.1807661389800017
+      ]
+    },
+    {
+      "params": {
+        "C": 0.1
+      },
+      "mean": 0.1712130054272213,
+      "std": 0.005879490074864334,
+      "fold_scores": [
+        0.173622262778501,
+        0.17060593447335304,
+        0.17736874276602485,
+        0.16026584492911017,
+        0.17420224218911726
+      ]
+    },
+    {
+      "params": {
+        "C": 1.0
+      },
+      "mean": 0.17070943205553182,
+      "std": 0.007099357533276336,
+      "fold_scores": [
+        0.17584273456814145,
+        0.17462763045012708,
+        0.17713165714501677,
+        0.15800576725065502,
+        0.16793937086371882
+      ]
+    },
+    {
+      "params": {
+        "C": 10.0
+      },
+      "mean": 0.16696173601394473,
+      "std": 0.010905101120169998,
+      "fold_scores": [
+        0.16475194740072766,
+        0.1644767933134408,
+        0.17585094314509367,
+        0.1491207179182202,
+        0.18060827829224124
+      ]
+    }
+  ],
+  "seed": 42,
+  "val_metrics": {
+    "accuracy_secondary": 0.3557010365521004,
+    "macro_f1": 0.15500708374695762,
+    "macro_precision": 0.28292163657855146,
+    "macro_recall": 0.1976797875704425,
+    "weighted_f1": 0.23585226282955293,
+    "per_class": {
+      "progressive_disease": {
+        "precision": 0.3723404255319149,
+        "recall": 0.13059701492537312,
+        "f1": 0.19337016574585636,
+        "support": 268
+      },
+      "stable_disease": {
+        "precision": 0.22916666666666666,
+        "recall": 0.04741379310344827,
+        "f1": 0.07857142857142857,
+        "support": 232
+      },
+      "partial_response": {
+        "precision": 0.21875,
+        "recall": 0.03125,
+        "f1": 0.0546875,
+        "support": 224
+      },
+      "very_good_partial_response": {
+        "precision": 0.36363636363636365,
+        "recall": 0.9333333333333333,
+        "f1": 0.5233644859813084,
+        "support": 630
+      },
+      "complete_response": {
+        "precision": 0.36363636363636365,
+        "recall": 0.027777777777777776,
+        "f1": 0.05161290322580645,
+        "support": 288
+      },
+      "stringent_complete_response": {
+        "precision": 0.15,
+        "recall": 0.015706806282722512,
+        "f1": 0.02843601895734597,
+        "support": 191
+      }
+    },
+    "confusion_matrix": [
+      [
+        35,
+        17,
+        8,
+        206,
+        0,
+        2
+      ],
+      [
+        17,
+        11,
+        12,
+        184,
+        0,
+        8
+      ],
+      [
+        15,
+        8,
+        7,
+        193,
+        0,
+        1
+      ],
+      [
+        15,
+        11,
+        5,
+        588,
+        8,
+        3
+      ],
+      [
+        7,
+        1,
+        0,
+        269,
+        8,
+        3
+      ],
+      [
+        5,
+        0,
+        0,
+        177,
+        6,
+        3
+      ]
+    ],
+    "n": 1833
+  },
+  "test_metrics_PRELIMINARY": {
+    "accuracy_secondary": 0.36796536796536794,
+    "macro_f1": 0.14875384785768245,
+    "macro_precision": 0.2611152842258694,
+    "macro_recall": 0.18923019264637453,
+    "weighted_f1": 0.24424495153552292,
+    "per_class": {
+      "progressive_disease": {
+        "precision": 0.22772277227722773,
+        "recall": 0.0942622950819672,
+        "f1": 0.13333333333333333,
+        "support": 244
+      },
+      "stable_disease": {
+        "precision": 0.18604651162790697,
+        "recall": 0.03225806451612903,
+        "f1": 0.054982817869415807,
+        "support": 248
+      },
+      "partial_response": {
+        "precision": 0.3235294117647059,
+        "recall": 0.024774774774774775,
+        "f1": 0.04602510460251046,
+        "support": 444
+      },
+      "very_good_partial_response": {
+        "precision": 0.38494856524093124,
+        "recall": 0.9174193548387096,
+        "f1": 0.5423340961098398,
+        "support": 775
+      },
+      "complete_response": {
+        "precision": 0.18518518518518517,
+        "recall": 0.025,
+        "f1": 0.04405286343612335,
+        "support": 200
+      },
+      "stringent_complete_response": {
+        "precision": 0.25925925925925924,
+        "recall": 0.041666666666666664,
+        "f1": 0.07179487179487179,
+        "support": 168
+      }
+    },
+    "confusion_matrix": [
+      [
+        23,
+        11,
+        7,
+        203,
+        0,
+        0
+      ],
+      [
+        18,
+        8,
+        7,
+        214,
+        0,
+        1
+      ],
+      [
+        29,
+        8,
+        11,
+        392,
+        1,
+        3
+      ],
+      [
+        14,
+        10,
+        8,
+        711,
+        18,
+        14
+      ],
+      [
+        8,
+        3,
+        0,
+        182,
+        5,
+        2
+      ],
+      [
+        9,
+        3,
+        1,
+        145,
+        3,
+        7
+      ]
+    ],
+    "n": 2079,
+    "PRELIMINARY": true
+  },
+  "test_macro_f1_bootstrap_ci_PRELIMINARY": {
+    "n_resamples_used": 200,
+    "mean": 0.14780451684000745,
+    "ci_lower_2.5": 0.12592824366834698,
+    "ci_upper_97.5": 0.1764084094726009
+  },
+  "class_order": [
+    "progressive_disease",
+    "stable_disease",
+    "partial_response",
+    "very_good_partial_response",
+    "complete_response",
+    "stringent_complete_response"
+  ],
+  "feature_importance_top30": {
+    "numeric__kappa_flc_previous": 0.0024821433381900532,
+    "numeric__kappa_flc_change": 0.0022591544174720615,
+    "numeric__lambda_flc_previous": 0.002003991727748721,
+    "numeric__lambda_flc_change": 0.0019086028130196212,
+    "numeric__qol_physical_functioning": 0.001685557057509519,
+    "numeric__qol_global_health_status": 0.0016747035548134014,
+    "numeric__age_at_diagnosis": 0.0015830451302308128,
+    "numeric__cd38_pct": 0.0013597496051301044,
+    "numeric__qol_fatigue": 0.001206698712582438,
+    "ordinal_response__vt_disease_response_ordinal": 0.0011463434665670324,
+    "numeric__qol_pain": 0.0011092893178925708,
+    "numeric__pct_plasma_cells_bm": 0.0010955048625137295,
+    "numeric__cd56_pct": 0.0010521125486247223,
+    "numeric__albumin_days_since_previous": 0.001028365444768296,
+    "numeric__ldh_current": 0.0010267447591526702,
+    "numeric__m_protein_days_since_previous": 0.0010029866271235696,
+    "numeric__hemoglobin_days_since_previous": 0.0009783284573108729,
+    "numeric__line_duration_so_far": 0.0009487548939993576,
+    "numeric__m_protein_pct_change": 0.0008778480411881108,
+    "numeric__ldh_change": 0.0007713447137501309,
+    "numeric__creatinine_days_since_previous": 0.0006960046311556847,
+    "numeric__regimen_duration_so_far": 0.000683629279280557,
+    "numeric__ldh_days_since_previous": 0.0006445357931149768,
+    "numeric__qol_disease_symptoms": 0.0006269957809485415,
+    "numeric__lambda_flc_days_since_previous": 0.0006188138130626208,
+    "numeric__weight_at_diagnosis_kg": 0.0006036496267929575,
+    "numeric__calcium_days_since_previous": 0.0005952151352332204,
+    "numeric__ldh_previous": 0.0005916792220290955,
+    "numeric__lambda_flc_pct_change": 0.0005367828368188296,
+    "numeric__bmi_at_diagnosis": 0.0005281829413973377
+  }
+}
