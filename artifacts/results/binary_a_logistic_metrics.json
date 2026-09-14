@@ -1,0 +1,183 @@
+{
+  "task": "binary",
+  "model_stage": "a",
+  "algorithm": "logistic",
+  "tag": "",
+  "n_train": 8709,
+  "n_val": 1659,
+  "n_test": 1930,
+  "n_patients_train": 709,
+  "n_patients_val": 154,
+  "n_patients_test": 155,
+  "best_params": {
+    "C": 0.01
+  },
+  "cv_results": [
+    {
+      "params": {
+        "C": 0.01
+      },
+      "mean": 0.476761108079044,
+      "std": 0.012432288114545527,
+      "fold_scores": [
+        0.46758915518631494,
+        0.4738865152382564,
+        0.4887528677904509,
+        0.46040837390471995,
+        0.4931686282754775
+      ]
+    },
+    {
+      "params": {
+        "C": 0.1
+      },
+      "mean": 0.4736183190787261,
+      "std": 0.014341818610904052,
+      "fold_scores": [
+        0.4616666240781119,
+        0.467893928100611,
+        0.49027907461889414,
+        0.4571741272203389,
+        0.4910778413756748
+      ]
+    },
+    {
+      "params": {
+        "C": 1.0
+      },
+      "mean": 0.47282372036088455,
+      "std": 0.014919184850203616,
+      "fold_scores": [
+        0.4598298174585169,
+        0.4669486665001099,
+        0.4910959740730966,
+        0.4561588863146384,
+        0.49008525745806086
+      ]
+    },
+    {
+      "params": {
+        "C": 10.0
+      },
+      "mean": 0.4728761067541699,
+      "std": 0.015221983927878676,
+      "fold_scores": [
+        0.45977295164488086,
+        0.4662116391283324,
+        0.49122296567657575,
+        0.4561965540182632,
+        0.490976423302797
+      ]
+    }
+  ],
+  "seed": 42,
+  "val_metrics": {
+    "auprc": 0.4193667524292947,
+    "auroc": 0.7289713703464387,
+    "brier_score": 0.12989935744285194,
+    "sensitivity": 0.4542372881355932,
+    "specificity": 0.8812316715542522,
+    "precision": 0.4527027027027027,
+    "recall": 0.4542372881355932,
+    "f1": 0.45346869712351945,
+    "threshold_used": 0.35,
+    "confusion_matrix": [
+      [
+        1202,
+        162
+      ],
+      [
+        161,
+        134
+      ]
+    ],
+    "n": 1659
+  },
+  "test_metrics_PRELIMINARY": {
+    "auprc": 0.47699758769083533,
+    "auroc": 0.7812391656981289,
+    "brier_score": 0.12185320571334277,
+    "sensitivity": 0.45325779036827196,
+    "specificity": 0.9175649968294229,
+    "precision": 0.5517241379310345,
+    "recall": 0.45325779036827196,
+    "f1": 0.4976671850699845,
+    "threshold_used": 0.35,
+    "confusion_matrix": [
+      [
+        1447,
+        130
+      ],
+      [
+        193,
+        160
+      ]
+    ],
+    "n": 1930,
+    "PRELIMINARY": true
+  },
+  "test_auprc_bootstrap_ci_PRELIMINARY": {
+    "n_resamples_used": 200,
+    "mean": 0.4826017739559573,
+    "ci_lower_2.5": 0.4283152374599,
+    "ci_upper_97.5": 0.52581830797682
+  },
+  "calibration_curve": {
+    "prob_true": [
+      0.06735751295336788,
+      0.04145077720207254,
+      0.05181347150259067,
+      0.07253886010362694,
+      0.09326424870466321,
+      0.13989637305699482,
+      0.15544041450777202,
+      0.25906735751295334,
+      0.33678756476683935,
+      0.6113989637305699
+    ],
+    "prob_pred": [
+      0.03807203120781595,
+      0.0657420132009051,
+      0.08175738288295901,
+      0.09548460476220905,
+      0.12004594618140867,
+      0.15170620289596623,
+      0.18954550765392825,
+      0.2540016050678936,
+      0.35667667415397947,
+      0.5535179585704348
+    ]
+  },
+  "feature_importance_top30": {
+    "ordinal_response__vt_disease_response_ordinal": 0.9168447078901595,
+    "numeric__age_at_diagnosis": 0.12660484062975544,
+    "numeric__kappa_flc_current": 0.09913981569225794,
+    "object_boolean__had_ed_visit_False": 0.07713577719303805,
+    "numeric__qol_side_effects_treatment": 0.06361698346543668,
+    "clean_boolean__vt_reported_signs_symptoms": 0.06035787761635348,
+    "numeric__cmmc_number": 0.059164090512922846,
+    "clean_boolean__has_hypertension_or_chf": 0.05497818527998068,
+    "object_boolean__cmmc_detected_True": 0.05199472454987612,
+    "object_boolean__amyloidosis_True": 0.05158938618194835,
+    "categorical__ig_heavy_chain_type_igg_igm": 0.049515153906059414,
+    "numeric__qol_global_health_status": 0.04407875756944706,
+    "numeric__creatinine_current": 0.043738233746921755,
+    "numeric__comorbidity_count_total": 0.04259659666689975,
+    "clean_boolean__has_cva": 0.04226115349615076,
+    "object_boolean__cmmc_detected_False": 0.04184797201278972,
+    "object_boolean__has_braf_mutation_True": 0.04028752226042582,
+    "object_boolean__soft_tissue_plasmacytoma_multi_True": 0.03963875930808882,
+    "object_boolean__had_ed_visit_True": 0.03907428481050837,
+    "object_boolean__cmmc_detected_missing": 0.03631188201777022,
+    "categorical__ig_light_chain_type_bi_clonal": 0.036132110659271695,
+    "object_boolean__cd56_detected_missing": 0.035790653526384296,
+    "numeric__vt_ecog_ps_numeric": 0.034532414962927895,
+    "numeric__qol_physical_functioning": 0.03440668176996992,
+    "object_boolean__bone_pain_True": 0.034167466826172284,
+    "object_boolean__had_esa_True": 0.0334012873487865,
+    "numeric__dna_index": 0.03253632344739319,
+    "categorical__ig_heavy_chain_type_missing": 0.03246525445387928,
+    "numeric__qol_pain": 0.03205273079285896,
+    "numeric__pct_plasma_cells_bm": 0.03181236380465484
+  }
+}

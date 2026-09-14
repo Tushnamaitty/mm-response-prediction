@@ -1,0 +1,177 @@
+{
+  "task": "binary",
+  "model_stage": "a",
+  "algorithm": "xgboost",
+  "tag": "",
+  "n_train": 8709,
+  "n_val": 1659,
+  "n_test": 1930,
+  "n_patients_train": 709,
+  "n_patients_val": 154,
+  "n_patients_test": 155,
+  "best_params": {
+    "n_estimators": 100,
+    "max_depth": 3,
+    "learning_rate": 0.05
+  },
+  "cv_results": [
+    {
+      "params": {
+        "n_estimators": 100,
+        "max_depth": 3,
+        "learning_rate": 0.05
+      },
+      "mean": 0.5050681885017282,
+      "std": 0.011996403267543834,
+      "fold_scores": [
+        0.5029969719935096,
+        0.5030759696852884,
+        0.5272021243733767,
+        0.49064188216417864,
+        0.5014239942922878
+      ]
+    },
+    {
+      "params": {
+        "n_estimators": 200,
+        "max_depth": 4,
+        "learning_rate": 0.05
+      },
+      "mean": 0.5008447650446693,
+      "std": 0.010281636272343101,
+      "fold_scores": [
+        0.5021073873832811,
+        0.4942410276689347,
+        0.5188224454576995,
+        0.4881893586241643,
+        0.5008636060892672
+      ]
+    },
+    {
+      "params": {
+        "n_estimators": 200,
+        "max_depth": 3,
+        "learning_rate": 0.1
+      },
+      "mean": 0.49169824500310017,
+      "std": 0.009495173146512912,
+      "fold_scores": [
+        0.49121121813625623,
+        0.48763557650207007,
+        0.5099826230682761,
+        0.48647557068229086,
+        0.48318623662660753
+      ]
+    }
+  ],
+  "seed": 42,
+  "val_metrics": {
+    "auprc": 0.4409129034391329,
+    "auroc": 0.7545193598091356,
+    "brier_score": 0.12448543310165405,
+    "sensitivity": 0.5559322033898305,
+    "specificity": 0.8262463343108505,
+    "precision": 0.4089775561097257,
+    "recall": 0.5559322033898305,
+    "f1": 0.47126436781609193,
+    "threshold_used": 0.25,
+    "confusion_matrix": [
+      [
+        1127,
+        237
+      ],
+      [
+        131,
+        164
+      ]
+    ],
+    "n": 1659
+  },
+  "test_metrics_PRELIMINARY": {
+    "auprc": 0.472849626233419,
+    "auroc": 0.7967013424205245,
+    "brier_score": 0.1211472898721695,
+    "sensitivity": 0.5750708215297451,
+    "specificity": 0.849714648065948,
+    "precision": 0.46136363636363636,
+    "recall": 0.5750708215297451,
+    "f1": 0.5119798234552333,
+    "threshold_used": 0.25,
+    "confusion_matrix": [
+      [
+        1340,
+        237
+      ],
+      [
+        150,
+        203
+      ]
+    ],
+    "n": 1930,
+    "PRELIMINARY": true
+  },
+  "test_auprc_bootstrap_ci_PRELIMINARY": {
+    "n_resamples_used": 200,
+    "mean": 0.4760145023739554,
+    "ci_lower_2.5": 0.44086176979699754,
+    "ci_upper_97.5": 0.5180614472843749
+  },
+  "calibration_curve": {
+    "prob_true": [
+      0.030927835051546393,
+      0.036458333333333336,
+      0.05181347150259067,
+      0.08808290155440414,
+      0.08290155440414508,
+      0.14507772020725387,
+      0.18652849740932642,
+      0.22279792746113988,
+      0.39378238341968913,
+      0.5906735751295337
+    ],
+    "prob_pred": [
+      0.04777165926685653,
+      0.06341749274482329,
+      0.07167138236483143,
+      0.08037653893541177,
+      0.10616773830176635,
+      0.1873291980262865,
+      0.21668421975071567,
+      0.2429976371440245,
+      0.3197543553120114,
+      0.6154192315482105
+    ]
+  },
+  "feature_importance_top30": {
+    "ordinal_response__vt_disease_response_ordinal": 0.1736937016248703,
+    "object_boolean__subject_had_signs_symptoms_missing": 0.17280207574367523,
+    "object_boolean__had_transfusion_missing": 0.04646295681595802,
+    "object_boolean__had_transfusion_False": 0.03168245404958725,
+    "object_boolean__had_hospitalization_True": 0.022500548511743546,
+    "object_boolean__spinal_cord_compression_False": 0.020209094509482384,
+    "clean_boolean__vt_reported_clinical_event": 0.017812509089708328,
+    "object_boolean__had_esa_False": 0.01773221418261528,
+    "object_boolean__had_ed_visit_False": 0.01673387736082077,
+    "numeric__m_protein_current": 0.015970885753631592,
+    "object_boolean__cd38_detected_True": 0.015468450263142586,
+    "object_boolean__had_wbc_growth_factor_False": 0.015049292705953121,
+    "numeric__creatinine_current": 0.014226141385734081,
+    "numeric__kappa_flc_current": 0.014205710031092167,
+    "numeric__age_at_diagnosis": 0.014030417427420616,
+    "numeric__pct_plasma_cells_pb": 0.014029610902071,
+    "numeric__count_relatives_with_cancer": 0.013958604075014591,
+    "object_boolean__bone_pain_True": 0.013843251392245293,
+    "numeric__qol_physical_functioning": 0.013395904563367367,
+    "numeric__cmmc_number": 0.013199970126152039,
+    "numeric__ldh_current": 0.013168128207325935,
+    "numeric__qol_pain": 0.013089224696159363,
+    "numeric__qol_global_health_status": 0.01291681919246912,
+    "numeric__iss_stage": 0.01242166105657816,
+    "numeric__cd56_pct": 0.0123192323371768,
+    "object_boolean__pathologic_fracture_False": 0.012240973301231861,
+    "object_boolean__had_anticoagulation_False": 0.011921054683625698,
+    "numeric__lambda_flc_current": 0.01178122591227293,
+    "categorical__ig_heavy_chain_type_igg": 0.011779118329286575,
+    "object_boolean__subject_had_signs_symptoms_False": 0.011446612887084484
+  }
+}
