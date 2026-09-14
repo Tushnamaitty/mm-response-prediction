@@ -1,0 +1,307 @@
+{
+  "task": "multiclass",
+  "model_stage": "c",
+  "algorithm": "xgboost",
+  "tag": "",
+  "n_train": 9539,
+  "n_val": 1833,
+  "n_test": 2079,
+  "n_patients_train": 716,
+  "n_patients_val": 154,
+  "n_patients_test": 155,
+  "best_params": {
+    "n_estimators": 200,
+    "max_depth": 4,
+    "learning_rate": 0.05
+  },
+  "cv_results": [
+    {
+      "params": {
+        "n_estimators": 100,
+        "max_depth": 3,
+        "learning_rate": 0.05
+      },
+      "mean": 0.651158215541124,
+      "std": 0.009641144517829502,
+      "fold_scores": [
+        0.6543696358895966,
+        0.6470568110666636,
+        0.6424614168389909,
+        0.6685221297881547,
+        0.6433810841222137
+      ]
+    },
+    {
+      "params": {
+        "n_estimators": 200,
+        "max_depth": 4,
+        "learning_rate": 0.05
+      },
+      "mean": 0.6557444093791742,
+      "std": 0.014856457245989817,
+      "fold_scores": [
+        0.6501706059802584,
+        0.6647578392669657,
+        0.643300894829408,
+        0.6801948665419429,
+        0.6402978402772964
+      ]
+    },
+    {
+      "params": {
+        "n_estimators": 200,
+        "max_depth": 3,
+        "learning_rate": 0.1
+      },
+      "mean": 0.6515070840915833,
+      "std": 0.012545414789682923,
+      "fold_scores": [
+        0.6467288366439797,
+        0.6589365523204833,
+        0.6391267877017768,
+        0.6723138507173317,
+        0.6404293930743453
+      ]
+    }
+  ],
+  "seed": 42,
+  "val_metrics": {
+    "accuracy_secondary": 0.6923076923076923,
+    "macro_f1": 0.6574760073252345,
+    "macro_precision": 0.6637745658837372,
+    "macro_recall": 0.6575902548425153,
+    "weighted_f1": 0.687295874757777,
+    "per_class": {
+      "progressive_disease": {
+        "precision": 0.5240641711229946,
+        "recall": 0.3656716417910448,
+        "f1": 0.4307692307692308,
+        "support": 268
+      },
+      "stable_disease": {
+        "precision": 0.5343511450381679,
+        "recall": 0.603448275862069,
+        "f1": 0.5668016194331984,
+        "support": 232
+      },
+      "partial_response": {
+        "precision": 0.51440329218107,
+        "recall": 0.5580357142857143,
+        "f1": 0.5353319057815846,
+        "support": 224
+      },
+      "very_good_partial_response": {
+        "precision": 0.7782672540381792,
+        "recall": 0.8412698412698413,
+        "f1": 0.8085430968726163,
+        "support": 630
+      },
+      "complete_response": {
+        "precision": 0.8252788104089219,
+        "recall": 0.7708333333333334,
+        "f1": 0.7971274685816876,
+        "support": 288
+      },
+      "stringent_complete_response": {
+        "precision": 0.806282722513089,
+        "recall": 0.806282722513089,
+        "f1": 0.806282722513089,
+        "support": 191
+      }
+    },
+    "confusion_matrix": [
+      [
+        98,
+        73,
+        29,
+        50,
+        7,
+        11
+      ],
+      [
+        38,
+        140,
+        34,
+        18,
+        1,
+        1
+      ],
+      [
+        36,
+        30,
+        125,
+        33,
+        0,
+        0
+      ],
+      [
+        14,
+        14,
+        50,
+        530,
+        17,
+        5
+      ],
+      [
+        1,
+        4,
+        5,
+        36,
+        222,
+        20
+      ],
+      [
+        0,
+        1,
+        0,
+        14,
+        22,
+        154
+      ]
+    ],
+    "n": 1833
+  },
+  "test_metrics_PRELIMINARY": {
+    "accuracy_secondary": 0.6940836940836941,
+    "macro_f1": 0.6553947578698641,
+    "macro_precision": 0.6666845294554471,
+    "macro_recall": 0.650886404270857,
+    "weighted_f1": 0.6882870789162586,
+    "per_class": {
+      "progressive_disease": {
+        "precision": 0.41916167664670656,
+        "recall": 0.28688524590163933,
+        "f1": 0.340632603406326,
+        "support": 244
+      },
+      "stable_disease": {
+        "precision": 0.49324324324324326,
+        "recall": 0.5887096774193549,
+        "f1": 0.5367647058823529,
+        "support": 248
+      },
+      "partial_response": {
+        "precision": 0.6621923937360179,
+        "recall": 0.6666666666666666,
+        "f1": 0.6644219977553311,
+        "support": 444
+      },
+      "very_good_partial_response": {
+        "precision": 0.7876960193003619,
+        "recall": 0.8425806451612903,
+        "f1": 0.814214463840399,
+        "support": 775
+      },
+      "complete_response": {
+        "precision": 0.7921348314606742,
+        "recall": 0.705,
+        "f1": 0.746031746031746,
+        "support": 200
+      },
+      "stringent_complete_response": {
+        "precision": 0.845679012345679,
+        "recall": 0.8154761904761905,
+        "f1": 0.8303030303030303,
+        "support": 168
+      }
+    },
+    "confusion_matrix": [
+      [
+        70,
+        56,
+        44,
+        58,
+        7,
+        9
+      ],
+      [
+        36,
+        146,
+        39,
+        25,
+        2,
+        0
+      ],
+      [
+        40,
+        64,
+        296,
+        43,
+        0,
+        1
+      ],
+      [
+        15,
+        25,
+        59,
+        653,
+        19,
+        4
+      ],
+      [
+        4,
+        4,
+        5,
+        35,
+        141,
+        11
+      ],
+      [
+        2,
+        1,
+        4,
+        15,
+        9,
+        137
+      ]
+    ],
+    "n": 2079,
+    "PRELIMINARY": true
+  },
+  "test_macro_f1_bootstrap_ci_PRELIMINARY": {
+    "n_resamples_used": 200,
+    "mean": 0.6520636116434136,
+    "ci_lower_2.5": 0.6205466641398751,
+    "ci_upper_97.5": 0.6774124170936121
+  },
+  "class_order": [
+    "progressive_disease",
+    "stable_disease",
+    "partial_response",
+    "very_good_partial_response",
+    "complete_response",
+    "stringent_complete_response"
+  ],
+  "feature_importance_top30": {
+    "ordinal_response__vt_disease_response_ordinal": 0.13362275063991547,
+    "object_boolean__subject_had_signs_symptoms_missing": 0.04255535453557968,
+    "object_boolean__had_dialysis_False": 0.01652517542243004,
+    "clean_boolean__prior_treatment_failure": 0.015484162606298923,
+    "numeric__m_protein_change": 0.012742660939693451,
+    "clean_boolean__prior_exposure_steroid": 0.012594065628945827,
+    "object_boolean__had_transfusion_False": 0.008282599970698357,
+    "object_boolean__had_radiation_therapy_False": 0.007749340962618589,
+    "numeric__n_prior_lines_completed": 0.0076514603570103645,
+    "clean_boolean__prior_exposure_pi": 0.007522230036556721,
+    "numeric__vt_days_to_visit": 0.007449014578014612,
+    "numeric__m_protein_current": 0.007346484810113907,
+    "clean_boolean__prior_exposure_cd38": 0.0073304129764437675,
+    "numeric__lambda_flc_current": 0.007109198719263077,
+    "object_boolean__soft_tissue_plasmacytoma_multi_False": 0.006893552374094725,
+    "clean_boolean__prior_exposure_chemo": 0.006474594119936228,
+    "object_boolean__bone_lytic_lesion_present_True": 0.006364427972584963,
+    "object_boolean__cd45_typical_detected_True": 0.0062741488218307495,
+    "object_boolean__hypercalcemia_False": 0.0062245698645710945,
+    "numeric__kappa_flc_change": 0.0061852592043578625,
+    "object_boolean__had_bisphosphonate_True": 0.0060203466564416885,
+    "clean_boolean__currently_on_imid": 0.005941512994468212,
+    "categorical_high_card__current_regimen_categories_infrequent_sklearn": 0.005908960942178965,
+    "categorical__ig_heavy_chain_type_igg": 0.005852764472365379,
+    "numeric__kappa_flc_current": 0.0058447737246751785,
+    "clean_boolean__vt_reported_clinical_event": 0.005671283695846796,
+    "object_boolean__had_tumor_lysis_meds_False": 0.005663408897817135,
+    "categorical_high_card__current_regimen_name_daratumumab": 0.005592545960098505,
+    "numeric__comorbidity_count_total": 0.005577817093580961,
+    "clean_boolean__has_hypertension_or_chf": 0.005577062722295523
+  }
+}

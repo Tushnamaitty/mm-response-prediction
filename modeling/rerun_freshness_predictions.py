@@ -37,8 +37,21 @@ def run_freshness_cutoff(df, task, cutoff, algorithm="xgboost"):
     X_va, y_va, g_va, pid_va, _ = getter(work_df, "d", preprocessor, meta, "val")
     X_te, y_te, g_te, pid_te, _ = getter(work_df, "d", preprocessor, meta, "test")
 
-    X_trv = np.vstack([X_tr, X_va]); y_trv = np.concatenate([y_tr, y_va]); g_trv = np.concatenate([g_tr, g_va])
-    best_params, _ = select_best_params(X_trv, y_trv, g_trv, algorithm, task)
+    # SAFETY NET: train/val/test patient sets must be mutually disjoint
+    # before anything else happens (same check as train_models.py:run_one).
+    tr_ids, va_ids, te_ids = set(g_tr), set(g_va), set(g_te)
+    assert tr_ids.isdisjoint(va_ids), f"train/val patient overlap: {sorted(tr_ids & va_ids)[:5]}"
+    assert tr_ids.isdisjoint(te_ids), f"train/test patient overlap: {sorted(tr_ids & te_ids)[:5]}"
+    assert va_ids.isdisjoint(te_ids), f"val/test patient overlap: {sorted(va_ids & te_ids)[:5]}"
+
+    # FIX: hyperparameter selection now uses TRAINING PATIENTS ONLY, matching
+    # the corrected train_models.py:run_one. Previously this combined
+    # train+val (X_trv/y_trv/g_trv) into the GroupKFold CV. Validation stays
+    # untouched until its original downstream use below (threshold selection).
+    best_params, _ = select_best_params(
+        X_tr, y_tr, g_tr, algorithm, task,
+        banned_groups=va_ids | te_ids,
+    )
     model = build_model(algorithm, task, best_params)
     model.fit(X_tr, y_tr)
 

@@ -1,14 +1,36 @@
 """
-Step 13 (PRELIMINARY): Train/evaluate Models A-D, binary + multiclass.
-Results are preliminary, not final.
+Step 13 (CLEAN RERUN): Train/evaluate all 24 Model A-D x
+Logistic/LightGBM/XGBoost x binary/multiclass combinations, using
+TRAIN-ONLY hyperparameter tuning.
 
-Frozen inputs read, never modified: Steps 1-12 outputs, split, eligibility,
-preprocessors.
+Frozen inputs read, never modified: Steps 1-12 outputs (data/clinical,
+data/splits, artifacts/preprocessing).
 
-This run only replaces the 8 Logistic Regression combinations. The
-RNA-specific XGBoost analyses (Model D without rna_available, freshness
-sensitivity, RNA-subset A-D comparison) and the imbalance/heterogeneity
-reports are NOT rerun here - their existing files are untouched.
+This is the full clean rerun of all 24 main combinations, replacing the
+earlier partial "Logistic Regression rerun only" run. Hyperparameter
+selection now uses TRAIN PATIENTS ONLY (see select_best_params /
+run_one below) - validation is never combined with train for tuning,
+and stays untouched until its original downstream use (binary threshold
+selection / val_metrics reporting). Test remains untouched until final
+evaluation.
+
+Outputs are written ONLY to artifacts/models_clean_rerun/ and
+artifacts/results_clean_rerun/ - the original artifacts/models/ and
+artifacts/results/ directories are never read from or written to by
+this script, so all historical outputs remain untouched.
+
+This run does NOT touch: freshness analyses, RNA-specific ablations,
+RNA-subset comparisons, uncertainty analyses, or heterogeneity/subgroup
+analyses. Those are handled separately after these 24 clean models are
+complete.
+
+RESUMABILITY: a combination is considered complete only if all three of
+its expected files (model joblib, metrics JSON, predictions CSV) exist
+in the clean-rerun directories. If the run is interrupted (Ctrl+C or a
+crash) and restarted, already-complete combinations are skipped and
+incomplete/missing ones are (re)run. Completion is judged ONLY from the
+clean-rerun directories - the old artifacts/models/ and
+artifacts/results/ are never consulted for this.
 """
 
 import json, os, sys, warnings
@@ -40,8 +62,12 @@ sys.modules["__main__"]._stringify_preserving_na = _bp._stringify_preserving_na
 CLINICAL_DIR = "data/clinical"
 SPLITS_DIR = "data/splits"
 PREPROC_DIR = "artifacts/preprocessing"
-MODELS_DIR = "artifacts/models"
-RESULTS_DIR = "artifacts/results"
+
+# CLEAN RERUN: outputs go ONLY here. The original artifacts/models/ and
+# artifacts/results/ directories are never read from or written to by
+# this script - historical outputs remain fully untouched.
+MODELS_DIR = "artifacts/models_clean_rerun"
+RESULTS_DIR = "artifacts/results_clean_rerun"
 
 RANDOM_SEED = 42
 N_CV_FOLDS = 5
@@ -62,6 +88,9 @@ FRESHNESS_CUTOFFS_DAYS = [365, 545, 730]  # 1yr, 1.5yr, 2yr - not used this run
 
 
 def already_done(key):
+    """A combination is complete only if ALL THREE expected files exist
+    in the CLEAN-RERUN directories. Never checks the old artifacts/models/
+    or artifacts/results/ directories."""
     return (os.path.exists(f"{MODELS_DIR}/{key}.joblib")
             and os.path.exists(f"{RESULTS_DIR}/{key}_metrics.json")
             and os.path.exists(f"{RESULTS_DIR}/{key}_predictions.csv"))
@@ -139,7 +168,19 @@ def build_model(algorithm, task, params):
     raise ValueError(algorithm)
 
 
-def select_best_params(X, y, groups, algorithm, task):
+def select_best_params(X, y, groups, algorithm, task, banned_groups=None):
+    """Hyperparameter selection via GroupKFold CV. `groups` must contain
+    ONLY training patients - banned_groups (typically val | test patient
+    ids) is an explicit safety net: if any patient in `groups` is also in
+    banned_groups, this raises immediately rather than silently tuning on
+    contaminated folds."""
+    if banned_groups:
+        contaminated = set(np.unique(groups)) & set(banned_groups)
+        assert not contaminated, (
+            f"select_best_params received {len(contaminated)} patient(s) that must "
+            f"be excluded from hyperparameter tuning (val/test): "
+            f"{sorted(contaminated)[:5]}{'...' if len(contaminated) > 5 else ''}"
+        )
     grid = get_param_grid(algorithm)
     folds = make_group_folds(groups)
     scored = []
@@ -276,8 +317,21 @@ def run_one(df, task, stage, algorithm, row_filter=None, tag=""):
     X_va, y_va, g_va, pid_va, _ = getter(work_df, stage, preprocessor, meta, "val")
     X_te, y_te, g_te, pid_te, _ = getter(work_df, stage, preprocessor, meta, "test")
 
-    X_trv = np.vstack([X_tr, X_va]); y_trv = np.concatenate([y_tr, y_va]); g_trv = np.concatenate([g_tr, g_va])
-    best_params, cv_results = select_best_params(X_trv, y_trv, g_trv, algorithm, task)
+    # SAFETY NET: train/val/test patient sets must be mutually disjoint
+    # before anything else happens. This should already be guaranteed by
+    # Step 11's split, but is re-verified here at the point of use.
+    tr_ids, va_ids, te_ids = set(g_tr), set(g_va), set(g_te)
+    assert tr_ids.isdisjoint(va_ids), f"train/val patient overlap: {sorted(tr_ids & va_ids)[:5]}"
+    assert tr_ids.isdisjoint(te_ids), f"train/test patient overlap: {sorted(tr_ids & te_ids)[:5]}"
+    assert va_ids.isdisjoint(te_ids), f"val/test patient overlap: {sorted(va_ids & te_ids)[:5]}"
+
+    # Hyperparameter selection uses TRAINING PATIENTS ONLY. Validation is
+    # never combined with train for tuning, and stays untouched until its
+    # original downstream use (threshold selection / val_metrics) below.
+    best_params, cv_results = select_best_params(
+        X_tr, y_tr, g_tr, algorithm, task,
+        banned_groups=va_ids | te_ids,
+    )
 
     # X_va/X_te stay UNSCALED here - if logistic, model is a Pipeline that
     # scales internally on each predict call, exactly once.
@@ -333,6 +387,7 @@ def run_one(df, task, stage, algorithm, row_filter=None, tag=""):
 
 
 def rebuild_summary():
+    """Reads ONLY from the clean-rerun RESULTS_DIR."""
     summary_rows = []
     for task in ["binary", "multiclass"]:
         for stage in MODEL_STAGES:
@@ -362,16 +417,20 @@ if __name__ == "__main__":
 
     df = load_master_data()
 
-    print("STEP 13 - Logistic Regression rerun only (scaling fix)")
+    print("STEP 13 - CLEAN RERUN: all 24 combinations, train-only hyperparameter tuning")
+    print(f"Models  -> {MODELS_DIR}/")
+    print(f"Results -> {RESULTS_DIR}/")
+    print("Historical artifacts/models/ and artifacts/results/ are NOT read or written by this run.")
+    print()
 
     for task in ["binary", "multiclass"]:
         for stage in MODEL_STAGES:
             for algo in ALGORITHMS:
                 key = f"{task}_{stage}_{algo}"
                 if already_done(key):
-                    print(f"SKIP (already done): {key}")
+                    print(f"SKIP completed: {key}")
                     continue
-                print(f"{task} | {stage} | {algo}")
+                print(f"RUN: {key}")
                 model, result, preds_df = run_one(df, task, stage, algo)
                 joblib.dump(model, f"{MODELS_DIR}/{key}.joblib")
                 with open(f"{RESULTS_DIR}/{key}_metrics.json", "w") as f:
@@ -380,4 +439,7 @@ if __name__ == "__main__":
 
     rebuild_summary().to_csv(f"{RESULTS_DIR}/summary_PRELIMINARY.csv", index=False)
 
-    print("DONE. RNA-specific analyses and imbalance/heterogeneity reports were NOT touched this run.")
+    print()
+    print("DONE. All 24 main A/B/C/D x algorithm combinations written to the clean-rerun directories.")
+    print("Freshness analyses, RNA-specific ablations, RNA-subset comparisons, uncertainty analyses, "
+          "and heterogeneity/subgroup analyses were NOT touched by this run.")
