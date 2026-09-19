@@ -1,0 +1,1264 @@
+{
+  "description": "Calibration of locked clean-rerun C-XGBoost and D-XGBoost (binary and multiclass).",
+  "design": {
+    "calibration_set": "validation split (never used for training or tuning)",
+    "evaluation_set": "test split, evaluated once; all task-eligible rows (D - C also on RNA-available rows)",
+    "methods": {
+      "binary": [
+        "uncalibrated",
+        "platt",
+        "isotonic"
+      ],
+      "multiclass": [
+        "uncalibrated",
+        "temperature"
+      ]
+    },
+    "selection_rule": "5-fold patient-grouped cross-fitting within validation; lowest cross-fitted log-loss, but a simpler method is preferred if its cross-fitted Brier is within 0.001. Final calibrators refit on all validation rows and frozen.",
+    "uncertainty": "1000 patient-level bootstrap resamples of test, seed 42, shared across models/methods (paired); calibrators frozen (test-sampling uncertainty only).",
+    "excluded": "threshold-based metrics; ECE; per-class isotonic/Dirichlet multiclass calibration"
+  },
+  "results": {
+    "binary": {
+      "selected_method_on_validation": {
+        "C-XGBoost": "uncalibrated",
+        "D-XGBoost": "uncalibrated"
+      },
+      "test_metrics": [
+        {
+          "model": "C-XGBoost",
+          "method": "uncalibrated",
+          "selected": true,
+          "metric": "auroc",
+          "estimate": 0.812597,
+          "ci_lower": 0.784222,
+          "ci_upper": 0.838931
+        },
+        {
+          "model": "C-XGBoost",
+          "method": "uncalibrated",
+          "selected": true,
+          "metric": "auprc",
+          "estimate": 0.492861,
+          "ci_lower": 0.442747,
+          "ci_upper": 0.551088
+        },
+        {
+          "model": "C-XGBoost",
+          "method": "uncalibrated",
+          "selected": true,
+          "metric": "brier",
+          "estimate": 0.117485,
+          "ci_lower": 0.107475,
+          "ci_upper": 0.128548
+        },
+        {
+          "model": "C-XGBoost",
+          "method": "uncalibrated",
+          "selected": true,
+          "metric": "scaled_brier",
+          "estimate": 0.213876,
+          "ci_lower": 0.170103,
+          "ci_upper": 0.255308
+        },
+        {
+          "model": "C-XGBoost",
+          "method": "uncalibrated",
+          "selected": true,
+          "metric": "log_loss",
+          "estimate": 0.378207,
+          "ci_lower": 0.350863,
+          "ci_upper": 0.407981
+        },
+        {
+          "model": "C-XGBoost",
+          "method": "uncalibrated",
+          "selected": true,
+          "metric": "calibration_intercept",
+          "estimate": -0.065946,
+          "ci_lower": -0.198867,
+          "ci_upper": 0.074709
+        },
+        {
+          "model": "C-XGBoost",
+          "method": "uncalibrated",
+          "selected": true,
+          "metric": "calibration_slope",
+          "estimate": 1.086692,
+          "ci_lower": 0.952265,
+          "ci_upper": 1.231859
+        },
+        {
+          "model": "C-XGBoost",
+          "method": "uncalibrated",
+          "selected": true,
+          "metric": "mean_predicted",
+          "estimate": 0.190952,
+          "ci_lower": 0.176875,
+          "ci_upper": 0.20611
+        },
+        {
+          "model": "C-XGBoost",
+          "method": "uncalibrated",
+          "selected": true,
+          "metric": "observed_rate",
+          "estimate": 0.182902,
+          "ci_lower": 0.165919,
+          "ci_upper": 0.199686
+        },
+        {
+          "model": "C-XGBoost",
+          "method": "platt",
+          "selected": false,
+          "metric": "auroc",
+          "estimate": 0.812597,
+          "ci_lower": 0.784222,
+          "ci_upper": 0.838931
+        },
+        {
+          "model": "C-XGBoost",
+          "method": "platt",
+          "selected": false,
+          "metric": "auprc",
+          "estimate": 0.492861,
+          "ci_lower": 0.442747,
+          "ci_upper": 0.551088
+        },
+        {
+          "model": "C-XGBoost",
+          "method": "platt",
+          "selected": false,
+          "metric": "brier",
+          "estimate": 0.118813,
+          "ci_lower": 0.108679,
+          "ci_upper": 0.129538
+        },
+        {
+          "model": "C-XGBoost",
+          "method": "platt",
+          "selected": false,
+          "metric": "scaled_brier",
+          "estimate": 0.204992,
+          "ci_lower": 0.168537,
+          "ci_upper": 0.23946
+        },
+        {
+          "model": "C-XGBoost",
+          "method": "platt",
+          "selected": false,
+          "metric": "log_loss",
+          "estimate": 0.380826,
+          "ci_lower": 0.35343,
+          "ci_upper": 0.409791
+        },
+        {
+          "model": "C-XGBoost",
+          "method": "platt",
+          "selected": false,
+          "metric": "calibration_intercept",
+          "estimate": 0.115389,
+          "ci_lower": -0.010543,
+          "ci_upper": 0.246359
+        },
+        {
+          "model": "C-XGBoost",
+          "method": "platt",
+          "selected": false,
+          "metric": "calibration_slope",
+          "estimate": 1.213032,
+          "ci_lower": 1.062977,
+          "ci_upper": 1.375077
+        },
+        {
+          "model": "C-XGBoost",
+          "method": "platt",
+          "selected": false,
+          "metric": "mean_predicted",
+          "estimate": 0.168837,
+          "ci_lower": 0.157007,
+          "ci_upper": 0.181626
+        },
+        {
+          "model": "C-XGBoost",
+          "method": "platt",
+          "selected": false,
+          "metric": "observed_rate",
+          "estimate": 0.182902,
+          "ci_lower": 0.165919,
+          "ci_upper": 0.199686
+        },
+        {
+          "model": "C-XGBoost",
+          "method": "isotonic",
+          "selected": false,
+          "metric": "auroc",
+          "estimate": 0.811374,
+          "ci_lower": 0.78422,
+          "ci_upper": 0.837282
+        },
+        {
+          "model": "C-XGBoost",
+          "method": "isotonic",
+          "selected": false,
+          "metric": "auprc",
+          "estimate": 0.472702,
+          "ci_lower": 0.426526,
+          "ci_upper": 0.525157
+        },
+        {
+          "model": "C-XGBoost",
+          "method": "isotonic",
+          "selected": false,
+          "metric": "brier",
+          "estimate": 0.118745,
+          "ci_lower": 0.108801,
+          "ci_upper": 0.130044
+        },
+        {
+          "model": "C-XGBoost",
+          "method": "isotonic",
+          "selected": false,
+          "metric": "scaled_brier",
+          "estimate": 0.205445,
+          "ci_lower": 0.166991,
+          "ci_upper": 0.243594
+        },
+        {
+          "model": "C-XGBoost",
+          "method": "isotonic",
+          "selected": false,
+          "metric": "log_loss",
+          "estimate": 0.390899,
+          "ci_lower": 0.358516,
+          "ci_upper": 0.428238
+        },
+        {
+          "model": "C-XGBoost",
+          "method": "isotonic",
+          "selected": false,
+          "metric": "calibration_intercept",
+          "estimate": 0.131576,
+          "ci_lower": 0.00411,
+          "ci_upper": 0.262509
+        },
+        {
+          "model": "C-XGBoost",
+          "method": "isotonic",
+          "selected": false,
+          "metric": "calibration_slope",
+          "estimate": 1.035863,
+          "ci_lower": 0.816047,
+          "ci_upper": 1.256329
+        },
+        {
+          "model": "C-XGBoost",
+          "method": "isotonic",
+          "selected": false,
+          "metric": "mean_predicted",
+          "estimate": 0.167332,
+          "ci_lower": 0.155708,
+          "ci_upper": 0.179836
+        },
+        {
+          "model": "C-XGBoost",
+          "method": "isotonic",
+          "selected": false,
+          "metric": "observed_rate",
+          "estimate": 0.182902,
+          "ci_lower": 0.165919,
+          "ci_upper": 0.199686
+        },
+        {
+          "model": "D-XGBoost",
+          "method": "uncalibrated",
+          "selected": true,
+          "metric": "auroc",
+          "estimate": 0.809603,
+          "ci_lower": 0.780938,
+          "ci_upper": 0.837169
+        },
+        {
+          "model": "D-XGBoost",
+          "method": "uncalibrated",
+          "selected": true,
+          "metric": "auprc",
+          "estimate": 0.500774,
+          "ci_lower": 0.453978,
+          "ci_upper": 0.55381
+        },
+        {
+          "model": "D-XGBoost",
+          "method": "uncalibrated",
+          "selected": true,
+          "metric": "brier",
+          "estimate": 0.117588,
+          "ci_lower": 0.10768,
+          "ci_upper": 0.128556
+        },
+        {
+          "model": "D-XGBoost",
+          "method": "uncalibrated",
+          "selected": true,
+          "metric": "scaled_brier",
+          "estimate": 0.213191,
+          "ci_lower": 0.170285,
+          "ci_upper": 0.253972
+        },
+        {
+          "model": "D-XGBoost",
+          "method": "uncalibrated",
+          "selected": true,
+          "metric": "log_loss",
+          "estimate": 0.378729,
+          "ci_lower": 0.351328,
+          "ci_upper": 0.408408
+        },
+        {
+          "model": "D-XGBoost",
+          "method": "uncalibrated",
+          "selected": true,
+          "metric": "calibration_intercept",
+          "estimate": -0.075087,
+          "ci_lower": -0.21037,
+          "ci_upper": 0.069491
+        },
+        {
+          "model": "D-XGBoost",
+          "method": "uncalibrated",
+          "selected": true,
+          "metric": "calibration_slope",
+          "estimate": 1.082874,
+          "ci_lower": 0.953367,
+          "ci_upper": 1.224516
+        },
+        {
+          "model": "D-XGBoost",
+          "method": "uncalibrated",
+          "selected": true,
+          "metric": "mean_predicted",
+          "estimate": 0.19209,
+          "ci_lower": 0.177857,
+          "ci_upper": 0.207613
+        },
+        {
+          "model": "D-XGBoost",
+          "method": "uncalibrated",
+          "selected": true,
+          "metric": "observed_rate",
+          "estimate": 0.182902,
+          "ci_lower": 0.165919,
+          "ci_upper": 0.199686
+        },
+        {
+          "model": "D-XGBoost",
+          "method": "platt",
+          "selected": false,
+          "metric": "auroc",
+          "estimate": 0.809603,
+          "ci_lower": 0.780938,
+          "ci_upper": 0.837169
+        },
+        {
+          "model": "D-XGBoost",
+          "method": "platt",
+          "selected": false,
+          "metric": "auprc",
+          "estimate": 0.500774,
+          "ci_lower": 0.453978,
+          "ci_upper": 0.55381
+        },
+        {
+          "model": "D-XGBoost",
+          "method": "platt",
+          "selected": false,
+          "metric": "brier",
+          "estimate": 0.118639,
+          "ci_lower": 0.108678,
+          "ci_upper": 0.129265
+        },
+        {
+          "model": "D-XGBoost",
+          "method": "platt",
+          "selected": false,
+          "metric": "scaled_brier",
+          "estimate": 0.206157,
+          "ci_lower": 0.169858,
+          "ci_upper": 0.240663
+        },
+        {
+          "model": "D-XGBoost",
+          "method": "platt",
+          "selected": false,
+          "metric": "log_loss",
+          "estimate": 0.380922,
+          "ci_lower": 0.353882,
+          "ci_upper": 0.409609
+        },
+        {
+          "model": "D-XGBoost",
+          "method": "platt",
+          "selected": false,
+          "metric": "calibration_intercept",
+          "estimate": 0.091879,
+          "ci_lower": -0.034174,
+          "ci_upper": 0.223258
+        },
+        {
+          "model": "D-XGBoost",
+          "method": "platt",
+          "selected": false,
+          "metric": "calibration_slope",
+          "estimate": 1.209042,
+          "ci_lower": 1.064446,
+          "ci_upper": 1.367187
+        },
+        {
+          "model": "D-XGBoost",
+          "method": "platt",
+          "selected": false,
+          "metric": "mean_predicted",
+          "estimate": 0.171633,
+          "ci_lower": 0.159572,
+          "ci_upper": 0.184724
+        },
+        {
+          "model": "D-XGBoost",
+          "method": "platt",
+          "selected": false,
+          "metric": "observed_rate",
+          "estimate": 0.182902,
+          "ci_lower": 0.165919,
+          "ci_upper": 0.199686
+        },
+        {
+          "model": "D-XGBoost",
+          "method": "isotonic",
+          "selected": false,
+          "metric": "auroc",
+          "estimate": 0.808818,
+          "ci_lower": 0.78161,
+          "ci_upper": 0.835623
+        },
+        {
+          "model": "D-XGBoost",
+          "method": "isotonic",
+          "selected": false,
+          "metric": "auprc",
+          "estimate": 0.474491,
+          "ci_lower": 0.429558,
+          "ci_upper": 0.523492
+        },
+        {
+          "model": "D-XGBoost",
+          "method": "isotonic",
+          "selected": false,
+          "metric": "brier",
+          "estimate": 0.118907,
+          "ci_lower": 0.109103,
+          "ci_upper": 0.130019
+        },
+        {
+          "model": "D-XGBoost",
+          "method": "isotonic",
+          "selected": false,
+          "metric": "scaled_brier",
+          "estimate": 0.204361,
+          "ci_lower": 0.169044,
+          "ci_upper": 0.238956
+        },
+        {
+          "model": "D-XGBoost",
+          "method": "isotonic",
+          "selected": false,
+          "metric": "log_loss",
+          "estimate": 0.385877,
+          "ci_lower": 0.3562,
+          "ci_upper": 0.419348
+        },
+        {
+          "model": "D-XGBoost",
+          "method": "isotonic",
+          "selected": false,
+          "metric": "calibration_intercept",
+          "estimate": 0.126937,
+          "ci_lower": 0.001792,
+          "ci_upper": 0.255728
+        },
+        {
+          "model": "D-XGBoost",
+          "method": "isotonic",
+          "selected": false,
+          "metric": "calibration_slope",
+          "estimate": 1.121029,
+          "ci_lower": 0.929513,
+          "ci_upper": 1.311436
+        },
+        {
+          "model": "D-XGBoost",
+          "method": "isotonic",
+          "selected": false,
+          "metric": "mean_predicted",
+          "estimate": 0.16767,
+          "ci_lower": 0.15611,
+          "ci_upper": 0.180293
+        },
+        {
+          "model": "D-XGBoost",
+          "method": "isotonic",
+          "selected": false,
+          "metric": "observed_rate",
+          "estimate": 0.182902,
+          "ci_lower": 0.165919,
+          "ci_upper": 0.199686
+        }
+      ],
+      "d_minus_c": [
+        {
+          "analysis_set": "all_test_rows",
+          "method": "uncalibrated",
+          "metric": "auroc",
+          "estimate": -0.002995,
+          "ci_lower": -0.006742,
+          "ci_upper": 0.000727
+        },
+        {
+          "analysis_set": "all_test_rows",
+          "method": "uncalibrated",
+          "metric": "auprc",
+          "estimate": 0.007912,
+          "ci_lower": -0.00863,
+          "ci_upper": 0.022999
+        },
+        {
+          "analysis_set": "all_test_rows",
+          "method": "uncalibrated",
+          "metric": "brier",
+          "estimate": 0.000102,
+          "ci_lower": -0.001029,
+          "ci_upper": 0.00105
+        },
+        {
+          "analysis_set": "all_test_rows",
+          "method": "uncalibrated",
+          "metric": "scaled_brier",
+          "estimate": -0.000686,
+          "ci_lower": -0.007291,
+          "ci_upper": 0.006661
+        },
+        {
+          "analysis_set": "all_test_rows",
+          "method": "uncalibrated",
+          "metric": "log_loss",
+          "estimate": 0.000521,
+          "ci_lower": -0.002291,
+          "ci_upper": 0.002967
+        },
+        {
+          "analysis_set": "all_test_rows",
+          "method": "uncalibrated",
+          "metric": "calibration_intercept",
+          "estimate": -0.009141,
+          "ci_lower": -0.023524,
+          "ci_upper": 0.005231
+        },
+        {
+          "analysis_set": "all_test_rows",
+          "method": "uncalibrated",
+          "metric": "calibration_slope",
+          "estimate": -0.003818,
+          "ci_lower": -0.028852,
+          "ci_upper": 0.023676
+        },
+        {
+          "analysis_set": "all_test_rows",
+          "method": "uncalibrated",
+          "metric": "mean_predicted",
+          "estimate": 0.001138,
+          "ci_lower": -0.000615,
+          "ci_upper": 0.003018
+        },
+        {
+          "analysis_set": "all_test_rows",
+          "method": "uncalibrated",
+          "metric": "observed_rate",
+          "estimate": 0.0,
+          "ci_lower": 0.0,
+          "ci_upper": 0.0
+        },
+        {
+          "analysis_set": "all_test_rows",
+          "method": "platt",
+          "metric": "auroc",
+          "estimate": -0.002995,
+          "ci_lower": -0.006742,
+          "ci_upper": 0.000727
+        },
+        {
+          "analysis_set": "all_test_rows",
+          "method": "platt",
+          "metric": "auprc",
+          "estimate": 0.007912,
+          "ci_lower": -0.00863,
+          "ci_upper": 0.022999
+        },
+        {
+          "analysis_set": "all_test_rows",
+          "method": "platt",
+          "metric": "brier",
+          "estimate": -0.000174,
+          "ci_lower": -0.001196,
+          "ci_upper": 0.000778
+        },
+        {
+          "analysis_set": "all_test_rows",
+          "method": "platt",
+          "metric": "scaled_brier",
+          "estimate": 0.001166,
+          "ci_lower": -0.005292,
+          "ci_upper": 0.007886
+        },
+        {
+          "analysis_set": "all_test_rows",
+          "method": "platt",
+          "metric": "log_loss",
+          "estimate": 9.6e-05,
+          "ci_lower": -0.002528,
+          "ci_upper": 0.00239
+        },
+        {
+          "analysis_set": "all_test_rows",
+          "method": "platt",
+          "metric": "calibration_intercept",
+          "estimate": -0.023511,
+          "ci_lower": -0.036449,
+          "ci_upper": -0.010754
+        },
+        {
+          "analysis_set": "all_test_rows",
+          "method": "platt",
+          "metric": "calibration_slope",
+          "estimate": -0.00399,
+          "ci_lower": -0.031939,
+          "ci_upper": 0.026677
+        },
+        {
+          "analysis_set": "all_test_rows",
+          "method": "platt",
+          "metric": "mean_predicted",
+          "estimate": 0.002796,
+          "ci_lower": 0.001244,
+          "ci_upper": 0.004464
+        },
+        {
+          "analysis_set": "all_test_rows",
+          "method": "platt",
+          "metric": "observed_rate",
+          "estimate": 0.0,
+          "ci_lower": 0.0,
+          "ci_upper": 0.0
+        },
+        {
+          "analysis_set": "all_test_rows",
+          "method": "isotonic",
+          "metric": "auroc",
+          "estimate": -0.002556,
+          "ci_lower": -0.009134,
+          "ci_upper": 0.003442
+        },
+        {
+          "analysis_set": "all_test_rows",
+          "method": "isotonic",
+          "metric": "auprc",
+          "estimate": 0.001789,
+          "ci_lower": -0.012591,
+          "ci_upper": 0.014628
+        },
+        {
+          "analysis_set": "all_test_rows",
+          "method": "isotonic",
+          "metric": "brier",
+          "estimate": 0.000162,
+          "ci_lower": -0.00176,
+          "ci_upper": 0.001775
+        },
+        {
+          "analysis_set": "all_test_rows",
+          "method": "isotonic",
+          "metric": "scaled_brier",
+          "estimate": -0.001084,
+          "ci_lower": -0.011751,
+          "ci_upper": 0.011659
+        },
+        {
+          "analysis_set": "all_test_rows",
+          "method": "isotonic",
+          "metric": "log_loss",
+          "estimate": -0.005023,
+          "ci_lower": -0.023803,
+          "ci_upper": 0.004646
+        },
+        {
+          "analysis_set": "all_test_rows",
+          "method": "isotonic",
+          "metric": "calibration_intercept",
+          "estimate": -0.004639,
+          "ci_lower": -0.030623,
+          "ci_upper": 0.018915
+        },
+        {
+          "analysis_set": "all_test_rows",
+          "method": "isotonic",
+          "metric": "calibration_slope",
+          "estimate": 0.085167,
+          "ci_lower": -0.003662,
+          "ci_upper": 0.240776
+        },
+        {
+          "analysis_set": "all_test_rows",
+          "method": "isotonic",
+          "metric": "mean_predicted",
+          "estimate": 0.000337,
+          "ci_lower": -0.002372,
+          "ci_upper": 0.00333
+        },
+        {
+          "analysis_set": "all_test_rows",
+          "method": "isotonic",
+          "metric": "observed_rate",
+          "estimate": 0.0,
+          "ci_lower": 0.0,
+          "ci_upper": 0.0
+        },
+        {
+          "analysis_set": "rna_available_test_rows",
+          "method": "uncalibrated",
+          "metric": "auroc",
+          "estimate": -0.003631,
+          "ci_lower": -0.008679,
+          "ci_upper": 0.001443
+        },
+        {
+          "analysis_set": "rna_available_test_rows",
+          "method": "uncalibrated",
+          "metric": "auprc",
+          "estimate": 0.012813,
+          "ci_lower": -0.010394,
+          "ci_upper": 0.029079
+        },
+        {
+          "analysis_set": "rna_available_test_rows",
+          "method": "uncalibrated",
+          "metric": "brier",
+          "estimate": -0.000146,
+          "ci_lower": -0.001619,
+          "ci_upper": 0.001166
+        },
+        {
+          "analysis_set": "rna_available_test_rows",
+          "method": "uncalibrated",
+          "metric": "scaled_brier",
+          "estimate": 0.000964,
+          "ci_lower": -0.007934,
+          "ci_upper": 0.010434
+        },
+        {
+          "analysis_set": "rna_available_test_rows",
+          "method": "uncalibrated",
+          "metric": "log_loss",
+          "estimate": -3e-05,
+          "ci_lower": -0.003896,
+          "ci_upper": 0.003252
+        },
+        {
+          "analysis_set": "rna_available_test_rows",
+          "method": "uncalibrated",
+          "metric": "calibration_intercept",
+          "estimate": -0.025777,
+          "ci_lower": -0.044721,
+          "ci_upper": -0.007062
+        },
+        {
+          "analysis_set": "rna_available_test_rows",
+          "method": "uncalibrated",
+          "metric": "calibration_slope",
+          "estimate": 0.010321,
+          "ci_lower": -0.022007,
+          "ci_upper": 0.043178
+        },
+        {
+          "analysis_set": "rna_available_test_rows",
+          "method": "uncalibrated",
+          "metric": "mean_predicted",
+          "estimate": 0.003378,
+          "ci_lower": 0.001041,
+          "ci_upper": 0.005815
+        },
+        {
+          "analysis_set": "rna_available_test_rows",
+          "method": "uncalibrated",
+          "metric": "observed_rate",
+          "estimate": 0.0,
+          "ci_lower": 0.0,
+          "ci_upper": 0.0
+        },
+        {
+          "analysis_set": "rna_available_test_rows",
+          "method": "platt",
+          "metric": "auroc",
+          "estimate": -0.003631,
+          "ci_lower": -0.008679,
+          "ci_upper": 0.001443
+        },
+        {
+          "analysis_set": "rna_available_test_rows",
+          "method": "platt",
+          "metric": "auprc",
+          "estimate": 0.012813,
+          "ci_lower": -0.010394,
+          "ci_upper": 0.029079
+        },
+        {
+          "analysis_set": "rna_available_test_rows",
+          "method": "platt",
+          "metric": "brier",
+          "estimate": -0.000482,
+          "ci_lower": -0.001884,
+          "ci_upper": 0.000772
+        },
+        {
+          "analysis_set": "rna_available_test_rows",
+          "method": "platt",
+          "metric": "scaled_brier",
+          "estimate": 0.003181,
+          "ci_lower": -0.005257,
+          "ci_upper": 0.012279
+        },
+        {
+          "analysis_set": "rna_available_test_rows",
+          "method": "platt",
+          "metric": "log_loss",
+          "estimate": -0.000565,
+          "ci_lower": -0.004108,
+          "ci_upper": 0.00235
+        },
+        {
+          "analysis_set": "rna_available_test_rows",
+          "method": "platt",
+          "metric": "calibration_intercept",
+          "estimate": -0.038669,
+          "ci_lower": -0.055538,
+          "ci_upper": -0.021943
+        },
+        {
+          "analysis_set": "rna_available_test_rows",
+          "method": "platt",
+          "metric": "calibration_slope",
+          "estimate": 0.01178,
+          "ci_lower": -0.024339,
+          "ci_upper": 0.048478
+        },
+        {
+          "analysis_set": "rna_available_test_rows",
+          "method": "platt",
+          "metric": "mean_predicted",
+          "estimate": 0.004768,
+          "ci_lower": 0.002648,
+          "ci_upper": 0.006945
+        },
+        {
+          "analysis_set": "rna_available_test_rows",
+          "method": "platt",
+          "metric": "observed_rate",
+          "estimate": 0.0,
+          "ci_lower": 0.0,
+          "ci_upper": 0.0
+        },
+        {
+          "analysis_set": "rna_available_test_rows",
+          "method": "isotonic",
+          "metric": "auroc",
+          "estimate": -0.003752,
+          "ci_lower": -0.011293,
+          "ci_upper": 0.003442
+        },
+        {
+          "analysis_set": "rna_available_test_rows",
+          "method": "isotonic",
+          "metric": "auprc",
+          "estimate": 0.003769,
+          "ci_lower": -0.016499,
+          "ci_upper": 0.02122
+        },
+        {
+          "analysis_set": "rna_available_test_rows",
+          "method": "isotonic",
+          "metric": "brier",
+          "estimate": -0.000461,
+          "ci_lower": -0.003147,
+          "ci_upper": 0.001695
+        },
+        {
+          "analysis_set": "rna_available_test_rows",
+          "method": "isotonic",
+          "metric": "scaled_brier",
+          "estimate": 0.003044,
+          "ci_lower": -0.011453,
+          "ci_upper": 0.020851
+        },
+        {
+          "analysis_set": "rna_available_test_rows",
+          "method": "isotonic",
+          "metric": "log_loss",
+          "estimate": -0.008731,
+          "ci_lower": -0.033601,
+          "ci_upper": 0.004985
+        },
+        {
+          "analysis_set": "rna_available_test_rows",
+          "method": "isotonic",
+          "metric": "calibration_intercept",
+          "estimate": -0.026457,
+          "ci_lower": -0.055309,
+          "ci_upper": 0.004234
+        },
+        {
+          "analysis_set": "rna_available_test_rows",
+          "method": "isotonic",
+          "metric": "calibration_slope",
+          "estimate": 0.123962,
+          "ci_lower": 0.002676,
+          "ci_upper": 0.309149
+        },
+        {
+          "analysis_set": "rna_available_test_rows",
+          "method": "isotonic",
+          "metric": "mean_predicted",
+          "estimate": 0.00302,
+          "ci_lower": -0.000564,
+          "ci_upper": 0.006442
+        },
+        {
+          "analysis_set": "rna_available_test_rows",
+          "method": "isotonic",
+          "metric": "observed_rate",
+          "estimate": 0.0,
+          "ci_lower": 0.0,
+          "ci_upper": 0.0
+        }
+      ]
+    },
+    "multiclass": {
+      "selected_method_on_validation": {
+        "C-XGBoost": "uncalibrated",
+        "D-XGBoost": "temperature"
+      },
+      "test_metrics": [
+        {
+          "model": "C-XGBoost",
+          "method": "uncalibrated",
+          "selected": true,
+          "metric": "macro_f1",
+          "estimate": 0.655395,
+          "ci_lower": 0.623555,
+          "ci_upper": 0.678305
+        },
+        {
+          "model": "C-XGBoost",
+          "method": "uncalibrated",
+          "selected": true,
+          "metric": "brier",
+          "estimate": 0.448719,
+          "ci_lower": 0.414581,
+          "ci_upper": 0.483711
+        },
+        {
+          "model": "C-XGBoost",
+          "method": "uncalibrated",
+          "selected": true,
+          "metric": "scaled_brier",
+          "estimate": 0.418487,
+          "ci_lower": 0.375098,
+          "ci_upper": 0.457456
+        },
+        {
+          "model": "C-XGBoost",
+          "method": "uncalibrated",
+          "selected": true,
+          "metric": "log_loss",
+          "estimate": 0.910898,
+          "ci_lower": 0.848885,
+          "ci_upper": 0.973053
+        },
+        {
+          "model": "C-XGBoost",
+          "method": "temperature",
+          "selected": false,
+          "metric": "macro_f1",
+          "estimate": 0.655395,
+          "ci_lower": 0.623555,
+          "ci_upper": 0.678305
+        },
+        {
+          "model": "C-XGBoost",
+          "method": "temperature",
+          "selected": false,
+          "metric": "brier",
+          "estimate": 0.447376,
+          "ci_lower": 0.412257,
+          "ci_upper": 0.483425
+        },
+        {
+          "model": "C-XGBoost",
+          "method": "temperature",
+          "selected": false,
+          "metric": "scaled_brier",
+          "estimate": 0.420228,
+          "ci_lower": 0.375137,
+          "ci_upper": 0.460463
+        },
+        {
+          "model": "C-XGBoost",
+          "method": "temperature",
+          "selected": false,
+          "metric": "log_loss",
+          "estimate": 0.907246,
+          "ci_lower": 0.841751,
+          "ci_upper": 0.972293
+        },
+        {
+          "model": "D-XGBoost",
+          "method": "uncalibrated",
+          "selected": false,
+          "metric": "macro_f1",
+          "estimate": 0.651026,
+          "ci_lower": 0.61897,
+          "ci_upper": 0.676237
+        },
+        {
+          "model": "D-XGBoost",
+          "method": "uncalibrated",
+          "selected": false,
+          "metric": "brier",
+          "estimate": 0.451269,
+          "ci_lower": 0.416148,
+          "ci_upper": 0.486796
+        },
+        {
+          "model": "D-XGBoost",
+          "method": "uncalibrated",
+          "selected": false,
+          "metric": "scaled_brier",
+          "estimate": 0.415182,
+          "ci_lower": 0.369246,
+          "ci_upper": 0.455619
+        },
+        {
+          "model": "D-XGBoost",
+          "method": "uncalibrated",
+          "selected": false,
+          "metric": "log_loss",
+          "estimate": 0.913416,
+          "ci_lower": 0.850926,
+          "ci_upper": 0.974521
+        },
+        {
+          "model": "D-XGBoost",
+          "method": "temperature",
+          "selected": true,
+          "metric": "macro_f1",
+          "estimate": 0.651026,
+          "ci_lower": 0.61897,
+          "ci_upper": 0.676237
+        },
+        {
+          "model": "D-XGBoost",
+          "method": "temperature",
+          "selected": true,
+          "metric": "brier",
+          "estimate": 0.44971,
+          "ci_lower": 0.413131,
+          "ci_upper": 0.486764
+        },
+        {
+          "model": "D-XGBoost",
+          "method": "temperature",
+          "selected": true,
+          "metric": "scaled_brier",
+          "estimate": 0.417203,
+          "ci_lower": 0.369533,
+          "ci_upper": 0.460299
+        },
+        {
+          "model": "D-XGBoost",
+          "method": "temperature",
+          "selected": true,
+          "metric": "log_loss",
+          "estimate": 0.908639,
+          "ci_lower": 0.843822,
+          "ci_upper": 0.975724
+        }
+      ],
+      "d_minus_c": [
+        {
+          "analysis_set": "all_test_rows",
+          "method": "uncalibrated",
+          "metric": "macro_f1",
+          "estimate": -0.004369,
+          "ci_lower": -0.021426,
+          "ci_upper": 0.012156
+        },
+        {
+          "analysis_set": "all_test_rows",
+          "method": "uncalibrated",
+          "metric": "brier",
+          "estimate": 0.00255,
+          "ci_lower": -0.004063,
+          "ci_upper": 0.010772
+        },
+        {
+          "analysis_set": "all_test_rows",
+          "method": "uncalibrated",
+          "metric": "scaled_brier",
+          "estimate": -0.003305,
+          "ci_lower": -0.013954,
+          "ci_upper": 0.005391
+        },
+        {
+          "analysis_set": "all_test_rows",
+          "method": "uncalibrated",
+          "metric": "log_loss",
+          "estimate": 0.002517,
+          "ci_lower": -0.008955,
+          "ci_upper": 0.015628
+        },
+        {
+          "analysis_set": "all_test_rows",
+          "method": "temperature",
+          "metric": "macro_f1",
+          "estimate": -0.004369,
+          "ci_lower": -0.021426,
+          "ci_upper": 0.012156
+        },
+        {
+          "analysis_set": "all_test_rows",
+          "method": "temperature",
+          "metric": "brier",
+          "estimate": 0.002334,
+          "ci_lower": -0.004933,
+          "ci_upper": 0.011573
+        },
+        {
+          "analysis_set": "all_test_rows",
+          "method": "temperature",
+          "metric": "scaled_brier",
+          "estimate": -0.003025,
+          "ci_lower": -0.014962,
+          "ci_upper": 0.006391
+        },
+        {
+          "analysis_set": "all_test_rows",
+          "method": "temperature",
+          "metric": "log_loss",
+          "estimate": 0.001393,
+          "ci_lower": -0.010836,
+          "ci_upper": 0.015238
+        },
+        {
+          "analysis_set": "rna_available_test_rows",
+          "method": "uncalibrated",
+          "metric": "macro_f1",
+          "estimate": -0.006352,
+          "ci_lower": -0.029672,
+          "ci_upper": 0.01573
+        },
+        {
+          "analysis_set": "rna_available_test_rows",
+          "method": "uncalibrated",
+          "metric": "brier",
+          "estimate": 0.00489,
+          "ci_lower": -0.004535,
+          "ci_upper": 0.015732
+        },
+        {
+          "analysis_set": "rna_available_test_rows",
+          "method": "uncalibrated",
+          "metric": "scaled_brier",
+          "estimate": -0.006319,
+          "ci_lower": -0.020365,
+          "ci_upper": 0.005884
+        },
+        {
+          "analysis_set": "rna_available_test_rows",
+          "method": "uncalibrated",
+          "metric": "log_loss",
+          "estimate": 0.004411,
+          "ci_lower": -0.013237,
+          "ci_upper": 0.022294
+        },
+        {
+          "analysis_set": "rna_available_test_rows",
+          "method": "temperature",
+          "metric": "macro_f1",
+          "estimate": -0.006352,
+          "ci_lower": -0.029672,
+          "ci_upper": 0.01573
+        },
+        {
+          "analysis_set": "rna_available_test_rows",
+          "method": "temperature",
+          "metric": "brier",
+          "estimate": 0.004659,
+          "ci_lower": -0.005301,
+          "ci_upper": 0.01666
+        },
+        {
+          "analysis_set": "rna_available_test_rows",
+          "method": "temperature",
+          "metric": "scaled_brier",
+          "estimate": -0.00602,
+          "ci_lower": -0.021255,
+          "ci_upper": 0.00698
+        },
+        {
+          "analysis_set": "rna_available_test_rows",
+          "method": "temperature",
+          "metric": "log_loss",
+          "estimate": 0.00307,
+          "ci_lower": -0.015374,
+          "ci_upper": 0.022518
+        }
+      ]
+    }
+  },
+  "checks": {
+    "step1_reproduction_checks_passed": true,
+    "binary_monotone_recalibration_preserves_discrimination": true,
+    "binary_calibrators_fit_on_validation_only": true,
+    "multiclass_monotone_recalibration_preserves_discrimination": true,
+    "multiclass_calibrators_fit_on_validation_only": true,
+    "step1_inputs_unchanged_during_run": true
+  },
+  "input_sha256": {
+    "artifacts/results_clean_rerun/calibration/probabilities/binary_c_xgboost_val.csv": "8549fd312b6c027b4a9ff4b579f7b77cad788f9fbb78a88aeea06b93f5f34ff4",
+    "artifacts/results_clean_rerun/calibration/probabilities/binary_c_xgboost_test.csv": "bc42abe94f59c0207f22362b3ecdac8625238aab162f4f205655f916071c4b94",
+    "artifacts/results_clean_rerun/calibration/probabilities/binary_d_xgboost_val.csv": "a4ba0b738aca4c0682d92851225c13ea003b9260522c5e854ede7e16bcf1b74c",
+    "artifacts/results_clean_rerun/calibration/probabilities/binary_d_xgboost_test.csv": "8562eb694b5c7faeececff5f8525fe1612addc02f8061bdbb29c5ff54becfe72",
+    "artifacts/results_clean_rerun/calibration/probabilities/multiclass_c_xgboost_val.csv": "76ed1a94056c6eca0ac73821c2d23ca2a2a142878f2bf59246151cd6ff626db3",
+    "artifacts/results_clean_rerun/calibration/probabilities/multiclass_c_xgboost_test.csv": "e1edd456ff2733747fc3d7471e399b6ffca273c6e1c2287dae4d124d3a57cce3",
+    "artifacts/results_clean_rerun/calibration/probabilities/multiclass_d_xgboost_val.csv": "cfa48acb91af2ff543ca0661a959be0a28e0c94d3adefeae49ed7efd8be1b781",
+    "artifacts/results_clean_rerun/calibration/probabilities/multiclass_d_xgboost_test.csv": "3701bc257dce0d69a3130905690b3dbf55b1e75875145486637813a994cef4b4",
+    "artifacts/results_clean_rerun/calibration/calibration_predictions_manifest.json": "aeaa8cfe73a6a0f22f22575a07c62ccd31d51df41239b97617161dc89cc2c1b2"
+  },
+  "outputs": [
+    "artifacts/results_clean_rerun/calibration/figures/binary_reliability_c_vs_d.png",
+    "artifacts/results_clean_rerun/calibration/calibration_binary_metrics.csv",
+    "artifacts/results_clean_rerun/calibration/calibration_binary_curves.csv",
+    "artifacts/results_clean_rerun/calibration/figures/multiclass_ovr_reliability_c.png",
+    "artifacts/results_clean_rerun/calibration/figures/multiclass_ovr_reliability_d.png",
+    "artifacts/results_clean_rerun/calibration/calibration_multiclass_metrics.csv",
+    "artifacts/results_clean_rerun/calibration/calibration_multiclass_per_class.csv",
+    "artifacts/results_clean_rerun/calibration/calibration_multiclass_ovr_curves.csv",
+    "artifacts/results_clean_rerun/calibration/calibration_val_selection.csv",
+    "artifacts/results_clean_rerun/calibration/calibration_paired_differences.csv"
+  ]
+}
