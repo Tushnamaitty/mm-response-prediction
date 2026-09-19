@@ -1,0 +1,490 @@
+{
+  "description": "A priori, hypothesis-driven subgroup analysis of the incremental value of RNA (Model D = Model C + RNA) for predicting next-visit response.",
+  "hypotheses": {
+    "H1_deep_responders": {
+      "definition": "vt_disease_response in ['very_good_partial_response', 'complete_response', 'stringent_complete_response']; complement = other non-missing Vt responses",
+      "binary_note": "eligible_for_binary already excludes Vt = sCR",
+      "test": "(D-C)_deep - (D-C)_non_deep"
+    },
+    "H2_treatment_line": {
+      "definition": "frontline: current_line_number == 1; later_line: current_line_number >= 2",
+      "test": "(D-C)_frontline - (D-C)_later_line"
+    }
+  },
+  "membership_fields": [
+    "current_line_number",
+    "vt_disease_response",
+    "eligible_for_binary (task filter)"
+  ],
+  "primary_analysis": {
+    "design": "Locked clean-rerun whole-cohort test predictions, no retraining; paired patient-level bootstrap; interactions use a joint patient bootstrap over both groups.",
+    "comparison": "D-xgboost minus C-xgboost",
+    "analysis_set": "test split, task-eligible, RNA-available (days_since_rna_sample notna)",
+    "n_bootstrap": 1000,
+    "seed": 42,
+    "multiclass_macro_f1": "fixed 6-class MULTICLASS_CLASSES label set",
+    "alignment": [
+      {
+        "task": "binary",
+        "n_test_rows_aligned": 1930,
+        "n_rows_dropped_nan": 0,
+        "n_rows_dropped_rna_unavailable": 607,
+        "n_rows_analysis_set": 1323,
+        "n_patients_analysis_set": 107
+      },
+      {
+        "task": "multiclass",
+        "n_test_rows_aligned": 2079,
+        "n_rows_dropped_nan": 0,
+        "n_rows_dropped_rna_unavailable": 630,
+        "n_rows_analysis_set": 1449,
+        "n_patients_analysis_set": 107
+      }
+    ],
+    "subgroup_differences": [
+      {
+        "task": "binary",
+        "subgroup": "all",
+        "metric": "auroc",
+        "n_rows": 1323,
+        "n_patients": 107,
+        "C": 0.801177,
+        "D": 0.797546,
+        "observed_diff": -0.003631,
+        "ci_lower": -0.008679,
+        "ci_upper": 0.001443,
+        "n_boot_skipped": 0
+      },
+      {
+        "task": "binary",
+        "subgroup": "all",
+        "metric": "auprc",
+        "n_rows": 1323,
+        "n_patients": 107,
+        "C": 0.473865,
+        "D": 0.486677,
+        "observed_diff": 0.012813,
+        "ci_lower": -0.010394,
+        "ci_upper": 0.029079,
+        "n_boot_skipped": 0
+      },
+      {
+        "task": "binary",
+        "subgroup": "deep_responders",
+        "metric": "auroc",
+        "n_rows": 631,
+        "n_patients": 86,
+        "C": 0.675051,
+        "D": 0.645309,
+        "observed_diff": -0.029742,
+        "ci_lower": -0.067441,
+        "ci_upper": 0.006656,
+        "n_boot_skipped": 0
+      },
+      {
+        "task": "binary",
+        "subgroup": "deep_responders",
+        "metric": "auprc",
+        "n_rows": 631,
+        "n_patients": 86,
+        "C": 0.167856,
+        "D": 0.221212,
+        "observed_diff": 0.053357,
+        "ci_lower": -0.003865,
+        "ci_upper": 0.098055,
+        "n_boot_skipped": 0
+      },
+      {
+        "task": "binary",
+        "subgroup": "non_deep_responders",
+        "metric": "auroc",
+        "n_rows": 692,
+        "n_patients": 92,
+        "C": 0.751917,
+        "D": 0.747514,
+        "observed_diff": -0.004402,
+        "ci_lower": -0.011866,
+        "ci_upper": 0.003438,
+        "n_boot_skipped": 0
+      },
+      {
+        "task": "binary",
+        "subgroup": "non_deep_responders",
+        "metric": "auprc",
+        "n_rows": 692,
+        "n_patients": 92,
+        "C": 0.537373,
+        "D": 0.534086,
+        "observed_diff": -0.003287,
+        "ci_lower": -0.02661,
+        "ci_upper": 0.022135,
+        "n_boot_skipped": 0
+      },
+      {
+        "task": "binary",
+        "subgroup": "frontline",
+        "metric": "auroc",
+        "n_rows": 713,
+        "n_patients": 102,
+        "C": 0.80157,
+        "D": 0.799743,
+        "observed_diff": -0.001828,
+        "ci_lower": -0.010048,
+        "ci_upper": 0.005812,
+        "n_boot_skipped": 0
+      },
+      {
+        "task": "binary",
+        "subgroup": "frontline",
+        "metric": "auprc",
+        "n_rows": 713,
+        "n_patients": 102,
+        "C": 0.474571,
+        "D": 0.500493,
+        "observed_diff": 0.025923,
+        "ci_lower": -0.002946,
+        "ci_upper": 0.045662,
+        "n_boot_skipped": 0
+      },
+      {
+        "task": "binary",
+        "subgroup": "later_line",
+        "metric": "auroc",
+        "n_rows": 609,
+        "n_patients": 63,
+        "C": 0.801932,
+        "D": 0.796572,
+        "observed_diff": -0.005361,
+        "ci_lower": -0.012774,
+        "ci_upper": 0.001306,
+        "n_boot_skipped": 0
+      },
+      {
+        "task": "binary",
+        "subgroup": "later_line",
+        "metric": "auprc",
+        "n_rows": 609,
+        "n_patients": 63,
+        "C": 0.495566,
+        "D": 0.48478,
+        "observed_diff": -0.010786,
+        "ci_lower": -0.042127,
+        "ci_upper": 0.025921,
+        "n_boot_skipped": 0
+      },
+      {
+        "task": "multiclass",
+        "subgroup": "all",
+        "metric": "macro_f1",
+        "n_rows": 1449,
+        "n_patients": 107,
+        "C": 0.645168,
+        "D": 0.638817,
+        "observed_diff": -0.006352,
+        "ci_lower": -0.029672,
+        "ci_upper": 0.01573,
+        "n_boot_skipped": 0
+      },
+      {
+        "task": "multiclass",
+        "subgroup": "deep_responders",
+        "metric": "macro_f1",
+        "n_rows": 757,
+        "n_patients": 86,
+        "C": 0.422693,
+        "D": 0.432532,
+        "observed_diff": 0.009839,
+        "ci_lower": -0.002081,
+        "ci_upper": 0.024505,
+        "n_boot_skipped": 0
+      },
+      {
+        "task": "multiclass",
+        "subgroup": "non_deep_responders",
+        "metric": "macro_f1",
+        "n_rows": 692,
+        "n_patients": 92,
+        "C": 0.318383,
+        "D": 0.313304,
+        "observed_diff": -0.005079,
+        "ci_lower": -0.037186,
+        "ci_upper": 0.022982,
+        "n_boot_skipped": 0
+      },
+      {
+        "task": "multiclass",
+        "subgroup": "frontline",
+        "metric": "macro_f1",
+        "n_rows": 812,
+        "n_patients": 102,
+        "C": 0.639811,
+        "D": 0.619375,
+        "observed_diff": -0.020436,
+        "ci_lower": -0.049314,
+        "ci_upper": 0.009223,
+        "n_boot_skipped": 0
+      },
+      {
+        "task": "multiclass",
+        "subgroup": "later_line",
+        "metric": "macro_f1",
+        "n_rows": 636,
+        "n_patients": 63,
+        "C": 0.613529,
+        "D": 0.616017,
+        "observed_diff": 0.002488,
+        "ci_lower": -0.028554,
+        "ci_upper": 0.033046,
+        "n_boot_skipped": 0
+      }
+    ],
+    "interactions": [
+      {
+        "task": "binary",
+        "metric": "auroc",
+        "group_a": "deep_responders",
+        "group_b": "non_deep_responders",
+        "diff_a": -0.029742,
+        "diff_b": -0.004402,
+        "observed_interaction": -0.02534,
+        "ci_lower": -0.066102,
+        "ci_upper": 0.012814,
+        "n_boot_skipped": 0,
+        "n_patients_in_both": 71
+      },
+      {
+        "task": "binary",
+        "metric": "auprc",
+        "group_a": "deep_responders",
+        "group_b": "non_deep_responders",
+        "diff_a": 0.053357,
+        "diff_b": -0.003287,
+        "observed_interaction": 0.056644,
+        "ci_lower": -0.005981,
+        "ci_upper": 0.106962,
+        "n_boot_skipped": 0,
+        "n_patients_in_both": 71
+      },
+      {
+        "task": "binary",
+        "metric": "auroc",
+        "group_a": "frontline",
+        "group_b": "later_line",
+        "diff_a": -0.001828,
+        "diff_b": -0.005361,
+        "observed_interaction": 0.003533,
+        "ci_lower": -0.007121,
+        "ci_upper": 0.01342,
+        "n_boot_skipped": 0,
+        "n_patients_in_both": 58
+      },
+      {
+        "task": "binary",
+        "metric": "auprc",
+        "group_a": "frontline",
+        "group_b": "later_line",
+        "diff_a": 0.025923,
+        "diff_b": -0.010786,
+        "observed_interaction": 0.036709,
+        "ci_lower": -0.010185,
+        "ci_upper": 0.073199,
+        "n_boot_skipped": 0,
+        "n_patients_in_both": 58
+      },
+      {
+        "task": "multiclass",
+        "metric": "macro_f1",
+        "group_a": "deep_responders",
+        "group_b": "non_deep_responders",
+        "diff_a": 0.009839,
+        "diff_b": -0.005079,
+        "observed_interaction": 0.014918,
+        "ci_lower": -0.0177,
+        "ci_upper": 0.047527,
+        "n_boot_skipped": 0,
+        "n_patients_in_both": 71
+      },
+      {
+        "task": "multiclass",
+        "metric": "macro_f1",
+        "group_a": "frontline",
+        "group_b": "later_line",
+        "diff_a": -0.020436,
+        "diff_b": 0.002488,
+        "observed_interaction": -0.022924,
+        "ci_lower": -0.066064,
+        "ci_upper": 0.022932,
+        "n_boot_skipped": 0,
+        "n_patients_in_both": 58
+      }
+    ]
+  },
+  "secondary_repeated_cv": {
+    "design": "5-fold x 5-repeat patient-grouped CV on subgroup train+val rows; C/D RETRAINED within subgroup with locked best_params (different estimand from primary); evaluated on RNA-available held-out patients.",
+    "aggregate": [
+      {
+        "subgroup": "deep_responders",
+        "task": "binary",
+        "metric": "auroc",
+        "n_fold_replicates": 25,
+        "mean_D_minus_C": -0.015576,
+        "sd_D_minus_C": 0.018226,
+        "min_D_minus_C": -0.043716,
+        "max_D_minus_C": 0.0154,
+        "frac_folds_D_better": 0.28
+      },
+      {
+        "subgroup": "deep_responders",
+        "task": "binary",
+        "metric": "auprc",
+        "n_fold_replicates": 25,
+        "mean_D_minus_C": -0.005554,
+        "sd_D_minus_C": 0.013325,
+        "min_D_minus_C": -0.029861,
+        "max_D_minus_C": 0.025579,
+        "frac_folds_D_better": 0.32
+      },
+      {
+        "subgroup": "deep_responders",
+        "task": "multiclass",
+        "metric": "macro_f1",
+        "n_fold_replicates": 25,
+        "mean_D_minus_C": -0.000305,
+        "sd_D_minus_C": 0.012414,
+        "min_D_minus_C": -0.023329,
+        "max_D_minus_C": 0.034652,
+        "frac_folds_D_better": 0.48
+      },
+      {
+        "subgroup": "non_deep_responders",
+        "task": "binary",
+        "metric": "auroc",
+        "n_fold_replicates": 25,
+        "mean_D_minus_C": -0.004805,
+        "sd_D_minus_C": 0.006013,
+        "min_D_minus_C": -0.020652,
+        "max_D_minus_C": 0.002426,
+        "frac_folds_D_better": 0.24
+      },
+      {
+        "subgroup": "non_deep_responders",
+        "task": "binary",
+        "metric": "auprc",
+        "n_fold_replicates": 25,
+        "mean_D_minus_C": -0.008681,
+        "sd_D_minus_C": 0.014214,
+        "min_D_minus_C": -0.041859,
+        "max_D_minus_C": 0.020782,
+        "frac_folds_D_better": 0.28
+      },
+      {
+        "subgroup": "non_deep_responders",
+        "task": "multiclass",
+        "metric": "macro_f1",
+        "n_fold_replicates": 25,
+        "mean_D_minus_C": 0.001298,
+        "sd_D_minus_C": 0.01455,
+        "min_D_minus_C": -0.038862,
+        "max_D_minus_C": 0.025405,
+        "frac_folds_D_better": 0.56
+      },
+      {
+        "subgroup": "frontline",
+        "task": "binary",
+        "metric": "auroc",
+        "n_fold_replicates": 25,
+        "mean_D_minus_C": -0.003787,
+        "sd_D_minus_C": 0.006644,
+        "min_D_minus_C": -0.016956,
+        "max_D_minus_C": 0.010472,
+        "frac_folds_D_better": 0.28
+      },
+      {
+        "subgroup": "frontline",
+        "task": "binary",
+        "metric": "auprc",
+        "n_fold_replicates": 25,
+        "mean_D_minus_C": 0.002028,
+        "sd_D_minus_C": 0.013163,
+        "min_D_minus_C": -0.019918,
+        "max_D_minus_C": 0.023444,
+        "frac_folds_D_better": 0.44
+      },
+      {
+        "subgroup": "frontline",
+        "task": "multiclass",
+        "metric": "macro_f1",
+        "n_fold_replicates": 25,
+        "mean_D_minus_C": -0.009601,
+        "sd_D_minus_C": 0.010154,
+        "min_D_minus_C": -0.029391,
+        "max_D_minus_C": 0.010475,
+        "frac_folds_D_better": 0.16
+      },
+      {
+        "subgroup": "later_line",
+        "task": "binary",
+        "metric": "auroc",
+        "n_fold_replicates": 25,
+        "mean_D_minus_C": -0.00245,
+        "sd_D_minus_C": 0.005634,
+        "min_D_minus_C": -0.013393,
+        "max_D_minus_C": 0.009617,
+        "frac_folds_D_better": 0.36
+      },
+      {
+        "subgroup": "later_line",
+        "task": "binary",
+        "metric": "auprc",
+        "n_fold_replicates": 25,
+        "mean_D_minus_C": -0.007365,
+        "sd_D_minus_C": 0.018062,
+        "min_D_minus_C": -0.046434,
+        "max_D_minus_C": 0.031762,
+        "frac_folds_D_better": 0.4
+      },
+      {
+        "subgroup": "later_line",
+        "task": "multiclass",
+        "metric": "macro_f1",
+        "n_fold_replicates": 25,
+        "mean_D_minus_C": -0.01347,
+        "sd_D_minus_C": 0.014909,
+        "min_D_minus_C": -0.043913,
+        "max_D_minus_C": 0.013093,
+        "frac_folds_D_better": 0.16
+      }
+    ],
+    "note": "Mean/SD over non-independent fold replicates; no CI or significance test by design."
+  },
+  "multiplicity": {
+    "n_interaction_cis": 6,
+    "n_within_subgroup_cis": 12,
+    "adjustment": "none; 95% CIs are unadjusted. The interaction CIs are the hypothesis tests; within-subgroup CIs are descriptive."
+  },
+  "checks": {
+    "whole_cohort_matches_canonical_rna_subset_paired_differences": true,
+    "complements_partition_analysis_set": true,
+    "counts_report_consistent_with_bootstrap": true,
+    "all_cis_defined_and_skips_reported": true,
+    "primary_comparison_is_c_vs_d_xgboost_only": true,
+    "secondary_cv_complete_without_fold_bootstrap_ci": true,
+    "membership_rederivation_consistent": true,
+    "locked_inputs_unchanged_during_run": true
+  },
+  "locked_input_sha256": {
+    "artifacts/results_clean_rerun/binary_c_xgboost_predictions.csv": "69f64c91fd6cc7676aed165914be91dd2d15e9a05d8ca3121e26fcf37f5ed6cb",
+    "artifacts/results_clean_rerun/binary_c_xgboost_metrics.json": "288a1b0c5f3062a2173c5f5892a7d61c01a7b55847ca651a9c2ebc778b93cbf4",
+    "artifacts/results_clean_rerun/binary_d_xgboost_predictions.csv": "c49274e4fda6b742138ddb3aab3e52a937c05fa21eece6490a64141dba44e76a",
+    "artifacts/results_clean_rerun/binary_d_xgboost_metrics.json": "d20850d9e7b95a64e5e394e89f8f4ff5a0b989e83c7c8588d8342f9b10ca59df",
+    "artifacts/results_clean_rerun/multiclass_c_xgboost_predictions.csv": "720575cf9451ae15d9c1012846b6729d6b1716780918e058c0f0739f287d1e7f",
+    "artifacts/results_clean_rerun/multiclass_c_xgboost_metrics.json": "2f3b9a500ccf86bfc968ad184ce2bf8c508e2076289942e6d45e6fd5250ff285",
+    "artifacts/results_clean_rerun/multiclass_d_xgboost_predictions.csv": "a51b9639ad413a475431b24678bf91aef3b41162d9a28c1515c66666134c0d22",
+    "artifacts/results_clean_rerun/multiclass_d_xgboost_metrics.json": "2982abf0ca3d488dd946016374d6322098e4a8cb9340949408a052738542e626",
+    "artifacts/results_clean_rerun/uncertainty/rna_subset_paired_differences.csv": "e3cc937c4ccaaddcb59434f9bb93ca682ff545a6881f3770410bc480ce724a0c",
+    "data_pipeline/model_feature_sets.json": "9600d0b4806c96e210d07cc9a375f1eeb21d6324aad86a707ae09d5a419c3bde",
+    "data/clinical/visit_pairs_with_rna.csv": "7697743bbddb405edc61213c5bfa690eb73154df6b20b6f4f7a1cb5224ea5a58",
+    "data/splits/visit_pair_splits.csv": "036fc74d7d035d6b207d51bf508a075671ebc7494d6d194062e377a9d45103db",
+    "data/splits/task_eligibility.csv": "3f4c5bfb5257ad0f944802b4f05e892aad2bb03dc0c2717b66b2b42fd1a93727"
+  }
+}
