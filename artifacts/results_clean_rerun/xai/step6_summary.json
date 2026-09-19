@@ -1,0 +1,86 @@
+{
+  "d_vs_d_models": {
+    "binary": "binary_d_lightgbm",
+    "multiclass": "multiclass_d_xgboost"
+  },
+  "best_vs_best_models": {
+    "binary": "binary_c_lightgbm",
+    "multiclass": "multiclass_a_xgboost"
+  },
+  "top_feature_overlap": [
+    {
+      "label": "D_vs_D",
+      "n": 10,
+      "binary_top": [
+        "vt_disease_response",
+        "vt_days_to_visit",
+        "m_protein_current",
+        "subject_had_signs_symptoms",
+        "age_at_diagnosis",
+        "days_since_last_transplant",
+        "kappa_flc_pct_change",
+        "current_regimen_categories",
+        "kappa_flc_current",
+        "line_duration_so_far"
+      ],
+      "multiclass_top": [
+        "vt_disease_response",
+        "m_protein_current",
+        "m_protein_previous",
+        "vt_days_to_visit",
+        "kappa_flc_current",
+        "m_protein_change",
+        "kappa_flc_change",
+        "n_prior_transplants",
+        "kappa_flc_previous",
+        "ig_heavy_chain_type"
+      ],
+      "overlap": [
+        "kappa_flc_current",
+        "m_protein_current",
+        "vt_days_to_visit",
+        "vt_disease_response"
+      ],
+      "n_overlap": 4,
+      "jaccard_index": 0.25
+    },
+    {
+      "label": "best_vs_best",
+      "n": 10,
+      "binary_top": [
+        "vt_disease_response",
+        "vt_days_to_visit",
+        "m_protein_current",
+        "age_at_diagnosis",
+        "days_since_last_transplant",
+        "subject_had_signs_symptoms",
+        "current_regimen_categories",
+        "b2m_previous",
+        "kappa_flc_pct_change",
+        "kappa_flc_current"
+      ],
+      "multiclass_top": [
+        "vt_disease_response",
+        "m_protein_current",
+        "kappa_flc_current",
+        "lambda_flc_current",
+        "subject_had_signs_symptoms",
+        "age_at_diagnosis",
+        "cmmc_number",
+        "b2m_current",
+        "creatinine_current",
+        "ig_heavy_chain_type"
+      ],
+      "overlap": [
+        "age_at_diagnosis",
+        "kappa_flc_current",
+        "m_protein_current",
+        "subject_had_signs_symptoms",
+        "vt_disease_response"
+      ],
+      "n_overlap": 5,
+      "jaccard_index": 0.3333333333333333
+    }
+  ],
+  "ceiling_effect_note": "vt_disease_response is the rank-1 feature in all 4 selected models. In every model, its category medians are monotonic with the IMWG response hierarchy in the SAME direction: patients already in a deeper response at Vt (e.g. VGPR, CR, sCR) show LOWER predicted-improvement SHAP contributions than patients with stable or progressive disease at Vt. This reflects a real structural ceiling effect in the target definition - 'improved' measures upward movement on a bounded response scale, and a patient starting near the top of that scale has mechanically less room to register as 'improved' regardless of true clinical trajectory. This is consistent with, and the same underlying phenomenon as, the project's existing decision to exclude Vt=sCR pairs from the binary task for an identical ceiling reason (sCR cannot improve further by definition) - this pattern is that same effect showing up one or two rungs lower on the ladder (VGPR/CR), not severe enough on its own to warrant exclusion, but present."
+}

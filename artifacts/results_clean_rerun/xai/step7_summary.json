@@ -1,0 +1,189 @@
+[
+  {
+    "key": "multiclass_a_xgboost",
+    "focus_class_direction": {
+      "progressive_disease": [
+        {
+          "type": "continuous",
+          "spearman_corr": 0.8389219409867642,
+          "original_column": "m_protein_current",
+          "rank": 1
+        },
+        {
+          "type": "categorical",
+          "n_categories": 6,
+          "category_medians": {
+            "very_good_partial_response": -0.3127497136592865,
+            "complete_response": -0.24759845435619354,
+            "partial_response": -0.20617574453353882,
+            "stringent_complete_response": -0.18775629997253418,
+            "stable_disease": 0.17320093512535095,
+            "progressive_disease": 0.7350980043411255
+          },
+          "original_column": "vt_disease_response",
+          "rank": 2
+        },
+        {
+          "type": "continuous",
+          "spearman_corr": 0.4964890387072287,
+          "original_column": "kappa_flc_current",
+          "rank": 3
+        },
+        {
+          "type": "categorical",
+          "n_categories": 3,
+          "category_medians": {
+            "1.0": -0.20378181338310242,
+            "2.0": 0.0305262953042984,
+            "3.0": 0.052150625735521317
+          },
+          "original_column": "r_iss_stage",
+          "rank": 4
+        },
+        {
+          "type": "continuous",
+          "spearman_corr": 0.17909946239991092,
+          "original_column": "lambda_flc_current",
+          "rank": 5
+        }
+      ],
+      "stringent_complete_response": [
+        {
+          "type": "categorical",
+          "n_categories": 6,
+          "category_medians": {
+            "partial_response": -1.8095320463180542,
+            "stable_disease": -1.807919979095459,
+            "progressive_disease": -1.7859361171722412,
+            "very_good_partial_response": -0.7263244390487671,
+            "complete_response": 0.07978841662406921,
+            "stringent_complete_response": 2.799959659576416
+          },
+          "original_column": "vt_disease_response",
+          "rank": 1
+        },
+        {
+          "type": "categorical",
+          "n_categories": 2,
+          "category_medians": {
+            "false": -0.06947148591279984,
+            "true": -0.06603727489709854
+          },
+          "original_column": "subject_had_signs_symptoms",
+          "rank": 2
+        },
+        {
+          "type": "continuous",
+          "spearman_corr": -0.45987724136276265,
+          "original_column": "age_at_diagnosis",
+          "rank": 3
+        },
+        {
+          "type": "continuous",
+          "spearman_corr": -0.8060231646020799,
+          "original_column": "m_protein_current",
+          "rank": 4
+        },
+        {
+          "type": "categorical",
+          "n_categories": 2,
+          "category_medians": {
+            "false": -0.011015298776328564,
+            "true": 0.06481815129518509
+          },
+          "original_column": "had_esa",
+          "rank": 5
+        }
+      ]
+    }
+  },
+  {
+    "key": "multiclass_d_xgboost",
+    "focus_class_direction": {
+      "progressive_disease": [
+        {
+          "type": "continuous",
+          "spearman_corr": 0.4488893915991111,
+          "original_column": "m_protein_change",
+          "rank": 1
+        },
+        {
+          "type": "categorical",
+          "n_categories": 6,
+          "category_medians": {
+            "complete_response": -0.1866074651479721,
+            "very_good_partial_response": -0.17409440875053406,
+            "stringent_complete_response": -0.1485847532749176,
+            "partial_response": -0.11050702631473541,
+            "stable_disease": 0.15984183549880981,
+            "progressive_disease": 0.4330776631832123
+          },
+          "original_column": "vt_disease_response",
+          "rank": 2
+        },
+        {
+          "type": "continuous",
+          "spearman_corr": 0.5317661735347,
+          "original_column": "kappa_flc_change",
+          "rank": 3
+        },
+        {
+          "type": "continuous",
+          "spearman_corr": 0.7582753935771496,
+          "original_column": "vt_days_to_visit",
+          "rank": 4
+        },
+        {
+          "type": "continuous",
+          "spearman_corr": 0.47496657351945354,
+          "original_column": "kappa_flc_current",
+          "rank": 5
+        }
+      ],
+      "stringent_complete_response": [
+        {
+          "type": "categorical",
+          "n_categories": 6,
+          "category_medians": {
+            "partial_response": -1.8067069053649902,
+            "stable_disease": -1.7897107601165771,
+            "progressive_disease": -1.7373905181884766,
+            "very_good_partial_response": -0.6755865216255188,
+            "complete_response": 0.10818161070346832,
+            "stringent_complete_response": 2.7774250507354736
+          },
+          "original_column": "vt_disease_response",
+          "rank": 1
+        },
+        {
+          "type": "continuous",
+          "spearman_corr": -0.8549177628505384,
+          "original_column": "m_protein_previous",
+          "rank": 2
+        },
+        {
+          "type": "continuous",
+          "spearman_corr": -0.7126783279262925,
+          "original_column": "m_protein_current",
+          "rank": 3
+        },
+        {
+          "type": "continuous",
+          "spearman_corr": -0.49250155384800015,
+          "original_column": "m_protein_pct_change",
+          "rank": 4
+        },
+        {
+          "type": "categorical",
+          "n_categories": 2,
+          "category_medians": {
+            "false": -0.06007607281208038,
+            "true": -0.05694156512618065
+          },
+          "original_column": "subject_had_signs_symptoms",
+          "rank": 5
+        }
+      ]
+    }
+  }
+]

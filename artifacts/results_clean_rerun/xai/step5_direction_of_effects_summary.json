@@ -1,0 +1,371 @@
+[
+  {
+    "type": "categorical",
+    "n_categories": 5,
+    "displayed_top_k": 5,
+    "category_medians": {
+      "very_good_partial_response": -0.7371024977068406,
+      "complete_response": -0.6869013929033216,
+      "partial_response": 0.4337497899589463,
+      "stable_disease": 0.7726923236695518,
+      "progressive_disease": 2.408990018312478
+    },
+    "key": "binary_c_lightgbm",
+    "original_column": "vt_disease_response",
+    "rank": 1
+  },
+  {
+    "type": "continuous",
+    "spearman_corr": -0.6694215886837497,
+    "key": "binary_c_lightgbm",
+    "original_column": "vt_days_to_visit",
+    "rank": 2
+  },
+  {
+    "type": "continuous",
+    "spearman_corr": -0.8247174204535724,
+    "key": "binary_c_lightgbm",
+    "original_column": "m_protein_current",
+    "rank": 3
+  },
+  {
+    "type": "continuous",
+    "spearman_corr": -0.8668590902993671,
+    "key": "binary_c_lightgbm",
+    "original_column": "age_at_diagnosis",
+    "rank": 4
+  },
+  {
+    "type": "continuous",
+    "spearman_corr": -0.36487962668436086,
+    "key": "binary_c_lightgbm",
+    "original_column": "days_since_last_transplant",
+    "rank": 5
+  },
+  {
+    "type": "categorical",
+    "n_categories": 2,
+    "displayed_top_k": 2,
+    "category_medians": {
+      "false": -0.03966479560925892,
+      "true": -0.03848460027940752
+    },
+    "key": "binary_c_lightgbm",
+    "original_column": "subject_had_signs_symptoms",
+    "rank": 6
+  },
+  {
+    "type": "categorical",
+    "n_categories": 42,
+    "displayed_top_k": 12,
+    "category_medians": {
+      "pi_pi_imid_steroid": -0.041106681061651995,
+      "pi_imid_chemo_chemo_steroid": -0.03776479635696211,
+      "cd38_imid_chemo_steroid": -0.037758138649410196,
+      "pi_chemo_steroid_steroid": -0.033396934534149464,
+      "pi_chemo": -0.033219459304252456,
+      "pi_imid_chemo_steroid": -0.03250014160191038,
+      "pi_imid_antibiotic_steroid": -0.032204467492369264,
+      "chemo_steroid": -0.029909285964882546,
+      "bcl2_steroid": -0.029728417395598655,
+      "pi_cd38_imid_steroid": -0.02848756985417768,
+      "slamf7_imid_steroid": -0.027807474006837876,
+      "cd38_imid": -0.027664773329102426,
+      "pi_cd38_imid": -0.02724371993602111,
+      "pi": -0.02657782257793261,
+      "imid": -0.02629956800405635,
+      "pi_cd38": -0.026247951730267984,
+      "pi_imid_chemo": -0.026069804274293354,
+      "cd38_imid_steroid": -0.025954949033328782,
+      "cd38_pi_steroid": -0.025859400964700758,
+      "pi_slamf7_steroid": -0.024735600405571358,
+      "imid_chemo_steroid": -0.02466733762281743,
+      "bcl2": -0.024634529331205336,
+      "pi_chemo_chemo": -0.023498665589327956,
+      "pi_slamf7_imid_steroid": -0.022999609113712283,
+      "imid_steroid": -0.02206538276660383,
+      "imid_cd38_steroid": -0.022060422073618996,
+      "pi_cd38_chemo_steroid": -0.021715877835424946,
+      "cd38_checkpoint": -0.019791805862488326,
+      "imid_hdac_steroid": -0.019693627572121522,
+      "cd38_steroid": -0.018099440764249106,
+      "checkpoint": -0.017013722276236612,
+      "cd38": -0.016374039897651453,
+      "pi_mdm2_steroid": -0.01610784072749178,
+      "sct": -0.015023371053859294,
+      "pi_xpo1_steroid": -0.014892056069769807,
+      "pi_imid": -0.014594301628168492,
+      "slamf7": -0.013859802533658237,
+      "pi_pi": -0.013551984488017019,
+      "pi_pi_imid_chemo_steroid": -0.012060437561825932,
+      "pi_steroid": -0.007658383608337298,
+      "pi_chemo_steroid": 0.009981430840330409,
+      "pi_imid_steroid": 0.1593159001665208
+    },
+    "key": "binary_c_lightgbm",
+    "original_column": "current_regimen_categories",
+    "rank": 7
+  },
+  {
+    "type": "continuous",
+    "spearman_corr": -0.858531356044718,
+    "key": "binary_c_lightgbm",
+    "original_column": "b2m_previous",
+    "rank": 8
+  },
+  {
+    "type": "categorical",
+    "n_categories": 5,
+    "displayed_top_k": 5,
+    "category_medians": {
+      "very_good_partial_response": -0.7408481444534669,
+      "complete_response": -0.7008268667045638,
+      "partial_response": 0.42759928911114065,
+      "stable_disease": 0.7741143760991462,
+      "progressive_disease": 2.4235603022916834
+    },
+    "key": "binary_d_lightgbm",
+    "original_column": "vt_disease_response",
+    "rank": 1
+  },
+  {
+    "type": "continuous",
+    "spearman_corr": -0.6870603813858684,
+    "key": "binary_d_lightgbm",
+    "original_column": "vt_days_to_visit",
+    "rank": 2
+  },
+  {
+    "type": "continuous",
+    "spearman_corr": -0.8232039949903162,
+    "key": "binary_d_lightgbm",
+    "original_column": "m_protein_current",
+    "rank": 3
+  },
+  {
+    "type": "categorical",
+    "n_categories": 2,
+    "displayed_top_k": 2,
+    "category_medians": {
+      "false": -0.03871186820305648,
+      "true": -0.03754895210425578
+    },
+    "key": "binary_d_lightgbm",
+    "original_column": "subject_had_signs_symptoms",
+    "rank": 4
+  },
+  {
+    "type": "continuous",
+    "spearman_corr": -0.8430563211864627,
+    "key": "binary_d_lightgbm",
+    "original_column": "age_at_diagnosis",
+    "rank": 5
+  },
+  {
+    "type": "continuous",
+    "spearman_corr": -0.29503695557691917,
+    "key": "binary_d_lightgbm",
+    "original_column": "days_since_last_transplant",
+    "rank": 6
+  },
+  {
+    "type": "continuous",
+    "spearman_corr": -0.14527484619383307,
+    "key": "binary_d_lightgbm",
+    "original_column": "kappa_flc_pct_change",
+    "rank": 7
+  },
+  {
+    "type": "categorical",
+    "n_categories": 42,
+    "displayed_top_k": 12,
+    "category_medians": {
+      "pi_pi_imid_steroid": -0.03334609835293877,
+      "pi_imid_chemo_steroid": -0.032662998180784726,
+      "pi_imid_chemo": -0.03038979054656745,
+      "pi_chemo": -0.029098873129220805,
+      "bcl2_steroid": -0.028263345965647148,
+      "pi_chemo_steroid_steroid": -0.027710378383459792,
+      "pi": -0.027669797375527078,
+      "cd38_imid": -0.027227665707964428,
+      "slamf7_imid_steroid": -0.02534999439490436,
+      "bcl2": -0.024391320618577378,
+      "imid": -0.024306853638572837,
+      "pi_chemo_chemo": -0.023552407980625474,
+      "imid_steroid": -0.023470940140002075,
+      "pi_imid_chemo_chemo_steroid": -0.022911352446751278,
+      "cd38_imid_chemo_steroid": -0.022629576863356038,
+      "checkpoint": -0.022018510071409213,
+      "pi_imid": -0.02174722242339889,
+      "pi_imid_antibiotic_steroid": -0.021736894362102063,
+      "imid_hdac_steroid": -0.02165313987558566,
+      "pi_cd38_imid_steroid": -0.02154373903965956,
+      "cd38_steroid": -0.021020034860935722,
+      "cd38_imid_steroid": -0.02092000056313177,
+      "pi_xpo1_steroid": -0.02065503405249645,
+      "pi_steroid": -0.019976316362797966,
+      "pi_cd38": -0.019748217807549925,
+      "pi_slamf7_steroid": -0.01919518888927375,
+      "imid_cd38_steroid": -0.01849021604872078,
+      "pi_cd38_chemo_steroid": -0.01848543494445723,
+      "chemo_steroid": -0.01833286838542651,
+      "pi_slamf7_imid_steroid": -0.018213332309763623,
+      "imid_chemo_steroid": -0.01818610790723623,
+      "sct": -0.01701730621787247,
+      "pi_mdm2_steroid": -0.01680062858956069,
+      "pi_cd38_imid": -0.016139390121527503,
+      "cd38_pi_steroid": -0.015239780369018035,
+      "pi_pi": -0.014337972335236347,
+      "cd38": -0.013849314245170052,
+      "pi_pi_imid_chemo_steroid": -0.01247566250760799,
+      "cd38_checkpoint": -0.012257878106824202,
+      "slamf7": -0.008367093474105098,
+      "pi_chemo_steroid": 0.023978267862325,
+      "pi_imid_steroid": 0.1553646590089315
+    },
+    "key": "binary_d_lightgbm",
+    "original_column": "current_regimen_categories",
+    "rank": 8
+  },
+  {
+    "type": "categorical",
+    "n_categories": 6,
+    "displayed_top_k": 6,
+    "category_medians": {
+      "progressive_disease": 0.6228748559951782,
+      "very_good_partial_response": 1.0299664735794067,
+      "partial_response": 1.2954528331756592,
+      "stable_disease": 1.2992762327194214,
+      "complete_response": 1.9971344470977783,
+      "stringent_complete_response": 2.795612335205078
+    },
+    "key": "multiclass_a_xgboost",
+    "original_column": "vt_disease_response",
+    "rank": 1
+  },
+  {
+    "type": "continuous",
+    "spearman_corr": 0.35399338306717043,
+    "key": "multiclass_a_xgboost",
+    "original_column": "m_protein_current",
+    "rank": 2
+  },
+  {
+    "type": "continuous",
+    "spearman_corr": 0.14935463210124542,
+    "key": "multiclass_a_xgboost",
+    "original_column": "kappa_flc_current",
+    "rank": 3
+  },
+  {
+    "type": "continuous",
+    "spearman_corr": -0.17093169377297457,
+    "key": "multiclass_a_xgboost",
+    "original_column": "lambda_flc_current",
+    "rank": 4
+  },
+  {
+    "type": "categorical",
+    "n_categories": 2,
+    "displayed_top_k": 2,
+    "category_medians": {
+      "false": 0.0037670040037482977,
+      "true": 0.0037670040037482977
+    },
+    "key": "multiclass_a_xgboost",
+    "original_column": "subject_had_signs_symptoms",
+    "rank": 5
+  },
+  {
+    "type": "continuous",
+    "spearman_corr": -0.1627666974195184,
+    "key": "multiclass_a_xgboost",
+    "original_column": "age_at_diagnosis",
+    "rank": 6
+  },
+  {
+    "type": "continuous",
+    "spearman_corr": 0.4048912217423327,
+    "key": "multiclass_a_xgboost",
+    "original_column": "cmmc_number",
+    "rank": 7
+  },
+  {
+    "type": "continuous",
+    "spearman_corr": -0.21547160097430396,
+    "key": "multiclass_a_xgboost",
+    "original_column": "b2m_current",
+    "rank": 8
+  },
+  {
+    "type": "categorical",
+    "n_categories": 6,
+    "displayed_top_k": 6,
+    "category_medians": {
+      "progressive_disease": 0.37330925464630127,
+      "very_good_partial_response": 1.0452574491500854,
+      "partial_response": 1.1575376987457275,
+      "stable_disease": 1.2119756937026978,
+      "complete_response": 2.0147149562835693,
+      "stringent_complete_response": 2.75846791267395
+    },
+    "key": "multiclass_d_xgboost",
+    "original_column": "vt_disease_response",
+    "rank": 1
+  },
+  {
+    "type": "continuous",
+    "spearman_corr": -0.31420834724155605,
+    "key": "multiclass_d_xgboost",
+    "original_column": "m_protein_current",
+    "rank": 2
+  },
+  {
+    "type": "continuous",
+    "spearman_corr": 0.23551046347228616,
+    "key": "multiclass_d_xgboost",
+    "original_column": "m_protein_previous",
+    "rank": 3
+  },
+  {
+    "type": "continuous",
+    "spearman_corr": -0.3467411609374796,
+    "key": "multiclass_d_xgboost",
+    "original_column": "vt_days_to_visit",
+    "rank": 4
+  },
+  {
+    "type": "continuous",
+    "spearman_corr": -0.029395246935491948,
+    "key": "multiclass_d_xgboost",
+    "original_column": "kappa_flc_current",
+    "rank": 5
+  },
+  {
+    "type": "continuous",
+    "spearman_corr": 0.23099251719562855,
+    "key": "multiclass_d_xgboost",
+    "original_column": "m_protein_change",
+    "rank": 6
+  },
+  {
+    "type": "continuous",
+    "spearman_corr": -0.0495852977988986,
+    "key": "multiclass_d_xgboost",
+    "original_column": "kappa_flc_change",
+    "rank": 7
+  },
+  {
+    "type": "categorical",
+    "n_categories": 3,
+    "displayed_top_k": 3,
+    "category_medians": {
+      "1": -0.00010351455421186984,
+      "2": 0.0,
+      "0": 0.00023103867715690285
+    },
+    "key": "multiclass_d_xgboost",
+    "original_column": "n_prior_transplants",
+    "rank": 8
+  }
+]

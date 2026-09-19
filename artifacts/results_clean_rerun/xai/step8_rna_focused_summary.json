@@ -1,0 +1,162 @@
+{
+  "per_model": [
+    {
+      "key": "binary_d_lightgbm",
+      "rna_family_sum": 0.26335138974447064,
+      "step4_cross_check_relative_diff": 2.1078738671218026e-16,
+      "top_5_pathways": [
+        {
+          "original_column": "TGF-beta Signaling",
+          "importance": 0.0186077114904298,
+          "whole_dataset_rank": 18
+        },
+        {
+          "original_column": "Hedgehog Signaling",
+          "importance": 0.017617296113302,
+          "whole_dataset_rank": 19
+        },
+        {
+          "original_column": "TNF-alpha Signaling via NF-kB",
+          "importance": 0.0137136899747662,
+          "whole_dataset_rank": 24
+        },
+        {
+          "original_column": "DNA Repair",
+          "importance": 0.0132686649937908,
+          "whole_dataset_rank": 25
+        },
+        {
+          "original_column": "Apoptosis",
+          "importance": 0.0103958702635194,
+          "whole_dataset_rank": 31
+        }
+      ],
+      "days_since_rna_sample_whole_dataset_rank": 37,
+      "days_since_rna_sample_outranks_n_pathways": 43,
+      "n_pathways_total": 50,
+      "rna_available_importance": 0.0
+    },
+    {
+      "key": "multiclass_d_xgboost",
+      "rna_family_sum": 0.35677891479999996,
+      "step4_cross_check_relative_diff": 1.55589775428225e-16,
+      "top_5_pathways": [
+        {
+          "original_column": "Myc Targets V1",
+          "importance": 0.018724304,
+          "whole_dataset_rank": 21
+        },
+        {
+          "original_column": "Spermatogenesis",
+          "importance": 0.015300491,
+          "whole_dataset_rank": 27
+        },
+        {
+          "original_column": "Notch Signaling",
+          "importance": 0.013065282,
+          "whole_dataset_rank": 39
+        },
+        {
+          "original_column": "Unfolded Protein Response",
+          "importance": 0.0125704,
+          "whole_dataset_rank": 42
+        },
+        {
+          "original_column": "Androgen Response",
+          "importance": 0.012049462,
+          "whole_dataset_rank": 43
+        }
+      ],
+      "days_since_rna_sample_whole_dataset_rank": 15,
+      "days_since_rna_sample_outranks_n_pathways": 50,
+      "n_pathways_total": 50,
+      "rna_available_importance": 0.0
+    }
+  ],
+  "per_class_rna_appearances": [
+    {
+      "class": "progressive_disease",
+      "original_column": "Notch Signaling",
+      "rank_within_class": 12,
+      "importance": 0.04996723
+    },
+    {
+      "class": "progressive_disease",
+      "original_column": "Spermatogenesis",
+      "rank_within_class": 14,
+      "importance": 0.043674417
+    },
+    {
+      "class": "stable_disease",
+      "original_column": "Androgen Response",
+      "rank_within_class": 5,
+      "importance": 0.06642043
+    },
+    {
+      "class": "stable_disease",
+      "original_column": "Unfolded Protein Response",
+      "rank_within_class": 15,
+      "importance": 0.021587834
+    },
+    {
+      "class": "partial_response",
+      "original_column": "Myc Targets V1",
+      "rank_within_class": 6,
+      "importance": 0.04017083
+    },
+    {
+      "class": "partial_response",
+      "original_column": "Pancreas Beta Cells",
+      "rank_within_class": 8,
+      "importance": 0.038515523
+    },
+    {
+      "class": "partial_response",
+      "original_column": "DNA Repair",
+      "rank_within_class": 9,
+      "importance": 0.035519168
+    },
+    {
+      "class": "partial_response",
+      "original_column": "Apoptosis",
+      "rank_within_class": 15,
+      "importance": 0.021002635
+    },
+    {
+      "class": "very_good_partial_response",
+      "original_column": "days_since_rna_sample",
+      "rank_within_class": 6,
+      "importance": 0.042122733
+    },
+    {
+      "class": "very_good_partial_response",
+      "original_column": "Unfolded Protein Response",
+      "rank_within_class": 7,
+      "importance": 0.039603397
+    },
+    {
+      "class": "very_good_partial_response",
+      "original_column": "heme Metabolism",
+      "rank_within_class": 12,
+      "importance": 0.021198204
+    },
+    {
+      "class": "very_good_partial_response",
+      "original_column": "Pperoxisome",
+      "rank_within_class": 14,
+      "importance": 0.018084276
+    },
+    {
+      "class": "complete_response",
+      "original_column": "Epithelial Mesenchymal Transition",
+      "rank_within_class": 10,
+      "importance": 0.05007049
+    },
+    {
+      "class": "stringent_complete_response",
+      "original_column": "days_since_rna_sample",
+      "rank_within_class": 12,
+      "importance": 0.040441696
+    }
+  ]
+}

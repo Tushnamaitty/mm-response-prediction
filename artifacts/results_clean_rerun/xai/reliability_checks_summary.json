@@ -1,0 +1,1299 @@
+{
+  "missingness_dominance": {
+    "binary_d_lightgbm": {
+      "importance": 0.0,
+      "rank": 190,
+      "passed": true
+    },
+    "multiclass_d_xgboost": {
+      "importance": 0.0,
+      "rank": 195,
+      "passed": true
+    }
+  },
+  "repeated_measures_sensitivity": {
+    "binary_d_lightgbm": {
+      "full_row_top10": [
+        "age_at_diagnosis",
+        "current_regimen_categories",
+        "days_since_last_transplant",
+        "kappa_flc_current",
+        "kappa_flc_pct_change",
+        "line_duration_so_far",
+        "m_protein_current",
+        "subject_had_signs_symptoms",
+        "vt_days_to_visit",
+        "vt_disease_response"
+      ],
+      "one_per_patient_top10": [
+        "age_at_diagnosis",
+        "current_regimen_categories",
+        "days_since_last_transplant",
+        "kappa_flc_current",
+        "kappa_flc_pct_change",
+        "line_duration_so_far",
+        "m_protein_current",
+        "subject_had_signs_symptoms",
+        "vt_days_to_visit",
+        "vt_disease_response"
+      ],
+      "overlap": [
+        "age_at_diagnosis",
+        "current_regimen_categories",
+        "days_since_last_transplant",
+        "kappa_flc_current",
+        "kappa_flc_pct_change",
+        "line_duration_so_far",
+        "m_protein_current",
+        "subject_had_signs_symptoms",
+        "vt_days_to_visit",
+        "vt_disease_response"
+      ],
+      "jaccard": 1.0
+    },
+    "multiclass_d_xgboost": {
+      "full_row_top10": [
+        "ig_heavy_chain_type",
+        "kappa_flc_change",
+        "kappa_flc_current",
+        "kappa_flc_previous",
+        "m_protein_change",
+        "m_protein_current",
+        "m_protein_previous",
+        "n_prior_transplants",
+        "vt_days_to_visit",
+        "vt_disease_response"
+      ],
+      "one_per_patient_top10": [
+        "ig_heavy_chain_type",
+        "kappa_flc_change",
+        "kappa_flc_current",
+        "m_protein_change",
+        "m_protein_current",
+        "m_protein_previous",
+        "n_prior_transplants",
+        "subject_had_signs_symptoms",
+        "vt_days_to_visit",
+        "vt_disease_response"
+      ],
+      "overlap": [
+        "ig_heavy_chain_type",
+        "kappa_flc_change",
+        "kappa_flc_current",
+        "m_protein_change",
+        "m_protein_current",
+        "m_protein_previous",
+        "n_prior_transplants",
+        "vt_days_to_visit",
+        "vt_disease_response"
+      ],
+      "jaccard": 0.8181818181818182
+    }
+  },
+  "correlated_feature_stability": [
+    {
+      "group": "m_protein_trio",
+      "feature_1": "m_protein_current",
+      "feature_2": "m_protein_previous",
+      "spearman_r": 0.7698823233160847,
+      "flagged": true
+    },
+    {
+      "group": "m_protein_trio",
+      "feature_1": "m_protein_current",
+      "feature_2": "m_protein_change",
+      "spearman_r": 0.14758034058311983,
+      "flagged": false
+    },
+    {
+      "group": "m_protein_trio",
+      "feature_1": "m_protein_previous",
+      "feature_2": "m_protein_change",
+      "spearman_r": -0.35383038123611665,
+      "flagged": false
+    },
+    {
+      "group": "kappa_flc_trio",
+      "feature_1": "kappa_flc_current",
+      "feature_2": "kappa_flc_previous",
+      "spearman_r": 0.7848777835787701,
+      "flagged": true
+    },
+    {
+      "group": "kappa_flc_trio",
+      "feature_1": "kappa_flc_current",
+      "feature_2": "kappa_flc_change",
+      "spearman_r": 0.2563351727820781,
+      "flagged": false
+    },
+    {
+      "group": "kappa_flc_trio",
+      "feature_1": "kappa_flc_previous",
+      "feature_2": "kappa_flc_change",
+      "spearman_r": -0.220850546955963,
+      "flagged": false
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Myc Targets V1",
+      "feature_2": "Myc Targets V2",
+      "spearman_r": 0.7973353344238417,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Myc Targets V1",
+      "feature_2": "E2F Targets",
+      "spearman_r": 0.7215860878132156,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "KRAS Signaling Up",
+      "feature_2": "Estrogen Response Late",
+      "spearman_r": 0.7816618408271967,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "KRAS Signaling Up",
+      "feature_2": "Hedgehog Signaling",
+      "spearman_r": 0.7065933360955369,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "KRAS Signaling Up",
+      "feature_2": "Allograft Rejection",
+      "spearman_r": 0.8455622474417998,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "KRAS Signaling Up",
+      "feature_2": "Complement",
+      "spearman_r": 0.9019439033258021,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "KRAS Signaling Up",
+      "feature_2": "Epithelial Mesenchymal Transition",
+      "spearman_r": 0.8707584768084599,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "KRAS Signaling Up",
+      "feature_2": "heme Metabolism",
+      "spearman_r": 0.7067109254395717,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "KRAS Signaling Up",
+      "feature_2": "IL-6/JAK/STAT3 Signaling",
+      "spearman_r": 0.8645652204877655,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "KRAS Signaling Up",
+      "feature_2": "IL-2/STAT5 Signaling",
+      "spearman_r": 0.9029656939351067,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "KRAS Signaling Up",
+      "feature_2": "Angiogenesis",
+      "spearman_r": 0.8253303887521607,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "KRAS Signaling Up",
+      "feature_2": "Hypoxia",
+      "spearman_r": 0.8421357186684091,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "KRAS Signaling Up",
+      "feature_2": "Coagulation",
+      "spearman_r": 0.8742708801098227,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "KRAS Signaling Up",
+      "feature_2": "UV Response Dn",
+      "spearman_r": 0.7437550496325778,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "KRAS Signaling Up",
+      "feature_2": "Apoptosis",
+      "spearman_r": 0.8484766052875024,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "KRAS Signaling Up",
+      "feature_2": "Inflammatory Response",
+      "spearman_r": 0.8892406718877187,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "KRAS Signaling Up",
+      "feature_2": "p53 Pathway",
+      "spearman_r": 0.741596172965055,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "KRAS Signaling Up",
+      "feature_2": "Estrogen Response Early",
+      "spearman_r": 0.7259615008051081,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "KRAS Signaling Up",
+      "feature_2": "Xenobiotic Metabolism",
+      "spearman_r": 0.8346841534510367,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "KRAS Signaling Up",
+      "feature_2": "Myogenesis",
+      "spearman_r": 0.7452662689667574,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "KRAS Signaling Up",
+      "feature_2": "TNF-alpha Signaling via NF-kB",
+      "spearman_r": 0.800430894172744,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "KRAS Signaling Up",
+      "feature_2": "Apical Junction",
+      "spearman_r": 0.7909809052959546,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Estrogen Response Late",
+      "feature_2": "Complement",
+      "spearman_r": 0.7380923021855176,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Estrogen Response Late",
+      "feature_2": "Epithelial Mesenchymal Transition",
+      "spearman_r": 0.7485479082068254,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Estrogen Response Late",
+      "feature_2": "IL-2/STAT5 Signaling",
+      "spearman_r": 0.8094663362684058,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Estrogen Response Late",
+      "feature_2": "Angiogenesis",
+      "spearman_r": 0.7301798398552224,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Estrogen Response Late",
+      "feature_2": "Hypoxia",
+      "spearman_r": 0.8176431135871695,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Estrogen Response Late",
+      "feature_2": "Coagulation",
+      "spearman_r": 0.7442906209646031,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Estrogen Response Late",
+      "feature_2": "UV Response Up",
+      "spearman_r": 0.7443178029493798,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Estrogen Response Late",
+      "feature_2": "p53 Pathway",
+      "spearman_r": 0.7241549958588659,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Estrogen Response Late",
+      "feature_2": "Estrogen Response Early",
+      "spearman_r": 0.8774639610213734,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Estrogen Response Late",
+      "feature_2": "Xenobiotic Metabolism",
+      "spearman_r": 0.7947633077411378,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Estrogen Response Late",
+      "feature_2": "Myogenesis",
+      "spearman_r": 0.7154521846936805,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Estrogen Response Late",
+      "feature_2": "Glycolysis",
+      "spearman_r": 0.7382593079647903,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Estrogen Response Late",
+      "feature_2": "Apical Junction",
+      "spearman_r": 0.7634914379677918,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Estrogen Response Late",
+      "feature_2": "Androgen Response",
+      "spearman_r": 0.7068101386851062,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Reactive Oxygen Species Pathway",
+      "feature_2": "Allograft Rejection",
+      "spearman_r": 0.7088466177761885,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Reactive Oxygen Species Pathway",
+      "feature_2": "Complement",
+      "spearman_r": 0.7364288740754021,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Reactive Oxygen Species Pathway",
+      "feature_2": "IL-6/JAK/STAT3 Signaling",
+      "spearman_r": 0.7163913308225005,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Reactive Oxygen Species Pathway",
+      "feature_2": "IL-2/STAT5 Signaling",
+      "spearman_r": 0.7132652746672867,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Reactive Oxygen Species Pathway",
+      "feature_2": "Inflammatory Response",
+      "spearman_r": 0.7135401677390628,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Allograft Rejection",
+      "feature_2": "Complement",
+      "spearman_r": 0.8855533080306006,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Allograft Rejection",
+      "feature_2": "Epithelial Mesenchymal Transition",
+      "spearman_r": 0.7643255135011632,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Allograft Rejection",
+      "feature_2": "IL-6/JAK/STAT3 Signaling",
+      "spearman_r": 0.9006769710812098,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Allograft Rejection",
+      "feature_2": "IL-2/STAT5 Signaling",
+      "spearman_r": 0.8438802323213861,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Allograft Rejection",
+      "feature_2": "Angiogenesis",
+      "spearman_r": 0.7168483023889476,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Allograft Rejection",
+      "feature_2": "Hypoxia",
+      "spearman_r": 0.7005191781503476,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Allograft Rejection",
+      "feature_2": "Coagulation",
+      "spearman_r": 0.8054734397600655,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Allograft Rejection",
+      "feature_2": "Apoptosis",
+      "spearman_r": 0.8456520917632605,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Allograft Rejection",
+      "feature_2": "Interferon Gamma Response",
+      "spearman_r": 0.7003890916059906,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Allograft Rejection",
+      "feature_2": "Inflammatory Response",
+      "spearman_r": 0.9094927706007095,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Allograft Rejection",
+      "feature_2": "Xenobiotic Metabolism",
+      "spearman_r": 0.7384899930002361,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Allograft Rejection",
+      "feature_2": "TNF-alpha Signaling via NF-kB",
+      "spearman_r": 0.7944533253267214,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Complement",
+      "feature_2": "Epithelial Mesenchymal Transition",
+      "spearman_r": 0.8347319401005707,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Complement",
+      "feature_2": "heme Metabolism",
+      "spearman_r": 0.7307456268286942,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Complement",
+      "feature_2": "IL-6/JAK/STAT3 Signaling",
+      "spearman_r": 0.9153773904339558,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Complement",
+      "feature_2": "IL-2/STAT5 Signaling",
+      "spearman_r": 0.8962550734306806,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Complement",
+      "feature_2": "Angiogenesis",
+      "spearman_r": 0.7760485647743309,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Complement",
+      "feature_2": "Hypoxia",
+      "spearman_r": 0.8301580119836597,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Complement",
+      "feature_2": "Coagulation",
+      "spearman_r": 0.9139801953099328,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Complement",
+      "feature_2": "Apoptosis",
+      "spearman_r": 0.8746066786506803,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Complement",
+      "feature_2": "Inflammatory Response",
+      "spearman_r": 0.9390352228814856,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Complement",
+      "feature_2": "p53 Pathway",
+      "spearman_r": 0.7188505304052885,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Complement",
+      "feature_2": "Xenobiotic Metabolism",
+      "spearman_r": 0.8483872386969663,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Complement",
+      "feature_2": "Myogenesis",
+      "spearman_r": 0.7086061366137808,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Complement",
+      "feature_2": "TNF-alpha Signaling via NF-kB",
+      "spearman_r": 0.8292567368203039,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Complement",
+      "feature_2": "Apical Junction",
+      "spearman_r": 0.7725544751499096,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Epithelial Mesenchymal Transition",
+      "feature_2": "IL-6/JAK/STAT3 Signaling",
+      "spearman_r": 0.782327987099806,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Epithelial Mesenchymal Transition",
+      "feature_2": "IL-2/STAT5 Signaling",
+      "spearman_r": 0.8291699264198134,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Epithelial Mesenchymal Transition",
+      "feature_2": "Angiogenesis",
+      "spearman_r": 0.8199319355382062,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Epithelial Mesenchymal Transition",
+      "feature_2": "Hypoxia",
+      "spearman_r": 0.8656928302381721,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Epithelial Mesenchymal Transition",
+      "feature_2": "Coagulation",
+      "spearman_r": 0.8391316149143138,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Epithelial Mesenchymal Transition",
+      "feature_2": "UV Response Dn",
+      "spearman_r": 0.8002816605808795,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Epithelial Mesenchymal Transition",
+      "feature_2": "Apoptosis",
+      "spearman_r": 0.8286708481770177,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Epithelial Mesenchymal Transition",
+      "feature_2": "Inflammatory Response",
+      "spearman_r": 0.8093638267136942,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Epithelial Mesenchymal Transition",
+      "feature_2": "Xenobiotic Metabolism",
+      "spearman_r": 0.7595969553514487,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Epithelial Mesenchymal Transition",
+      "feature_2": "Myogenesis",
+      "spearman_r": 0.7659795718787563,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Epithelial Mesenchymal Transition",
+      "feature_2": "TNF-alpha Signaling via NF-kB",
+      "spearman_r": 0.740337813089475,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Epithelial Mesenchymal Transition",
+      "feature_2": "Apical Junction",
+      "spearman_r": 0.7781852384276048,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Epithelial Mesenchymal Transition",
+      "feature_2": "Apical Surface",
+      "spearman_r": 0.7078210810338054,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "heme Metabolism",
+      "feature_2": "IL-2/STAT5 Signaling",
+      "spearman_r": 0.7137797696048059,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "heme Metabolism",
+      "feature_2": "Inflammatory Response",
+      "spearman_r": 0.7078530356015146,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "heme Metabolism",
+      "feature_2": "Xenobiotic Metabolism",
+      "spearman_r": 0.7212946185293345,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "IL-6/JAK/STAT3 Signaling",
+      "feature_2": "IL-2/STAT5 Signaling",
+      "spearman_r": 0.845691218529223,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "IL-6/JAK/STAT3 Signaling",
+      "feature_2": "Angiogenesis",
+      "spearman_r": 0.7407126391125903,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "IL-6/JAK/STAT3 Signaling",
+      "feature_2": "Hypoxia",
+      "spearman_r": 0.7541140844027762,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "IL-6/JAK/STAT3 Signaling",
+      "feature_2": "Coagulation",
+      "spearman_r": 0.8718413362401014,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "IL-6/JAK/STAT3 Signaling",
+      "feature_2": "Apoptosis",
+      "spearman_r": 0.8409149602650672,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "IL-6/JAK/STAT3 Signaling",
+      "feature_2": "Inflammatory Response",
+      "spearman_r": 0.9405189040315519,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "IL-6/JAK/STAT3 Signaling",
+      "feature_2": "Xenobiotic Metabolism",
+      "spearman_r": 0.7969216113118972,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "IL-6/JAK/STAT3 Signaling",
+      "feature_2": "TNF-alpha Signaling via NF-kB",
+      "spearman_r": 0.8413521074129229,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "IL-6/JAK/STAT3 Signaling",
+      "feature_2": "Apical Junction",
+      "spearman_r": 0.7244493341402062,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "IL-2/STAT5 Signaling",
+      "feature_2": "Angiogenesis",
+      "spearman_r": 0.7942857874017154,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "IL-2/STAT5 Signaling",
+      "feature_2": "Hypoxia",
+      "spearman_r": 0.8736992522818973,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "IL-2/STAT5 Signaling",
+      "feature_2": "Coagulation",
+      "spearman_r": 0.8399001976392262,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "IL-2/STAT5 Signaling",
+      "feature_2": "UV Response Up",
+      "spearman_r": 0.7161528063388721,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "IL-2/STAT5 Signaling",
+      "feature_2": "UV Response Dn",
+      "spearman_r": 0.7088834045965546,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "IL-2/STAT5 Signaling",
+      "feature_2": "Apoptosis",
+      "spearman_r": 0.8722347045134482,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "IL-2/STAT5 Signaling",
+      "feature_2": "Inflammatory Response",
+      "spearman_r": 0.8769979334004545,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "IL-2/STAT5 Signaling",
+      "feature_2": "p53 Pathway",
+      "spearman_r": 0.8190366131527916,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "IL-2/STAT5 Signaling",
+      "feature_2": "Estrogen Response Early",
+      "spearman_r": 0.7901828738052658,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "IL-2/STAT5 Signaling",
+      "feature_2": "Xenobiotic Metabolism",
+      "spearman_r": 0.7957508914760727,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "IL-2/STAT5 Signaling",
+      "feature_2": "Myogenesis",
+      "spearman_r": 0.7185725729247022,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "IL-2/STAT5 Signaling",
+      "feature_2": "Cholesterol Homeostasis",
+      "spearman_r": 0.7065314054359154,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "IL-2/STAT5 Signaling",
+      "feature_2": "TNF-alpha Signaling via NF-kB",
+      "spearman_r": 0.8535872640361609,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "IL-2/STAT5 Signaling",
+      "feature_2": "Apical Junction",
+      "spearman_r": 0.7898510977469785,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Angiogenesis",
+      "feature_2": "Hypoxia",
+      "spearman_r": 0.7606247808117729,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Angiogenesis",
+      "feature_2": "Coagulation",
+      "spearman_r": 0.785245964587478,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Angiogenesis",
+      "feature_2": "Apoptosis",
+      "spearman_r": 0.7544045265216373,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Angiogenesis",
+      "feature_2": "Inflammatory Response",
+      "spearman_r": 0.7454354990368379,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Angiogenesis",
+      "feature_2": "Xenobiotic Metabolism",
+      "spearman_r": 0.7426651409646031,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Angiogenesis",
+      "feature_2": "TNF-alpha Signaling via NF-kB",
+      "spearman_r": 0.7014391946754928,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Angiogenesis",
+      "feature_2": "Apical Junction",
+      "spearman_r": 0.7432669493908384,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Hypoxia",
+      "feature_2": "Coagulation",
+      "spearman_r": 0.8147485995317301,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Hypoxia",
+      "feature_2": "UV Response Up",
+      "spearman_r": 0.7523978341122922,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Hypoxia",
+      "feature_2": "UV Response Dn",
+      "spearman_r": 0.7599997811672716,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Hypoxia",
+      "feature_2": "Apoptosis",
+      "spearman_r": 0.8136925890817841,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Hypoxia",
+      "feature_2": "Inflammatory Response",
+      "spearman_r": 0.7892074944723417,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Hypoxia",
+      "feature_2": "p53 Pathway",
+      "spearman_r": 0.7538762263761756,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Hypoxia",
+      "feature_2": "Estrogen Response Early",
+      "spearman_r": 0.8031175065020519,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Hypoxia",
+      "feature_2": "Xenobiotic Metabolism",
+      "spearman_r": 0.7724302353212585,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Hypoxia",
+      "feature_2": "Myogenesis",
+      "spearman_r": 0.7614088002405114,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Hypoxia",
+      "feature_2": "Cholesterol Homeostasis",
+      "spearman_r": 0.7088039694392887,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Hypoxia",
+      "feature_2": "TNF-alpha Signaling via NF-kB",
+      "spearman_r": 0.7972733158765309,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Hypoxia",
+      "feature_2": "Apical Junction",
+      "spearman_r": 0.7577400988903517,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Coagulation",
+      "feature_2": "Apoptosis",
+      "spearman_r": 0.8119131650953397,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Coagulation",
+      "feature_2": "Inflammatory Response",
+      "spearman_r": 0.8739242003796266,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Coagulation",
+      "feature_2": "Xenobiotic Metabolism",
+      "spearman_r": 0.8549523580145276,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Coagulation",
+      "feature_2": "Myogenesis",
+      "spearman_r": 0.7363185220563728,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Coagulation",
+      "feature_2": "Adipogenesis",
+      "spearman_r": 0.7019156237492508,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Coagulation",
+      "feature_2": "TNF-alpha Signaling via NF-kB",
+      "spearman_r": 0.7708150407306318,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Coagulation",
+      "feature_2": "Apical Junction",
+      "spearman_r": 0.7867571234745788,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Mitotic Spindle",
+      "feature_2": "G2-M Checkpoint",
+      "spearman_r": 0.7060173012122685,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "UV Response Up",
+      "feature_2": "Myogenesis",
+      "spearman_r": 0.7146139639956662,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "G2-M Checkpoint",
+      "feature_2": "E2F Targets",
+      "spearman_r": 0.9577210424808132,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Apoptosis",
+      "feature_2": "Inflammatory Response",
+      "spearman_r": 0.8767093587667281,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Apoptosis",
+      "feature_2": "p53 Pathway",
+      "spearman_r": 0.779516617643583,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Apoptosis",
+      "feature_2": "Xenobiotic Metabolism",
+      "spearman_r": 0.7392970801567195,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Apoptosis",
+      "feature_2": "TNF-alpha Signaling via NF-kB",
+      "spearman_r": 0.8749738605592285,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Apoptosis",
+      "feature_2": "Apical Junction",
+      "spearman_r": 0.7338956893981942,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Interferon Gamma Response",
+      "feature_2": "Inflammatory Response",
+      "spearman_r": 0.7080958628972599,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Interferon Gamma Response",
+      "feature_2": "Interferon Alpha Response",
+      "spearman_r": 0.8468061503288608,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Inflammatory Response",
+      "feature_2": "p53 Pathway",
+      "spearman_r": 0.7146533186352998,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Inflammatory Response",
+      "feature_2": "Xenobiotic Metabolism",
+      "spearman_r": 0.8091133508880088,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Inflammatory Response",
+      "feature_2": "TNF-alpha Signaling via NF-kB",
+      "spearman_r": 0.8824304299645056,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Inflammatory Response",
+      "feature_2": "Apical Junction",
+      "spearman_r": 0.7178226627035257,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "p53 Pathway",
+      "feature_2": "Estrogen Response Early",
+      "spearman_r": 0.7325552325017445,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "p53 Pathway",
+      "feature_2": "Xenobiotic Metabolism",
+      "spearman_r": 0.7092515459470069,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "p53 Pathway",
+      "feature_2": "TNF-alpha Signaling via NF-kB",
+      "spearman_r": 0.7982562892934923,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Estrogen Response Early",
+      "feature_2": "Apical Junction",
+      "spearman_r": 0.7478473867315227,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Estrogen Response Early",
+      "feature_2": "Androgen Response",
+      "spearman_r": 0.7107204685261381,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Xenobiotic Metabolism",
+      "feature_2": "Myogenesis",
+      "spearman_r": 0.7536343470641302,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Xenobiotic Metabolism",
+      "feature_2": "Adipogenesis",
+      "spearman_r": 0.7050721276950314,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Xenobiotic Metabolism",
+      "feature_2": "Apical Junction",
+      "spearman_r": 0.7858652352077307,
+      "flagged": true
+    },
+    {
+      "group": "hallmark_pathways",
+      "feature_1": "Myogenesis",
+      "feature_2": "Apical Junction",
+      "spearman_r": 0.757392417818849,
+      "flagged": true
+    }
+  ],
+  "cross_model_consistency": {
+    "binary_c_lightgbm_vs_binary_d_lightgbm": {
+      "c_top10": [
+        "age_at_diagnosis",
+        "b2m_previous",
+        "current_regimen_categories",
+        "days_since_last_transplant",
+        "kappa_flc_current",
+        "kappa_flc_pct_change",
+        "m_protein_current",
+        "subject_had_signs_symptoms",
+        "vt_days_to_visit",
+        "vt_disease_response"
+      ],
+      "d_top10_non_rna": [
+        "age_at_diagnosis",
+        "current_regimen_categories",
+        "days_since_last_transplant",
+        "kappa_flc_current",
+        "kappa_flc_pct_change",
+        "line_duration_so_far",
+        "m_protein_current",
+        "subject_had_signs_symptoms",
+        "vt_days_to_visit",
+        "vt_disease_response"
+      ],
+      "overlap": [
+        "age_at_diagnosis",
+        "current_regimen_categories",
+        "days_since_last_transplant",
+        "kappa_flc_current",
+        "kappa_flc_pct_change",
+        "m_protein_current",
+        "subject_had_signs_symptoms",
+        "vt_days_to_visit",
+        "vt_disease_response"
+      ],
+      "jaccard": 0.8181818181818182
+    },
+    "multiclass_a_xgboost_vs_multiclass_d_xgboost": {
+      "c_top10": [
+        "age_at_diagnosis",
+        "b2m_current",
+        "cmmc_number",
+        "creatinine_current",
+        "ig_heavy_chain_type",
+        "kappa_flc_current",
+        "lambda_flc_current",
+        "m_protein_current",
+        "subject_had_signs_symptoms",
+        "vt_disease_response"
+      ],
+      "d_top10_non_rna": [
+        "age_at_diagnosis",
+        "b2m_current",
+        "ig_heavy_chain_type",
+        "kappa_flc_current",
+        "lambda_flc_current",
+        "m_protein_current",
+        "pct_plasma_cells_bm",
+        "pct_plasma_cells_pb",
+        "subject_had_signs_symptoms",
+        "vt_disease_response"
+      ],
+      "overlap": [
+        "age_at_diagnosis",
+        "b2m_current",
+        "ig_heavy_chain_type",
+        "kappa_flc_current",
+        "lambda_flc_current",
+        "m_protein_current",
+        "subject_had_signs_symptoms",
+        "vt_disease_response"
+      ],
+      "jaccard": 0.6666666666666666
+    }
+  }
+}

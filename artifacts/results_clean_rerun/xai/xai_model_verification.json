@@ -1,0 +1,65 @@
+{
+  "reconfirmed_best_per_task": {
+    "binary": {
+      "model_stage": "c",
+      "algorithm": "lightgbm",
+      "test_main_metric_PRELIMINARY": 0.514502055729032
+    },
+    "multiclass": {
+      "model_stage": "a",
+      "algorithm": "xgboost",
+      "test_main_metric_PRELIMINARY": 0.6591491478873354
+    }
+  },
+  "selected_models_verification": [
+    {
+      "key": "binary_c_lightgbm",
+      "task": "binary",
+      "model_stage": "c",
+      "algorithm": "lightgbm",
+      "pair_id_order_match": true,
+      "predictions_match": true,
+      "max_abs_diff": 9.71445146547012e-17,
+      "n_test_rows": 1930,
+      "n_test_patients": 155,
+      "role": "best-performing binary model"
+    },
+    {
+      "key": "binary_d_lightgbm",
+      "task": "binary",
+      "model_stage": "d",
+      "algorithm": "lightgbm",
+      "pair_id_order_match": true,
+      "predictions_match": true,
+      "max_abs_diff": 9.71445146547012e-17,
+      "n_test_rows": 1930,
+      "n_test_patients": 155,
+      "role": "RNA-integrated comparison"
+    },
+    {
+      "key": "multiclass_a_xgboost",
+      "task": "multiclass",
+      "model_stage": "a",
+      "algorithm": "xgboost",
+      "pair_id_order_match": true,
+      "predictions_match": true,
+      "max_abs_diff": null,
+      "n_test_rows": 2079,
+      "n_test_patients": 155,
+      "role": "best-performing multiclass model"
+    },
+    {
+      "key": "multiclass_d_xgboost",
+      "task": "multiclass",
+      "model_stage": "d",
+      "algorithm": "xgboost",
+      "pair_id_order_match": true,
+      "predictions_match": true,
+      "max_abs_diff": null,
+      "n_test_rows": 2079,
+      "n_test_patients": 155,
+      "role": "RNA-integrated comparison"
+    }
+  ],
+  "all_checks_passed": true
+}

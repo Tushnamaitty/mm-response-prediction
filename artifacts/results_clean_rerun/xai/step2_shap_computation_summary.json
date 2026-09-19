@@ -1,0 +1,46 @@
+[
+  {
+    "key": "binary_c_lightgbm",
+    "task": "binary",
+    "model_stage": "c",
+    "algorithm": "lightgbm",
+    "feature_perturbation": "tree_path_dependent",
+    "n_test_rows": 1930,
+    "n_features": 302,
+    "sanity_check_max_abs_diff": 5.10702591327572e-15,
+    "sanity_check_passed": true
+  },
+  {
+    "key": "binary_d_lightgbm",
+    "task": "binary",
+    "model_stage": "d",
+    "algorithm": "lightgbm",
+    "feature_perturbation": "tree_path_dependent",
+    "n_test_rows": 1930,
+    "n_features": 354,
+    "sanity_check_max_abs_diff": 1.7763568394002505e-15,
+    "sanity_check_passed": true
+  },
+  {
+    "key": "multiclass_a_xgboost",
+    "task": "multiclass",
+    "model_stage": "a",
+    "algorithm": "xgboost",
+    "feature_perturbation": "tree_path_dependent",
+    "n_test_rows": 2079,
+    "n_features": 148,
+    "sanity_check_max_abs_diff": 1.430511474609375e-06,
+    "sanity_check_passed": true
+  },
+  {
+    "key": "multiclass_d_xgboost",
+    "task": "multiclass",
+    "model_stage": "d",
+    "algorithm": "xgboost",
+    "feature_perturbation": "tree_path_dependent",
+    "n_test_rows": 2079,
+    "n_features": 354,
+    "sanity_check_max_abs_diff": 2.6226043701171875e-06,
+    "sanity_check_passed": true
+  }
+]

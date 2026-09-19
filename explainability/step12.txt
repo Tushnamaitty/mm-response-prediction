@@ -1,0 +1,25 @@
+Integrated synthesis (final)
+
+1. Predictive performance. Binary Model C-LightGBM (test AUPRC 0.5145) and multiclass Model A-XGBoost (test macro-F1 0.6591) are the best-performing models on the corrected clean rerun. Model D sits close behind in both tasks.
+
+2. Uncertainty. Patient-level bootstrap 95% CIs accompany every A–D × algorithm × task result.
+
+3. C-vs-D paired comparison (single split). D−C AUPRC −0.0075 (CI [−0.043, 0.019]), AUROC −0.0059 (CI [−0.016, 0.004]) — CIs straddle zero.
+
+4. RNA freshness sensitivity. No detectable performance difference across 365/545/730-day cutoffs.
+
+5. RNA-indicator ablation. Removing rna_available from Model D changes zero predictions across binary AUPRC, AUROC, and multiclass macro-F1 — mechanistically corroborated by SHAP (the feature is never used to split any tree).
+
+6. Repeated patient-grouped CV, C vs. D (25 fold-replicates, train+val only, original test set untouched). Mean D−C differences (SD across folds): binary AUPRC +0.00308 (0.00654), binary AUROC −0.00220 (0.00290), multiclass macro-F1 −0.00488 (0.00764). In every metric, the fold-to-fold standard deviation exceeds the magnitude of the mean difference — the sign itself is not stable across folds, which is the clearest possible signal that there is no consistent direction of advantage for either model, not just a small one. This is reported as an empirical dispersion diagnostic describing observed fold-to-fold variability, not a formal confidence interval or significance test.
+
+7. SHAP/XAI. [unchanged from previous message]
+
+Final RNA verdict:
+
+"RNA-derived pathway and timing features are measurably used by the models (11–14% of SHAP-attributed importance) but do not confer a statistically detectable incremental predictive benefit over clinical, temporal, and treatment information. This is supported by four independent, converging lines of evidence: a single-split paired bootstrap comparison, an RNA-freshness sensitivity analysis, a direct feature-removal ablation, and repeated patient-grouped cross-validation on an entirely separate patient pool, where the fold-to-fold dispersion in D−C performance exceeded the mean difference itself in every metric — indicating the observed differences are indistinguishable from noise rather than a small but consistent effect. The null is not explained by RNA sample staleness, nor by the mere fact of RNA being measured — the availability indicator's zero contribution is confirmed both by SHAP attribution and by direct ablation, two independent methods reaching an identical, mechanistically consistent conclusion. RNA's modest overall usage is diffuse across correlated pathways (155/1225 pairs exceed |r|=0.7) rather than concentrated in one biological program. We do not conclude RNA lacks biological relevance to myeloma treatment response — only that, as represented here (50 broad Hallmark pathway scores, ~68% coverage, single time point per visit), it adds no detectable predictive value beyond what current clinical state and biomarker trajectory already capture."
+
+Step 12 and the full RNA validation chain are now closed, six independent checks deep, with no open items.
+
+Next: hypothesis-driven MM subgroup analysis
+
+Per Song's guidance, this should be a small number of pre-specified subgroups grounded in MM literature — not an exploratory sweep, to avoid the multiple-comparisons criticism that's been a recurring theme in this project's audit discipline. Your existing feature set already contains several natural, clinically motivated candidates: ISS/R-ISS stage (disease severity at diagnosis), treatment line (current_line_number/n_prior_lines_completed — early vs. relapsed/refractory disease), prior transplant status (has_prior_transplant/n_prior_transplants), and age at diagnosis (frailty/fitness proxy).

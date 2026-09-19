@@ -1,0 +1,70 @@
+[
+  {
+    "key": "binary_c_lightgbm",
+    "task": "binary",
+    "model_stage": "c",
+    "algorithm": "lightgbm",
+    "n_output_columns": 302,
+    "n_original_columns": 143,
+    "n_unmatched": 0,
+    "rollup_sum_check_diff": 4.440892098500626e-16,
+    "top_5_original_columns": [
+      "vt_disease_response",
+      "vt_days_to_visit",
+      "m_protein_current",
+      "age_at_diagnosis",
+      "days_since_last_transplant"
+    ]
+  },
+  {
+    "key": "binary_d_lightgbm",
+    "task": "binary",
+    "model_stage": "d",
+    "algorithm": "lightgbm",
+    "n_output_columns": 354,
+    "n_original_columns": 195,
+    "n_unmatched": 0,
+    "rollup_sum_check_diff": 4.440892098500626e-16,
+    "top_5_original_columns": [
+      "vt_disease_response",
+      "vt_days_to_visit",
+      "m_protein_current",
+      "subject_had_signs_symptoms",
+      "age_at_diagnosis"
+    ]
+  },
+  {
+    "key": "multiclass_a_xgboost",
+    "task": "multiclass",
+    "model_stage": "a",
+    "algorithm": "xgboost",
+    "n_output_columns": 148,
+    "n_original_columns": 78,
+    "n_unmatched": 0,
+    "rollup_sum_check_diff": 1.1920928955078125e-07,
+    "top_5_original_columns": [
+      "vt_disease_response",
+      "m_protein_current",
+      "kappa_flc_current",
+      "lambda_flc_current",
+      "subject_had_signs_symptoms"
+    ]
+  },
+  {
+    "key": "multiclass_d_xgboost",
+    "task": "multiclass",
+    "model_stage": "d",
+    "algorithm": "xgboost",
+    "n_output_columns": 354,
+    "n_original_columns": 195,
+    "n_unmatched": 0,
+    "rollup_sum_check_diff": 0.0,
+    "top_5_original_columns": [
+      "vt_disease_response",
+      "m_protein_current",
+      "m_protein_previous",
+      "vt_days_to_visit",
+      "kappa_flc_current"
+    ]
+  }
+]
