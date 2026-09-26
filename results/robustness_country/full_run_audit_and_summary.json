@@ -1,0 +1,805 @@
+{
+  "audit": {
+    "us_train_val_overlap": [],
+    "us_train_sc_overlap": [],
+    "us_val_sc_overlap": [],
+    "n_us_train_patients": 632,
+    "n_us_val_patients": 139,
+    "n_spain_canada_patients": 116
+  },
+  "tasks": {
+    "binary": {
+      "algorithm": "xgboost",
+      "params": {
+        "n_estimators": 100,
+        "max_depth": 3,
+        "learning_rate": 0.05
+      },
+      "calibration_method_selected_on_us_val": "uncalibrated",
+      "calibration_cross_fit_scores": {
+        "uncalibrated": {
+          "cross_fit_log_loss": 0.3737953087996536,
+          "cross_fit_brier": 0.11451702970671566
+        },
+        "platt": {
+          "cross_fit_log_loss": 0.37886431711064605,
+          "cross_fit_brier": 0.11581080901867753
+        },
+        "isotonic": {
+          "cross_fit_log_loss": 0.38201175957362565,
+          "cross_fit_brier": 0.11500205262228017
+        }
+      },
+      "threshold_selected_on_us_val": 0.25,
+      "n_train": 8630,
+      "n_val": 1911,
+      "n_patients_train": 631,
+      "n_patients_val": 139,
+      "n_test_pooled": 1588,
+      "n_patients_test_pooled": 116,
+      "n_test_spain": 949,
+      "n_patients_test_spain": 80,
+      "n_test_canada": 639,
+      "n_patients_test_canada": 36,
+      "improvement_events_train": 1520,
+      "improvement_events_val": 351,
+      "improvement_events_pooled": 283,
+      "improvement_events_spain": 185,
+      "improvement_events_canada": 98,
+      "us_val_metrics": {
+        "auprc": 0.5246787281791697,
+        "auroc": 0.8049848418438161,
+        "brier_score": 0.11451702564954758,
+        "log_loss": 0.3737953088175062,
+        "sensitivity": 0.6096866096866097,
+        "specificity": 0.8801282051282051,
+        "precision": 0.5336658354114713,
+        "recall": 0.6096866096866097,
+        "f1": 0.5691489361702128,
+        "threshold_used": 0.25,
+        "confusion_matrix": [
+          [
+            1373,
+            187
+          ],
+          [
+            137,
+            214
+          ]
+        ],
+        "n": 1911
+      },
+      "spain_canada_pooled_metrics": {
+        "auprc": 0.45141783139241015,
+        "auroc": 0.7702692823199708,
+        "brier_score": 0.1227898970246315,
+        "log_loss": 0.3960360525972946,
+        "sensitivity": 0.5653710247349824,
+        "specificity": 0.8513409961685824,
+        "precision": 0.4519774011299435,
+        "recall": 0.5653710247349824,
+        "f1": 0.5023547880690737,
+        "threshold_used": 0.25,
+        "confusion_matrix": [
+          [
+            1111,
+            194
+          ],
+          [
+            123,
+            160
+          ]
+        ],
+        "n": 1588
+      },
+      "spain_canada_pooled_bootstrap_ci": {
+        "auprc": {
+          "n_resamples_used": 1000,
+          "mean": 0.4539514187807115,
+          "ci_lower_2.5": 0.40120510521772634,
+          "ci_upper_97.5": 0.5071316410178441
+        },
+        "auroc": {
+          "n_resamples_used": 1000,
+          "mean": 0.7697761717068474,
+          "ci_lower_2.5": 0.7294182147250512,
+          "ci_upper_97.5": 0.8082293462224696
+        },
+        "brier_score": {
+          "n_resamples_used": 1000,
+          "mean": 0.12313871867209673,
+          "ci_lower_2.5": 0.11045166589319706,
+          "ci_upper_97.5": 0.13745946399867534
+        },
+        "sensitivity": {
+          "n_resamples_used": 1000,
+          "mean": 0.5630373609224889,
+          "ci_lower_2.5": 0.4944750719079578,
+          "ci_upper_97.5": 0.6286792557932264
+        },
+        "specificity": {
+          "n_resamples_used": 1000,
+          "mean": 0.8515168739865685,
+          "ci_lower_2.5": 0.8229109768907563,
+          "ci_upper_97.5": 0.8798591878097178
+        }
+      },
+      "spain_only_metrics": {
+        "auprc": 0.4626346621550622,
+        "auroc": 0.7610832036224706,
+        "brier_score": 0.13419847190380096,
+        "log_loss": 0.42592474797843244,
+        "sensitivity": 0.5675675675675675,
+        "specificity": 0.824607329842932,
+        "precision": 0.4393305439330544,
+        "recall": 0.5675675675675675,
+        "f1": 0.49528301886792453,
+        "threshold_used": 0.25,
+        "confusion_matrix": [
+          [
+            630,
+            134
+          ],
+          [
+            80,
+            105
+          ]
+        ],
+        "n": 949
+      },
+      "spain_only_bootstrap_ci": {
+        "auprc": {
+          "n_resamples_used": 1000,
+          "mean": 0.4689899127320671,
+          "ci_lower_2.5": 0.40663715399934147,
+          "ci_upper_97.5": 0.5318235836187307
+        },
+        "auroc": {
+          "n_resamples_used": 1000,
+          "mean": 0.7619337424357395,
+          "ci_lower_2.5": 0.717981426413781,
+          "ci_upper_97.5": 0.8089678337432127
+        },
+        "brier_score": {
+          "n_resamples_used": 1000,
+          "mean": 0.13434573195129634,
+          "ci_lower_2.5": 0.1152140561491251,
+          "ci_upper_97.5": 0.15558229498565196
+        },
+        "sensitivity": {
+          "n_resamples_used": 1000,
+          "mean": 0.5698236889544275,
+          "ci_lower_2.5": 0.4895596590909091,
+          "ci_upper_97.5": 0.6564879612787865
+        },
+        "specificity": {
+          "n_resamples_used": 1000,
+          "mean": 0.8240986071895398,
+          "ci_lower_2.5": 0.7868847380502569,
+          "ci_upper_97.5": 0.8627877128953771
+        }
+      },
+      "canada_only_metrics": {
+        "auprc": 0.4434521413348185,
+        "auroc": 0.7725017918442794,
+        "brier_score": 0.10584665089845657,
+        "log_loss": 0.35164736415175485,
+        "sensitivity": 0.5612244897959183,
+        "specificity": 0.88909426987061,
+        "precision": 0.4782608695652174,
+        "recall": 0.5612244897959183,
+        "f1": 0.5164319248826291,
+        "threshold_used": 0.25,
+        "confusion_matrix": [
+          [
+            481,
+            60
+          ],
+          [
+            43,
+            55
+          ]
+        ],
+        "n": 639
+      },
+      "canada_only_bootstrap_ci": {
+        "auprc": {
+          "n_resamples_used": 1000,
+          "mean": 0.45203600434318597,
+          "ci_lower_2.5": 0.3690874299741896,
+          "ci_upper_97.5": 0.541335769061859
+        },
+        "auroc": {
+          "n_resamples_used": 1000,
+          "mean": 0.7745066745801042,
+          "ci_lower_2.5": 0.6997464411817287,
+          "ci_upper_97.5": 0.8472556352367987
+        },
+        "brier_score": {
+          "n_resamples_used": 1000,
+          "mean": 0.10531147951632738,
+          "ci_lower_2.5": 0.08755217362195253,
+          "ci_upper_97.5": 0.12498669084161519
+        },
+        "sensitivity": {
+          "n_resamples_used": 1000,
+          "mean": 0.5665819925289395,
+          "ci_lower_2.5": 0.4433690130624093,
+          "ci_upper_97.5": 0.6868686868686869
+        },
+        "specificity": {
+          "n_resamples_used": 1000,
+          "mean": 0.8889567405322396,
+          "ci_lower_2.5": 0.8515755838845539,
+          "ci_upper_97.5": 0.9201426630434782
+        }
+      },
+      "unseen_category_audit": {
+        "ig_heavy_chain_type": {
+          "unseen_categories": [
+            "igd"
+          ],
+          "n_eval_rows_affected": 3
+        },
+        "current_regimen_name": {
+          "unseen_categories": [
+            "bortezomib_cyclophosphamide_prednisone",
+            "bortezomib_daratumumab_melphalan_prednisone",
+            "bortezomib_daratumumab_thalidomide_dexamethasone",
+            "bortezomib_melphalan_dexamethasone_prednisone",
+            "bortezomib_pomalidomide",
+            "bortezomib_selinexor_dexamethasone",
+            "bortezomib_thalidomide_clarithromycin_dexamethasone",
+            "carmustine_cyclophosphamide_melphalan_prednisone_vincristine",
+            "clarithromycin_cyclophosphamide_thalidomide_dexamethasone",
+            "cyclophosphamide_daratumumab_dexamethasone",
+            "cyclophosphamide_daratumumab_lenalidomide_dexamethasone",
+            "cyclophosphamide_daratumumab_pomalidomide_dexamethasone",
+            "cyclophosphamide_lenalidomide_dexamethasone_prednisone",
+            "cyclophosphamide_prednisone",
+            "filanesib_pomalidomide_dexamethasone",
+            "isatuximab_pomalidomide",
+            "isatuximab_pomalidomide_dexamethasone"
+          ],
+          "n_eval_rows_affected": 57
+        },
+        "current_regimen_categories": {
+          "unseen_categories": [
+            "cd38_chemo_steroid",
+            "cd38_imid_chemo_steroid",
+            "chemo_chemo_chemo_chemo_steroid",
+            "imid_antibiotic_chemo_steroid",
+            "imid_cd38_steroid",
+            "imid_chemo_steroid_steroid",
+            "imid_other_steroid",
+            "pi_cd38_chemo_steroid"
+          ],
+          "n_eval_rows_affected": 26
+        }
+      }
+    },
+    "multiclass": {
+      "algorithm": "xgboost",
+      "params": {
+        "n_estimators": 200,
+        "max_depth": 4,
+        "learning_rate": 0.05
+      },
+      "calibration_method_selected_on_us_val": "uncalibrated",
+      "calibration_cross_fit_scores": {
+        "uncalibrated": {
+          "cross_fit_log_loss": 0.9156658679488656
+        },
+        "temperature": {
+          "cross_fit_log_loss": 0.9156757021020432
+        }
+      },
+      "temperature_fitted_on_us_val": null,
+      "n_train": 9483,
+      "n_val": 2076,
+      "n_patients_train": 632,
+      "n_patients_val": 139,
+      "n_test_pooled": 1694,
+      "n_patients_test_pooled": 116,
+      "n_test_spain": 1034,
+      "n_patients_test_spain": 80,
+      "n_test_canada": 660,
+      "n_patients_test_canada": 36,
+      "class_order": [
+        "progressive_disease",
+        "stable_disease",
+        "partial_response",
+        "very_good_partial_response",
+        "complete_response",
+        "stringent_complete_response"
+      ],
+      "us_val_metrics": {
+        "accuracy_secondary": 0.6931599229287091,
+        "macro_f1": 0.6474939063506239,
+        "macro_precision": 0.6567925637156489,
+        "macro_recall": 0.6425411679833753,
+        "weighted_f1": 0.6901924761100965,
+        "per_class": {
+          "progressive_disease": {
+            "precision": 0.4114285714285714,
+            "recall": 0.3090128755364807,
+            "f1": 0.35294117647058826,
+            "support": 233
+          },
+          "stable_disease": {
+            "precision": 0.5680473372781065,
+            "recall": 0.6056782334384858,
+            "f1": 0.5862595419847328,
+            "support": 317
+          },
+          "partial_response": {
+            "precision": 0.4874551971326165,
+            "recall": 0.5551020408163265,
+            "f1": 0.5190839694656488,
+            "support": 245
+          },
+          "very_good_partial_response": {
+            "precision": 0.7976047904191617,
+            "recall": 0.8345864661654135,
+            "f1": 0.8156766687078996,
+            "support": 798
+          },
+          "complete_response": {
+            "precision": 0.8111888111888111,
+            "recall": 0.7631578947368421,
+            "f1": 0.7864406779661017,
+            "support": 304
+          },
+          "stringent_complete_response": {
+            "precision": 0.8650306748466258,
+            "recall": 0.7877094972067039,
+            "f1": 0.8245614035087719,
+            "support": 179
+          }
+        },
+        "confusion_matrix": [
+          [
+            72,
+            64,
+            31,
+            49,
+            11,
+            6
+          ],
+          [
+            48,
+            192,
+            44,
+            26,
+            5,
+            2
+          ],
+          [
+            32,
+            42,
+            136,
+            31,
+            3,
+            1
+          ],
+          [
+            19,
+            34,
+            58,
+            666,
+            19,
+            2
+          ],
+          [
+            2,
+            6,
+            5,
+            48,
+            232,
+            11
+          ],
+          [
+            2,
+            0,
+            5,
+            15,
+            16,
+            141
+          ]
+        ],
+        "n": 2076
+      },
+      "spain_canada_pooled_metrics": {
+        "accuracy_secondary": 0.6936245572609209,
+        "macro_f1": 0.6441260760785514,
+        "macro_precision": 0.6477682061094048,
+        "macro_recall": 0.6450035395510306,
+        "weighted_f1": 0.6916064854728586,
+        "per_class": {
+          "progressive_disease": {
+            "precision": 0.5505050505050505,
+            "recall": 0.42745098039215684,
+            "f1": 0.48123620309050774,
+            "support": 255
+          },
+          "stable_disease": {
+            "precision": 0.4375,
+            "recall": 0.504,
+            "f1": 0.4684014869888476,
+            "support": 125
+          },
+          "partial_response": {
+            "precision": 0.589041095890411,
+            "recall": 0.669260700389105,
+            "f1": 0.6265938069216758,
+            "support": 257
+          },
+          "very_good_partial_response": {
+            "precision": 0.7944055944055944,
+            "recall": 0.8172661870503597,
+            "f1": 0.8056737588652483,
+            "support": 695
+          },
+          "complete_response": {
+            "precision": 0.7698744769874477,
+            "recall": 0.7272727272727273,
+            "f1": 0.7479674796747967,
+            "support": 253
+          },
+          "stringent_complete_response": {
+            "precision": 0.7452830188679245,
+            "recall": 0.7247706422018348,
+            "f1": 0.7348837209302326,
+            "support": 109
+          }
+        },
+        "confusion_matrix": [
+          [
+            109,
+            44,
+            37,
+            53,
+            10,
+            2
+          ],
+          [
+            33,
+            63,
+            15,
+            12,
+            1,
+            1
+          ],
+          [
+            37,
+            21,
+            172,
+            26,
+            1,
+            0
+          ],
+          [
+            17,
+            14,
+            66,
+            568,
+            24,
+            6
+          ],
+          [
+            1,
+            1,
+            2,
+            47,
+            184,
+            18
+          ],
+          [
+            1,
+            1,
+            0,
+            9,
+            19,
+            79
+          ]
+        ],
+        "n": 1694
+      },
+      "spain_canada_pooled_bootstrap_ci": {
+        "macro_f1": {
+          "n_resamples_used": 1000,
+          "mean": 0.6383979929871193,
+          "ci_lower_2.5": 0.5978093670339437,
+          "ci_upper_97.5": 0.675673080678654
+        },
+        "weighted_f1": {
+          "n_resamples_used": 1000,
+          "mean": 0.6918228833828148,
+          "ci_lower_2.5": 0.6590907596368105,
+          "ci_upper_97.5": 0.7185094863480189
+        },
+        "accuracy_secondary": {
+          "n_resamples_used": 1000,
+          "mean": 0.6938118870194767,
+          "ci_lower_2.5": 0.6616351436981317,
+          "ci_upper_97.5": 0.7205413905330433
+        }
+      },
+      "spain_only_metrics": {
+        "accuracy_secondary": 0.660541586073501,
+        "macro_f1": 0.6387583536643895,
+        "macro_precision": 0.6431095679616814,
+        "macro_recall": 0.6389888642019991,
+        "weighted_f1": 0.6577553056131872,
+        "per_class": {
+          "progressive_disease": {
+            "precision": 0.58,
+            "recall": 0.45549738219895286,
+            "f1": 0.5102639296187683,
+            "support": 191
+          },
+          "stable_disease": {
+            "precision": 0.46601941747572817,
+            "recall": 0.4897959183673469,
+            "f1": 0.47761194029850745,
+            "support": 98
+          },
+          "partial_response": {
+            "precision": 0.5927835051546392,
+            "recall": 0.7012195121951219,
+            "f1": 0.6424581005586593,
+            "support": 164
+          },
+          "very_good_partial_response": {
+            "precision": 0.736986301369863,
+            "recall": 0.7752161383285303,
+            "f1": 0.7556179775280899,
+            "support": 347
+          },
+          "complete_response": {
+            "precision": 0.7299270072992701,
+            "recall": 0.684931506849315,
+            "f1": 0.7067137809187279,
+            "support": 146
+          },
+          "stringent_complete_response": {
+            "precision": 0.7529411764705882,
+            "recall": 0.7272727272727273,
+            "f1": 0.7398843930635838,
+            "support": 88
+          }
+        },
+        "confusion_matrix": [
+          [
+            87,
+            30,
+            28,
+            37,
+            7,
+            2
+          ],
+          [
+            26,
+            48,
+            11,
+            12,
+            1,
+            0
+          ],
+          [
+            23,
+            13,
+            115,
+            13,
+            0,
+            0
+          ],
+          [
+            13,
+            10,
+            39,
+            269,
+            13,
+            3
+          ],
+          [
+            1,
+            1,
+            1,
+            27,
+            100,
+            16
+          ],
+          [
+            0,
+            1,
+            0,
+            7,
+            16,
+            64
+          ]
+        ],
+        "n": 1034
+      },
+      "spain_only_bootstrap_ci": {
+        "macro_f1": {
+          "n_resamples_used": 1000,
+          "mean": 0.6317623330943145,
+          "ci_lower_2.5": 0.5890811161266305,
+          "ci_upper_97.5": 0.6743406707601357
+        },
+        "weighted_f1": {
+          "n_resamples_used": 1000,
+          "mean": 0.6573879958489828,
+          "ci_lower_2.5": 0.6175067124804794,
+          "ci_upper_97.5": 0.69448657143144
+        },
+        "accuracy_secondary": {
+          "n_resamples_used": 1000,
+          "mean": 0.6602537658844131,
+          "ci_lower_2.5": 0.620748780217343,
+          "ci_upper_97.5": 0.696564336040823
+        }
+      },
+      "canada_only_metrics": {
+        "accuracy_secondary": 0.7454545454545455,
+        "macro_f1": 0.6342898736710034,
+        "macro_precision": 0.6329867475445462,
+        "macro_recall": 0.6451227711530892,
+        "weighted_f1": 0.7450231986447212,
+        "per_class": {
+          "progressive_disease": {
+            "precision": 0.4583333333333333,
+            "recall": 0.34375,
+            "f1": 0.39285714285714285,
+            "support": 64
+          },
+          "stable_disease": {
+            "precision": 0.36585365853658536,
+            "recall": 0.5555555555555556,
+            "f1": 0.4411764705882353,
+            "support": 27
+          },
+          "partial_response": {
+            "precision": 0.5816326530612245,
+            "recall": 0.6129032258064516,
+            "f1": 0.5968586387434555,
+            "support": 93
+          },
+          "very_good_partial_response": {
+            "precision": 0.8542857142857143,
+            "recall": 0.8591954022988506,
+            "f1": 0.8567335243553008,
+            "support": 348
+          },
+          "complete_response": {
+            "precision": 0.8235294117647058,
+            "recall": 0.7850467289719626,
+            "f1": 0.8038277511961722,
+            "support": 107
+          },
+          "stringent_complete_response": {
+            "precision": 0.7142857142857143,
+            "recall": 0.7142857142857143,
+            "f1": 0.7142857142857143,
+            "support": 21
+          }
+        },
+        "confusion_matrix": [
+          [
+            22,
+            14,
+            9,
+            16,
+            3,
+            0
+          ],
+          [
+            7,
+            15,
+            4,
+            0,
+            0,
+            1
+          ],
+          [
+            14,
+            8,
+            57,
+            13,
+            1,
+            0
+          ],
+          [
+            4,
+            4,
+            27,
+            299,
+            11,
+            3
+          ],
+          [
+            0,
+            0,
+            1,
+            20,
+            84,
+            2
+          ],
+          [
+            1,
+            0,
+            0,
+            2,
+            3,
+            15
+          ]
+        ],
+        "n": 660
+      },
+      "canada_only_bootstrap_ci": {
+        "macro_f1": {
+          "n_resamples_used": 1000,
+          "mean": 0.5991325022873097,
+          "ci_lower_2.5": 0.49155875753526396,
+          "ci_upper_97.5": 0.68604334102697
+        },
+        "weighted_f1": {
+          "n_resamples_used": 1000,
+          "mean": 0.7456094545502542,
+          "ci_lower_2.5": 0.6953403628040322,
+          "ci_upper_97.5": 0.792023747313063
+        },
+        "accuracy_secondary": {
+          "n_resamples_used": 1000,
+          "mean": 0.7459186159613437,
+          "ci_lower_2.5": 0.6952981085526316,
+          "ci_upper_97.5": 0.7915347741691128
+        }
+      },
+      "unseen_category_audit": {
+        "ig_heavy_chain_type": {
+          "unseen_categories": [
+            "igd"
+          ],
+          "n_eval_rows_affected": 3
+        },
+        "current_regimen_name": {
+          "unseen_categories": [
+            "bortezomib_cyclophosphamide_prednisone",
+            "bortezomib_daratumumab_melphalan_prednisone",
+            "bortezomib_daratumumab_thalidomide_dexamethasone",
+            "bortezomib_melphalan_dexamethasone_prednisone",
+            "bortezomib_pomalidomide",
+            "bortezomib_selinexor_dexamethasone",
+            "bortezomib_thalidomide_clarithromycin_dexamethasone",
+            "carmustine_cyclophosphamide_melphalan_prednisone_vincristine",
+            "clarithromycin_cyclophosphamide_thalidomide_dexamethasone",
+            "cyclophosphamide_daratumumab_dexamethasone",
+            "cyclophosphamide_daratumumab_lenalidomide_dexamethasone",
+            "cyclophosphamide_daratumumab_pomalidomide_dexamethasone",
+            "cyclophosphamide_lenalidomide_dexamethasone_prednisone",
+            "cyclophosphamide_prednisone",
+            "filanesib_pomalidomide_dexamethasone",
+            "isatuximab_pomalidomide",
+            "isatuximab_pomalidomide_dexamethasone"
+          ],
+          "n_eval_rows_affected": 57
+        },
+        "current_regimen_categories": {
+          "unseen_categories": [
+            "cd38_chemo_steroid",
+            "cd38_imid_chemo_steroid",
+            "chemo_chemo_chemo_chemo_steroid",
+            "imid_antibiotic_chemo_steroid",
+            "imid_cd38_steroid",
+            "imid_chemo_steroid_steroid",
+            "imid_other_steroid",
+            "pi_cd38_chemo_steroid"
+          ],
+          "n_eval_rows_affected": 26
+        }
+      }
+    }
+  }
+}

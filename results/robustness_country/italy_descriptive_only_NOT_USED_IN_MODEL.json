@@ -1,0 +1,26 @@
+{
+  "status": "DESCRIPTIVE ONLY - Italy was excluded entirely from fitting and evaluation in this robustness test",
+  "reason": "Read-only audit (see conversation) found Italy is a single site (institution_id 600), enrolled only 2015-2016, using a non-standard followup_1-4 visit-labeling scheme (vs month_3-month_96 elsewhere), with ~3x longer visit gaps (mean 350 vs ~110-118 days elsewhere) and a site-concentrated same-day-duplicate-record pattern (39 rows / 20 patients) that the pipeline's existing, pre-documented zero/negative-time-gap filter removes. This produces an anomalous response-class distribution (0 occurrences of partial_response or stable_disease as a Vt+1 outcome, a 78.7% raw 'improvement' rate vs 15-20% elsewhere) that reflects assessment sparsity/density, not a coding bug and not necessarily a genuine country-level practice-pattern difference in treatment response.",
+  "raw_visit_records": {
+    "total_rows_in_followup_deid": 567,
+    "valid_six_class_responses": 386,
+    "patients_with_0_valid_visits": 4,
+    "patients_with_1_valid_visit": 26,
+    "patients_with_2plus_valid_visits": 142
+  },
+  "pairing": {
+    "expected_pairs_before_cleaning": 218,
+    "pairs_dropped_by_zero_negative_gap_filter": 20,
+    "pairs_retained_in_final_visit_pairs_with_rna": 198,
+    "note": "all 20 dropped pairs traced to patients with same-day duplicate valid-response records, unique to Italy in this dataset"
+  },
+  "descriptive_stats_final_table": {
+    "patients": 138,
+    "total_pairs": 198,
+    "eligible_binary_pairs_vt_not_sCR": 169,
+    "improvement_events": 133,
+    "improvement_rate_pct": 78.7,
+    "missing_vt1_response_classes": ["partial_response", "stable_disease"]
+  },
+  "recommendation": "Do not merge into a 'non-US' aggregate or treat this rate as comparable to Spain/Canada/US without further investigation of the underlying visit-schedule difference."
+}
