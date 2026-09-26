@@ -1,0 +1,270 @@
+{
+  "algorithm": "xgboost",
+  "params": {
+    "n_estimators": 100,
+    "max_depth": 3,
+    "learning_rate": 0.05
+  },
+  "calibration_method_selected_on_us_val": "uncalibrated",
+  "calibration_cross_fit_scores": {
+    "uncalibrated": {
+      "cross_fit_log_loss": 0.3737953087996536,
+      "cross_fit_brier": 0.11451702970671566
+    },
+    "platt": {
+      "cross_fit_log_loss": 0.37886431711064605,
+      "cross_fit_brier": 0.11581080901867753
+    },
+    "isotonic": {
+      "cross_fit_log_loss": 0.38201175957362565,
+      "cross_fit_brier": 0.11500205262228017
+    }
+  },
+  "threshold_selected_on_us_val": 0.25,
+  "n_train": 8630,
+  "n_val": 1911,
+  "n_patients_train": 631,
+  "n_patients_val": 139,
+  "n_test_pooled": 1588,
+  "n_patients_test_pooled": 116,
+  "n_test_spain": 949,
+  "n_patients_test_spain": 80,
+  "n_test_canada": 639,
+  "n_patients_test_canada": 36,
+  "improvement_events_train": 1520,
+  "improvement_events_val": 351,
+  "improvement_events_pooled": 283,
+  "improvement_events_spain": 185,
+  "improvement_events_canada": 98,
+  "us_val_metrics": {
+    "auprc": 0.5246787281791697,
+    "auroc": 0.8049848418438161,
+    "brier_score": 0.11451702564954758,
+    "log_loss": 0.3737953088175062,
+    "sensitivity": 0.6096866096866097,
+    "specificity": 0.8801282051282051,
+    "precision": 0.5336658354114713,
+    "recall": 0.6096866096866097,
+    "f1": 0.5691489361702128,
+    "threshold_used": 0.25,
+    "confusion_matrix": [
+      [
+        1373,
+        187
+      ],
+      [
+        137,
+        214
+      ]
+    ],
+    "n": 1911
+  },
+  "spain_canada_pooled_metrics": {
+    "auprc": 0.45141783139241015,
+    "auroc": 0.7702692823199708,
+    "brier_score": 0.1227898970246315,
+    "log_loss": 0.3960360525972946,
+    "sensitivity": 0.5653710247349824,
+    "specificity": 0.8513409961685824,
+    "precision": 0.4519774011299435,
+    "recall": 0.5653710247349824,
+    "f1": 0.5023547880690737,
+    "threshold_used": 0.25,
+    "confusion_matrix": [
+      [
+        1111,
+        194
+      ],
+      [
+        123,
+        160
+      ]
+    ],
+    "n": 1588
+  },
+  "spain_canada_pooled_bootstrap_ci": {
+    "auprc": {
+      "n_resamples_used": 1000,
+      "mean": 0.4539514187807115,
+      "ci_lower_2.5": 0.40120510521772634,
+      "ci_upper_97.5": 0.5071316410178441
+    },
+    "auroc": {
+      "n_resamples_used": 1000,
+      "mean": 0.7697761717068474,
+      "ci_lower_2.5": 0.7294182147250512,
+      "ci_upper_97.5": 0.8082293462224696
+    },
+    "brier_score": {
+      "n_resamples_used": 1000,
+      "mean": 0.12313871867209673,
+      "ci_lower_2.5": 0.11045166589319706,
+      "ci_upper_97.5": 0.13745946399867534
+    },
+    "sensitivity": {
+      "n_resamples_used": 1000,
+      "mean": 0.5630373609224889,
+      "ci_lower_2.5": 0.4944750719079578,
+      "ci_upper_97.5": 0.6286792557932264
+    },
+    "specificity": {
+      "n_resamples_used": 1000,
+      "mean": 0.8515168739865685,
+      "ci_lower_2.5": 0.8229109768907563,
+      "ci_upper_97.5": 0.8798591878097178
+    }
+  },
+  "spain_only_metrics": {
+    "auprc": 0.4626346621550622,
+    "auroc": 0.7610832036224706,
+    "brier_score": 0.13419847190380096,
+    "log_loss": 0.42592474797843244,
+    "sensitivity": 0.5675675675675675,
+    "specificity": 0.824607329842932,
+    "precision": 0.4393305439330544,
+    "recall": 0.5675675675675675,
+    "f1": 0.49528301886792453,
+    "threshold_used": 0.25,
+    "confusion_matrix": [
+      [
+        630,
+        134
+      ],
+      [
+        80,
+        105
+      ]
+    ],
+    "n": 949
+  },
+  "spain_only_bootstrap_ci": {
+    "auprc": {
+      "n_resamples_used": 1000,
+      "mean": 0.4689899127320671,
+      "ci_lower_2.5": 0.40663715399934147,
+      "ci_upper_97.5": 0.5318235836187307
+    },
+    "auroc": {
+      "n_resamples_used": 1000,
+      "mean": 0.7619337424357395,
+      "ci_lower_2.5": 0.717981426413781,
+      "ci_upper_97.5": 0.8089678337432127
+    },
+    "brier_score": {
+      "n_resamples_used": 1000,
+      "mean": 0.13434573195129634,
+      "ci_lower_2.5": 0.1152140561491251,
+      "ci_upper_97.5": 0.15558229498565196
+    },
+    "sensitivity": {
+      "n_resamples_used": 1000,
+      "mean": 0.5698236889544275,
+      "ci_lower_2.5": 0.4895596590909091,
+      "ci_upper_97.5": 0.6564879612787865
+    },
+    "specificity": {
+      "n_resamples_used": 1000,
+      "mean": 0.8240986071895398,
+      "ci_lower_2.5": 0.7868847380502569,
+      "ci_upper_97.5": 0.8627877128953771
+    }
+  },
+  "canada_only_metrics": {
+    "auprc": 0.4434521413348185,
+    "auroc": 0.7725017918442794,
+    "brier_score": 0.10584665089845657,
+    "log_loss": 0.35164736415175485,
+    "sensitivity": 0.5612244897959183,
+    "specificity": 0.88909426987061,
+    "precision": 0.4782608695652174,
+    "recall": 0.5612244897959183,
+    "f1": 0.5164319248826291,
+    "threshold_used": 0.25,
+    "confusion_matrix": [
+      [
+        481,
+        60
+      ],
+      [
+        43,
+        55
+      ]
+    ],
+    "n": 639
+  },
+  "canada_only_bootstrap_ci": {
+    "auprc": {
+      "n_resamples_used": 1000,
+      "mean": 0.45203600434318597,
+      "ci_lower_2.5": 0.3690874299741896,
+      "ci_upper_97.5": 0.541335769061859
+    },
+    "auroc": {
+      "n_resamples_used": 1000,
+      "mean": 0.7745066745801042,
+      "ci_lower_2.5": 0.6997464411817287,
+      "ci_upper_97.5": 0.8472556352367987
+    },
+    "brier_score": {
+      "n_resamples_used": 1000,
+      "mean": 0.10531147951632738,
+      "ci_lower_2.5": 0.08755217362195253,
+      "ci_upper_97.5": 0.12498669084161519
+    },
+    "sensitivity": {
+      "n_resamples_used": 1000,
+      "mean": 0.5665819925289395,
+      "ci_lower_2.5": 0.4433690130624093,
+      "ci_upper_97.5": 0.6868686868686869
+    },
+    "specificity": {
+      "n_resamples_used": 1000,
+      "mean": 0.8889567405322396,
+      "ci_lower_2.5": 0.8515755838845539,
+      "ci_upper_97.5": 0.9201426630434782
+    }
+  },
+  "unseen_category_audit": {
+    "ig_heavy_chain_type": {
+      "unseen_categories": [
+        "igd"
+      ],
+      "n_eval_rows_affected": 3
+    },
+    "current_regimen_name": {
+      "unseen_categories": [
+        "bortezomib_cyclophosphamide_prednisone",
+        "bortezomib_daratumumab_melphalan_prednisone",
+        "bortezomib_daratumumab_thalidomide_dexamethasone",
+        "bortezomib_melphalan_dexamethasone_prednisone",
+        "bortezomib_pomalidomide",
+        "bortezomib_selinexor_dexamethasone",
+        "bortezomib_thalidomide_clarithromycin_dexamethasone",
+        "carmustine_cyclophosphamide_melphalan_prednisone_vincristine",
+        "clarithromycin_cyclophosphamide_thalidomide_dexamethasone",
+        "cyclophosphamide_daratumumab_dexamethasone",
+        "cyclophosphamide_daratumumab_lenalidomide_dexamethasone",
+        "cyclophosphamide_daratumumab_pomalidomide_dexamethasone",
+        "cyclophosphamide_lenalidomide_dexamethasone_prednisone",
+        "cyclophosphamide_prednisone",
+        "filanesib_pomalidomide_dexamethasone",
+        "isatuximab_pomalidomide",
+        "isatuximab_pomalidomide_dexamethasone"
+      ],
+      "n_eval_rows_affected": 57
+    },
+    "current_regimen_categories": {
+      "unseen_categories": [
+        "cd38_chemo_steroid",
+        "cd38_imid_chemo_steroid",
+        "chemo_chemo_chemo_chemo_steroid",
+        "imid_antibiotic_chemo_steroid",
+        "imid_cd38_steroid",
+        "imid_chemo_steroid_steroid",
+        "imid_other_steroid",
+        "pi_cd38_chemo_steroid"
+      ],
+      "n_eval_rows_affected": 26
+    }
+  }
+}
