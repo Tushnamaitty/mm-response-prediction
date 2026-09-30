@@ -1,0 +1,19 @@
+task,model,group,macro_f1_mean_over_repeats,note
+multiclass,C,all,0.65433345,DESCRIPTIVE ONLY (unstable in subgroups); not bootstrapped
+multiclass,C,on_pi,0.62360454,DESCRIPTIVE ONLY (unstable in subgroups); not bootstrapped
+multiclass,C,not_pi,0.66583643,DESCRIPTIVE ONLY (unstable in subgroups); not bootstrapped
+multiclass,C,on_imid,0.66038531,DESCRIPTIVE ONLY (unstable in subgroups); not bootstrapped
+multiclass,C,not_imid,0.6384716,DESCRIPTIVE ONLY (unstable in subgroups); not bootstrapped
+multiclass,C,on_steroid,0.63248377,DESCRIPTIVE ONLY (unstable in subgroups); not bootstrapped
+multiclass,C,not_steroid,0.65668919,DESCRIPTIVE ONLY (unstable in subgroups); not bootstrapped
+multiclass,C,on_cd38,0.66663814,DESCRIPTIVE ONLY (unstable in subgroups); not bootstrapped
+multiclass,C,not_cd38,0.65179229,DESCRIPTIVE ONLY (unstable in subgroups); not bootstrapped
+multiclass,D,all,0.64972554,DESCRIPTIVE ONLY (unstable in subgroups); not bootstrapped
+multiclass,D,on_pi,0.61389343,DESCRIPTIVE ONLY (unstable in subgroups); not bootstrapped
+multiclass,D,not_pi,0.66337436,DESCRIPTIVE ONLY (unstable in subgroups); not bootstrapped
+multiclass,D,on_imid,0.65856296,DESCRIPTIVE ONLY (unstable in subgroups); not bootstrapped
+multiclass,D,not_imid,0.63246579,DESCRIPTIVE ONLY (unstable in subgroups); not bootstrapped
+multiclass,D,on_steroid,0.62833391,DESCRIPTIVE ONLY (unstable in subgroups); not bootstrapped
+multiclass,D,not_steroid,0.65238008,DESCRIPTIVE ONLY (unstable in subgroups); not bootstrapped
+multiclass,D,on_cd38,0.65225475,DESCRIPTIVE ONLY (unstable in subgroups); not bootstrapped
+multiclass,D,not_cd38,0.64775013,DESCRIPTIVE ONLY (unstable in subgroups); not bootstrapped

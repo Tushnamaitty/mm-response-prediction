@@ -1,0 +1,3 @@
+family,role,universe_rows,universe_patients,n_pairs,n_patients_in_pairs,n_informative_pairs,n_concordant_pairs,n_informative_patients,informative_S2_rna_age_gap_le_365d,pairs_trainval_trainval,pairs_test_test,pairs_cross_split,informative_trainval_trainval,informative_test_test,median_rna_age_gap_days_informative,concordant_both_improved,concordant_both_not_improved
+ordinal,PRIMARY,9172,707,259,518,120,139,240,86,184,5,70,80,4,173.0,,
+binary,SECONDARY,8261,703,261,522,63,198,126,43,181,6,74,40,2,123.0,22.0,176.0

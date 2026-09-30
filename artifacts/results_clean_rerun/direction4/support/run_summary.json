@@ -1,0 +1,69 @@
+{
+  "label": "DIRECTION 4 STEP 1: TRAJECTORY CONSTRUCTION AND SUPPORT AUDIT (no models, no RNA values, no association)",
+  "smoke": false,
+  "completed_utc": "2026-09-30T09:44:40.878460+00:00",
+  "runtime_seconds": 2.0,
+  "state_definition": "previous row's vt_disease_response -> current row's vt_disease_response (PD < SD < PR < VGPR < CR < sCR); first row = no_history; audited continuity rows = ambiguous",
+  "ordering": "within patient by vt_days_to_visit; vt1_days_to_visit used only to verify ordering/continuity",
+  "rna_availability_definition": "days_since_rna_sample notna (existing project definition); RNA values never used",
+  "leakage_tests": {
+    "truncation_test": {
+      "rows_checked": 13445,
+      "mismatches": 0,
+      "patients_limit": null
+    },
+    "assignment_table_excludes_outcomes_and_vt1": true,
+    "trajectory_source_fields_in_model_c": [
+      "vt_disease_response",
+      "vt_days_to_visit"
+    ]
+  },
+  "audited_counts_reproduced": true,
+  "state_counts": {
+    "all": {
+      "improving": 2057,
+      "stable": 8752,
+      "worsening": 1611,
+      "no_history": 1025,
+      "ambiguous": 6
+    },
+    "all_binary_eligible": {
+      "improving": 1817,
+      "stable": 7855,
+      "worsening": 1611,
+      "no_history": 1013,
+      "ambiguous": 2
+    },
+    "rna_multiclass": {
+      "improving": 1421,
+      "stable": 5957,
+      "worsening": 1100,
+      "no_history": 690,
+      "ambiguous": 5
+    },
+    "rna_binary": {
+      "improving": 1237,
+      "stable": 5242,
+      "worsening": 1100,
+      "no_history": 682,
+      "ambiguous": 1
+    }
+  },
+  "ambiguous_rows_excluded": 6,
+  "continuity": {
+    "n_rows": 13451,
+    "n_patients": 1025,
+    "n_duplicate_patient_day": 0,
+    "n_duplicate_patient_visit": 0,
+    "order_by_vt1_identical_to_order_by_vt": true,
+    "n_first_rows": 1025,
+    "n_links": 12426,
+    "n_day_mismatch_links": 0,
+    "n_label_conflict_links": 6,
+    "n_visit_id_mismatch_links": 6,
+    "label_conflict_set_equals_visit_id_mismatch_set": true
+  },
+  "support_rule_vs_design_expectation_mismatches": [],
+  "assignments_sha256": "5e5ddffdf53d6ab7910b3b4b9674b71753c09ec080d519c33a2b0bffcccbc284",
+  "note": "Step 1 only: no predictive model and no molecular association were run."
+}
