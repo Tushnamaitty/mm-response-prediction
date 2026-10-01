@@ -1,0 +1,34 @@
+{
+  "caveats": [
+    "post-hoc exploratory analysis",
+    "same project data as D1-D4 and pooled D2/D3 findings",
+    "patient bootstrap covers evaluation sampling, not model-training variability",
+    "primary comparator uses minimally floored locked Model-C probabilities"
+  ],
+  "completed_utc": "2026-10-01T01:33:30.795571+00:00",
+  "config_sha256": "da3beefd17c178b5f612b3dfa14d6e6d53ba197d0da4d8da22eb3f74b5520bc6",
+  "decision": "SUPPORTED (EXPLORATORY)",
+  "interpretation_if_failure": "The observed RNA association does not translate into detected incremental predictive gain under this regularized model.",
+  "label": "POST-HOC EXPLORATORY low-variance RNA incremental-value analysis",
+  "n_null_delta_le_observed": 0,
+  "n_permutations": 200,
+  "observed_delta_rps": -0.00033976481221190634,
+  "one_sided_permutation_p": 0.004975124378109453,
+  "patient_bootstrap": {
+    "ci_lower": -0.0005828738306286647,
+    "ci_upper": -0.00010691985731233264,
+    "mean": -0.0003412101099964513,
+    "n_bootstrap": 2000,
+    "seed": 42
+  },
+  "permutation_null_mean": 2.3693657937558647e-05,
+  "permutation_null_p2_5": -1.3703337406258964e-05,
+  "permutation_null_p97_5": 7.546186428913949e-05,
+  "permutation_null_sd": 2.407445608794931e-05,
+  "stopping_rule": "Stop after this result; no alternative penalties, feature sets, models, subgroups, freshness variants, binary task, or endpoints.",
+  "success_components": {
+    "bootstrap_ci_upper_below_zero": true,
+    "observed_delta_negative": true,
+    "permutation_p_le_0.05": true
+  }
+}

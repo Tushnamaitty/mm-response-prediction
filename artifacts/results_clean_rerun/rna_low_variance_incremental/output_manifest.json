@@ -1,0 +1,17 @@
+{
+  "combined_sha256": "af0628eaaf54bca15f63ae67e4e7a25ff16636e2087143e9fcb613b906f50e97",
+  "files": {
+    "frozen_config.json": "8243ae2c9c496ddb81fb331f30f263883f95c7818e5cceaf4ebdbcd99cc9cbb7",
+    "gates_report.json": "4b3b444cb4c46246b5c8577ab2f2337f1a7cc7e23468455b5c9303703c0f7ca2",
+    "observed_predictions.csv": "c629649915b900c04152c6f24bf498c1d214715060755827d46dce626ea42523",
+    "observed_summary.json": "9cbbbc42b69ea214f3bb5cc49fb26cd5cf874c895a7d610eb8e4659e03f8d8d7",
+    "permutation_null.csv": "03ad4a2330d4f347c784f86eb151c4f67dd82052385a91dac1202b238d66c5d5",
+    "run_summary.json": "9e3cdbdf545231847980395996f205f2fae03a449e9f8e7ca5044bb4da4ced02",
+    "timing_pilot.json": "657d030265f43b3b15845b26765c2277d53711907a4247eb8dd0e42547242ab6"
+  },
+  "locked_inputs": {
+    "fold_assignments": "9601302e2d770eee2e833093c7c63b833b016d2060c3059b9b7b671af852dee6",
+    "multiclass_c_metrics": "2f3b9a500ccf86bfc968ad184ce2bf8c508e2076289942e6d45e6fd5250ff285",
+    "oof_multiclass": "9701df1fd3d2728f085f508daf1a472cfae263af48bf640cecfd62d600ee7716"
+  }
+}

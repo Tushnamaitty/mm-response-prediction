@@ -1,0 +1,52 @@
+{
+  "label": "DIRECTION 2 FOLLOW-UP: POST-HOC INTERNAL SPLIT-SAMPLE REPLICATION of the proliferation/MYC axis (NOT untouched confirmation; NOT external validation)",
+  "family_statement": "post-hoc, biologically coherent family motivated by the previously observed pooled D2/D3 proliferation/MYC findings, which included test patients; PC1 construction thereafter is outcome-blind and train+val-only",
+  "multiplicity": "one primary test within this analysis, so no additional within-analysis multiplicity adjustment; broader post-hoc / project-level selection remains and must be acknowledged",
+  "frozen_artifact_sha256": "3489b474021a14fc5823afadfb59436333c8eff0f84fdb5b5f716663227d1e6e",
+  "discovery_gates_passed": true,
+  "interpretation_limit": "association given clinical state; not predictive improvement; not external validation",
+  "completed_utc": "2026-09-30T17:27:47.590357+00:00",
+  "status": "COMPLETED: single primary directional test run once",
+  "test_result": {
+    "beta_test": -0.2035164250232188,
+    "se_robust": 0.08872478343737694,
+    "z": -2.2937945536588797,
+    "one_sided_p_H1_beta_lt_0": 0.010901151209399112,
+    "ci95_wald": [
+      -0.3774138050965935,
+      -0.029619044949844076
+    ],
+    "odds_ratio_per_discovery_SD": 0.8158568037456768,
+    "recalibration_slope_b_eta": 0.9600123950334046,
+    "validity_flag_b_eta_positive": true,
+    "discovery_beta": -0.2786100802788457,
+    "discovery_ci95": [
+      -0.3491712279260558,
+      -0.20804893263163557
+    ],
+    "bootstrap_ci95_descriptive": [
+      -0.3841414565370182,
+      -0.019449608884464432
+    ],
+    "bootstrap_n_ok": 2000,
+    "bootstrap_n_failed": 0,
+    "bootstrap_seed": 42,
+    "interpretation": "REPLICATED (95% CI entirely below 0, in the hypothesised direction)"
+  },
+  "test_support": {
+    "test_rows": 1221,
+    "test_patients": 84,
+    "outcome_class_counts": {
+      "progressive_disease": 154,
+      "stable_disease": 153,
+      "partial_response": 243,
+      "very_good_partial_response": 475,
+      "complete_response": 82,
+      "stringent_complete_response": 114
+    },
+    "all_six_classes_represented": true,
+    "patients_at_least_80": true,
+    "eta_non_degenerate": true
+  },
+  "runtime_seconds": 245.6
+}

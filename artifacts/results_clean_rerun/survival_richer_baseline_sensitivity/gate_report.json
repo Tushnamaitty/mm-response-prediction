@@ -1,0 +1,159 @@
+{
+  "checks": [
+    {
+      "check": "locked output_manifest.json exists",
+      "detail": "artifacts\\results_clean_rerun\\survival_incremental\\output_manifest.json",
+      "passed": true
+    },
+    {
+      "check": "manifest spec SHA256 == expected fe0792db...",
+      "detail": "fe0792dbcb61ec62d3901aa7b268b7fcb51a5b60291b9dc4b3da75d0317db6e4",
+      "passed": true
+    },
+    {
+      "check": "imported locked module spec_sha() == expected",
+      "detail": "fe0792dbcb61ec62d3901aa7b268b7fcb51a5b60291b9dc4b3da75d0317db6e4",
+      "passed": true
+    },
+    {
+      "check": "analysis_spec.json spec SHA256 == expected",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "manifest combined SHA256 recomputes from its file hashes",
+      "detail": "6ab539a31f17aa91ca7d3af4bb25a1183a8855a7ba57a1054744c21ea6c7786a",
+      "passed": true
+    },
+    {
+      "check": "needed locked file present: analysis_spec.json",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "locked file hash matches manifest: analysis_spec.json",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "needed locked file present: final_summary.json",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "locked file hash matches manifest: final_summary.json",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "needed locked file present: primary_pfs_oof_predictions.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "locked file hash matches manifest: primary_pfs_oof_predictions.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "needed locked file present: primary_pfs_repeat_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "locked file hash matches manifest: primary_pfs_repeat_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "needed locked file present: primary_pfs_summary.json",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "locked file hash matches manifest: primary_pfs_summary.json",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "needed locked file present: primary_pfs_tuning.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "locked file hash matches manifest: primary_pfs_tuning.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "needed locked file present: secondary_os_oof_predictions.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "locked file hash matches manifest: secondary_os_oof_predictions.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "needed locked file present: secondary_os_repeat_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "locked file hash matches manifest: secondary_os_repeat_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "needed locked file present: secondary_os_summary.json",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "locked file hash matches manifest: secondary_os_summary.json",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "needed locked file present: secondary_os_tuning.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "locked file hash matches manifest: secondary_os_tuning.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "cohort rebuilt with the locked asserts (n=674, 459 PFS events, 247 OS deaths, 50 pathways)",
+      "detail": "n=674",
+      "passed": true
+    },
+    {
+      "check": "[pfs] machinery (no added variables) reproduces the locked lambdas, repeat 0, all folds, both models",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "[pfs] machinery reproduces the locked OOF risks (max |diff| < 1e-09)",
+      "detail": "max=2.220e-16",
+      "passed": true
+    },
+    {
+      "check": "[os] machinery (no added variables) reproduces the locked lambdas, repeat 0, all folds, both models",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "[os] machinery reproduces the locked OOF risks (max |diff| < 1e-09)",
+      "detail": "max=2.220e-16",
+      "passed": true
+    }
+  ],
+  "created_utc": "20261001T052607Z",
+  "label": "RICHER-BASELINE SURVIVAL SENSITIVITY (post-hoc, exploratory; internal validation only; not external validation; no causal claim)",
+  "note": "locked analysis only read",
+  "passed": true,
+  "tolerance_risk": 1e-09
+}
