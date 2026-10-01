@@ -1,0 +1,95 @@
+{
+  "label": "RETROSPECTIVE MOLECULAR ASSOCIATION - NOT PREDICTIVE VALIDATION",
+  "created_utc": "2026-09-30T08:46:21.347000+00:00",
+  "smoke": false,
+  "n_random_draws": 200,
+  "s4_seed_base": 1042,
+  "s4_seed_formula": "seed_k = 1042 + k",
+  "spec_sha256": "9267a0175cc6fa0c561b7b6fa78db45e3237507aab6b50d2870f17c1b5283f54",
+  "input_files_sha256": {
+    "data/clinical/visit_pairs_with_rna.csv": "7697743bbddb405edc61213c5bfa690eb73154df6b20b6f4f7a1cb5224ea5a58",
+    "data/splits/visit_pair_splits.csv": "036fc74d7d035d6b207d51bf508a075671ebc7494d6d194062e377a9d45103db",
+    "data/splits/task_eligibility.csv": "3f4c5bfb5257ad0f944802b4f05e892aad2bb03dc0c2717b66b2b42fd1a93727",
+    "data_pipeline/model_feature_sets.json": "9600d0b4806c96e210d07cc9a375f1eeb21d6324aad86a707ae09d5a419c3bde"
+  },
+  "code_sha256": {
+    "direction2_common.py": "155734fa5d0f60ab936dc2366c1550b09a68a6c0a1fa483664d66be7f5f73d4f",
+    "direction2_matching.py": "062b672074af5768af79ccfb8ae37c28668b025e528c7d980f78623004413d25"
+  },
+  "rna_usage_in_matching": "RNA availability defines the universe only. No RNA value and no RNA age is used for distance, strata, caliper, candidate ordering or pair selection.",
+  "rna_fields_read_during_matching": [
+    "days_since_rna_sample (boolean availability mask only; dropped immediately)"
+  ],
+  "pathway_columns_read_during_matching": 0,
+  "outcome_columns_read_during_matching": 0,
+  "calipers": {
+    "ordinal": {
+      "p50": 0.6360132924258723,
+      "p75": 0.8110325079628604,
+      "p90": 1.0296590337518567
+    },
+    "binary": {
+      "p50": 0.6368509839842836,
+      "p75": 0.8092764858071666,
+      "p90": 1.0249072993382344
+    }
+  },
+  "exact_primary_pair_counts": {
+    "ordinal": 259,
+    "binary": 261
+  },
+  "count_qa": {
+    "ordinal": {
+      "n_pairs": 259,
+      "audit_reference_pairs": 259,
+      "difference_vs_audit_reference": 0,
+      "identical_count_to_audit_reference": true,
+      "legacy_tie_order_pairs": 259,
+      "pair_set_identical_to_legacy_tie_order": true,
+      "n_pairs_only_in_frozen_selection": 0,
+      "n_pairs_only_in_legacy_selection": 0,
+      "n_candidate_pairs_within_caliper": 226801,
+      "n_candidate_pairs_sharing_an_exactly_tied_distance": 6094,
+      "note": "Legacy tie order = stable sort on distance in candidate generation order. Differences between the frozen (pair_id) and legacy selections can only arise from exactly tied candidate distances."
+    },
+    "binary": {
+      "n_pairs": 261,
+      "audit_reference_pairs": 261,
+      "difference_vs_audit_reference": 0,
+      "identical_count_to_audit_reference": true,
+      "legacy_tie_order_pairs": 261,
+      "pair_set_identical_to_legacy_tie_order": true,
+      "n_pairs_only_in_frozen_selection": 0,
+      "n_pairs_only_in_legacy_selection": 0,
+      "n_candidate_pairs_within_caliper": 214267,
+      "n_candidate_pairs_sharing_an_exactly_tied_distance": 5980,
+      "note": "Legacy tie order = stable sort on distance in candidate generation order. Differences between the frozen (pair_id) and legacy selections can only arise from exactly tied candidate distances."
+    }
+  },
+  "files": {
+    "matching_attrition_binary.json": "fd2a3dfd80517f5b67115e9aa6eac3fdb42655e143ea41ba71b7af640dad548f",
+    "matching_attrition_ordinal.json": "4e15588840efb53b91a8a9ea8814c7557c318f1b35925eba58dfa6a055b74d69",
+    "matching_balance_outcome_blind_binary.csv": "ff819b372a20dbb2dd224e9da3eea6dad8637e29ba6f8bc10e239ebd08f8d0a9",
+    "matching_balance_outcome_blind_ordinal.csv": "a2f1b488240d12b50b2e9164d00eb866c257ecfdc570721ceefcf710f10c2075",
+    "matching_spec.json": "9267a0175cc6fa0c561b7b6fa78db45e3237507aab6b50d2870f17c1b5283f54",
+    "matching_strata_binary.csv": "d10fbde72c66112e216a05bfc7105ba340b11679f1ebfbfc7b72cbf9d20aed2c",
+    "matching_strata_ordinal.csv": "717168ea7102f81fe9ede7a437611d67663306410da92cdf1b418fbad4d5cffb",
+    "pairs_binary_S1_p50_M1.csv": "def4a755db73c546f9be4c37c413cc333f337609ba9085a4ff2a153b633bfd13",
+    "pairs_binary_S1_p90_M1.csv": "966f5be7645db65d10b115fa89ff0e3c4303275288fb79526d5a2ffadf49e91c",
+    "pairs_binary_S4_random_M1.csv": "e569e45811c818d04d866c0db9b93f7ed7207530f7dd94988f897eb78645d305",
+    "pairs_binary_primary_p75_M1.csv": "99505027c8dba1cd8a7c31be857551ad85d84f76e06917241450cf29f6ba2575",
+    "pairs_ordinal_S1_p50_M1.csv": "18f0fe2beae48a9fe0a504075f8383f147df7af85c588c3885717b4b56d7ffc6",
+    "pairs_ordinal_S1_p90_M1.csv": "52e492e114eaa8d49b076729201faac80c7ce20387b2f93e095ea716dd31c456",
+    "pairs_ordinal_S4_random_M1.csv": "305ddd997897eef9fc5a6739d5cd1da4a1742cd3e23cf71e620bc5a20d767650",
+    "pairs_ordinal_primary_p75_M1.csv": "95e92412f7fe8e5c317ac89f4756251dbb3dd5688cb6c944d3ac089a344c5900"
+  },
+  "combined_sha256": "b5f9fd86bf4f2d0f1deb816db293a0edec1ce773e6f12138b248743c91d6831f",
+  "versions": {
+    "python": "3.13.15",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "numpy": "2.4.6",
+    "pandas": "3.0.5",
+    "scipy": "1.18.0",
+    "statsmodels": "0.15.0"
+  }
+}

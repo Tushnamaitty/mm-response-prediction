@@ -1,0 +1,177 @@
+{
+  "task": "binary",
+  "model_stage": "d",
+  "algorithm": "xgboost",
+  "tag": "",
+  "n_train": 8709,
+  "n_val": 1659,
+  "n_test": 1930,
+  "n_patients_train": 709,
+  "n_patients_val": 154,
+  "n_patients_test": 155,
+  "best_params": {
+    "n_estimators": 100,
+    "max_depth": 3,
+    "learning_rate": 0.05
+  },
+  "cv_results": [
+    {
+      "params": {
+        "n_estimators": 100,
+        "max_depth": 3,
+        "learning_rate": 0.05
+      },
+      "mean": 0.5333368765964238,
+      "std": 0.013159511780443814,
+      "fold_scores": [
+        0.531430810943005,
+        0.5248019966747508,
+        0.5444314716397318,
+        0.5147606296528726,
+        0.5512594740717589
+      ]
+    },
+    {
+      "params": {
+        "n_estimators": 200,
+        "max_depth": 4,
+        "learning_rate": 0.05
+      },
+      "mean": 0.527181743383047,
+      "std": 0.015565635266179725,
+      "fold_scores": [
+        0.5281101665441228,
+        0.5146114831790372,
+        0.5406025847454549,
+        0.5054251596835153,
+        0.5471593227631047
+      ]
+    },
+    {
+      "params": {
+        "n_estimators": 200,
+        "max_depth": 3,
+        "learning_rate": 0.1
+      },
+      "mean": 0.5197912563560697,
+      "std": 0.020948941556596514,
+      "fold_scores": [
+        0.5229189842330201,
+        0.5067214360142522,
+        0.5323090397428218,
+        0.48805939766190987,
+        0.5489474241283451
+      ]
+    }
+  ],
+  "seed": 42,
+  "val_metrics": {
+    "auprc": 0.47920178838341576,
+    "auroc": 0.7740344947562006,
+    "brier_score": 0.12048088014125824,
+    "sensitivity": 0.6033898305084746,
+    "specificity": 0.8255131964809385,
+    "precision": 0.42788461538461536,
+    "recall": 0.6033898305084746,
+    "f1": 0.5007032348804501,
+    "threshold_used": 0.25,
+    "confusion_matrix": [
+      [
+        1126,
+        238
+      ],
+      [
+        117,
+        178
+      ]
+    ],
+    "n": 1659
+  },
+  "test_metrics_PRELIMINARY": {
+    "auprc": 0.5007736127340023,
+    "auroc": 0.8096028066343202,
+    "brier_score": 0.11758753657341003,
+    "sensitivity": 0.6118980169971672,
+    "specificity": 0.8484464172479391,
+    "precision": 0.4747252747252747,
+    "recall": 0.6118980169971672,
+    "f1": 0.5346534653465347,
+    "threshold_used": 0.25,
+    "confusion_matrix": [
+      [
+        1338,
+        239
+      ],
+      [
+        137,
+        216
+      ]
+    ],
+    "n": 1930,
+    "PRELIMINARY": true
+  },
+  "test_auprc_bootstrap_ci_PRELIMINARY": {
+    "n_resamples_used": 200,
+    "mean": 0.5027471531410751,
+    "ci_lower_2.5": 0.4653619321057554,
+    "ci_upper_97.5": 0.5386861196330838
+  },
+  "calibration_curve": {
+    "prob_true": [
+      0.031088082901554404,
+      0.05670103092783505,
+      0.052083333333333336,
+      0.03626943005181347,
+      0.08808290155440414,
+      0.09844559585492228,
+      0.18652849740932642,
+      0.2694300518134715,
+      0.40414507772020725,
+      0.6062176165803109
+    ],
+    "prob_pred": [
+      0.046375470052574586,
+      0.06056547813962415,
+      0.06651905078130464,
+      0.07730336927379351,
+      0.10845007650901617,
+      0.14317750197309287,
+      0.1739249812352225,
+      0.23936462881033901,
+      0.3936779281327144,
+      0.6115699398085244
+    ]
+  },
+  "feature_importance_top30": {
+    "object_boolean__subject_had_signs_symptoms_missing": 0.07896525412797928,
+    "ordinal_response__vt_disease_response_ordinal": 0.07872487604618073,
+    "numeric__vt_days_to_visit": 0.0594446174800396,
+    "object_boolean__had_transfusion_missing": 0.01965707540512085,
+    "numeric__kappa_flc_pct_change": 0.0131294634193182,
+    "numeric__regimen_duration_so_far": 0.011693112552165985,
+    "object_boolean__had_esa_False": 0.011359794065356255,
+    "numeric__PI3K/AKT/mTOR  Signaling": 0.011333191767334938,
+    "numeric__days_since_last_transplant": 0.010819165036082268,
+    "numeric__m_protein_current": 0.010477647185325623,
+    "numeric__Angiogenesis": 0.009964236989617348,
+    "numeric__Inflammatory Response": 0.009816675446927547,
+    "numeric__kappa_flc_change": 0.009400169365108013,
+    "numeric__Apical Surface": 0.009309623390436172,
+    "numeric__Pperoxisome": 0.009304111823439598,
+    "numeric__b2m_change": 0.00928646419197321,
+    "numeric__Notch Signaling": 0.009246313013136387,
+    "numeric__line_duration_so_far": 0.009211682714521885,
+    "categorical_high_card__current_regimen_categories_pi_imid_steroid": 0.009112929925322533,
+    "object_boolean__had_wbc_growth_factor_False": 0.008977247402071953,
+    "numeric__Interferon Alpha Response": 0.00895761139690876,
+    "numeric__TNF-alpha Signaling via NF-kB": 0.008882788009941578,
+    "numeric__calcium_change": 0.008856945671141148,
+    "numeric__days_since_rna_sample": 0.00878407433629036,
+    "numeric__m_protein_days_since_previous": 0.008778476156294346,
+    "numeric__Xenobiotic Metabolism": 0.008719670586287975,
+    "numeric__n_prior_lines_completed": 0.008663897402584553,
+    "object_boolean__had_hospitalization_True": 0.008644018322229385,
+    "numeric__current_line_number": 0.0085263941437006,
+    "numeric__age_at_diagnosis": 0.008487832732498646
+  }
+}

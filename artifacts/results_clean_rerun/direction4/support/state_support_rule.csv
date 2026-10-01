@@ -1,0 +1,9 @@
+state,universe,group_rows,group_pts,group_events,group_non_events,complement_rows,complement_pts,complement_events,complement_non_events,tier_group,tier_complement,tier,design_expected_tier_informational,matches_design_expectation,multiclass_min_class_group,multiclass_min_class_complement,multiclass_ok
+improving,partA_trainval,1028,423,144,884,5910,596,1183,4727,2,1,2,2,True,147,721,True
+stable,partA_trainval,4403,473,517,3886,2535,595,810,1725,1,1,1,1,True,486,231,True
+worsening,partA_trainval,928,385,442,486,6010,596,885,5125,1,1,1,1,True,34,680,True
+no_history,partA_trainval,579,579,224,355,6359,509,1103,5256,1,1,1,1,True,36,818,True
+improving,pooled,1237,504,172,1065,7024,703,1401,5623,1,1,1,1,True,,,
+stable,pooled,5242,564,622,4620,3019,702,951,2068,1,1,1,1,True,,,
+worsening,pooled,1100,460,527,573,7161,703,1046,6115,1,1,1,1,True,,,
+no_history,pooled,682,682,252,430,7579,604,1321,6258,1,1,1,1,True,,,

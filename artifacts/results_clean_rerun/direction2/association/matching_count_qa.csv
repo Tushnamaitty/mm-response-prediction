@@ -1,0 +1,3 @@
+family,exact_pairs,audit_pairs,pairs_difference,exact_informative_pairs,audit_informative_pairs,informative_difference,identical_to_audit,selection_identical_to_legacy_tie_order,explanation
+ordinal,259,259,0,120,120,0,True,True,identical to the audit counts
+binary,261,261,0,63,63,0,True,True,identical to the audit counts

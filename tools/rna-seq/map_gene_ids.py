@@ -2,7 +2,7 @@ import pandas as pd
 from pybiomart import Dataset
 
 # Load expression matrix
-expr = pd.read_csv("data_raw/rnaseq/expression_matrix_tpm.csv", index_col=0)
+expr = pd.read_csv("data/rna/expression_matrix_tpm.csv", index_col=0)
 
 # Strip version suffix (ENSG00000000003.15 -> ENSG00000000003)
 expr.index = expr.index.str.split(".").str[0]
@@ -22,5 +22,4 @@ expr = expr[~expr.index.duplicated(keep="first")]
 
 print(expr.shape)
 print(expr.index[:10])
-
-expr.to_csv("data_raw/rnaseq/expression_matrix_tpm_symbols.csv")
+expr.to_csv("data/rna/expression_matrix_tpm_symbols.csv")

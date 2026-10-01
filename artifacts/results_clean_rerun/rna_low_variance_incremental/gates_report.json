@@ -1,0 +1,40 @@
+{
+  "config_sha256": "da3beefd17c178b5f612b3dfa14d6e6d53ba197d0da4d8da22eb3f74b5520bc6",
+  "floor_absolute_rps_change": 4.9877870597625495e-08,
+  "floored_rps_by_repeat": [
+    0.07804323944746008,
+    0.07788868538492018,
+    0.07777234899381288,
+    0.07780884653489363,
+    0.077428446402442
+  ],
+  "floored_rps_mean": 0.07778831335270577,
+  "gradient_relative_error": 7.679366483114483e-10,
+  "locked_fold_sha256": "9601302e2d770eee2e833093c7c63b833b016d2060c3059b9b7b671af852dee6",
+  "locked_model_c_metrics_sha256": "2f3b9a500ccf86bfc968ad184ce2bf8c508e2076289942e6d45e6fd5250ff285",
+  "locked_oof_sha256": "9701df1fd3d2728f085f508daf1a472cfae263af48bf640cecfd62d600ee7716",
+  "max_beta0_probability_identity_diff": 5.620504062164855e-16,
+  "max_raw_vs_committed_repeat_rps_diff": 4.518955626364729e-10,
+  "model_c_best_params": {
+    "learning_rate": 0.05,
+    "max_depth": 4,
+    "n_estimators": 200
+  },
+  "n_distinct_rna_units": 637,
+  "n_pathways": 50,
+  "n_rna_patients": 600,
+  "n_rna_rows": 7724,
+  "n_trainval_patients": 870,
+  "n_trainval_rows": 11372,
+  "planted_effect_delta_rps": -0.012487204912931486,
+  "planted_null_max_probability_diff": 4.510281037539698e-16,
+  "raw_rps_by_repeat": [
+    0.0780431866238494,
+    0.07788863418301799,
+    0.07777230005791742,
+    0.07780879745189556,
+    0.07742839905749549
+  ],
+  "raw_rps_mean": 0.07778826347483517,
+  "status": "PASSED"
+}

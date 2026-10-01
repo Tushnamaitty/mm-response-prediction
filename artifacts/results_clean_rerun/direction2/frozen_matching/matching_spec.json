@@ -1,0 +1,63 @@
+{
+  "M1": "global greedy pairing in ascending distance; ties broken by (min pair_id, max pair_id); each PATIENT used at most once",
+  "S4": "randomised greedy nearest-neighbour (seeded random VISITING ORDER): draw k uses seed 1042+k; rows are visited in that order; each row whose patient is unused is paired with its nearest in-caliper partner from an unused patient (ties by pair_id); patient-once",
+  "caliper_S1": [
+    "p50",
+    "p90"
+  ],
+  "caliper_primary": "p75 of each row's nearest cross-patient same-stratum distance",
+  "continuous_features": {
+    "age_at_diagnosis": "identity",
+    "albumin_change": "identity",
+    "albumin_current": "identity",
+    "b2m_current": "log1p",
+    "calcium_current": "identity",
+    "creatinine_change": "slog",
+    "creatinine_current": "log1p",
+    "hemoglobin_change": "identity",
+    "hemoglobin_current": "identity",
+    "iss_stage": "identity",
+    "kappa_flc_current": "log1p",
+    "lambda_flc_current": "log1p",
+    "ldh_current": "log1p",
+    "line_duration_so_far": "log1p",
+    "m_protein_change": "slog",
+    "m_protein_current": "log1p",
+    "n_prior_lines_completed": "identity"
+  },
+  "direction": 2,
+  "distance": "root-mean-square z-difference over jointly observed features",
+  "exact_keys": [
+    "vt_disease_response",
+    "line_group",
+    "currently_on_pi",
+    "currently_on_imid",
+    "currently_on_cd38"
+  ],
+  "label": "RETROSPECTIVE MOLECULAR ASSOCIATION - NOT PREDICTIVE VALIDATION",
+  "line_group_bins": [
+    0,
+    1,
+    2,
+    100
+  ],
+  "line_group_labels": [
+    "1",
+    "2",
+    "3+"
+  ],
+  "min_joint_features": 12,
+  "pooled_across_splits": true,
+  "primary_family": "ordinal (multiclass universe; pairs whose Vt+1 classes differ)",
+  "rna_usage_in_matching": "RNA availability defines the universe only. No RNA value and no RNA age is used for distance, strata, caliper, candidate ordering or pair selection.",
+  "s4_seed_base": 1042,
+  "same_patient_excluded": true,
+  "secondary_family": "binary (binary universe; pairs discordant on 'improved')",
+  "seed": 42,
+  "standardisation": "z-score per feature on the matching universe after winsorisation",
+  "universe": "RNA-available rows (days_since_rna_sample notna; used ONLY to define row membership) with non-missing current_line_number; binary additionally eligible_for_binary",
+  "winsor_percentiles": [
+    1,
+    99
+  ]
+}

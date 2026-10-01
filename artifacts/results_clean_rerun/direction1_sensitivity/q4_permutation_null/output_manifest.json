@@ -1,0 +1,29 @@
+{
+  "label": "DIRECTION 1 STEP 1 -- EXPLORATORY POST-HOC ROBUSTNESS ANALYSIS: scrambled-RNA permutation null for the locked binary Q4 interaction (does not make D1 confirmatory)",
+  "smoke": false,
+  "code_sha256": "bdfd521bfd927d0671b5862e4ba13b52a57e1af189a80a1d18b263e07f8ff58b",
+  "locked_input_sha256": {
+    "artifacts/results_clean_rerun/binary_c_xgboost_metrics.json": "288a1b0c5f3062a2173c5f5892a7d61c01a7b55847ca651a9c2ebc778b93cbf4",
+    "artifacts/results_clean_rerun/binary_d_xgboost_metrics.json": "d20850d9e7b95a64e5e394e89f8f4ff5a0b989e83c7c8588d8342f9b10ca59df",
+    "artifacts/results_clean_rerun/multiclass_c_xgboost_metrics.json": "2f3b9a500ccf86bfc968ad184ce2bf8c508e2076289942e6d45e6fd5250ff285",
+    "artifacts/results_clean_rerun/multiclass_d_xgboost_metrics.json": "2982abf0ca3d488dd946016374d6322098e4a8cb9340949408a052738542e626",
+    "artifacts/results_clean_rerun/direction3/partA_predictive/oof_predictions/oof_binary.csv": "2841bca0553b5afd6e8312721eb949ba64f8c958764b641ae9fe70a5cff1f82b"
+  },
+  "files": {
+    "gate2_repeat_diffs.csv": "f05b07d7106a88468f2170e14158cac162b12f7ed0fa49feca5d1418fcd23aa7",
+    "gate_decision.json": "cf00c2e7079c80f7bbf7a077d86bff8cfa55026c88b8c72a2bd99e7cd5e218ae",
+    "gates.json": "4816e3603cdb266bd5f0e53bf04fe14b85a4395dfde38e4d0611f65337d392be",
+    "permutation_null_distribution.csv": "6012580acd77648bbe7f0206bb35de626f9ff012aa94efaf471273772a9ae6fd",
+    "permutation_summary.json": "3ffb8812ec362e306f3d9e584953ed778596aa234565302f952700639bf641ba",
+    "run_summary.json": "0df8d4068f88aa46d33a9b09d815874e683493d2311efc379f05c5cefc66f55f"
+  },
+  "combined_sha256": "8fcdbc12128e55c8ab3c695cacbbaa60c36f7c34a90a0a6f0161e733c5c50b61",
+  "versions": {
+    "python": "3.13.15",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "numpy": "2.4.6",
+    "pandas": "3.0.5",
+    "scipy": "1.18.0",
+    "statsmodels": "0.15.0"
+  }
+}

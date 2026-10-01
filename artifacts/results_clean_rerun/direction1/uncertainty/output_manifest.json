@@ -1,0 +1,25 @@
+{
+  "label": "DIRECTION 1: RNA incremental value in clinically uncertain cases",
+  "smoke": false,
+  "locked_D3_partA_combined_sha256": "ce6c5170e5ceee1fe48d8f0a35b7a042f4ae3e5620866fb108be5c1bf4289a8a",
+  "input_oof_sha256": {
+    "artifacts/results_clean_rerun/direction3/partA_predictive/oof_predictions/oof_binary.csv": "2841bca0553b5afd6e8312721eb949ba64f8c958764b641ae9fe70a5cff1f82b",
+    "artifacts/results_clean_rerun/direction3/partA_predictive/oof_predictions/oof_multiclass.csv": "9701df1fd3d2728f085f508daf1a472cfae263af48bf640cecfd62d600ee7716"
+  },
+  "files": {
+    "direction1_multiclass_macro_f1_descriptive.csv": "53be3a74f8346ac8a4d99807955821e8e2125fcb3d4006a83786bb9fa70784c0",
+    "direction1_uncertainty_assignments.csv": "26fdf7363916d311ea11af23d12bb34e75f564f6dd943a2d2d137fa630ef5f21",
+    "direction1_uncertainty_interactions.csv": "7d4d75ca613e3cdd68be15d17b1bcb2f2d5c79bef4454620611594ffb5e896e5",
+    "direction1_within_uncertainty_groups.csv": "94b9f46a5832cee1015e7a1baa3f1ab8f29e3d14b6476ace20a273e801e33b41",
+    "run_summary.json": "1188a91a9933ad92b051ef8116d68221e0c8646428da2e96757d655018a4b5e7"
+  },
+  "combined_sha256": "396f1cb6f8d5288fb94e049a16af929bac1b01f7871db3ebfa90961ebcb0899a",
+  "versions": {
+    "python": "3.13.15",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "numpy": "2.4.6",
+    "pandas": "3.0.5",
+    "scipy": "1.18.0",
+    "statsmodels": "0.15.0"
+  }
+}

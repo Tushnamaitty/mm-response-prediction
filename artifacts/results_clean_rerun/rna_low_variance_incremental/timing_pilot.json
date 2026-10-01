@@ -1,0 +1,10 @@
+{
+  "cache_build_seconds_one_outer_fold": 32.39031100273132,
+  "chosen_permutation_count": 200,
+  "fallback_threshold_hours": 8.0,
+  "note": "Projection is a prespecified timing heuristic from one outer fold; no outcome metric is reported.",
+  "projected_hours_B200": 4.620860020319621,
+  "projected_seconds_per_permutation": 83.17548036575317,
+  "ridge_seconds_one_outer_fold": 3.327019214630127,
+  "status": "TIMING ONLY; NO PRIMARY STATISTIC COMPUTED"
+}

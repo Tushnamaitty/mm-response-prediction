@@ -1,0 +1,11 @@
+{
+  "statistic": "sum squared covariate-residualized pathway mean contrasts: improving-vs-stable + worsening-vs-stable",
+  "observed": 0.10453832988393567,
+  "n_permutations": 1000,
+  "seed": 5042,
+  "n_distinct_samples_permuted": 586,
+  "p_value": 0.37962037962037964,
+  "null_mean": 0.10413921136024579,
+  "null_p2_5": 0.041156321525342925,
+  "null_p97_5": 0.2701174263582169
+}

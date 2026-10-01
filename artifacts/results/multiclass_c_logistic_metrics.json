@@ -1,0 +1,313 @@
+{
+  "task": "multiclass",
+  "model_stage": "c",
+  "algorithm": "logistic",
+  "tag": "",
+  "n_train": 9539,
+  "n_val": 1833,
+  "n_test": 2079,
+  "n_patients_train": 716,
+  "n_patients_val": 154,
+  "n_patients_test": 155,
+  "best_params": {
+    "C": 1.0
+  },
+  "cv_results": [
+    {
+      "params": {
+        "C": 0.01
+      },
+      "mean": 0.4328418802029078,
+      "std": 0.024076125088957224,
+      "fold_scores": [
+        0.4105158871805272,
+        0.4476465283290467,
+        0.39789047585526593,
+        0.44873486891879083,
+        0.45942164073090835
+      ]
+    },
+    {
+      "params": {
+        "C": 0.1
+      },
+      "mean": 0.45711575385209874,
+      "std": 0.019902729348610582,
+      "fold_scores": [
+        0.4458457144262347,
+        0.47538714244488195,
+        0.424354918358065,
+        0.46242292025256965,
+        0.4775680737787422
+      ]
+    },
+    {
+      "params": {
+        "C": 1.0
+      },
+      "mean": 0.4588350498371404,
+      "std": 0.018057764388962002,
+      "fold_scores": [
+        0.446228669411832,
+        0.47950669905430376,
+        0.43017165720770073,
+        0.46684883988943465,
+        0.4714193836224309
+      ]
+    },
+    {
+      "params": {
+        "C": 10.0
+      },
+      "mean": 0.4573233540104703,
+      "std": 0.018384890081755145,
+      "fold_scores": [
+        0.44650531363046625,
+        0.47883548052362596,
+        0.4270542119832586,
+        0.46820791571230935,
+        0.46601384820269126
+      ]
+    }
+  ],
+  "seed": 42,
+  "val_metrics": {
+    "accuracy_secondary": 0.5280960174577196,
+    "macro_f1": 0.46512161329623397,
+    "macro_precision": 0.4912595680172367,
+    "macro_recall": 0.456188449620024,
+    "weighted_f1": 0.5084711930586608,
+    "per_class": {
+      "progressive_disease": {
+        "precision": 0.38311688311688313,
+        "recall": 0.22014925373134328,
+        "f1": 0.2796208530805687,
+        "support": 268
+      },
+      "stable_disease": {
+        "precision": 0.38164251207729466,
+        "recall": 0.34051724137931033,
+        "f1": 0.35990888382687924,
+        "support": 232
+      },
+      "partial_response": {
+        "precision": 0.27488151658767773,
+        "recall": 0.25892857142857145,
+        "f1": 0.26666666666666666,
+        "support": 224
+      },
+      "very_good_partial_response": {
+        "precision": 0.5974625144175317,
+        "recall": 0.8222222222222222,
+        "f1": 0.6920507682030728,
+        "support": 630
+      },
+      "complete_response": {
+        "precision": 0.5859030837004405,
+        "recall": 0.4618055555555556,
+        "f1": 0.516504854368932,
+        "support": 288
+      },
+      "stringent_complete_response": {
+        "precision": 0.7245508982035929,
+        "recall": 0.6335078534031413,
+        "f1": 0.6759776536312849,
+        "support": 191
+      }
+    },
+    "confusion_matrix": [
+      [
+        59,
+        73,
+        46,
+        68,
+        11,
+        11
+      ],
+      [
+        33,
+        79,
+        75,
+        43,
+        2,
+        0
+      ],
+      [
+        29,
+        33,
+        58,
+        102,
+        2,
+        0
+      ],
+      [
+        29,
+        18,
+        25,
+        518,
+        32,
+        8
+      ],
+      [
+        2,
+        4,
+        7,
+        115,
+        133,
+        27
+      ],
+      [
+        2,
+        0,
+        0,
+        21,
+        47,
+        121
+      ]
+    ],
+    "n": 1833
+  },
+  "test_metrics_PRELIMINARY": {
+    "accuracy_secondary": 0.506974506974507,
+    "macro_f1": 0.4375613234076181,
+    "macro_precision": 0.4557218766876487,
+    "macro_recall": 0.4314494185580912,
+    "weighted_f1": 0.4861229800240384,
+    "per_class": {
+      "progressive_disease": {
+        "precision": 0.265625,
+        "recall": 0.20901639344262296,
+        "f1": 0.23394495412844038,
+        "support": 244
+      },
+      "stable_disease": {
+        "precision": 0.3291139240506329,
+        "recall": 0.31451612903225806,
+        "f1": 0.3216494845360825,
+        "support": 248
+      },
+      "partial_response": {
+        "precision": 0.4389438943894389,
+        "recall": 0.29954954954954954,
+        "f1": 0.35609103078982596,
+        "support": 444
+      },
+      "very_good_partial_response": {
+        "precision": 0.600387972841901,
+        "recall": 0.7987096774193548,
+        "f1": 0.6854928017718716,
+        "support": 775
+      },
+      "complete_response": {
+        "precision": 0.40993788819875776,
+        "recall": 0.33,
+        "f1": 0.3656509695290859,
+        "support": 200
+      },
+      "stringent_complete_response": {
+        "precision": 0.6903225806451613,
+        "recall": 0.6369047619047619,
+        "f1": 0.6625386996904025,
+        "support": 168
+      }
+    },
+    "confusion_matrix": [
+      [
+        51,
+        55,
+        41,
+        77,
+        10,
+        10
+      ],
+      [
+        47,
+        78,
+        74,
+        47,
+        1,
+        1
+      ],
+      [
+        55,
+        81,
+        133,
+        170,
+        4,
+        1
+      ],
+      [
+        32,
+        22,
+        49,
+        619,
+        42,
+        11
+      ],
+      [
+        6,
+        1,
+        4,
+        98,
+        66,
+        25
+      ],
+      [
+        1,
+        0,
+        2,
+        20,
+        38,
+        107
+      ]
+    ],
+    "n": 2079,
+    "PRELIMINARY": true
+  },
+  "test_macro_f1_bootstrap_ci_PRELIMINARY": {
+    "n_resamples_used": 200,
+    "mean": 0.4343845447326784,
+    "ci_lower_2.5": 0.394963549897513,
+    "ci_upper_97.5": 0.47334030576880387
+  },
+  "class_order": [
+    "progressive_disease",
+    "stable_disease",
+    "partial_response",
+    "very_good_partial_response",
+    "complete_response",
+    "stringent_complete_response"
+  ],
+  "feature_importance_top30": {
+    "ordinal_response__vt_disease_response_ordinal": 1.922901512041637,
+    "numeric__bmi_at_diagnosis": 0.38095305705216315,
+    "numeric__weight_at_diagnosis_kg": 0.373387091282891,
+    "numeric__kappa_flc_current": 0.3593793366160522,
+    "categorical_high_card__current_regimen_categories_pi_steroid": 0.33606184845715137,
+    "categorical_high_card__current_regimen_name_bortezomib_dexamethasone": 0.32058052467660175,
+    "numeric__m_protein_pct_change": 0.29855805631262483,
+    "object_boolean__cd56_detected_missing": 0.29081433840570214,
+    "numeric__lambda_flc_previous": 0.27673888303745237,
+    "numeric__m_protein_previous": 0.26741148676897925,
+    "categorical_high_card__current_regimen_categories_imid": 0.26199910864007303,
+    "categorical_high_card__current_regimen_name_lenalidomide": 0.2590788142771114,
+    "object_boolean__cd45_typical_detected_missing": 0.2585150081651129,
+    "categorical_high_card__current_regimen_categories_pi_chemo_steroid": 0.2368582738393709,
+    "clean_boolean__has_prior_transplant": 0.2338139241111031,
+    "numeric__lambda_flc_days_since_previous": 0.2266777942066168,
+    "numeric__lambda_flc_change": 0.22537139603631498,
+    "numeric__m_protein_change": 0.21683109870005732,
+    "object_boolean__cd38_detected_missing": 0.2122598329795533,
+    "numeric__hemoglobin_pct_change": 0.21217807127493596,
+    "object_boolean__cd38_detected_True": 0.21009156996452386,
+    "categorical_high_card__current_regimen_categories_pi_imid_steroid": 0.20833915953058282,
+    "numeric__height_at_diagnosis_m": 0.20730335946184483,
+    "numeric__kappa_flc_change": 0.20291460646977,
+    "object_boolean__cd45_typical_detected_True": 0.20257731326200487,
+    "numeric__vt_days_to_visit": 0.20006520159113747,
+    "clean_boolean__vt_reported_signs_symptoms": 0.19359253607128726,
+    "numeric__kappa_flc_previous": 0.19281735597307748,
+    "numeric__hemoglobin_change": 0.1912447784486866,
+    "categorical_high_card__current_regimen_name_carfilzomib_lenalidomide_dexamethasone": 0.1908116270497946
+  }
+}

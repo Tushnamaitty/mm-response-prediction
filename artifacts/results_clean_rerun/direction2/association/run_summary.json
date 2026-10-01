@@ -1,0 +1,228 @@
+{
+  "label": "RETROSPECTIVE MOLECULAR ASSOCIATION - NOT PREDICTIVE VALIDATION",
+  "completed_utc": "2026-09-30T09:27:32.497899+00:00",
+  "runtime_seconds": 850.4,
+  "smoke": false,
+  "frozen_combined_sha256_verified": "b5f9fd86bf4f2d0f1deb816db293a0edec1ce773e6f12138b248743c91d6831f",
+  "seeds": {
+    "base": 42,
+    "n_perm": 10000,
+    "n_boot": 10000,
+    "s4_seed_base": 1042,
+    "per_analysis": "42 + crc32('<family>|<analysis>') % 100000 (see seed_signflip / seed_bootstrap columns)"
+  },
+  "rna_z_scoring": {
+    "n_distinct_samples": 751,
+    "n_rna_rows": 9173
+  },
+  "families": {
+    "ordinal": {
+      "role": "PRIMARY",
+      "family": "ordinal",
+      "universe_rows": 9172,
+      "universe_patients": 707,
+      "n_pairs": 259,
+      "n_patients_in_pairs": 518,
+      "n_informative_pairs": 120,
+      "n_concordant_pairs": 139,
+      "n_informative_patients": 240,
+      "informative_S2_rna_age_gap_le_365d": 86,
+      "pairs_trainval_trainval": 184,
+      "pairs_test_test": 5,
+      "pairs_cross_split": 70,
+      "informative_trainval_trainval": 80,
+      "informative_test_test": 4,
+      "median_rna_age_gap_days_informative": 173.0
+    },
+    "binary": {
+      "role": "SECONDARY",
+      "family": "binary",
+      "universe_rows": 8261,
+      "universe_patients": 703,
+      "n_pairs": 261,
+      "n_patients_in_pairs": 522,
+      "n_informative_pairs": 63,
+      "n_concordant_pairs": 198,
+      "n_informative_patients": 126,
+      "informative_S2_rna_age_gap_le_365d": 43,
+      "pairs_trainval_trainval": 181,
+      "pairs_test_test": 6,
+      "pairs_cross_split": 74,
+      "informative_trainval_trainval": 40,
+      "informative_test_test": 2,
+      "median_rna_age_gap_days_informative": 123.0,
+      "concordant_both_improved": 22,
+      "concordant_both_not_improved": 176
+    }
+  },
+  "exact_count_qa_vs_audit": [
+    {
+      "family": "ordinal",
+      "exact_pairs": 259,
+      "audit_pairs": 259,
+      "pairs_difference": 0,
+      "exact_informative_pairs": 120,
+      "audit_informative_pairs": 120,
+      "informative_difference": 0,
+      "identical_to_audit": true,
+      "selection_identical_to_legacy_tie_order": true,
+      "explanation": "identical to the audit counts"
+    },
+    {
+      "family": "binary",
+      "exact_pairs": 261,
+      "audit_pairs": 261,
+      "pairs_difference": 0,
+      "exact_informative_pairs": 63,
+      "audit_informative_pairs": 63,
+      "informative_difference": 0,
+      "identical_to_audit": true,
+      "selection_identical_to_legacy_tie_order": true,
+      "explanation": "identical to the audit counts"
+    }
+  ],
+  "global_tests": [
+    {
+      "family": "ordinal",
+      "analysis": "primary",
+      "analysis_role": "primary",
+      "n_informative_pairs": 120,
+      "global_sum_dz2": 0.6607536142022644,
+      "global_p": 0.14908509149085092,
+      "p_method": "monte_carlo_add_one",
+      "n_flips": 10000,
+      "min_p_signflip": 0.0032996700329967,
+      "min_q_bh": 0.10498950104989502,
+      "n_q_lt_0.05": 0,
+      "n_q_lt_0.10": 0,
+      "n_maxT_lt_0.05": 0,
+      "seed_signflip": 34737,
+      "seed_bootstrap": 34738
+    },
+    {
+      "family": "binary",
+      "analysis": "primary",
+      "analysis_role": "secondary",
+      "n_informative_pairs": 63,
+      "global_sum_dz2": 0.7059493742189887,
+      "global_p": 0.44145585441455854,
+      "p_method": "monte_carlo_add_one",
+      "n_flips": 10000,
+      "min_p_signflip": 0.08709129087091291,
+      "min_q_bh": 0.7963203679632038,
+      "n_q_lt_0.05": 0,
+      "n_q_lt_0.10": 0,
+      "n_maxT_lt_0.05": 0,
+      "seed_signflip": 93985,
+      "seed_bootstrap": 93986
+    }
+  ],
+  "n_pathways": 50,
+  "s3_s5_analysis_status": [
+    {
+      "family": "ordinal",
+      "analysis": "S3_adjusted",
+      "analysis_status": "complete",
+      "final_rows": 7559,
+      "rows_lost_total": 1613,
+      "failure_reasons": "[]"
+    },
+    {
+      "family": "ordinal",
+      "analysis": "S5_adjusted_plus_purity",
+      "analysis_status": "complete",
+      "final_rows": 7443,
+      "rows_lost_total": 1729,
+      "failure_reasons": "[]"
+    },
+    {
+      "family": "binary",
+      "analysis": "S3_adjusted",
+      "analysis_status": "complete",
+      "final_rows": 6725,
+      "rows_lost_total": 1536,
+      "failure_reasons": "[]"
+    },
+    {
+      "family": "binary",
+      "analysis": "S5_adjusted_plus_purity",
+      "analysis_status": "complete",
+      "final_rows": 6619,
+      "rows_lost_total": 1642,
+      "failure_reasons": "[]"
+    }
+  ],
+  "skipped_analyses": [
+    {
+      "family": "ordinal",
+      "analysis": "S7_holdout_test_pairs",
+      "n_informative_pairs": 4,
+      "reason": "fewer than 5 informative pairs"
+    },
+    {
+      "family": "binary",
+      "analysis": "S7_holdout_test_pairs",
+      "n_informative_pairs": 2,
+      "reason": "fewer than 5 informative pairs"
+    }
+  ],
+  "covariate_sets": {
+    "S3": [
+      "m_protein_current",
+      "kappa_flc_current",
+      "lambda_flc_current",
+      "calcium_current",
+      "creatinine_current",
+      "hemoglobin_current",
+      "b2m_current",
+      "albumin_current",
+      "ldh_current",
+      "m_protein_change",
+      "hemoglobin_change",
+      "creatinine_change",
+      "albumin_change",
+      "n_prior_lines_completed",
+      "iss_stage",
+      "age_at_diagnosis",
+      "log1p_days_since_rna_sample"
+    ],
+    "S5": [
+      "m_protein_current",
+      "kappa_flc_current",
+      "lambda_flc_current",
+      "calcium_current",
+      "creatinine_current",
+      "hemoglobin_current",
+      "b2m_current",
+      "albumin_current",
+      "ldh_current",
+      "m_protein_change",
+      "hemoglobin_change",
+      "creatinine_change",
+      "albumin_change",
+      "n_prior_lines_completed",
+      "iss_stage",
+      "age_at_diagnosis",
+      "log1p_days_since_rna_sample",
+      "pct_plasma_cells_bm"
+    ],
+    "strata_fixed_effects": [
+      "vt_disease_response",
+      "line_group",
+      "currently_on_pi",
+      "currently_on_imid",
+      "currently_on_cd38"
+    ],
+    "min_stratum_rows": 20
+  },
+  "claim_gate": "Report the GLOBAL test before any single-pathway statement; call a pathway robust only if q<0.05 AND direction agrees in S1 (p50,p90), S2 and S3.",
+  "interpretation": "RETROSPECTIVE MOLECULAR ASSOCIATION - NOT PREDICTIVE VALIDATION",
+  "versions": {
+    "python": "3.13.15",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "numpy": "2.4.6",
+    "pandas": "3.0.5",
+    "scipy": "1.18.0",
+    "statsmodels": "0.15.0"
+  }
+}
