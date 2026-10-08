@@ -1,0 +1,7 @@
+{
+  "survival_patients_by_next_visit_split": {
+    "train": 473,
+    "val": 101,
+    "test": 100
+  }
+}
