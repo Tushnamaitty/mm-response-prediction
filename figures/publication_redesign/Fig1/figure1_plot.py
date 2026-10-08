@@ -64,7 +64,7 @@ SPLIT_COLOR = {"train": "#e6e5df", "val": "#bdbbb3", "test": "#6f6d68"}
 SPLIT_TEXT = {"train": INK, "val": INK, "test": "#ffffff"}
 
 FS = {"panel": 10, "title": 7.5, "body": 6.5, "small": 6.0, "tick": 6}
-FIG_W, FIG_H = 7.2, 10.15   # inches (double-column width)
+FIG_W, FIG_H = 7.2, 9.45    # inches (double-column width)
 
 plt.rcParams.update({
     "font.family": "sans-serif",
@@ -218,11 +218,10 @@ def panel_a_unit(ax):
             fontsize=FS["body"], color=INK2, ha="center", va="top")
     ax.text(48, y - 3.1, "Target: IMWG response at V(t+1)", fontsize=FS["body"], color=INK2,
             ha="center", va="top")
-    ax.text(60, y + 2.3, "Unit of prediction: one consecutive visit pair, V(t) → V(t+1)",
-            fontsize=FS["body"], color=INK, fontweight="bold", ha="left", va="top")
-    ax.text(60, y + 0.4, "Each patient contributes several visit pairs. All of a\npatient's "
-            "pairs stay in one data split (train, validation\nor test), so no patient is shared "
-            "between splits.", fontsize=FS["body"], color=INK2, ha="left", va="top", linespacing=1.3)
+    ax.text(60, y + 1.6, "One visit pair = one prediction", fontsize=FS["body"], color=INK,
+            fontweight="bold", ha="left", va="top")
+    ax.text(60, y - 0.6, "All of a patient's visit pairs stay\nin the same data split", fontsize=FS["body"],
+            color=INK2, ha="left", va="top", linespacing=1.3)
 
 
 def nested_bars(ax, rows, total, unit):
@@ -259,11 +258,10 @@ def panel_a_pairs(ax, d):
     rows = [
         dict(label="Six-class response task", n=mc, fill=TASK_FILL,
              inside=f"{fmt(mc)} visit pairs · {fmt(cnt('multiclass', 'all', 'n_patients'))} patients",
-             right="Target: IMWG category at V(t+1)\n(PD, SD, PR, VGPR, CR or sCR)"),
+             right="Target: IMWG category at V(t+1)"),
         dict(label="Binary improvement task", n=bn, fill=TASK_FILL, rest=mc - bn, rest_hatch="////",
              inside=f"{fmt(bn)} visit pairs · {fmt(cnt('binary', 'all', 'n_patients'))} patients",
-             right=f"Target: better IMWG category at V(t+1)\nhatched: {fmt(mc - bn)} pairs with sCR "
-                   f"at V(t) excluded"),
+             right=f"Target: improvement at V(t+1)\nhatched: {fmt(mc - bn)} pairs excluded (sCR at V(t))"),
         dict(label="RNA available (six-class)", n=mc_r, fill=LAYER_COLOR["D"], rest=mc - mc_r,
              inside=f"{fmt(mc_r)} pairs · {fmt(cnt('multiclass', 'all', 'n_patients_rna_available'))} patients",
              inside_color="white", right=f"{mc_r / mc:.1%} of six-class pairs"),
@@ -283,15 +281,13 @@ def panel_a_patients(ax, d):
     n_s = int(surv.loc["PFS_primary", "n_patients"])
     rows = [
         dict(label="All patients", n=n_all, fill=TASK_FILL, inside=f"{fmt(n_all)} patients",
-             right="MMRF CoMMpass interim analysis IA24"),
+             right="MMRF CoMMpass (IA24)"),
         dict(label="RNA available for ≥1 visit pair", n=n_rna, fill=LAYER_COLOR["D"], rest=n_all - n_rna,
-             inside=f"{fmt(n_rna)} patients", inside_color="white",
-             right="Layer D still uses all visit pairs; RNA inputs\nare imputed when no RNA is available"),
+             inside=f"{fmt(n_rna)} patients", inside_color="white"),
         dict(label="Survival cohort (Figures 4–5)", n=n_s, fill=RNA_LIGHT, rest=n_all - n_s,
-             inside=f"{fmt(n_s)} patients with RNA on or before day 0", inside_color=INK,
+             inside=f"{fmt(n_s)} patients with pre-treatment RNA", inside_color=INK,
              right=f"PFS {fmt(surv.loc['PFS_primary', 'n_events'])} events · OS "
-                   f"{fmt(surv.loc['OS_secondary', 'n_events'])} deaths;\nanalysed by internal "
-                   f"cross-validation"),
+                   f"{fmt(surv.loc['OS_secondary', 'n_events'])} deaths"),
     ]
     nested_bars(ax, rows, n_all, "Patients")
     ax.set_xticks([0, 250, 500, 750, 1000])
@@ -328,10 +324,10 @@ def panel_a_split(ax, d):
 LAYER_ROW = {"A": "Current clinical state", "B": "A + longitudinal history",
              "C": "B + treatment context", "D": "C + RNA pathway scores"}
 FAMILY_KEY = [
-    ("A", "Current clinical state", "labs, IMWG response, ISS, CRAB,\nQoL, comorbidity, marrow/flow"),
-    ("B", "Longitudinal history", "previous values, changes,\ndays since last measurement"),
-    ("C", "Treatment context", "line, regimen, drug-class\nexposure, transplant"),
-    ("D", "RNA pathway scores", "50 Hallmark ssGSEA scores\n+ RNA age"),
+    ("A", "Current clinical state", "labs, response, stage, symptoms"),
+    ("B", "Longitudinal history", "previous values and changes"),
+    ("C", "Treatment context", "line, regimen, drug classes"),
+    ("D", "RNA pathway scores", "50 Hallmark scores + RNA age"),
 ]
 
 
@@ -376,9 +372,9 @@ def panel_b(ax, axk, d):
     axk.set_ylim(0, 10)
     for j, (fam, name, desc) in enumerate(FAMILY_KEY):
         x = j * 25
-        axk.add_patch(Rectangle((x, 6.2), 1.4, 3.4, fc=LAYER_COLOR[fam], ec="none"))
-        axk.text(x + 2.2, 9.7, name, fontsize=FS["body"], color=INK, fontweight="bold", va="top")
-        axk.text(x + 2.2, 6.6, desc, fontsize=FS["small"], color=INK2, va="top", linespacing=1.2)
+        axk.add_patch(Rectangle((x, 3.2), 1.4, 6.0, fc=LAYER_COLOR[fam], ec="none"))
+        axk.text(x + 2.2, 9.6, name, fontsize=FS["body"], color=INK, fontweight="bold", va="top")
+        axk.text(x + 2.2, 5.0, desc, fontsize=FS["small"], color=INK2, va="top")
 
 
 # ----------------------------------------------------------------------------------------------
@@ -409,9 +405,8 @@ def panel_c1(ax, d):
         ax.text(n + 12, y, fmt(n), va="center", ha="left", fontsize=FS["body"], color=INK)
     ax.barh(y_extra, n_extra, height=0.66, color=RNA_LIGHT, edgecolor=LAYER_COLOR["D"], linewidth=0.6,
             hatch="//////")
-    ax.text(n_extra + 12, y_extra, f"{n_extra}  (day {int(extra.min())}–{fmt(extra.max())}; "
-            f"{tm['n_patients_ge2_samples']} patients)", va="center", ha="left", fontsize=FS["small"],
-            color=INK)
+    ax.text(n_extra + 12, y_extra, f"{n_extra}  ({tm['n_patients_ge2_samples']} patients)", va="center",
+            ha="left", fontsize=FS["body"], color=INK)
     ax.text(0, 0.05, f"First RNA sample per patient (n = {n_first})", fontsize=FS["body"], color=INK,
             fontweight="bold", ha="left", va="center")
     ax.text(0, 5.45, f"Additional samples (n = {n_extra})", fontsize=FS["body"], color=INK,
@@ -424,15 +419,15 @@ def panel_c1(ax, d):
     ax.spines["bottom"].set_bounds(0, 650)
     clean_axis(ax, keep=("bottom",))
     ax.tick_params(axis="y", length=0, pad=4)
-    ax.set_xlabel("RNA samples (751 distinct samples)", fontsize=FS["body"], labelpad=1.5)
+    ax.set_xlabel("RNA samples (n = 751)", fontsize=FS["body"], labelpad=1.5)
     ax.xaxis.set_label_coords(325 / 1000, -0.25)
     # bracket for the +/-30-day window (rows "day -30 to 0" and "day 1 to 30")
     xb = 735
     ax.plot([xb, xb], [1.7, 3.3], color=INK2, lw=0.7)
     for yy in (1.7, 3.3):
         ax.plot([xb - 14, xb], [yy, yy], color=INK2, lw=0.7)
-    ax.text(xb + 18, 2.5, f"{tm['n_samples_within_30d_of_index']} / 751\n"
-            f"({tm['pct_samples_within_30d_of_index']:.1f}%)\nwithin ±30 days\nof index",
+    ax.text(xb + 18, 2.5, f"{tm['n_samples_within_30d_of_index']}/751\n"
+            f"({tm['pct_samples_within_30d_of_index']:.1f}%)\nwithin\n±30 days",
             ha="left", va="center", fontsize=FS["small"], color=INK, linespacing=1.15)
 
 
@@ -445,14 +440,14 @@ def panel_c2(ax, d):
     ax.axvline(tm["rna_age_median_days"], color=INK, lw=0.9, zorder=3)
     ymax = ax.get_ylim()[1]
     ax.text(tm["rna_age_q3_days"] + 70, ymax * 0.98,
-            f"Median {fmt(tm['rna_age_median_days'])} days\nIQR {fmt(tm['rna_age_q1_days'])}–"
-            f"{fmt(tm['rna_age_q3_days'])} days\n(shaded)", fontsize=FS["small"], color=INK, va="top",
+            f"Median {fmt(tm['rna_age_median_days'])} d\nIQR {fmt(tm['rna_age_q1_days'])}–"
+            f"{fmt(tm['rna_age_q3_days'])}\n(shaded)", fontsize=FS["small"], color=INK, va="top",
             linespacing=1.2)
     ax.set_xlim(0, 2900)
     ax.set_xticks([0, 1000, 2000])
     ax.set_xticks([500, 1500, 2500], minor=True)
     ax.set_xticklabels(["0", "1,000", "2,000"])
-    ax.set_xlabel("Days from the latest RNA sample\n(at or before V(t)) to V(t)", fontsize=FS["body"],
+    ax.set_xlabel("Days since latest RNA sample", fontsize=FS["body"],
                   labelpad=1.5)
     ax.set_ylabel("Visit pairs", fontsize=FS["body"], labelpad=2)
     ax.grid(axis="y", color=GRID, lw=0.5, zorder=0)
@@ -478,9 +473,9 @@ def panel_c3(ax):
     ax.plot(80, yr, "o", ms=6.5, mfc="white", mec=MUTED, mew=0.9)
     ax.plot([68, 68], [yv + 3, yr + 6], color=MUTED, lw=0.7, ls=(0, (2, 1.5)))
     arrow(ax, (66.5, yr), (44.2, yr), color=LAYER_COLOR["D"], lw=0.9)
-    ax.text(44, yr + 6, "used: latest sample\nat or before V(t)", fontsize=FS["small"], color=INK,
+    ax.text(48, yr + 6, "used: latest\nat or before V(t)", fontsize=FS["small"], color=INK,
             ha="center", va="bottom", linespacing=1.15)
-    ax.text(18, yr - 6, "earlier sample\n(superseded)", fontsize=FS["small"], color=INK2, ha="center",
+    ax.text(20, yr - 6, "earlier\n(superseded)", fontsize=FS["small"], color=INK2, ha="center",
             va="top", linespacing=1.15)
     ax.text(85, yr + 6, "after V(t):\nnever used", fontsize=FS["small"], color=INK2, ha="center",
             va="bottom", linespacing=1.15)
@@ -490,9 +485,6 @@ def panel_c3(ax):
         ax.plot([x, x], [yb - 2.5, yb + 2.5], color=INK2, lw=0.8)
     ax.plot([42, 42], [yb + 2.5, yr - 4], color=GRID, lw=0.6)
     ax.text(55, yb - 4, "RNA age at V(t)", fontsize=FS["small"], color=INK, ha="center", va="top")
-    ax.text(0, -14, "Visit pairs with no RNA sample at or before V(t)\nare RNA-unavailable; a later "
-            "sample is never\nused to fill them.", fontsize=FS["small"], color=MUTED,
-            ha="left", va="top", linespacing=1.2)
 
 
 # ----------------------------------------------------------------------------------------------
@@ -504,68 +496,52 @@ def build(d):
     # ---- Panel A ----
     panel_letter(fig, "A", 0.10)
     heading(fig, "Cohort, prediction tasks and data split", 0.12, LX + 0.02)
-    axU = add_ax(fig, LX, 0.30, 0.95, 0.56)
+    axU = add_ax(fig, LX, 0.30, 0.95, 0.5)
     panel_a_unit(axU)
 
-    heading(fig, "Visit pairs for next-visit prediction (RNA-available pairs are a subset of each "
-            "task's pairs; all bars share one axis)", 0.98, LX)
-    axP = add_ax(fig, PX, 1.18, 0.40, 1.02)
+    heading(fig, "Visit pairs (one shared axis; RNA-available pairs are subsets of each task)", 0.92, LX)
+    axP = add_ax(fig, PX, 1.1, 0.40, 1.0)
     panel_a_pairs(axP, d)
 
-    heading(fig, "Patients (nested sets: the survival cohort lies within the patients with RNA, "
-            "who lie within all patients)", 2.56, LX)
-    axQ = add_ax(fig, PX, 2.76, 0.40, 0.74)
+    heading(fig, "Patients (nested subsets)", 2.5, LX)
+    axQ = add_ax(fig, PX, 2.68, 0.40, 0.72)
     panel_a_patients(axQ, d)
 
-    heading(fig, "Patient-grouped data split for next-visit prediction, identical for every "
-            "information layer and algorithm", 3.86, LX)
-    axS = add_ax(fig, LX, 4.03, 0.95, 0.92)
+    heading(fig, "Patient-grouped data split (same for every information layer and algorithm; "
+            "bar width proportional to visit pairs)", 3.78, LX)
+    axS = add_ax(fig, LX, 3.95, 0.95, 0.9)
     panel_a_split(axS, d)
-    fig.text(LX, y_in(4.99), "Hyperparameters were tuned by patient-grouped cross-validation within "
-             "training patients only; validation patients set the binary decision threshold; test "
-             "patients were scored once.\nBar widths are proportional to visit pairs. Binary test-set "
-             f"improvement rate: {d['test_rate_text']}. The survival cohort is analysed separately "
-             "and spans all three splits.", fontsize=FS["small"], color=MUTED, ha="left", va="top",
-             linespacing=1.25)
 
     # ---- Panel B ----
-    panel_letter(fig, "B", 5.40)
-    heading(fig, "Nested information layers A\u2013D: input-feature sets, not algorithms", 5.42,
-            LX + 0.02, sub="Each layer adds one family of features to the previous layer; every "
-            "layer uses the same visit pairs and patient split.")
-    axB = add_ax(fig, PX, 5.98, 0.62, 0.90)
-    axK = add_ax(fig, LX, 7.22, 0.95, 0.32)
+    panel_letter(fig, "B", 5.05)
+    heading(fig, "Nested information layers A–D: input-feature sets, not algorithms", 5.07, LX + 0.02)
+    axB = add_ax(fig, PX, 5.42, 0.62, 0.88)
+    axK = add_ax(fig, LX, 6.66, 0.95, 0.3)
     panel_b(axB, axK, d)
-    fig.text(LX, y_in(7.58), "Each layer was fitted with Logistic Regression, LightGBM and XGBoost "
-             "(XGBoost is the reporting reference algorithm, not a validation-selected best model). "
-             "\u2020Plus 1 derived RNA-\navailability indicator. Source input features are counted before "
-             "one-hot encoding; *fitted model-input columns are counted after one-hot encoding and "
-             "addition of missing-value indicators.",
-             fontsize=FS["small"], color=MUTED, ha="left", va="top", linespacing=1.25)
+    fig.text(LX, y_in(7.02), "Each layer was fitted with Logistic Regression, LightGBM and XGBoost. "
+             "†Plus 1 derived RNA-availability indicator. *After one-hot encoding and missing-value "
+             "indicators.", fontsize=FS["small"], color=MUTED, ha="left", va="top")
 
     # ---- Panel C ----
-    panel_letter(fig, "C", 8.00)
-    top_c = 8.02
-    for x, t in [(LX + 0.02, "RNA collection relative to the\nCoMMpass index date (day 0)"),
-                 (0.505, "RNA age at the current visit V(t)\n(9,173 six-class pairs with RNA)"),
-                 (0.75, "No-future-RNA alignment rule\n(schematic)")]:
+    panel_letter(fig, "C", 7.32)
+    top_c = 7.34
+    for x, t in [(LX + 0.02, "RNA collection day vs\nCoMMpass index date (day 0)"),
+                 (0.505, "RNA age at the current visit\n(9,173 six-class pairs with RNA)"),
+                 (0.765, "No-future-RNA rule")]:
         fig.text(x, y_in(top_c), t, fontsize=FS["title"], fontweight="bold", color=INK, ha="left",
                  va="top", linespacing=1.15)
-    axC1 = add_ax(fig, 0.135, 8.40, 0.30, 0.98)
-    axC2 = add_ax(fig, 0.545, 8.42, 0.17, 0.84)
-    axC3 = add_ax(fig, 0.75, 8.40, 0.24, 0.84)
+    axC1 = add_ax(fig, 0.135, 7.72, 0.30, 0.98)
+    axC2 = add_ax(fig, 0.545, 7.74, 0.17, 0.84)
+    axC3 = add_ax(fig, 0.765, 7.62, 0.225, 0.84)
     panel_c1(axC1, d)
     panel_c2(axC2, d)
     panel_c3(axC3)
 
-    fig.text(LX, 0.005,
-             "IMWG, International Myeloma Working Group; PD, progressive disease; SD, stable disease; "
-             "PR, partial response; VGPR, very good partial response; CR, complete response;\nsCR, "
-             "stringent complete response; PFS, progression-free survival; OS, overall survival; ISS, "
-             "International Staging System; CRAB, hypercalcaemia, renal insufficiency,\nanaemia, bone "
-             "lesions; QoL, quality of life; ssGSEA, single-sample gene set enrichment analysis "
-             "(MSigDB Hallmark gene sets); IQR, interquartile range.",
-             fontsize=FS["small"] - 0.4, color=MUTED, ha="left", va="bottom", linespacing=1.3)
+    fig.text(LX, 0.006,
+             "IMWG response categories: PD, progressive disease; SD, stable disease; PR, partial response; "
+             "VGPR, very good partial response; CR, complete response;\nsCR, stringent complete response. "
+             "PFS, progression-free survival; OS, overall survival.",
+             fontsize=FS["small"], color=MUTED, ha="left", va="bottom", linespacing=1.3)
     return fig
 
 

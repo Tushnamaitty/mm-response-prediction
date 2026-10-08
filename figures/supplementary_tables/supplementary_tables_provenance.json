@@ -1,0 +1,47 @@
+{
+  "script": "figures/supplementary_tables/build_supplementary_tables.py",
+  "inputs_sha256": {
+    "figures\\data\\Fig3\\fig3C_treatment_and_trajectory_strata.csv": "6f62260f76cba1c80ccaa67711946adb466efea9fbac3a71b2ac1c8daacbaf9d",
+    "figures\\data\\Fig3\\fig3C_interactions_secondary.csv": "3f01d84cf40b4bd83a2e80e3633a22f7ca87f8453b30c966f2e29d87179b3b2d",
+    "artifacts\\results_clean_rerun\\direction3\\partA_predictive\\partA_delta_within_group.csv": "b17b8844b48e8cd8658b5637d1298f247f4a159138e3161137e3e5e884341781",
+    "artifacts\\results_clean_rerun\\direction4\\partA_predictive\\partA_state_delta.csv": "fc6eb9780ad6976fee197e6c217e00e2fcbabaa480c9631fbf400f2f41f4e26f",
+    "figures\\data\\FigS_calibration\\figS1_binary_calibration_metrics.csv": "4064f20255ba596e1aa90793377b60ba669c2ed67cea021bcccd908a12e8df32",
+    "figures\\data\\FigS_calibration\\figS1B_d_minus_c_calibration.csv": "8f6db9a8a3cc5a5573170c3fcb0653622800cdac42bbc7b43cbe3014bcc044ef",
+    "figures\\data\\FigS_calibration\\calibration_summary_from_subgroup_branch.json": "f6b09b15630d620afb96c2753112270bb9c287047b04f519230d6b49dc3d8463",
+    "artifacts\\results_clean_rerun\\calibration\\probabilities\\binary_c_xgboost_test.csv": "bc42abe94f59c0207f22362b3ecdac8625238aab162f4f205655f916071c4b94",
+    "artifacts\\results_clean_rerun\\calibration\\probabilities\\binary_d_xgboost_test.csv": "8562eb694b5c7faeececff5f8525fe1612addc02f8061bdbb29c5ff54becfe72",
+    "artifacts\\results_clean_rerun\\uncertainty\\rna_subset_paired_differences.csv": "e3cc937c4ccaaddcb59434f9bb93ca682ff545a6881f3770410bc480ce724a0c",
+    "figures\\data\\FigS_shap\\figS3A_ext_component_shares.csv": "9eee3d11f3035d79caaf8d0e9df0c5a97752db9a426c5aef745cad34d90bee79",
+    "figures\\data\\FigS_shap\\figS3A_ext_component_shares_per_class.csv": "3334d7de9aad1a3eb9e0b514f4123d6760ee60d114ddf6c81afe5b51d1597465",
+    "figures\\data\\FigS_shap\\figS3A_family_shares.csv": "3dea46581a8d4059bad9375f6953919d8050e4be9facd3f4edff7d56da61710e",
+    "figures\\data\\FigS_country\\figS2A_binary_auprc.csv": "16745b6d16411572d62562afb34b38b1725e57ce806c05da06fa132a6313008c",
+    "figures\\data\\FigS_country\\figS2B_sixclass_macro_f1.csv": "2dca9cb1f8048b97f6d65d3ba5a009d731d09ffea0069abe2c6707433d988232",
+    "figures\\data\\FigS_country\\figS2_auroc_caption_only.csv": "9f35506854cad31bd0b6dc5a3d06669f0a0efd90479a19fa33e47f44430ba967",
+    "figures\\data\\FigS_country\\figS2_tuning_overlap.json": "93782f9444739c625375191ec8ee02b48aa7f74d8b73157598a69b5169bd082b",
+    "figures\\data\\Fig4\\fig4_ibs_caption_only.csv": "7bb340ab00e27bead4d3be0da5185e0924e060b98d4ac5579c7e367538269f88",
+    "figures\\data\\Fig4\\fig4B_delta_c_forest.csv": "9401241e5c9b0348c0b4735489e34cac25adeadada51195ee3b6d9ddce09b464",
+    "figures\\data\\Fig4\\fig4A_cindex_summary.csv": "bbb0c64b637374bc8bedfed42047bf0b607915456dd4f7d12ba0ff1f7242e09a",
+    "artifacts\\results_clean_rerun\\survival_incremental\\final_summary.json": "b2c165d40dab3b8342a39a3a7badb4f365d7b342c3c9cab66ea1d8428e1a27f5",
+    "artifacts\\results_clean_rerun\\survival_richer_baseline_sensitivity\\final_summary.json": "05c99f8fe5e1bfb6466874d49f78d00e18f177f5ba0e1bea6e27bfca32b3850d",
+    "artifacts\\results_clean_rerun\\survival_incremental\\primary_pfs_repeat_metrics.csv": "4f68e6de234a40a253545cf5b1ac07c51d32e2b46ce5652bc48690091d496255",
+    "artifacts\\results_clean_rerun\\survival_incremental\\secondary_os_repeat_metrics.csv": "d841c5804229178f4c0a274a704fc6bb57226288999260bac230c7508719e6f1",
+    "artifacts\\results_clean_rerun\\survival_incremental\\sensitivity_m30_0_pfs_repeat_metrics.csv": "55d9298a884cdbedf974c763c22fb7faed08d88a9a91398d6e9731de28ae4439",
+    "artifacts\\results_clean_rerun\\survival_richer_baseline_sensitivity\\primary_pfs_richer_repeat_metrics.csv": "728ad3599584f2aa80d26f4b1b376139f4898c5e266577b5c76c651045162448",
+    "artifacts\\results_clean_rerun\\survival_richer_baseline_sensitivity\\secondary_os_richer_repeat_metrics.csv": "779dbcf0f23121317b6e74db8b95e7fc3a3d6fb9d16b0bb9b22059f918e9dd01"
+  },
+  "git_sources": {
+    "origin/modeling-country-robustness:results/robustness_country/binary_c_xgboost_us_to_spain_canada_metrics.json": "902c663ea8a82a64d0bc7fa548c06796a9dedf09bf9f54ff1bc58a6603b6ff9f"
+  },
+  "outputs": [
+    "Table_S1_fig3C_subgroups.csv",
+    "Table_S1_fig3C_subgroups.md",
+    "Table_S2_rna_available_calibration.csv",
+    "Table_S2_rna_available_calibration.md",
+    "Table_S3_shap_attribution.csv",
+    "Table_S3_shap_attribution.md",
+    "Table_S4_geographic_robustness.csv",
+    "Table_S4_geographic_robustness.md",
+    "Table_S5_survival.csv",
+    "Table_S5_survival.md"
+  ]
+}
