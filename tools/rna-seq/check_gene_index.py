@@ -1,7 +1,7 @@
 import pandas as pd
 
 expr = pd.read_csv(
-    "data_raw/rnaseq/expression_matrix_tpm.csv",
+    "data/rna/expression_matrix_tpm.csv",
     index_col=0
 )
 

@@ -1,0 +1,24 @@
+{
+  "label": "DIRECTION 1 EXPLORATORY SENSITIVITY: continuous Model-C entropy vs RNA log-loss benefit (binary)",
+  "smoke": false,
+  "input_oof_sha256": "2841bca0553b5afd6e8312721eb949ba64f8c958764b641ae9fe70a5cff1f82b",
+  "files": {
+    "bootstrap_slope_draws.csv": "55b0b1bcf7eef20c028d36c496f538885431f2f85f220a75d5e482dfbc19e15e",
+    "descriptive_spearman_and_per_repeat.csv": "f9d5317265b27053df86331f135748a16d3f1a3e77e56eb19f4872a9e6ad8bf9",
+    "entropy_slope_primary_and_secondary.csv": "d2614bebb395637e27b6b807f97b324c4d9397b7a2b44fe0e2e7aed2095a06ea",
+    "pair_level_benefit.csv": "21f00a8c4555a078066eb3305a4005a104e9c8d6799d6618a5f9ef930c3addbd",
+    "quartile_sanity_check_vs_D1.csv": "69d93f4c674d987ed8da361179f52957bfd31dbc6413a3947f5fa2d92bf3ae54",
+    "run_summary.json": "bd41d171993e7d51869ca26205f3ff865f70ef3d9ffba645aca18944ea378734",
+    "spline_curve.csv": "67b4223c5e71d805a385dce9503a5449e92a488364371d66cd3f3807d969729d",
+    "spline_tests.csv": "02ef8eb751f139e7b3bc2c92c5108d8042d3b21851cf01d31eb4fe7cb4cb6f97"
+  },
+  "combined_sha256": "624110bfa7d3e59df48c2ec7f968024cb8d9e06c10516b59ef2cf55453ddb92f",
+  "versions": {
+    "python": "3.13.15",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "numpy": "2.4.6",
+    "pandas": "3.0.5",
+    "scipy": "1.18.0",
+    "statsmodels": "0.15.0"
+  }
+}

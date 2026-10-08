@@ -1,0 +1,195 @@
+feature,layer_added
+vt_disease_response,A
+vt_ecog_ps_numeric,A
+vt_reported_signs_symptoms,A
+vt_reported_adverse_event,A
+vt_reported_clinical_event,A
+m_protein_current,A
+kappa_flc_current,A
+lambda_flc_current,A
+calcium_current,A
+creatinine_current,A
+hemoglobin_current,A
+b2m_current,A
+albumin_current,A
+ldh_current,A
+iss_stage,A
+r_iss_stage,A
+age_at_diagnosis,A
+height_at_diagnosis_m,A
+weight_at_diagnosis_kg,A
+bmi_at_diagnosis,A
+subject_had_signs_symptoms,A
+bone_pain,A
+hypercalcemia,A
+renal_insufficiency,A
+anemia,A
+lytic_bone_lesion,A
+spinal_cord_compression,A
+recurrent_bacteria_infection,A
+amyloidosis,A
+soft_tissue_plasmacytoma_single,A
+soft_tissue_plasmacytoma_multi,A
+bone_lytic_lesion_present,A
+n_lytic_lesions_ordinal,A
+pathologic_fracture,A
+has_peripheral_neuropathy,A
+peripheral_neuropathy_max_grade,A
+had_other_ae,A
+had_transfusion,A
+had_dialysis,A
+had_bisphosphonate,A
+had_opioid,A
+had_radiation_therapy,A
+had_wbc_growth_factor,A
+had_esa,A
+had_tumor_lysis_meds,A
+had_anticoagulation,A
+qol_global_health_status,A
+qol_fatigue,A
+qol_pain,A
+qol_physical_functioning,A
+qol_disease_symptoms,A
+qol_side_effects_treatment,A
+has_hypertension_or_chf,A
+has_chronic_pulmonary_disease,A
+has_renal_comorbidity,A
+has_borderline_diabetes,A
+has_cva,A
+has_mi,A
+comorbidity_count_total,A
+had_hospitalization,A
+had_ed_visit,A
+cd38_detected,A
+cd56_detected,A
+cd138_detected,A
+cd45_typical_detected,A
+cd38_pct,A
+cd56_pct,A
+pct_plasma_cells_bm,A
+pct_plasma_cells_pb,A
+ig_heavy_chain_type,A
+ig_light_chain_type,A
+has_braf_mutation,A
+dna_index,A
+has_family_history_of_cancer,A
+has_family_history_of_myeloma,A
+count_relatives_with_cancer,A
+cmmc_number,A
+cmmc_detected,A
+vt_days_to_visit,B
+m_protein_previous,B
+m_protein_change,B
+m_protein_pct_change,B
+m_protein_days_since_previous,B
+kappa_flc_previous,B
+kappa_flc_change,B
+kappa_flc_pct_change,B
+kappa_flc_days_since_previous,B
+lambda_flc_previous,B
+lambda_flc_change,B
+lambda_flc_pct_change,B
+lambda_flc_days_since_previous,B
+calcium_previous,B
+calcium_change,B
+calcium_pct_change,B
+calcium_days_since_previous,B
+creatinine_previous,B
+creatinine_change,B
+creatinine_pct_change,B
+creatinine_days_since_previous,B
+hemoglobin_previous,B
+hemoglobin_change,B
+hemoglobin_pct_change,B
+hemoglobin_days_since_previous,B
+b2m_previous,B
+b2m_change,B
+b2m_pct_change,B
+b2m_days_since_previous,B
+albumin_previous,B
+albumin_change,B
+albumin_pct_change,B
+albumin_days_since_previous,B
+ldh_previous,B
+ldh_change,B
+ldh_pct_change,B
+ldh_days_since_previous,B
+current_line_number,C
+current_line_is_active,C
+line_duration_so_far,C
+n_prior_lines_completed,C
+current_regimen_name,C
+current_regimen_type,C
+current_regimen_categories,C
+regimen_duration_so_far,C
+n_prior_regimens,C
+prior_treatment_failure,C
+has_prior_transplant,C
+has_prior_allo_transplant,C
+n_prior_transplants,C
+days_since_last_transplant,C
+currently_on_pi,C
+prior_exposure_pi,C
+currently_on_imid,C
+prior_exposure_imid,C
+currently_on_cd38,C
+prior_exposure_cd38,C
+currently_on_slamf7,C
+prior_exposure_slamf7,C
+currently_on_bcma,C
+prior_exposure_bcma,C
+currently_on_steroid,C
+prior_exposure_steroid,C
+currently_on_chemo,C
+prior_exposure_chemo,C
+Adipogenesis,D
+Allograft Rejection,D
+Androgen Response,D
+Angiogenesis,D
+Apical Junction,D
+Apical Surface,D
+Apoptosis,D
+Bile Acid Metabolism,D
+Cholesterol Homeostasis,D
+Coagulation,D
+Complement,D
+DNA Repair,D
+E2F Targets,D
+Epithelial Mesenchymal Transition,D
+Estrogen Response Early,D
+Estrogen Response Late,D
+Fatty Acid Metabolism,D
+G2-M Checkpoint,D
+Glycolysis,D
+Hedgehog Signaling,D
+Hypoxia,D
+IL-2/STAT5 Signaling,D
+IL-6/JAK/STAT3 Signaling,D
+Inflammatory Response,D
+Interferon Alpha Response,D
+Interferon Gamma Response,D
+KRAS Signaling Dn,D
+KRAS Signaling Up,D
+Mitotic Spindle,D
+Myc Targets V1,D
+Myc Targets V2,D
+Myogenesis,D
+Notch Signaling,D
+Oxidative Phosphorylation,D
+PI3K/AKT/mTOR  Signaling,D
+Pancreas Beta Cells,D
+Pperoxisome,D
+Protein Secretion,D
+Reactive Oxygen Species Pathway,D
+Spermatogenesis,D
+TGF-beta Signaling,D
+TNF-alpha Signaling via NF-kB,D
+UV Response Dn,D
+UV Response Up,D
+Unfolded Protein Response,D
+Wnt-beta Catenin Signaling,D
+Xenobiotic Metabolism,D
+heme Metabolism,D
+mTORC1 Signaling,D
+p53 Pathway,D
+days_since_rna_sample,D

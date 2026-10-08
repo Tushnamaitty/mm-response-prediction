@@ -1,0 +1,88 @@
+{
+  "description": "Inference-only val/test probabilities for locked C/D XGBoost models.",
+  "models": {
+    "binary_c_xgboost": {
+      "checks": {
+        "max_abs_proba_diff_vs_locked": 2.97042846986173e-08,
+        "val_auprc_matches_locked": true,
+        "val_brier_score_matches_locked": true,
+        "val_test_patients_disjoint": true
+      },
+      "n_rows_val": 1659,
+      "n_patients_val": 154,
+      "n_rna_available_val": 1082,
+      "n_rows_test": 1930,
+      "n_patients_test": 155,
+      "n_rna_available_test": 1323
+    },
+    "binary_d_xgboost": {
+      "checks": {
+        "max_abs_proba_diff_vs_locked": 2.9650115918045117e-08,
+        "val_auprc_matches_locked": true,
+        "val_brier_score_matches_locked": true,
+        "val_test_patients_disjoint": true
+      },
+      "n_rows_val": 1659,
+      "n_patients_val": 154,
+      "n_rna_available_val": 1082,
+      "n_rows_test": 1930,
+      "n_patients_test": 155,
+      "n_rna_available_test": 1323
+    },
+    "multiclass_c_xgboost": {
+      "checks": {
+        "n_argmax_label_mismatches_vs_locked": 0,
+        "val_macro_f1_matches_locked": true,
+        "val_test_patients_disjoint": true
+      },
+      "n_rows_val": 1833,
+      "n_patients_val": 154,
+      "n_rna_available_val": 1240,
+      "n_rows_test": 2079,
+      "n_patients_test": 155,
+      "n_rna_available_test": 1449
+    },
+    "multiclass_d_xgboost": {
+      "checks": {
+        "n_argmax_label_mismatches_vs_locked": 0,
+        "val_macro_f1_matches_locked": true,
+        "val_test_patients_disjoint": true
+      },
+      "n_rows_val": 1833,
+      "n_patients_val": 154,
+      "n_rna_available_val": 1240,
+      "n_rows_test": 2079,
+      "n_patients_test": 155,
+      "n_rna_available_test": 1449
+    }
+  },
+  "outputs": [
+    "artifacts/results_clean_rerun/calibration/probabilities/binary_c_xgboost_val.csv",
+    "artifacts/results_clean_rerun/calibration/probabilities/binary_c_xgboost_test.csv",
+    "artifacts/results_clean_rerun/calibration/probabilities/binary_d_xgboost_val.csv",
+    "artifacts/results_clean_rerun/calibration/probabilities/binary_d_xgboost_test.csv",
+    "artifacts/results_clean_rerun/calibration/probabilities/multiclass_c_xgboost_val.csv",
+    "artifacts/results_clean_rerun/calibration/probabilities/multiclass_c_xgboost_test.csv",
+    "artifacts/results_clean_rerun/calibration/probabilities/multiclass_d_xgboost_val.csv",
+    "artifacts/results_clean_rerun/calibration/probabilities/multiclass_d_xgboost_test.csv"
+  ],
+  "locked_inputs_unchanged": true,
+  "locked_input_sha256": {
+    "artifacts/models_clean_rerun/binary_c_xgboost.joblib": "4c8b1bedc489c880d95d26cedb57210d30773923addea601bd0eb160bdd4b850",
+    "artifacts/results_clean_rerun/binary_c_xgboost_predictions.csv": "69f64c91fd6cc7676aed165914be91dd2d15e9a05d8ca3121e26fcf37f5ed6cb",
+    "artifacts/results_clean_rerun/binary_c_xgboost_metrics.json": "288a1b0c5f3062a2173c5f5892a7d61c01a7b55847ca651a9c2ebc778b93cbf4",
+    "artifacts/models_clean_rerun/binary_d_xgboost.joblib": "4a359c1922d285f1bea962c67a548979ef791b0145b37aa646f947e68a4c1fcf",
+    "artifacts/results_clean_rerun/binary_d_xgboost_predictions.csv": "c49274e4fda6b742138ddb3aab3e52a937c05fa21eece6490a64141dba44e76a",
+    "artifacts/results_clean_rerun/binary_d_xgboost_metrics.json": "d20850d9e7b95a64e5e394e89f8f4ff5a0b989e83c7c8588d8342f9b10ca59df",
+    "artifacts/models_clean_rerun/multiclass_c_xgboost.joblib": "df24a808e4c7571fe90f7580ba7da17dd417b8fe9a5cf1aff5a9cdc5c9aacc99",
+    "artifacts/results_clean_rerun/multiclass_c_xgboost_predictions.csv": "720575cf9451ae15d9c1012846b6729d6b1716780918e058c0f0739f287d1e7f",
+    "artifacts/results_clean_rerun/multiclass_c_xgboost_metrics.json": "2f3b9a500ccf86bfc968ad184ce2bf8c508e2076289942e6d45e6fd5250ff285",
+    "artifacts/models_clean_rerun/multiclass_d_xgboost.joblib": "5185db90162ebbbebbb5279fdabb95a7255696be81b9812253098398024612ba",
+    "artifacts/results_clean_rerun/multiclass_d_xgboost_predictions.csv": "a51b9639ad413a475431b24678bf91aef3b41162d9a28c1515c66666134c0d22",
+    "artifacts/results_clean_rerun/multiclass_d_xgboost_metrics.json": "2982abf0ca3d488dd946016374d6322098e4a8cb9340949408a052738542e626",
+    "artifacts/preprocessing/model_c_preprocessor.joblib": "fc8e8ba532177c6a858c4ce077fdadceb7703bba9a674c376d97736da8fa0f09",
+    "artifacts/preprocessing/model_c_metadata.json": "1d72a7bce1b2429b6dcf62cc203b8c91beef91b56f66c05d9d3a06f4986f89ad",
+    "artifacts/preprocessing/model_d_preprocessor.joblib": "cd3b88d93f38516103618c9ea0e9781c9e567bdd16d9320e697c733aa429756c",
+    "artifacts/preprocessing/model_d_metadata.json": "0af43a8de39369a9b753e707fc629596e44e7eb3315362307a3d6eb1d1a8ce01"
+  }
+}

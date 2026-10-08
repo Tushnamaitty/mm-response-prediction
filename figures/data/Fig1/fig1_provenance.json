@@ -1,0 +1,32 @@
+{
+  "script": "figures/fig1_extract_data.py",
+  "inputs_sha256": {
+    "data\\clinical\\visit_pairs_with_rna.csv": "7697743bbddb405edc61213c5bfa690eb73154df6b20b6f4f7a1cb5224ea5a58",
+    "data\\splits\\task_eligibility.csv": "3f4c5bfb5257ad0f944802b4f05e892aad2bb03dc0c2717b66b2b42fd1a93727",
+    "data\\splits\\patient_split_assignments.csv": "f3427678baf4a9aa0c8b215a72cc42c0ecc93294ee73f7ca09232a18e60f76ff",
+    "data_pipeline\\model_feature_sets.json": "9600d0b4806c96e210d07cc9a375f1eeb21d6324aad86a707ae09d5a419c3bde",
+    "artifacts\\results_clean_rerun\\direction2\\association\\run_summary.json": "d1b515be3b9b76d6937b2047c961f8f66cae0579ac9c7ffe61ace1f0cec5b754",
+    "artifacts\\results\\rna_freshness_sensitivity_PRELIMINARY.json": "28f5da219a6207fa84170691660fd3714ee267cab1749c2a0c2093a7cb4ed195",
+    "artifacts\\results_clean_rerun\\survival_incremental\\primary_pfs_oof_predictions.csv": "4c33bb0fc50fd04c4ceeff4a60c42c649f53a97d6626361155bbd178cfafd49e",
+    "artifacts\\results_clean_rerun\\survival_incremental\\secondary_os_oof_predictions.csv": "c4afe0ca800f5e7cdf75c172dee9a8eb5a9c89854adaec3351752400d38a2ac0",
+    "artifacts\\results_clean_rerun\\survival_incremental\\sensitivity_m30_0_pfs_oof_predictions.csv": "fcb337965935a88dadda25fcb0a1ee51732fbb74369bc40f5732beda31d4ea29",
+    "artifacts\\preprocessing\\model_a_metadata.json": "793269b8321ca7439f7fced34e6411249794aa0bee29c2418080497d33062ad6",
+    "artifacts\\preprocessing\\model_b_metadata.json": "1c31239de16791def6ccb37ed434f5e45ebab33227f303cc77dd365dc358a910",
+    "artifacts\\preprocessing\\model_c_metadata.json": "1d72a7bce1b2429b6dcf62cc203b8c91beef91b56f66c05d9d3a06f4986f89ad",
+    "artifacts\\preprocessing\\model_d_metadata.json": "0af43a8de39369a9b753e707fc629596e44e7eb3315362307a3d6eb1d1a8ce01"
+  },
+  "outputs": [
+    "fig1_binary_improvement_prevalence.csv",
+    "fig1_cohort_task_counts.csv",
+    "fig1_features_by_layer_added.csv",
+    "fig1_information_layers.csv",
+    "fig1_multiclass_class_counts.csv",
+    "fig1_provenance.json",
+    "fig1_rna_age_by_visit_pair.csv",
+    "fig1_rna_samples_distinct.csv",
+    "fig1_rna_timing_summary.json",
+    "fig1_survival_cohort_counts.csv",
+    "fig1_survival_split_overlap.json",
+    "fig1_verification_checks.csv"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "full_D": {
+    "macro_f1": 0.6510262346872202
+  },
+  "D_without_indicator": {
+    "macro_f1": 0.6510262346872202
+  },
+  "best_params_reused_no_retuning": {
+    "n_estimators": 200,
+    "max_depth": 4,
+    "learning_rate": 0.05
+  },
+  "n_train": 9539,
+  "n_test": 2079
+}

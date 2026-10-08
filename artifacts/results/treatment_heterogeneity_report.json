@@ -1,0 +1,50 @@
+{
+  "train": {
+    "currently_on_pi": 0.2541146870741168,
+    "currently_on_imid": 0.49082713072649126,
+    "currently_on_cd38": 0.06887514414508858,
+    "currently_on_slamf7": 0.01845057133871475,
+    "currently_on_bcma": 0.0013628262920641577,
+    "currently_on_steroid": 0.3445853863088374,
+    "currently_on_chemo": 0.04602159555508963,
+    "current_regimen_type_top5": {
+      "maintenance": 1248,
+      "induction": 1103,
+      "consolidation": 36,
+      "sct_prep": 10,
+      "mobilization": 4
+    }
+  },
+  "val": {
+    "currently_on_pi": 0.24386252045826515,
+    "currently_on_imid": 0.5013638843426077,
+    "currently_on_cd38": 0.06001091107474086,
+    "currently_on_slamf7": 0.016366612111292964,
+    "currently_on_bcma": 0.0005455537370430987,
+    "currently_on_steroid": 0.3851609383524277,
+    "currently_on_chemo": 0.06873977086743044,
+    "current_regimen_type_top5": {
+      "maintenance": 245,
+      "induction": 211,
+      "consolidation": 7,
+      "sct_prep": 5,
+      "sct": 2
+    }
+  },
+  "test": {
+    "currently_on_pi": 0.24963924963924963,
+    "currently_on_imid": 0.4728234728234728,
+    "currently_on_cd38": 0.050505050505050504,
+    "currently_on_slamf7": 0.02068302068302068,
+    "currently_on_bcma": 0.0,
+    "currently_on_steroid": 0.3347763347763348,
+    "currently_on_chemo": 0.06012506012506012,
+    "current_regimen_type_top5": {
+      "maintenance": 300,
+      "induction": 208,
+      "sct": 12,
+      "consolidation": 8,
+      "sct_prep": 3
+    }
+  }
+}

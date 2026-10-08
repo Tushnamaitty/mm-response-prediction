@@ -1,0 +1,177 @@
+{
+  "task": "binary",
+  "model_stage": "a",
+  "algorithm": "lightgbm",
+  "tag": "",
+  "n_train": 8709,
+  "n_val": 1659,
+  "n_test": 1930,
+  "n_patients_train": 709,
+  "n_patients_val": 154,
+  "n_patients_test": 155,
+  "best_params": {
+    "n_estimators": 100,
+    "num_leaves": 15,
+    "learning_rate": 0.05
+  },
+  "cv_results": [
+    {
+      "params": {
+        "n_estimators": 100,
+        "num_leaves": 15,
+        "learning_rate": 0.05
+      },
+      "mean": 0.5081736221504526,
+      "std": 0.014156133033006647,
+      "fold_scores": [
+        0.5122203232543779,
+        0.48672065298488215,
+        0.5154199643710926,
+        0.4987406027056469,
+        0.5277665674362633
+      ]
+    },
+    {
+      "params": {
+        "n_estimators": 200,
+        "num_leaves": 31,
+        "learning_rate": 0.05
+      },
+      "mean": 0.49588273688009127,
+      "std": 0.01303217516258119,
+      "fold_scores": [
+        0.5006478031704887,
+        0.481876518105038,
+        0.5055914318503811,
+        0.4792791783723097,
+        0.5120187529022386
+      ]
+    },
+    {
+      "params": {
+        "n_estimators": 200,
+        "num_leaves": 15,
+        "learning_rate": 0.1
+      },
+      "mean": 0.488408362234458,
+      "std": 0.015501576575860574,
+      "fold_scores": [
+        0.4803766721811549,
+        0.46783044706545107,
+        0.5106301313829843,
+        0.48161913209735135,
+        0.501585428445348
+      ]
+    }
+  ],
+  "seed": 42,
+  "val_metrics": {
+    "auprc": 0.4553914070761109,
+    "auroc": 0.7592226253789951,
+    "brier_score": 0.12356708375318219,
+    "sensitivity": 0.5898305084745763,
+    "specificity": 0.8247800586510264,
+    "precision": 0.4213075060532688,
+    "recall": 0.5898305084745763,
+    "f1": 0.4915254237288136,
+    "threshold_used": 0.25,
+    "confusion_matrix": [
+      [
+        1125,
+        239
+      ],
+      [
+        121,
+        174
+      ]
+    ],
+    "n": 1659
+  },
+  "test_metrics_PRELIMINARY": {
+    "auprc": 0.47719240378520744,
+    "auroc": 0.7959495653704725,
+    "brier_score": 0.12033571652873015,
+    "sensitivity": 0.6147308781869688,
+    "specificity": 0.8281547241597971,
+    "precision": 0.444672131147541,
+    "recall": 0.6147308781869688,
+    "f1": 0.5160523186682521,
+    "threshold_used": 0.25,
+    "confusion_matrix": [
+      [
+        1306,
+        271
+      ],
+      [
+        136,
+        217
+      ]
+    ],
+    "n": 1930,
+    "PRELIMINARY": true
+  },
+  "test_auprc_bootstrap_ci_PRELIMINARY": {
+    "n_resamples_used": 200,
+    "mean": 0.4799967735990386,
+    "ci_lower_2.5": 0.4427730574235353,
+    "ci_upper_97.5": 0.5238719717665841
+  },
+  "calibration_curve": {
+    "prob_true": [
+      0.030927835051546393,
+      0.041666666666666664,
+      0.04145077720207254,
+      0.09326424870466321,
+      0.09326424870466321,
+      0.14507772020725387,
+      0.16580310880829016,
+      0.23834196891191708,
+      0.37305699481865284,
+      0.6062176165803109
+    ],
+    "prob_pred": [
+      0.04154672583965525,
+      0.0573568365138614,
+      0.06862936596580414,
+      0.08167971832080587,
+      0.10930322979015893,
+      0.17300670910319738,
+      0.20796771416364082,
+      0.2552863790137189,
+      0.3651065342695288,
+      0.6339597832213077
+    ]
+  },
+  "feature_importance_top30": {
+    "ordinal_response__vt_disease_response_ordinal": 129.0,
+    "numeric__kappa_flc_current": 97.0,
+    "numeric__b2m_current": 96.0,
+    "numeric__m_protein_current": 79.0,
+    "numeric__hemoglobin_current": 78.0,
+    "numeric__age_at_diagnosis": 74.0,
+    "numeric__ldh_current": 62.0,
+    "numeric__lambda_flc_current": 62.0,
+    "numeric__cmmc_number": 58.0,
+    "numeric__qol_side_effects_treatment": 47.0,
+    "numeric__pct_plasma_cells_bm": 45.0,
+    "numeric__creatinine_current": 45.0,
+    "numeric__dna_index": 43.0,
+    "numeric__bmi_at_diagnosis": 38.0,
+    "numeric__calcium_current": 37.0,
+    "numeric__albumin_current": 34.0,
+    "numeric__weight_at_diagnosis_kg": 32.0,
+    "object_boolean__subject_had_signs_symptoms_missing": 29.0,
+    "object_boolean__had_hospitalization_True": 19.0,
+    "numeric__qol_physical_functioning": 18.0,
+    "object_boolean__had_ed_visit_False": 17.0,
+    "numeric__height_at_diagnosis_m": 16.0,
+    "numeric__qol_fatigue": 14.0,
+    "numeric__qol_pain": 13.0,
+    "numeric__pct_plasma_cells_pb": 12.0,
+    "object_boolean__spinal_cord_compression_False": 11.0,
+    "object_boolean__had_esa_False": 11.0,
+    "numeric__iss_stage": 10.0,
+    "object_boolean__had_transfusion_False": 9.0,
+    "object_boolean__cd56_detected_False": 9.0
+  }
+}

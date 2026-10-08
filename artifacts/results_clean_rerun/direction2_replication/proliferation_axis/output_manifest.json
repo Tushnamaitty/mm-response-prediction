@@ -1,0 +1,23 @@
+{
+  "label": "DIRECTION 2 FOLLOW-UP: POST-HOC INTERNAL SPLIT-SAMPLE REPLICATION of the proliferation/MYC axis (NOT untouched confirmation; NOT external validation)",
+  "frozen_artifact_sha256": "3489b474021a14fc5823afadfb59436333c8eff0f84fdb5b5f716663227d1e6e",
+  "input_master_sha256": "7697743bbddb405edc61213c5bfa690eb73154df6b20b6f4f7a1cb5224ea5a58",
+  "code_sha256": "758211f98d650d10d5ea7bea7bac5a9fef1c38a876ee78b039d56bf0d243c27f",
+  "files": {
+    "discovery_composite_loadings.csv": "5d8b63f0f514a321fca5f76fe275d8c3475d71c6fc66f5b2bbe4d414c8769b67",
+    "discovery_report.json": "4c04e0405680d23969d90bb38f6fdec8eb5281e28738e0b2f5f74af8c49d125e",
+    "frozen_composite_artifact.json": "3489b474021a14fc5823afadfb59436333c8eff0f84fdb5b5f716663227d1e6e",
+    "run_summary.json": "d452bb33129ea81deb58e912c2223b1896f6008011520fc6d89f8658dd52b2c1",
+    "test_primary_result.csv": "b68b7d962e6a9e8d907b37ab55aa5f2e159d7c0c90eebca374ed979d7af2d57b",
+    "test_report.json": "44a5d415dd07212fe9e6f82ff15d61c3a6e28b029ca009f2d5c239c0f2131702"
+  },
+  "combined_sha256": "35359e72bd7010cbabf2a521a4f69b20cbd8c77eb7b9733ddff602d9d09918ff",
+  "versions": {
+    "python": "3.13.15",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "numpy": "2.4.6",
+    "pandas": "3.0.5",
+    "scipy": "1.18.0",
+    "statsmodels": "0.15.0"
+  }
+}

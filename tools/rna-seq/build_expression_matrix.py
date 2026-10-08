@@ -2,7 +2,7 @@ import pandas as pd
 import glob
 import os
 
-files = glob.glob("data_raw/rnaseq/**/*star_gene_counts.tsv", recursive=True)
+files = glob.glob("data/rna/**/*augmented_star_gene_counts.tsv", recursive=True)
 print(f"Found {len(files)} files")
 
 expr_dict = {}
@@ -18,4 +18,4 @@ for f in files:
 
 expr_matrix = pd.DataFrame(expr_dict)
 print(expr_matrix.shape)
-expr_matrix.to_csv("data_raw/rnaseq/expression_matrix_tpm.csv")
+expr_matrix.to_csv("data/rna/expression_matrix_tpm.csv")

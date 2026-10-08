@@ -1,0 +1,54 @@
+{
+  "label": "DIRECTION 2 FOLLOW-UP: POST-HOC INTERNAL SPLIT-SAMPLE REPLICATION of the proliferation/MYC axis (NOT untouched confirmation; NOT external validation)",
+  "family_statement": "post-hoc, biologically coherent family motivated by the previously observed pooled D2/D3 proliferation/MYC findings, which included test patients; PC1 construction thereafter is outcome-blind and train+val-only",
+  "gates": {
+    "all_five_loadings_positive": true,
+    "all_six_outcome_classes_represented": true,
+    "design_full_rank": true,
+    "model_identifiable_and_converged": true,
+    "composite_negative_one_sided_p_lt_0.025": true
+  },
+  "accounting": {
+    "discovery_rows_before_exclusions": 7724,
+    "discovery_patients_before": 600,
+    "rows_lost_incomplete_covariates": 1129,
+    "rows_lost_sparse_strata": 383,
+    "rows_lost_no_outcome_variation_strata": 0,
+    "discovery_rows": 6212,
+    "discovery_patients": 448,
+    "discovery_strata": 66,
+    "outcome_class_counts": {
+      "progressive_disease": 746,
+      "stable_disease": 734,
+      "partial_response": 797,
+      "very_good_partial_response": 2483,
+      "complete_response": 743,
+      "stringent_complete_response": 709
+    }
+  },
+  "composite": {
+    "lambda1": 3.5747577274496942,
+    "variance_explained": 0.7149515454899389,
+    "loadings": [
+      0.5085907610125118,
+      0.5053400337603481,
+      0.35006700673966684,
+      0.46912633788107005,
+      0.37860329896929146
+    ],
+    "n_distinct_samples": 637,
+    "composite_variance_in_discovery": 1.0000000000000004
+  },
+  "discovery_estimate": {
+    "beta_disc": -0.2786100802788457,
+    "se_disc": 0.036001247065653996,
+    "z_disc": -7.738900815595525,
+    "one_sided_p_disc": 5.013998505865613e-15,
+    "ci95_disc": [
+      -0.3491712279260558,
+      -0.20804893263163557
+    ]
+  },
+  "frozen_artifact_sha256": "3489b474021a14fc5823afadfb59436333c8eff0f84fdb5b5f716663227d1e6e",
+  "discovery_gates_passed": true
+}

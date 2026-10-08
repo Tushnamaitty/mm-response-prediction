@@ -1,0 +1,71 @@
+{
+  "family": "binary",
+  "role": "SECONDARY",
+  "universe_rows": 8261,
+  "universe_patients": 703,
+  "n_strata": 105,
+  "strata_size": {
+    "min": 1,
+    "median": 40.0,
+    "max": 1202,
+    "n_lt2": 5
+  },
+  "rows_with_any_candidate": 8205,
+  "nn_distance_percentiles": {
+    "25": 0.50107512002088,
+    "50": 0.6368509839842836,
+    "75": 0.8092764858071666,
+    "90": 1.0249072993382344,
+    "95": 1.175120102296544
+  },
+  "calipers": {
+    "p50": 0.6368509839842836,
+    "p75": 0.8092764858071666,
+    "p90": 1.0249072993382344
+  },
+  "n_candidate_pairs_all_finite": 1420926,
+  "designs": {
+    "primary_p75_M1": {
+      "n_pairs": 261,
+      "n_patients": 522,
+      "caliper": 0.8092764858071666,
+      "row_attrition_reasons": {
+        "partner_or_patient_already_used": 5632,
+        "nearest_neighbour_beyond_caliper": 2051,
+        "matched": 522,
+        "no_cross_patient_candidate": 51,
+        "stratum_has_<2_rows": 5
+      },
+      "count_qa": {
+        "n_pairs": 261,
+        "audit_reference_pairs": 261,
+        "difference_vs_audit_reference": 0,
+        "identical_count_to_audit_reference": true,
+        "legacy_tie_order_pairs": 261,
+        "pair_set_identical_to_legacy_tie_order": true,
+        "n_pairs_only_in_frozen_selection": 0,
+        "n_pairs_only_in_legacy_selection": 0,
+        "n_candidate_pairs_within_caliper": 214267,
+        "n_candidate_pairs_sharing_an_exactly_tied_distance": 5980,
+        "note": "Legacy tie order = stable sort on distance in candidate generation order. Differences between the frozen (pair_id) and legacy selections can only arise from exactly tied candidate distances."
+      }
+    },
+    "S1_p50_M1": {
+      "n_pairs": 203,
+      "n_patients": 406,
+      "caliper": 0.6368509839842836
+    },
+    "S1_p90_M1": {
+      "n_pairs": 294,
+      "n_patients": 588,
+      "caliper": 1.0249072993382344
+    },
+    "S4_random_M1": {
+      "n_draws": 200,
+      "seed_base": 1042,
+      "seed_formula": "seed_k = 1042 + k, k = 0..199",
+      "pairs_per_draw_min": 255,
+      "pairs_per_draw_max": 268
+    }
+  }
+}

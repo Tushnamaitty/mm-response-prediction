@@ -1,0 +1,9 @@
+task,split,n_visit_pairs,n_patients,n_visit_pairs_rna_available,n_patients_rna_available
+multiclass,train,9539,716,6484,494
+multiclass,val,1833,154,1240,106
+multiclass,test,2079,155,1449,107
+multiclass,all,13451,1025,9173,707
+binary,train,8709,709,5857,490
+binary,val,1659,154,1082,106
+binary,test,1930,155,1323,107
+binary,all,12298,1018,8262,703

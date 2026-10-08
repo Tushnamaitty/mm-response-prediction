@@ -1,0 +1,13 @@
+task,group,model,macro_f1_mean_over_repeats,note
+multiclass,all,C,0.6543334509,DESCRIPTIVE ONLY; not part of Direction 1 inference
+multiclass,all,D,0.6497255408,DESCRIPTIVE ONLY; not part of Direction 1 inference
+multiclass,Q1_low_uncertainty,C,0.4654650451,DESCRIPTIVE ONLY; not part of Direction 1 inference
+multiclass,Q1_low_uncertainty,D,0.4648102862,DESCRIPTIVE ONLY; not part of Direction 1 inference
+multiclass,Q2,C,0.6039809401,DESCRIPTIVE ONLY; not part of Direction 1 inference
+multiclass,Q2,D,0.6059405932,DESCRIPTIVE ONLY; not part of Direction 1 inference
+multiclass,Q3,C,0.6481318762,DESCRIPTIVE ONLY; not part of Direction 1 inference
+multiclass,Q3,D,0.6443458274,DESCRIPTIVE ONLY; not part of Direction 1 inference
+multiclass,Q4_high_uncertainty,C,0.5107688529,DESCRIPTIVE ONLY; not part of Direction 1 inference
+multiclass,Q4_high_uncertainty,D,0.4967564307,DESCRIPTIVE ONLY; not part of Direction 1 inference
+multiclass,Q1_Q3_lower_uncertainty,C,0.6700333684,DESCRIPTIVE ONLY; not part of Direction 1 inference
+multiclass,Q1_Q3_lower_uncertainty,D,0.6688114375,DESCRIPTIVE ONLY; not part of Direction 1 inference

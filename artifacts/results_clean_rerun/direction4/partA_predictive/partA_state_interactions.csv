@@ -1,0 +1,11 @@
+task,analysis,contrast,metric,delta_state,delta_reference,interaction_delta,ci_lo,ci_hi,n_valid_bootstrap,p_boot_two_sided,adjusted_p,adjustment_method,adjustment_family
+binary,primary,worsening_minus_stable,auprc,-0.0012829985,0.0011571195,-0.002440118,-0.017192173,0.011901919,2000,0.73763118,0.86156922,BH,binary|auprc|state interaction contrasts (secondary)
+binary,primary,worsening_minus_stable,auroc,-0.0018481277,-0.003081438,0.0012333103,-0.0060455579,0.0088171915,2000,0.75262369,0.75262369,BH,binary|auroc|state interaction contrasts (secondary)
+binary,primary,worsening_minus_stable,logloss,-0.003062808,0.0011923465,-0.0042551545,-0.0082185269,-0.00014829923,2000,0.04197901,0.083958021,BH,binary|logloss|state interaction contrasts (secondary)
+binary,primary,improving_minus_stable,auprc,0.00033603401,0.0011571195,-0.00082108546,-0.015511667,0.013393132,2000,0.86156922,0.86156922,BH,binary|auprc|state interaction contrasts (secondary)
+binary,primary,improving_minus_stable,auroc,-0.0074880593,-0.003081438,-0.0044066213,-0.011172234,0.0028417195,2000,0.22088956,0.44177911,BH,binary|auroc|state interaction contrasts (secondary)
+binary,primary,improving_minus_stable,logloss,0.001381927,0.0011923465,0.00018958051,-0.0022977762,0.0025333458,2000,0.88555722,0.88555722,BH,binary|logloss|state interaction contrasts (secondary)
+multiclass,primary,worsening_minus_stable,rps,0.00042599418,0.0011353297,-0.0007093355,-0.0021709496,0.00077534466,2000,0.33283358,0.33283358,BH,multiclass|rps|state interaction contrasts (secondary)
+multiclass,primary,worsening_minus_stable,logloss,-0.00029144799,0.012028908,-0.012320356,-0.027309951,0.0040191879,2000,0.13793103,0.13793103,BH,multiclass|logloss|state interaction contrasts (secondary)
+multiclass,primary,improving_minus_stable,rps,5.6587055e-05,0.0011353297,-0.0010787426,-0.0025201889,0.00031350647,2000,0.13093453,0.26186907,BH,multiclass|rps|state interaction contrasts (secondary)
+multiclass,primary,improving_minus_stable,logloss,-0.0060888748,0.012028908,-0.018117782,-0.030598339,-0.0060486839,2000,0.0049975012,0.0099950025,BH,multiclass|logloss|state interaction contrasts (secondary)

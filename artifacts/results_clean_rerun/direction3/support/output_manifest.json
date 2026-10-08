@@ -1,0 +1,18 @@
+{
+  "label": "support rule (no RNA association)",
+  "files": {
+    "support_rule_spec.json": "094c0a7f177bcbb9ff0ac4259bb3838df873479adc6865ca20386bea659d4510",
+    "support_rule_table.csv": "6596f623d6ba1bece2d6281918eede5374f541f7f371926bd4d1044e50d44166",
+    "treatment_cooccurrence_rows.csv": "67b32a0e266ee093bcb1ae5b7ef97aca4ad121d495ca9b8bb9eaaf3761441dbe",
+    "treatment_signature_counts.csv": "cb6118669985334b2c415ca2d3609b4e1bae3d83f17f66da3e4c301f5714ce02"
+  },
+  "combined_sha256": "ef41413db97f00f2083c4725b92b2174663aa9d323f7b9f2c1b6794a04e60fba",
+  "versions": {
+    "python": "3.13.15",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "numpy": "2.4.6",
+    "pandas": "3.0.5",
+    "scipy": "1.18.0",
+    "statsmodels": "0.15.0"
+  }
+}

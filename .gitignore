@@ -231,3 +231,7 @@ data_pipeline/processed/
 tools/gdc-client/gdc-client_2.3_Windows_x64/
 
 data/
+
+artifacts/models/
+artifacts/preprocessing/
+artifacts/models_clean_rerun/
