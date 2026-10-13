@@ -235,3 +235,13 @@ data/
 artifacts/models/
 artifacts/preprocessing/
 artifacts/models_clean_rerun/
+
+# Figure 2 plotting inputs (aggregate metrics only)
+!figures/data/
+figures/data/*
+!figures/data/Fig2/
+figures/data/Fig2/*
+!figures/data/Fig2/fig2_main_cis_1000boot.csv
+!figures/data/Fig2/fig2_paired_deltas_full_test.csv
+!figures/data/Fig2/fig2_point_estimates_from_json.csv
+!figures/data/Fig2/fig2_populations.csv

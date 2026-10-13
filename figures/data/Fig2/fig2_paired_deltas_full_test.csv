@@ -1,0 +1,25 @@
+task,algorithm,metric,comparison,meaning,observed_diff,ci_lower,ci_upper,ci_excludes_zero_descriptive,n_rows,n_patients,n_resamples_used
+binary,logistic,auprc,B - A,longitudinal history added to current clinical state,-0.0021066739647828125,-0.014581459258622448,0.009311248558825003,False,1930,155,1000
+binary,lightgbm,auprc,B - A,longitudinal history added to current clinical state,0.015252737276533535,-0.008589464532256182,0.03820151351332051,False,1930,155,1000
+binary,xgboost,auprc,B - A,longitudinal history added to current clinical state,0.02150959460929336,0.0011302932639073483,0.041211395421802,True,1930,155,1000
+binary,logistic,auprc,C - B,treatment context added to longitudinal history,0.004973259053335344,-0.018049523616815735,0.02778518377140033,False,1930,155,1000
+binary,lightgbm,auprc,C - B,treatment context added to longitudinal history,0.022056914667290983,0.006446359059796144,0.041160886936614356,True,1930,155,1000
+binary,xgboost,auprc,C - B,treatment context added to longitudinal history,-0.0014978030818989518,-0.015281881163806375,0.013533156600075763,False,1930,155,1000
+binary,logistic,auprc,D - C,RNA pathway information added to treatment context,0.005966689223064037,-0.00633485898682924,0.018701766967872315,False,1930,155,1000
+binary,lightgbm,auprc,D - C,RNA pathway information added to treatment context,-0.0017882165870900524,-0.019685536502714054,0.015001828790662038,False,1930,155,1000
+binary,xgboost,auprc,D - C,RNA pathway information added to treatment context,0.007912194973188957,-0.008629717643462157,0.02299889816280695,False,1930,155,1000
+binary,logistic,auprc,D - A,all added information vs current clinical state,0.008833274311616568,-0.01912173771517588,0.03781243945902677,False,1930,155,1000
+binary,lightgbm,auprc,D - A,all added information vs current clinical state,0.035521435356734465,0.007748394098013362,0.06172056724132702,True,1930,155,1000
+binary,xgboost,auprc,D - A,all added information vs current clinical state,0.027923986500583364,2.845060453483707e-05,0.05206016668699921,True,1930,155,1000
+multiclass,logistic,macro_f1,B - A,longitudinal history added to current clinical state,0.00849793785940045,-0.008373963038678782,0.027340167762488418,False,2079,155,1000
+multiclass,lightgbm,macro_f1,B - A,longitudinal history added to current clinical state,0.012096159631041159,-0.003117427005129597,0.029605117637292604,False,2079,155,1000
+multiclass,xgboost,macro_f1,B - A,longitudinal history added to current clinical state,-0.014354779216849911,-0.029446089786054317,0.0009736150121285498,False,2079,155,1000
+multiclass,logistic,macro_f1,C - B,treatment context added to longitudinal history,-0.016905908779425494,-0.044920729350910085,0.009784669117955024,False,2079,155,1000
+multiclass,lightgbm,macro_f1,C - B,treatment context added to longitudinal history,0.000165964889073833,-0.009181279011973626,0.01002199754128772,False,2079,155,1000
+multiclass,xgboost,macro_f1,C - B,treatment context added to longitudinal history,0.010600389199378668,-0.0003158971513080032,0.021377659510248396,False,2079,155,1000
+multiclass,logistic,macro_f1,D - C,RNA pathway information added to treatment context,0.005535362875598748,-0.02928226011497849,0.034762804319439004,False,2079,155,1000
+multiclass,lightgbm,macro_f1,D - C,RNA pathway information added to treatment context,-0.004991345369836697,-0.019228820758300312,0.009585620171937665,False,2079,155,1000
+multiclass,xgboost,macro_f1,D - C,RNA pathway information added to treatment context,-0.004368523182643913,-0.02142619608797581,0.012156430471864967,False,2079,155,1000
+multiclass,logistic,macro_f1,D - A,all added information vs current clinical state,-0.0028726080444262947,-0.038445109781439356,0.03130453822247845,False,2079,155,1000
+multiclass,lightgbm,macro_f1,D - A,all added information vs current clinical state,0.007270779150278295,-0.016610578243093223,0.030604999892009772,False,2079,155,1000
+multiclass,xgboost,macro_f1,D - A,all added information vs current clinical state,-0.008122913200115156,-0.030030611064499956,0.012103673035973156,False,2079,155,1000
