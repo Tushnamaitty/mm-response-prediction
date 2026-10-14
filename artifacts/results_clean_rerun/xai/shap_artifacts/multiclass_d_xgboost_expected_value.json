@@ -1,0 +1,13 @@
+{
+  "expected_value": [
+    -0.07770562171936035,
+    -0.04519728571176529,
+    -0.061916496604681015,
+    0.8731486797332764,
+    -0.2383384108543396,
+    -0.5129557847976685
+  ],
+  "task": "multiclass",
+  "feature_perturbation": "tree_path_dependent",
+  "shap_values_shape": "n_classes, n_test_rows, n_features (class order = MULTICLASS_CLASSES)"
+}

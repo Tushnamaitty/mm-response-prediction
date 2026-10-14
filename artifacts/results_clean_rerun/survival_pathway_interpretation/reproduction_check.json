@@ -1,0 +1,388 @@
+{
+  "checks": [
+    {
+      "check": "locked output_manifest.json exists",
+      "detail": "artifacts\\results_clean_rerun\\survival_incremental\\output_manifest.json",
+      "passed": true
+    },
+    {
+      "check": "manifest spec SHA256 == expected fe0792db...",
+      "detail": "fe0792dbcb61ec62d3901aa7b268b7fcb51a5b60291b9dc4b3da75d0317db6e4",
+      "passed": true
+    },
+    {
+      "check": "imported locked module spec_sha() == expected",
+      "detail": "fe0792dbcb61ec62d3901aa7b268b7fcb51a5b60291b9dc4b3da75d0317db6e4",
+      "passed": true
+    },
+    {
+      "check": "analysis_spec.json spec SHA256 == expected",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "manifest combined SHA256 recomputes from its file hashes",
+      "detail": "6ab539a31f17aa91ca7d3af4bb25a1183a8855a7ba57a1054744c21ea6c7786a",
+      "passed": true
+    },
+    {
+      "check": "needed locked file present: analysis_spec.json",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "locked file hash matches manifest: analysis_spec.json",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "needed locked file present: final_summary.json",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "locked file hash matches manifest: final_summary.json",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "needed locked file present: primary_pfs_oof_predictions.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "locked file hash matches manifest: primary_pfs_oof_predictions.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "needed locked file present: primary_pfs_repeat_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "locked file hash matches manifest: primary_pfs_repeat_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "needed locked file present: primary_pfs_summary.json",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "locked file hash matches manifest: primary_pfs_summary.json",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "needed locked file present: primary_pfs_tuning.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "locked file hash matches manifest: primary_pfs_tuning.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "needed locked file present: secondary_os_oof_predictions.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "locked file hash matches manifest: secondary_os_oof_predictions.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "needed locked file present: secondary_os_repeat_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "locked file hash matches manifest: secondary_os_repeat_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "needed locked file present: secondary_os_summary.json",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "locked file hash matches manifest: secondary_os_summary.json",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "needed locked file present: secondary_os_tuning.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "locked file hash matches manifest: secondary_os_tuning.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "cohort rebuilt with the locked asserts (n=674, 459 PFS events, 247 OS deaths, 50 pathways)",
+      "detail": "n=674, pathways=50",
+      "passed": true
+    },
+    {
+      "check": "[pfs] tuning table has 50 rows (25 folds x 2 models)",
+      "detail": "rows=50",
+      "passed": true
+    },
+    {
+      "check": "[pfs] tuning keys unique and cover 5 repeats x 5 folds",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "[pfs] every recorded lambda is in the locked grid",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "[pfs] recorded lambdas equal the locked selection rule applied to the recorded inner scores",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "[pfs] OOF table has 3370 rows (5 repeats x 674 patients)",
+      "detail": "rows=3370",
+      "passed": true
+    },
+    {
+      "check": "[pfs] OOF (repeat, public_id) unique",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "[pfs] OOF patients equal the rebuilt cohort",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "[pfs] OOF times and events equal the cohort's PFS endpoint",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "[pfs] refit C0 OOF risks reproduce the locked risks (max |diff| < 1e-09)",
+      "detail": "max=9.975e-17, mean=4.832e-17, n=3370",
+      "passed": true
+    },
+    {
+      "check": "[pfs] refit C0_RNA OOF risks reproduce the locked risks (max |diff| < 1e-09)",
+      "detail": "max=2.220e-16, mean=2.511e-17, n=3370",
+      "passed": true
+    },
+    {
+      "check": "[pfs] per-repeat C-indices (C0, C0_RNA, delta) reproduce the locked repeat-metrics table (< 1e-09)",
+      "detail": "max|diff|=7.633e-17",
+      "passed": true
+    },
+    {
+      "check": "[pfs] mean C-indices and delta C reproduce the locked summary JSON (< 1e-09)",
+      "detail": "delta_c refit=0.040494626634 locked=0.040494626634",
+      "passed": true
+    },
+    {
+      "check": "[os] tuning table has 50 rows (25 folds x 2 models)",
+      "detail": "rows=50",
+      "passed": true
+    },
+    {
+      "check": "[os] tuning keys unique and cover 5 repeats x 5 folds",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "[os] every recorded lambda is in the locked grid",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "[os] recorded lambdas equal the locked selection rule applied to the recorded inner scores",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "[os] OOF table has 3370 rows (5 repeats x 674 patients)",
+      "detail": "rows=3370",
+      "passed": true
+    },
+    {
+      "check": "[os] OOF (repeat, public_id) unique",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "[os] OOF patients equal the rebuilt cohort",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "[os] OOF times and events equal the cohort's OS endpoint",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "[os] refit C0 OOF risks reproduce the locked risks (max |diff| < 1e-09)",
+      "detail": "max=9.975e-17, mean=4.778e-17, n=3370",
+      "passed": true
+    },
+    {
+      "check": "[os] refit C0_RNA OOF risks reproduce the locked risks (max |diff| < 1e-09)",
+      "detail": "max=4.441e-16, mean=2.496e-17, n=3370",
+      "passed": true
+    },
+    {
+      "check": "[os] per-repeat C-indices (C0, C0_RNA, delta) reproduce the locked repeat-metrics table (< 1e-09)",
+      "detail": "max|diff|=9.021e-17",
+      "passed": true
+    },
+    {
+      "check": "[os] mean C-indices and delta C reproduce the locked summary JSON (< 1e-09)",
+      "detail": "delta_c refit=0.043498343035 locked=0.043498343035",
+      "passed": true
+    }
+  ],
+  "created_utc": "20261001T044417Z",
+  "endpoints": {
+    "os": {
+      "endpoint": "os",
+      "locked_summary": {
+        "c_C0": 0.6584694105324611,
+        "c_C0_RNA": 0.7019677535671972,
+        "delta_c": 0.04349834303473617
+      },
+      "max_abs_diff_C0": 9.974659986866641e-17,
+      "max_abs_diff_C0_RNA": 4.440892098500626e-16,
+      "max_abs_diff_repeat_metrics": 9.020562075079397e-17,
+      "max_abs_diff_summary": 0.0,
+      "mean_abs_diff_C0": 4.777576183429171e-17,
+      "mean_abs_diff_C0_RNA": 2.495559937605663e-17,
+      "per_repeat_refit": [
+        {
+          "c_C0": 0.651835539758581,
+          "c_C0_RNA": 0.7025446865502498,
+          "delta_c": 0.050709146791668824,
+          "repeat": 0
+        },
+        {
+          "c_C0": 0.6587381308058174,
+          "c_C0_RNA": 0.6979944710589124,
+          "delta_c": 0.03925634025309499,
+          "repeat": 1
+        },
+        {
+          "c_C0": 0.6625328388193479,
+          "c_C0_RNA": 0.7030855612218616,
+          "delta_c": 0.04055272240251373,
+          "repeat": 2
+        },
+        {
+          "c_C0": 0.6522733906832191,
+          "c_C0_RNA": 0.6986555401019935,
+          "delta_c": 0.04638214941877439,
+          "repeat": 3
+        },
+        {
+          "c_C0": 0.6669671525953399,
+          "c_C0_RNA": 0.7075585089029688,
+          "delta_c": 0.04059135630762889,
+          "repeat": 4
+        }
+      ],
+      "refit_means": {
+        "c_C0": 0.6584694105324611,
+        "c_C0_RNA": 0.7019677535671972,
+        "delta_c": 0.04349834303473617
+      }
+    },
+    "pfs": {
+      "endpoint": "pfs",
+      "locked_summary": {
+        "c_C0": 0.6012024837840428,
+        "c_C0_RNA": 0.6416971104176208,
+        "delta_c": 0.04049462663357797
+      },
+      "max_abs_diff_C0": 9.974659986866641e-17,
+      "max_abs_diff_C0_RNA": 2.220446049250313e-16,
+      "max_abs_diff_repeat_metrics": 7.632783294297951e-17,
+      "max_abs_diff_summary": 0.0,
+      "mean_abs_diff_C0": 4.8324741230218307e-17,
+      "mean_abs_diff_C0_RNA": 2.5114851623943967e-17,
+      "per_repeat_refit": [
+        {
+          "c_C0": 0.5880827359967621,
+          "c_C0_RNA": 0.6378862273535771,
+          "delta_c": 0.049803491356815055,
+          "repeat": 0
+        },
+        {
+          "c_C0": 0.6104522361511998,
+          "c_C0_RNA": 0.641230602093962,
+          "delta_c": 0.030778365942762176,
+          "repeat": 1
+        },
+        {
+          "c_C0": 0.604080350200769,
+          "c_C0_RNA": 0.6441010128982095,
+          "delta_c": 0.040020662697440534,
+          "repeat": 2
+        },
+        {
+          "c_C0": 0.5978416001874554,
+          "c_C0_RNA": 0.6421838554037215,
+          "delta_c": 0.04434225521626611,
+          "repeat": 3
+        },
+        {
+          "c_C0": 0.605555496384028,
+          "c_C0_RNA": 0.6430838543386339,
+          "delta_c": 0.03752835795460596,
+          "repeat": 4
+        }
+      ],
+      "refit_means": {
+        "c_C0": 0.6012024837840428,
+        "c_C0_RNA": 0.6416971104176208,
+        "delta_c": 0.04049462663357797
+      }
+    }
+  },
+  "label": "EXPLORATORY SURVIVAL PATHWAY INTERPRETATION (predictive association in the locked ridge-Cox model; not causal; no hypothesis testing)",
+  "locked_script": {
+    "matches_audited_copy": true,
+    "note": "informational only; reproduction of the locked OOF risks is the binding test",
+    "path": "explainability\\survival_incremental_analysis.py",
+    "sha256": "bd188693a586538bb28b49c8fedcc73f5d27eaea15d94757bd7d4cc54394ad9a"
+  },
+  "note": "the locked analysis was only read; nothing in the locked directory was written",
+  "passed": true,
+  "tolerances": {
+    "c_index": 1e-09,
+    "risk": 1e-09
+  },
+  "versions_locked_run": {
+    "numpy": "2.4.6",
+    "pandas": "3.0.5",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.13.15",
+    "scikit-learn": "1.9.0",
+    "scipy": "1.18.0"
+  },
+  "versions_now": {
+    "numpy": "2.4.6",
+    "pandas": "3.0.5",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.13.15",
+    "scikit-learn": "1.9.0",
+    "scipy": "1.18.0"
+  }
+}

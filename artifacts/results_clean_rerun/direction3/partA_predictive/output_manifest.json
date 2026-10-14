@@ -1,0 +1,39 @@
+{
+  "label": "PREDICTIVE INCREMENTAL-VALUE ANALYSIS (out-of-fold; Vt-side inputs only)",
+  "locked_input_sha256": {
+    "artifacts/results_clean_rerun/binary_c_xgboost_metrics.json": "288a1b0c5f3062a2173c5f5892a7d61c01a7b55847ca651a9c2ebc778b93cbf4",
+    "artifacts/results_clean_rerun/binary_d_xgboost_metrics.json": "d20850d9e7b95a64e5e394e89f8f4ff5a0b989e83c7c8588d8342f9b10ca59df",
+    "artifacts/results_clean_rerun/multiclass_c_xgboost_metrics.json": "2f3b9a500ccf86bfc968ad184ce2bf8c508e2076289942e6d45e6fd5250ff285",
+    "artifacts/results_clean_rerun/multiclass_d_xgboost_metrics.json": "2982abf0ca3d488dd946016374d6322098e4a8cb9340949408a052738542e626"
+  },
+  "oof_sha256": {
+    "oof_binary.csv": "2841bca0553b5afd6e8312721eb949ba64f8c958764b641ae9fe70a5cff1f82b",
+    "oof_multiclass.csv": "9701df1fd3d2728f085f508daf1a472cfae263af48bf640cecfd62d600ee7716"
+  },
+  "input_files_sha256": {
+    "master": "7697743bbddb405edc61213c5bfa690eb73154df6b20b6f4f7a1cb5224ea5a58"
+  },
+  "smoke": false,
+  "files": {
+    "oof_predictions/oof_binary.csv": "2841bca0553b5afd6e8312721eb949ba64f8c958764b641ae9fe70a5cff1f82b",
+    "oof_predictions/oof_fold_assignments.csv": "9601302e2d770eee2e833093c7c63b833b016d2060c3059b9b7b671af852dee6",
+    "oof_predictions/oof_multiclass.csv": "9701df1fd3d2728f085f508daf1a472cfae263af48bf640cecfd62d600ee7716",
+    "partA_delta_within_group.csv": "b17b8844b48e8cd8658b5637d1298f247f4a159138e3161137e3e5e884341781",
+    "partA_group_support_used.csv": "1b7c78c177fc2b620e223415c2d152a2ea5fff1869e46d519f910481944ac6ec",
+    "partA_interaction.csv": "653caddf22cff66861120873b8400729021b355fbfbae60be27f3355fbcdb145",
+    "partA_macro_f1_descriptive.csv": "e6b7006540bf8f0766aad12485cff8a700899b7dbd0566e42708f1c9ec28690b",
+    "partA_null_permutation_distribution.csv": "63d0986a47b4339cd363fcacbdef6a0597927cfd58f56c3dd50597f808cf428a",
+    "partA_null_permutation_summary.csv": "96981e67a932e2c2112096164fd8805c4d1316ea0af40d9000b285c98a20fd12",
+    "partA_repeat_level_metrics.csv": "48ad3df668a31b5fe71ce1b172d50a65fd14a3438da54fbde0288d9f0871586d",
+    "run_summary.json": "62fc0aabd9eac9ba8c647ab7d7503e9d23fdcbacc0c0fc3a7be5bb92745b88a5"
+  },
+  "combined_sha256": "ce6c5170e5ceee1fe48d8f0a35b7a042f4ae3e5620866fb108be5c1bf4289a8a",
+  "versions": {
+    "python": "3.13.15",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "numpy": "2.4.6",
+    "pandas": "3.0.5",
+    "scipy": "1.18.0",
+    "statsmodels": "0.15.0"
+  }
+}

@@ -1,0 +1,12 @@
+analysis,rows_before_complete_case,rows_final,patients_final,rows_lost_incomplete,state_counts,status
+primary,8478.0,7676.0,552.0,802.0,"{""stable"": 5436, ""improving"": 1267, ""worsening"": 973}",
+first_history_pair,616.0,518.0,518.0,98.0,"{""stable"": 288, ""improving"": 175, ""worsening"": 55}",
+gap_le_180d,7414.0,6712.0,534.0,702.0,"{""stable"": 4788, ""improving"": 1111, ""worsening"": 813}",
+vt_VGPR_only,3330.0,3082.0,435.0,248.0,"{""stable"": 2545, ""improving"": 456, ""worsening"": 81}",
+exclude_vt_PD,7556.0,6855.0,545.0,701.0,"{""stable"": 5155, ""improving"": 1267, ""worsening"": 433}",
+rna_age_le_730d,3319.0,2914.0,544.0,405.0,"{""stable"": 1940, ""improving"": 611, ""worsening"": 363}",
+rna_age_le_365d,1448.0,1234.0,506.0,214.0,"{""stable"": 747, ""improving"": 346, ""worsening"": 141}",
+at_or_above_best_prior,,,,,,failed: AssertionError: [direction2] at_or_above_best_prior: not all 3 states remain
+below_best_prior,3189.0,2818.0,417.0,371.0,"{""stable"": 1416, ""worsening"": 973, ""improving"": 429}",
+plus_plasma,8478.0,7532.0,519.0,946.0,"{""stable"": 5352, ""improving"": 1220, ""worsening"": 960}",
+plus_prior_exposure,8478.0,7676.0,552.0,802.0,"{""stable"": 5436, ""improving"": 1267, ""worsening"": 973}",

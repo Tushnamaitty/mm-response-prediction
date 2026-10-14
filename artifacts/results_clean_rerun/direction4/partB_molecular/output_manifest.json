@@ -1,0 +1,32 @@
+{
+  "analysis": "direction4_partB_molecular",
+  "smoke": false,
+  "input_master_sha256": "7697743bbddb405edc61213c5bfa690eb73154df6b20b6f4f7a1cb5224ea5a58",
+  "global_permutation_seed": 5042,
+  "upstream_support_combined_sha256": "123a7b44b419657051b9e6a52c121ebc008175dbf1b1a2fc5237da1ca232727e",
+  "upstream_assignments_sha256": "5e5ddffdf53d6ab7910b3b4b9674b71753c09ec080d519c33a2b0bffcccbc284",
+  "files": {
+    "partB_global_permutation.json": "50f3375ce989e1f615743d537a17632c2b6fedd6e7b4f535a9ed27b0d2ed4101",
+    "partB_results_below_best_prior.csv": "d7bd58abf41a5959ddcc1e26354e831492aad7262e501be8447c22ae765e9004",
+    "partB_results_exclude_vt_PD.csv": "e18f147b3aa44315b7f18bffe172a82a04550b5560323d70cf21178a01003964",
+    "partB_results_first_history_pair.csv": "89df6e73bfe0a98941375ff2fb0fac44a0a8e8e4b5c95752d028e1a1e2921a97",
+    "partB_results_gap_le_180d.csv": "3bd4a4efe536d30b106ef7aa716e22172ff07ed6a8fe6bf2032e059275b49fba",
+    "partB_results_plus_plasma.csv": "0ef1bfab53dae8a47a02bf64fd67f9a77324f944c4a43488e0be0cf7443a24cd",
+    "partB_results_plus_prior_exposure.csv": "296b4781eb4de0b7146de64dc169a24343f5063807564b29e239ea0998a9aa28",
+    "partB_results_primary.csv": "fc52373950dcff3bfa141bcc11dbbbd05424b8e5c81733222158d9e8bfa94071",
+    "partB_results_rna_age_le_365d.csv": "6b311cb3b38652377dae5ca87b7c61d330bd664843b0ec55b2182e3b8c906122",
+    "partB_results_rna_age_le_730d.csv": "ce76d81dbf733ffb91e14e72cfdcc67a4df5d2361eb30504df91083bf5d32709",
+    "partB_results_vt_VGPR_only.csv": "62b0719809ec9d50a33112a355feb8f69aacc3c8a49e655e119e804d0ad9f0ce",
+    "partB_row_accounting.csv": "180dcc01d818dc8169a93180641ca8c6c0bc28a819d47d5be21547309f056504",
+    "run_summary.json": "4c697282c2b8c38098252f7c7189e99d257da77bb52ff50044ddb51092c8a093"
+  },
+  "combined_sha256": "d2302ef5cd8edde7de9cbe8deccb1edd088ba3405a88bb94179b861d8c73e35e",
+  "versions": {
+    "python": "3.13.15",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "numpy": "2.4.6",
+    "pandas": "3.0.5",
+    "scipy": "1.18.0",
+    "statsmodels": "0.15.0"
+  }
+}

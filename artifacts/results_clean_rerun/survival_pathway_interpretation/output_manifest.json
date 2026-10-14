@@ -1,0 +1,30 @@
+{
+  "combined_sha256": "e2e90c36e2ebc2faa8db9354658a2a6a301d85dafd161ec6b3415d95196468b2",
+  "files": {
+    "os_fold_coefficients.csv": "19b75915fb09d410b5d6d3b818cb8b6a237517a8cc6192c792ee0b74cc3bdd59",
+    "os_pathway_stability.csv": "2c8a76116474284996b7884815ba8c09542470b86a0df8035c01fed1ee6ccc9a",
+    "pathway_stability_both_endpoints.csv": "2c9706269ca05a1424ee5f1ffbedcaf420f8062f593462efecbeac2b7e89cc52",
+    "pfs_fold_coefficients.csv": "92ea1623c258088a6a952b52806c0e10a1943e9afb194b5fffc2975be72bc13a",
+    "pfs_pathway_stability.csv": "f9ac3dd9ab34a73c3ae07409dc3325d2f45f3aad65a2eaa7e8d2dba2e49a8626",
+    "reproduction_check.json": "2a932182d92c8cfe7e90278bd2759b667b9a80363cc7275dbe102b94b312f084",
+    "summary.json": "6cf1845c0b87f28e2afdbdc22677798b04ea641d25ffde9d4e6108dc8ae063ed"
+  },
+  "label": "EXPLORATORY SURVIVAL PATHWAY INTERPRETATION (predictive association in the locked ridge-Cox model; not causal; no hypothesis testing)",
+  "locked_manifest_combined_sha256": "6ab539a31f17aa91ca7d3af4bb25a1183a8855a7ba57a1054744c21ea6c7786a",
+  "locked_script": {
+    "matches_audited_copy": true,
+    "note": "informational only; reproduction of the locked OOF risks is the binding test",
+    "path": "explainability\\survival_incremental_analysis.py",
+    "sha256": "bd188693a586538bb28b49c8fedcc73f5d27eaea15d94757bd7d4cc54394ad9a"
+  },
+  "locked_spec_sha256": "fe0792dbcb61ec62d3901aa7b268b7fcb51a5b60291b9dc4b3da75d0317db6e4",
+  "this_script_sha256": "8e033b82726c34dc52c3671820496f20ea078bce6711f33c3a5ea5008718ca68",
+  "versions": {
+    "numpy": "2.4.6",
+    "pandas": "3.0.5",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.13.15",
+    "scikit-learn": "1.9.0",
+    "scipy": "1.18.0"
+  }
+}

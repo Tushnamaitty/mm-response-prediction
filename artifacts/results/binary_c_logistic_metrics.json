@@ -1,0 +1,183 @@
+{
+  "task": "binary",
+  "model_stage": "c",
+  "algorithm": "logistic",
+  "tag": "",
+  "n_train": 8709,
+  "n_val": 1659,
+  "n_test": 1930,
+  "n_patients_train": 709,
+  "n_patients_val": 154,
+  "n_patients_test": 155,
+  "best_params": {
+    "C": 0.01
+  },
+  "cv_results": [
+    {
+      "params": {
+        "C": 0.01
+      },
+      "mean": 0.48259871780326824,
+      "std": 0.018192686982780693,
+      "fold_scores": [
+        0.4793202887414894,
+        0.4589524578331481,
+        0.49024533048153934,
+        0.4717355269405374,
+        0.5127399850196271
+      ]
+    },
+    {
+      "params": {
+        "C": 0.1
+      },
+      "mean": 0.4758236799049452,
+      "std": 0.020068169940463666,
+      "fold_scores": [
+        0.469358373845215,
+        0.4497391165846255,
+        0.4884694753182517,
+        0.46417189343195964,
+        0.507379540344674
+      ]
+    },
+    {
+      "params": {
+        "C": 1.0
+      },
+      "mean": 0.46959821513427497,
+      "std": 0.01780869603398383,
+      "fold_scores": [
+        0.46198971964817087,
+        0.44648261207793366,
+        0.4857494216575603,
+        0.45918604677895514,
+        0.4945832755087551
+      ]
+    },
+    {
+      "params": {
+        "C": 10.0
+      },
+      "mean": 0.4623972258781427,
+      "std": 0.022397284152776187,
+      "fold_scores": [
+        0.4619407480231152,
+        0.44780821956196193,
+        0.48638161646850686,
+        0.42894552643230005,
+        0.4869100189048291
+      ]
+    }
+  ],
+  "seed": 42,
+  "val_metrics": {
+    "auprc": 0.43452680769832497,
+    "auroc": 0.7503553854565336,
+    "brier_score": 0.1277346442454913,
+    "sensitivity": 0.559322033898305,
+    "specificity": 0.8255131964809385,
+    "precision": 0.4094292803970223,
+    "recall": 0.559322033898305,
+    "f1": 0.47277936962750716,
+    "threshold_used": 0.3,
+    "confusion_matrix": [
+      [
+        1126,
+        238
+      ],
+      [
+        130,
+        165
+      ]
+    ],
+    "n": 1659
+  },
+  "test_metrics_PRELIMINARY": {
+    "auprc": 0.47986417277938787,
+    "auroc": 0.7895527240915354,
+    "brier_score": 0.12108932609885747,
+    "sensitivity": 0.5155807365439093,
+    "specificity": 0.8604946100190235,
+    "precision": 0.4527363184079602,
+    "recall": 0.5155807365439093,
+    "f1": 0.4821192052980132,
+    "threshold_used": 0.3,
+    "confusion_matrix": [
+      [
+        1357,
+        220
+      ],
+      [
+        171,
+        182
+      ]
+    ],
+    "n": 1930,
+    "PRELIMINARY": true
+  },
+  "test_auprc_bootstrap_ci_PRELIMINARY": {
+    "n_resamples_used": 200,
+    "mean": 0.485428314478914,
+    "ci_lower_2.5": 0.43061921190177366,
+    "ci_upper_97.5": 0.5320643165200628
+  },
+  "calibration_curve": {
+    "prob_true": [
+      0.03626943005181347,
+      0.03626943005181347,
+      0.05181347150259067,
+      0.09844559585492228,
+      0.08290155440414508,
+      0.13989637305699482,
+      0.19170984455958548,
+      0.2694300518134715,
+      0.31088082901554404,
+      0.6113989637305699
+    ],
+    "prob_pred": [
+      0.02768285177183012,
+      0.05030185727018604,
+      0.06658576295087601,
+      0.08583059000528483,
+      0.11232248080731143,
+      0.1460473873999622,
+      0.19006430690779894,
+      0.2637961017752294,
+      0.37958642534830656,
+      0.5969225687601029
+    ]
+  },
+  "feature_importance_top30": {
+    "ordinal_response__vt_disease_response_ordinal": 1.0176166890478482,
+    "numeric__vt_days_to_visit": 0.15755993511493877,
+    "clean_boolean__current_line_is_active": 0.13553420884368175,
+    "numeric__hemoglobin_days_since_previous": 0.11573057954010682,
+    "categorical_high_card__current_regimen_name_elotuzumab_lenalidomide_prednisone": 0.0978259391962568,
+    "numeric__age_at_diagnosis": 0.09616719039494928,
+    "numeric__m_protein_previous": 0.09537013378099021,
+    "numeric__n_prior_lines_completed": 0.09505696019316075,
+    "clean_boolean__prior_exposure_chemo": 0.09023167889689532,
+    "clean_boolean__prior_exposure_steroid": 0.08660057913895636,
+    "clean_boolean__currently_on_pi": 0.0840991817783784,
+    "numeric__kappa_flc_current": 0.08250704967902073,
+    "clean_boolean__has_prior_allo_transplant": 0.08034478790674561,
+    "categorical_high_card__current_regimen_name_bendamustine_bortezomib_dexamethasone": 0.07427930888614824,
+    "categorical_high_card__current_regimen_categories_pi_cd38_imid": 0.07121897500800457,
+    "categorical_high_card__current_regimen_name_pomalidomide": 0.06913912326036238,
+    "categorical_high_card__current_regimen_name_carfilzomib_daratumumab_pomalidomide": 0.06904248912283972,
+    "numeric__pct_plasma_cells_bm": 0.06866233257549739,
+    "clean_boolean__prior_exposure_pi": 0.06853722499355763,
+    "categorical_high_card__current_regimen_name_bortezomib": 0.06709411699695733,
+    "categorical_high_card__current_regimen_name_cyclophosphamide_dexamethasone": 0.0659659933266807,
+    "clean_boolean__has_hypertension_or_chf": 0.06473034969539901,
+    "numeric__hemoglobin_change": 0.06332507376543212,
+    "categorical_high_card__current_regimen_categories_pi": 0.06308491215511411,
+    "categorical_high_card__current_regimen_name_ixazomib_lenalidomide": 0.06247111514418507,
+    "numeric__m_protein_current": 0.061675956387467215,
+    "object_boolean__cmmc_detected_True": 0.06120310948595616,
+    "numeric__cmmc_number": 0.06075176462540675,
+    "categorical_high_card__current_regimen_name_bortezomib_thalidomide_dexamethasone": 0.05921571118566914,
+    "object_boolean__had_ed_visit_False": 0.058842610019507725
+  }
+}

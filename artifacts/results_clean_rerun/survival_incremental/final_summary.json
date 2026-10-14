@@ -1,0 +1,62 @@
+{
+  "interpretation": "exploratory internal validation; not external validation; no causal claim",
+  "primary_pfs": {
+    "analysis": "primary",
+    "bootstrap_delta_c": {
+      "bootstrap_mean": 0.040161490957515325,
+      "ci_lower": 0.01624211038710264,
+      "ci_upper": 0.0640299086216969,
+      "n_boot": 2000,
+      "seed": 42
+    },
+    "c_C0": 0.6012024837840428,
+    "c_C0_RNA": 0.6416971104176208,
+    "delta_c": 0.04049462663357797,
+    "delta_ibs": -0.020125037980952602,
+    "endpoint": "pfs",
+    "ibs_C0": 0.20470549160609827,
+    "ibs_C0_RNA": 0.18458045362514566,
+    "permutation_delta_c": {
+      "B": 200,
+      "k_null_ge_observed": 0,
+      "null_mean": -4.840822673564532e-06,
+      "null_sd": 0.005020279558649767,
+      "one_sided_p": 0.004975124378109453
+    }
+  },
+  "secondary_os": {
+    "analysis": "secondary",
+    "bootstrap_delta_c": {
+      "bootstrap_mean": 0.04365297418655106,
+      "ci_lower": 0.012143686163121094,
+      "ci_upper": 0.07449073673410617,
+      "n_boot": 2000,
+      "seed": 1042
+    },
+    "c_C0": 0.6584694105324611,
+    "c_C0_RNA": 0.7019677535671972,
+    "delta_c": 0.04349834303473617,
+    "delta_ibs": -0.011416487831797675,
+    "endpoint": "os",
+    "ibs_C0": 0.10020832244084635,
+    "ibs_C0_RNA": 0.08879183460904867
+  },
+  "sensitivity_pfs": {
+    "analysis": "sensitivity_m30_0",
+    "bootstrap_delta_c": {
+      "bootstrap_mean": 0.02773607441483631,
+      "ci_lower": 0.0027834175306825416,
+      "ci_upper": 0.0530004547899617,
+      "n_boot": 2000,
+      "seed": 42
+    },
+    "c_C0": 0.6185450628276815,
+    "c_C0_RNA": 0.6464376891368511,
+    "delta_c": 0.02789262630916951,
+    "delta_ibs": -0.02028061487146076,
+    "endpoint": "pfs",
+    "ibs_C0": 0.20353926048286985,
+    "ibs_C0_RNA": 0.1832586456114091
+  },
+  "spec_sha256": "fe0792dbcb61ec62d3901aa7b268b7fcb51a5b60291b9dc4b3da75d0317db6e4"
+}

@@ -1,0 +1,21 @@
+task,state,metric,n_rows,n_patients,C,D,delta_D_minus_C,note
+binary,improving,auprc,301,119,0.35328726,0.34066849,-0.012618767,LOCKED TEST DESCRIPTIVE ONLY; no inference / no model selection
+binary,improving,auroc,301,119,0.75606729,0.76112337,0.0050560765,LOCKED TEST DESCRIPTIVE ONLY; no inference / no model selection
+binary,improving,logloss,301,119,0.35645819,0.35530443,-0.0011537596,LOCKED TEST DESCRIPTIVE ONLY; no inference / no model selection
+binary,stable,auprc,1240,130,0.3482692,0.3375223,-0.010746903,LOCKED TEST DESCRIPTIVE ONLY; no inference / no model selection
+binary,stable,auroc,1240,130,0.77221332,0.7623056,-0.0099077158,LOCKED TEST DESCRIPTIVE ONLY; no inference / no model selection
+binary,stable,logloss,1240,130,0.31060111,0.31328141,0.0026802988,LOCKED TEST DESCRIPTIVE ONLY; no inference / no model selection
+binary,worsening,auprc,233,104,0.67465018,0.67322313,-0.0014270497,LOCKED TEST DESCRIPTIVE ONLY; no inference / no model selection
+binary,worsening,auroc,233,104,0.72638172,0.73072955,0.0043478261,LOCKED TEST DESCRIPTIVE ONLY; no inference / no model selection
+binary,worsening,logloss,233,104,0.63394225,0.63259761,-0.0013446458,LOCKED TEST DESCRIPTIVE ONLY; no inference / no model selection
+binary,no_history,auprc,155,155,0.48348955,0.53610734,0.052617792,LOCKED TEST DESCRIPTIVE ONLY; no inference / no model selection
+binary,no_history,auroc,155,155,0.69811321,0.70908741,0.010974201,LOCKED TEST DESCRIPTIVE ONLY; no inference / no model selection
+binary,no_history,logloss,155,155,0.57735635,0.56650768,-0.01084867,LOCKED TEST DESCRIPTIVE ONLY; no inference / no model selection
+multiclass,improving,rps,328,120,0.087906458,0.08679123,-0.0011152284,LOCKED TEST DESCRIPTIVE ONLY; no inference / no model selection
+multiclass,improving,logloss,328,120,1.0575655,1.0431008,-0.014464726,LOCKED TEST DESCRIPTIVE ONLY; no inference / no model selection
+multiclass,stable,rps,1361,130,0.067804644,0.068244753,0.00044010809,LOCKED TEST DESCRIPTIVE ONLY; no inference / no model selection
+multiclass,stable,logloss,1361,130,0.78988776,0.79484436,0.0049566083,LOCKED TEST DESCRIPTIVE ONLY; no inference / no model selection
+multiclass,worsening,rps,233,104,0.11017376,0.10703559,-0.0031381715,LOCKED TEST DESCRIPTIVE ONLY; no inference / no model selection
+multiclass,worsening,logloss,233,104,1.3048098,1.2964856,-0.0083242261,LOCKED TEST DESCRIPTIVE ONLY; no inference / no model selection
+multiclass,no_history,rps,155,155,0.078330243,0.080028423,0.00169818,LOCKED TEST DESCRIPTIVE ONLY; no inference / no model selection
+multiclass,no_history,logloss,155,155,1.0741915,1.1007771,0.02658555,LOCKED TEST DESCRIPTIVE ONLY; no inference / no model selection

@@ -1,0 +1,71 @@
+{
+  "label": "DIRECTION 1 STEP 1 -- EXPLORATORY POST-HOC ROBUSTNESS ANALYSIS: scrambled-RNA permutation null for the locked binary Q4 interaction (does not make D1 confirmatory)",
+  "gate1": {
+    "observed_auprc_interaction": 0.013948030608735174,
+    "expected_locked_value": 0.013948030608735174,
+    "abs_diff_vs_expected": 0.0,
+    "two_group_evaluator_value": 0.013948030608735174,
+    "abs_diff_full_vs_two_group": 0.0,
+    "delta_Q4_auprc": 0.009991864347542467,
+    "delta_Q1_Q3_auprc": -0.003956166261192706,
+    "logloss_interaction_descriptive": -0.004058418956607102,
+    "tolerance": 1e-12,
+    "d1_run_summary_value": 0.013948030608735174,
+    "d1_csv_text_10sig": "0.01394803061",
+    "passed": true
+  },
+  "gate2": {
+    "per_repeat": [
+      {
+        "repeat": 0,
+        "n_rows": 6939,
+        "max_abs_diff": 4.999389791038311e-11,
+        "mean_abs_diff": 1.489567205230495e-11,
+        "tolerance": 1e-06,
+        "passed": true
+      },
+      {
+        "repeat": 1,
+        "n_rows": 6939,
+        "max_abs_diff": 4.999542446704197e-11,
+        "mean_abs_diff": 1.4862786631624954e-11,
+        "tolerance": 1e-06,
+        "passed": true
+      },
+      {
+        "repeat": 2,
+        "n_rows": 6939,
+        "max_abs_diff": 4.9980158900453375e-11,
+        "mean_abs_diff": 1.498085528384837e-11,
+        "tolerance": 1e-06,
+        "passed": true
+      },
+      {
+        "repeat": 3,
+        "n_rows": 6939,
+        "max_abs_diff": 4.999084479706539e-11,
+        "mean_abs_diff": 1.4649422186979765e-11,
+        "tolerance": 1e-06,
+        "passed": true
+      },
+      {
+        "repeat": 4,
+        "n_rows": 6939,
+        "max_abs_diff": 4.999084479706539e-11,
+        "mean_abs_diff": 1.4656070011334142e-11,
+        "tolerance": 1e-06,
+        "passed": true
+      }
+    ],
+    "tolerance": 1e-06,
+    "refit_unpermuted_interaction_auprc": 0.013948030608735174,
+    "passed": true
+  },
+  "d1_files_verified_unchanged": [
+    "direction1_multiclass_macro_f1_descriptive.csv",
+    "direction1_uncertainty_assignments.csv",
+    "direction1_uncertainty_interactions.csv",
+    "direction1_within_uncertainty_groups.csv",
+    "run_summary.json"
+  ]
+}

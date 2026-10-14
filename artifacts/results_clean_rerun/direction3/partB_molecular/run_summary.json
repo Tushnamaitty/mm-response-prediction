@@ -1,0 +1,79 @@
+{
+  "label": "RETROSPECTIVE MOLECULAR ASSOCIATION / INTERACTION - NOT PREDICTIVE VALIDATION",
+  "interpretation": "RNA = baseline / as-of-sample tumour biology (latest sample at or before Vt), NOT current-state RNA and NOT causal. Treatment = class active AT Vt.",
+  "smoke": false,
+  "completed_utc": "2026-09-30T10:42:01.581665+00:00",
+  "runtime_seconds": 1411.4,
+  "n_pathways": 50,
+  "global_permutation": {
+    "n_permutations": 1000,
+    "seed": 5042,
+    "n_distinct_samples_permuted": 669,
+    "B1_global_stat_observed": 104.13197740160415,
+    "B1_global_p": 0.08591408591408592,
+    "B2_global_stat_observed": 190.74615687943214,
+    "B2_global_p": 0.25674325674325676,
+    "statistic": "sum over pathways of Wald chi-square (B1: 1 df; B2: 3 df); whole RNA vectors permuted across distinct (patient, sample) units",
+    "smoke": false,
+    "n_pathways": 50
+  },
+  "models": {
+    "B1": "M0: pathway + PI + IMiD + steroid + covariates (main effect)",
+    "B2": "M1: M0 + pathway x PI + pathway x IMiD + pathway x steroid; joint 3-df Wald",
+    "estimator": "GEE independence, patient-clustered robust SEs (statsmodels); OrdinalGEE for the secondary"
+  },
+  "fdr": "BH over the pathways separately for B1 and B2 (per analysis)",
+  "covariates_complete_case": "no imputation / zero-filling / pooling; row attrition in partB_row_accounting",
+  "analysis_status": [
+    {
+      "analysis": "binary_primary",
+      "analysis_status": "complete",
+      "final_rows": 7375,
+      "rows_lost_incomplete_covariates": 886,
+      "failure_reasons": "[]"
+    },
+    {
+      "analysis": "ordinal_secondary_worse_same_better",
+      "analysis_status": "complete",
+      "final_rows": 8246,
+      "rows_lost_incomplete_covariates": 926,
+      "failure_reasons": "[]"
+    },
+    {
+      "analysis": "binary_sens_plasma_cell_pct",
+      "analysis_status": "complete",
+      "final_rows": 7158,
+      "rows_lost_incomplete_covariates": 1103,
+      "failure_reasons": "[]"
+    },
+    {
+      "analysis": "binary_sens_prior_treatment_exposure",
+      "analysis_status": "complete",
+      "final_rows": 7375,
+      "rows_lost_incomplete_covariates": 886,
+      "failure_reasons": "[]"
+    },
+    {
+      "analysis": "binary_exploratory_tier2_cd38_interaction",
+      "analysis_status": "complete",
+      "final_rows": 7375,
+      "rows_lost_incomplete_covariates": 886,
+      "failure_reasons": "[]"
+    }
+  ],
+  "primary_counts": {
+    "B1_q_lt_0.05": 4,
+    "B2_q_lt_0.05": 0
+  },
+  "exploratory_tier2_cd38": {
+    "model": "M0 + pathway x PI/IMiD/steroid (adjustment terms only) + pathway x CD38 (sole target, 1 df); separate from B1/B2",
+    "bh_family": "own BH over the pathways, NOT mixed into the primary families",
+    "interaction_q_lt_0.05": 0,
+    "support": {
+      "pooled_rna_patients": 148,
+      "pooled_events": 125,
+      "tier": 2
+    },
+    "interpretation": "exploratory / hypothesis-generating (Tier 2); RNA is baseline as-of-sample biology"
+  }
+}

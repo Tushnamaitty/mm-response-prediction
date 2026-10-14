@@ -1,0 +1,89 @@
+check,observed,expected_locked,previous_pdf_value,passed,source
+pairs rows == eligibility rows,13451,13451,,True,data\splits\task_eligibility.csv
+patients in split file,1025,1025,1025,True,data\splits\patient_split_assignments.csv
+multiclass visit pairs,13451,13451,13451,True,data\splits\task_eligibility.csv
+multiclass patients,1025,1025,1025,True,data\splits\task_eligibility.csv
+binary visit pairs,12298,12298,12298,True,data\splits\task_eligibility.csv
+binary patients,1018,1018,1018,True,data\splits\task_eligibility.csv
+RNA-available visit pairs (all pairs),9173,9173,9173,True,data\clinical\visit_pairs_with_rna.csv
+RNA-available patients (all pairs),707,707,707,True,data\clinical\visit_pairs_with_rna.csv
+binary exclusions are exactly V(t) = sCR,True,True,,True,data\splits\task_eligibility.csv
+binary exclusions count,1153,1153,,True,data\splits\task_eligibility.csv
+binary layer A train rows match metrics JSON,8709,8709,,True,artifacts\results_clean_rerun\binary_a_xgboost_metrics.json
+binary layer A val rows match metrics JSON,1659,1659,,True,artifacts\results_clean_rerun\binary_a_xgboost_metrics.json
+binary layer A test rows match metrics JSON,1930,1930,,True,artifacts\results_clean_rerun\binary_a_xgboost_metrics.json
+binary layer A train patients match metrics JSON,709,709,,True,artifacts\results_clean_rerun\binary_a_xgboost_metrics.json
+binary layer A val patients match metrics JSON,154,154,,True,artifacts\results_clean_rerun\binary_a_xgboost_metrics.json
+binary layer A test patients match metrics JSON,155,155,,True,artifacts\results_clean_rerun\binary_a_xgboost_metrics.json
+binary layer B train rows match metrics JSON,8709,8709,,True,artifacts\results_clean_rerun\binary_b_xgboost_metrics.json
+binary layer B val rows match metrics JSON,1659,1659,,True,artifacts\results_clean_rerun\binary_b_xgboost_metrics.json
+binary layer B test rows match metrics JSON,1930,1930,,True,artifacts\results_clean_rerun\binary_b_xgboost_metrics.json
+binary layer B train patients match metrics JSON,709,709,,True,artifacts\results_clean_rerun\binary_b_xgboost_metrics.json
+binary layer B val patients match metrics JSON,154,154,,True,artifacts\results_clean_rerun\binary_b_xgboost_metrics.json
+binary layer B test patients match metrics JSON,155,155,,True,artifacts\results_clean_rerun\binary_b_xgboost_metrics.json
+binary layer C train rows match metrics JSON,8709,8709,,True,artifacts\results_clean_rerun\binary_c_xgboost_metrics.json
+binary layer C val rows match metrics JSON,1659,1659,,True,artifacts\results_clean_rerun\binary_c_xgboost_metrics.json
+binary layer C test rows match metrics JSON,1930,1930,,True,artifacts\results_clean_rerun\binary_c_xgboost_metrics.json
+binary layer C train patients match metrics JSON,709,709,,True,artifacts\results_clean_rerun\binary_c_xgboost_metrics.json
+binary layer C val patients match metrics JSON,154,154,,True,artifacts\results_clean_rerun\binary_c_xgboost_metrics.json
+binary layer C test patients match metrics JSON,155,155,,True,artifacts\results_clean_rerun\binary_c_xgboost_metrics.json
+binary layer D train rows match metrics JSON,8709,8709,,True,artifacts\results_clean_rerun\binary_d_xgboost_metrics.json
+binary layer D val rows match metrics JSON,1659,1659,,True,artifacts\results_clean_rerun\binary_d_xgboost_metrics.json
+binary layer D test rows match metrics JSON,1930,1930,,True,artifacts\results_clean_rerun\binary_d_xgboost_metrics.json
+binary layer D train patients match metrics JSON,709,709,,True,artifacts\results_clean_rerun\binary_d_xgboost_metrics.json
+binary layer D val patients match metrics JSON,154,154,,True,artifacts\results_clean_rerun\binary_d_xgboost_metrics.json
+binary layer D test patients match metrics JSON,155,155,,True,artifacts\results_clean_rerun\binary_d_xgboost_metrics.json
+multiclass layer A train rows match metrics JSON,9539,9539,,True,artifacts\results_clean_rerun\multiclass_a_xgboost_metrics.json
+multiclass layer A val rows match metrics JSON,1833,1833,,True,artifacts\results_clean_rerun\multiclass_a_xgboost_metrics.json
+multiclass layer A test rows match metrics JSON,2079,2079,,True,artifacts\results_clean_rerun\multiclass_a_xgboost_metrics.json
+multiclass layer A train patients match metrics JSON,716,716,,True,artifacts\results_clean_rerun\multiclass_a_xgboost_metrics.json
+multiclass layer A val patients match metrics JSON,154,154,,True,artifacts\results_clean_rerun\multiclass_a_xgboost_metrics.json
+multiclass layer A test patients match metrics JSON,155,155,,True,artifacts\results_clean_rerun\multiclass_a_xgboost_metrics.json
+multiclass layer B train rows match metrics JSON,9539,9539,,True,artifacts\results_clean_rerun\multiclass_b_xgboost_metrics.json
+multiclass layer B val rows match metrics JSON,1833,1833,,True,artifacts\results_clean_rerun\multiclass_b_xgboost_metrics.json
+multiclass layer B test rows match metrics JSON,2079,2079,,True,artifacts\results_clean_rerun\multiclass_b_xgboost_metrics.json
+multiclass layer B train patients match metrics JSON,716,716,,True,artifacts\results_clean_rerun\multiclass_b_xgboost_metrics.json
+multiclass layer B val patients match metrics JSON,154,154,,True,artifacts\results_clean_rerun\multiclass_b_xgboost_metrics.json
+multiclass layer B test patients match metrics JSON,155,155,,True,artifacts\results_clean_rerun\multiclass_b_xgboost_metrics.json
+multiclass layer C train rows match metrics JSON,9539,9539,,True,artifacts\results_clean_rerun\multiclass_c_xgboost_metrics.json
+multiclass layer C val rows match metrics JSON,1833,1833,,True,artifacts\results_clean_rerun\multiclass_c_xgboost_metrics.json
+multiclass layer C test rows match metrics JSON,2079,2079,,True,artifacts\results_clean_rerun\multiclass_c_xgboost_metrics.json
+multiclass layer C train patients match metrics JSON,716,716,,True,artifacts\results_clean_rerun\multiclass_c_xgboost_metrics.json
+multiclass layer C val patients match metrics JSON,154,154,,True,artifacts\results_clean_rerun\multiclass_c_xgboost_metrics.json
+multiclass layer C test patients match metrics JSON,155,155,,True,artifacts\results_clean_rerun\multiclass_c_xgboost_metrics.json
+multiclass layer D train rows match metrics JSON,9539,9539,,True,artifacts\results_clean_rerun\multiclass_d_xgboost_metrics.json
+multiclass layer D val rows match metrics JSON,1833,1833,,True,artifacts\results_clean_rerun\multiclass_d_xgboost_metrics.json
+multiclass layer D test rows match metrics JSON,2079,2079,,True,artifacts\results_clean_rerun\multiclass_d_xgboost_metrics.json
+multiclass layer D train patients match metrics JSON,716,716,,True,artifacts\results_clean_rerun\multiclass_d_xgboost_metrics.json
+multiclass layer D val patients match metrics JSON,154,154,,True,artifacts\results_clean_rerun\multiclass_d_xgboost_metrics.json
+multiclass layer D test patients match metrics JSON,155,155,,True,artifacts\results_clean_rerun\multiclass_d_xgboost_metrics.json
+binary target = next IMWG category better than current,True,True,,True,data\clinical\visit_pairs_with_rna.csv
+binary test improvement rate (rounded 3 dp),0.183,0.183,18.3%,True,data\splits\task_eligibility.csv
+distinct RNA samples vs direction2 run_summary,751,751,751,True,artifacts\results_clean_rerun\direction2\association\run_summary.json
+RNA-available rows vs direction2 run_summary,9173,9173,9173,True,artifacts\results_clean_rerun\direction2\association\run_summary.json
+median RNA age vs PRELIMINARY freshness file,866.0,866.0,866,True,artifacts\results\rna_freshness_sensitivity_PRELIMINARY.json
+RNA-age row count vs PRELIMINARY freshness file,9173,9173,,True,artifacts\results\rna_freshness_sensitivity_PRELIMINARY.json
+patients with 1 RNA sample,669,,669,,data\clinical\visit_pairs_with_rna.csv
+patients with >=2 RNA samples,38,,38,,data\clinical\visit_pairs_with_rna.csv
+RNA age IQR (days),380-1465,,"380-1,465",,data\clinical\visit_pairs_with_rna.csv
+% RNA samples within +/-30 d of index,84.7,,~85%,,data\clinical\visit_pairs_with_rna.csv
+survival PFS patients,674,674,674,True,artifacts\results_clean_rerun\survival_incremental\primary_pfs_oof_predictions.csv
+survival PFS events,459,459,459,True,artifacts\results_clean_rerun\survival_incremental\primary_pfs_oof_predictions.csv
+survival OS deaths,247,247,247,True,artifacts\results_clean_rerun\survival_incremental\secondary_os_oof_predictions.csv
+survival -30 to 0 d patients,624,624,624,True,artifacts\results_clean_rerun\survival_incremental\sensitivity_m30_0_pfs_oof_predictions.csv
+survival patients that are in the visit-pair RNA subset,674,,,,data\clinical\visit_pairs_with_rna.csv
+RNA visit-pair patients with first sample day <= 0 (survival-eligibility proxy),674,,674,,data\clinical\visit_pairs_with_rna.csv
+layer A is a strict superset of previous,True,True,,True,data_pipeline\model_feature_sets.json
+layer B is a strict superset of previous,True,True,,True,data_pipeline\model_feature_sets.json
+layer C is a strict superset of previous,True,True,,True,data_pipeline\model_feature_sets.json
+layer D is a strict superset of previous,True,True,,True,data_pipeline\model_feature_sets.json
+layer A source input features,78,78,78,True,data_pipeline\model_feature_sets.json
+layer A fitted model-input columns,148,148,,True,artifacts\preprocessing\model_a_metadata.json
+layer B source input features,115,115,115,True,data_pipeline\model_feature_sets.json
+layer B fitted model-input columns,185,185,,True,artifacts\preprocessing\model_b_metadata.json
+layer C source input features,143,143,143,True,data_pipeline\model_feature_sets.json
+layer C fitted model-input columns,302,302,,True,artifacts\preprocessing\model_c_metadata.json
+layer D source input features,194,194,194,True,data_pipeline\model_feature_sets.json
+layer D fitted model-input columns,354,354,195 (stated for D),True,artifacts\preprocessing\model_d_metadata.json
+layer D preprocessor input columns = 194 source + rna_available,195,195,195,True,artifacts\preprocessing\model_d_metadata.json
+layer D adds days_since_rna_sample + 50 pathways,True,True,+51,True,data_pipeline\model_feature_sets.json

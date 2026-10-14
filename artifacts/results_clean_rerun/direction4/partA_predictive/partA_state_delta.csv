@@ -1,0 +1,51 @@
+task,analysis,state,metric,n_rows,n_patients,C_mean,D_mean,delta_D_minus_C,ci_lo,ci_hi,n_valid_bootstrap,p_boot_two_sided,better_when,is_primary_metric,adjusted_p,adjustment_method,adjustment_family
+binary,primary,improving,auprc,1028,423,0.31274697,0.31308301,0.00033603401,-0.010584283,0.012105252,2000,0.94652674,higher,True,0.94652674,BH,binary|auprc|secondary states
+binary,primary,improving,auroc,1028,423,0.70264109,0.69515303,-0.0074880593,-0.013343949,-0.0012872138,2000,0.017991004,higher,False,0.035982009,BH,binary|auroc|secondary states
+binary,primary,improving,logloss,1028,423,0.37047418,0.3718561,0.001381927,-0.00093353331,0.0035413024,2000,0.23888056,lower,False,0.47776112,BH,binary|logloss|secondary states
+binary,primary,stable,auprc,4403,473,0.3570581,0.35821522,0.0011571195,-0.0069928177,0.0099750396,2000,0.77461269,higher,True,1,Holm,binary|auprc|primary states (confirmatory)
+binary,primary,stable,auroc,4403,473,0.74993828,0.74685684,-0.003081438,-0.0073344571,0.0013876387,2000,0.17991004,higher,False,,none (descriptive: secondary metric / reference row),
+binary,primary,stable,logloss,4403,473,0.31102306,0.3122154,0.0011923465,9.0303292e-05,0.0022715269,2000,0.031984008,lower,False,,none (descriptive: secondary metric / reference row),
+binary,primary,worsening,auprc,928,385,0.64806482,0.64678182,-0.0012829985,-0.011800812,0.009893268,2000,0.8135932,higher,True,1,Holm,binary|auprc|primary states (confirmatory)
+binary,primary,worsening,auroc,928,385,0.7021996,0.70035147,-0.0018481277,-0.0079419928,0.0044035652,2000,0.53973013,higher,False,,none (descriptive: secondary metric / reference row),
+binary,primary,worsening,logloss,928,385,0.66697861,0.6639158,-0.003062808,-0.0068659105,0.0007197108,2000,0.11094453,lower,False,,none (descriptive: secondary metric / reference row),
+binary,primary,no_history,auprc,579,579,0.68031782,0.69417106,0.013853243,-0.0043089856,0.029929968,2000,0.16091954,higher,True,0.32183908,BH,binary|auprc|secondary states
+binary,primary,no_history,auroc,579,579,0.78873994,0.78444165,-0.0042982897,-0.0097082113,0.0008197905,2000,0.11194403,higher,False,0.11194403,BH,binary|auroc|secondary states
+binary,primary,no_history,logloss,579,579,0.53642023,0.53546785,-0.00095237694,-0.0070559858,0.0048384668,2000,0.7926037,lower,False,0.7926037,BH,binary|logloss|secondary states
+binary,gap_prev_le_180d,improving,auprc,909,397,0.28625317,0.27957027,-0.0066828988,-0.017077308,0.0027442483,2000,0.16291854,higher,True,,none (prespecified sensitivity analysis),
+binary,gap_prev_le_180d,improving,auroc,909,397,0.71091517,0.70039962,-0.010515546,-0.01717581,-0.0036203579,2000,0.0049975012,higher,False,,none (prespecified sensitivity analysis),
+binary,gap_prev_le_180d,improving,logloss,909,397,0.35455166,0.35723455,0.0026828896,0.00071750427,0.0047028265,2000,0.010994503,lower,False,,none (prespecified sensitivity analysis),
+binary,gap_prev_le_180d,stable,auprc,3906,471,0.37058498,0.3717052,0.0011202226,-0.0070432022,0.010642473,2000,0.7826087,higher,True,,none (prespecified sensitivity analysis),
+binary,gap_prev_le_180d,stable,auroc,3906,471,0.75928847,0.75583443,-0.0034540363,-0.0077504409,0.00094749457,2000,0.12693653,higher,False,,none (prespecified sensitivity analysis),
+binary,gap_prev_le_180d,stable,logloss,3906,471,0.31000868,0.31129118,0.0012825053,8.9803294e-05,0.002426849,2000,0.035982009,lower,False,,none (prespecified sensitivity analysis),
+binary,gap_prev_le_180d,worsening,auprc,785,349,0.64521453,0.64538572,0.00017119118,-0.011289912,0.011733952,2000,0.98350825,higher,True,,none (prespecified sensitivity analysis),
+binary,gap_prev_le_180d,worsening,auroc,785,349,0.69863705,0.69607046,-0.0025665869,-0.0094897811,0.0042618355,2000,0.45577211,higher,False,,none (prespecified sensitivity analysis),
+binary,gap_prev_le_180d,worsening,logloss,785,349,0.66861147,0.66602673,-0.0025847401,-0.0066132524,0.0014909984,2000,0.21889055,lower,False,,none (prespecified sensitivity analysis),
+binary,exclude_vt_PD,improving,auprc,1028,423,0.31274697,0.31308301,0.00033603401,-0.010584283,0.012105252,2000,0.94652674,higher,True,,none (prespecified sensitivity analysis),
+binary,exclude_vt_PD,improving,auroc,1028,423,0.70264109,0.69515303,-0.0074880593,-0.013343949,-0.0012872138,2000,0.017991004,higher,False,,none (prespecified sensitivity analysis),
+binary,exclude_vt_PD,improving,logloss,1028,423,0.37047418,0.3718561,0.001381927,-0.00093353331,0.0035413024,2000,0.23888056,lower,False,,none (prespecified sensitivity analysis),
+binary,exclude_vt_PD,stable,auprc,4140,464,0.245489,0.23553817,-0.0099508324,-0.016001843,-0.0039820892,2000,0.00099950025,higher,True,,none (prespecified sensitivity analysis),
+binary,exclude_vt_PD,stable,auroc,4140,464,0.69285863,0.68817072,-0.004687914,-0.010647762,0.0015369627,2000,0.14292854,higher,False,,none (prespecified sensitivity analysis),
+binary,exclude_vt_PD,stable,logloss,4140,464,0.28617692,0.2880073,0.0018303794,0.00094144805,0.0027078507,2000,0.00099950025,lower,False,,none (prespecified sensitivity analysis),
+binary,exclude_vt_PD,worsening,auprc,420,253,0.44924074,0.45696701,0.0077262696,-0.002901786,0.018089249,2000,0.16691654,higher,True,,none (prespecified sensitivity analysis),
+binary,exclude_vt_PD,worsening,auroc,420,253,0.59671447,0.59660745,-0.00010702055,-0.0077722163,0.0078154672,2000,0.98550725,higher,False,,none (prespecified sensitivity analysis),
+binary,exclude_vt_PD,worsening,logloss,420,253,0.67341714,0.66884592,-0.0045712203,-0.0088551285,-0.00033061405,2000,0.030984508,lower,False,,none (prespecified sensitivity analysis),
+multiclass,primary,improving,rps,1192,448,0.096261623,0.09631821,5.6587055e-05,-0.0012413339,0.0013966244,2000,0.95652174,lower,True,0.95652174,BH,multiclass|rps|secondary states
+multiclass,primary,improving,logloss,1192,448,1.1101486,1.1040597,-0.0060888748,-0.017549863,0.0051174063,2000,0.30184908,lower,False,0.60369815,BH,multiclass|logloss|secondary states
+multiclass,primary,stable,rps,5013,478,0.064736927,0.065872257,0.0011353297,0.00048766523,0.0018347064,2000,0.00099950025,lower,True,0.0019990005,Holm,multiclass|rps|primary states (confirmatory)
+multiclass,primary,stable,logloss,5013,478,0.7691653,0.78119421,0.012028908,0.0061662089,0.018245143,2000,0.00099950025,lower,False,,none (descriptive: secondary metric / reference row),
+multiclass,primary,worsening,rps,928,385,0.11817753,0.11860352,0.00042599418,-0.00089753831,0.0017672799,2000,0.49975012,lower,True,0.49975012,Holm,multiclass|rps|primary states (confirmatory)
+multiclass,primary,worsening,logloss,928,385,1.3609486,1.3606571,-0.00029144799,-0.014148404,0.014711134,2000,0.95952024,lower,False,,none (descriptive: secondary metric / reference row),
+multiclass,primary,no_history,rps,587,587,0.087339316,0.086923453,-0.00041586349,-0.0023142737,0.0014927506,2000,0.70864568,lower,True,0.95652174,BH,multiclass|rps|secondary states
+multiclass,primary,no_history,logloss,587,587,1.0428364,1.0453413,0.0025049483,-0.011584514,0.01677458,2000,0.70664668,lower,False,0.70664668,BH,multiclass|logloss|secondary states
+multiclass,gap_prev_le_180d,improving,rps,1041,416,0.093551514,0.093642393,9.0878699e-05,-0.0011278919,0.0013016098,2000,0.89055472,lower,True,,none (prespecified sensitivity analysis),
+multiclass,gap_prev_le_180d,improving,logloss,1041,416,1.1122784,1.106074,-0.0062044598,-0.01816456,0.0056474847,2000,0.30484758,lower,False,,none (prespecified sensitivity analysis),
+multiclass,gap_prev_le_180d,stable,rps,4418,477,0.063321237,0.064333791,0.0010125541,0.00036704137,0.0017068097,2000,0.0019990005,lower,True,,none (prespecified sensitivity analysis),
+multiclass,gap_prev_le_180d,stable,logloss,4418,477,0.76707856,0.77956116,0.012482594,0.0064654793,0.018717327,2000,0.00099950025,lower,False,,none (prespecified sensitivity analysis),
+multiclass,gap_prev_le_180d,worsening,rps,785,349,0.11642602,0.11667746,0.00025144111,-0.0011959151,0.0017981619,2000,0.71164418,lower,True,,none (prespecified sensitivity analysis),
+multiclass,gap_prev_le_180d,worsening,logloss,785,349,1.3525522,1.3522711,-0.00028103684,-0.016484596,0.016635712,2000,0.99250375,lower,False,,none (prespecified sensitivity analysis),
+multiclass,exclude_vt_PD,improving,rps,1192,448,0.096261623,0.09631821,5.6587055e-05,-0.0012413339,0.0013966244,2000,0.95652174,lower,True,,none (prespecified sensitivity analysis),
+multiclass,exclude_vt_PD,improving,logloss,1192,448,1.1101486,1.1040597,-0.0060888748,-0.017549863,0.0051174063,2000,0.30184908,lower,False,,none (prespecified sensitivity analysis),
+multiclass,exclude_vt_PD,stable,rps,4750,469,0.061784088,0.063046485,0.0012623969,0.00061508641,0.0019789215,2000,0.00099950025,lower,True,,none (prespecified sensitivity analysis),
+multiclass,exclude_vt_PD,stable,logloss,4750,469,0.73873303,0.75217795,0.013444922,0.0075067161,0.01995718,2000,0.00099950025,lower,False,,none (prespecified sensitivity analysis),
+multiclass,exclude_vt_PD,worsening,rps,420,253,0.1133855,0.11310046,-0.00028503177,-0.0020387333,0.0013270481,2000,0.74162919,lower,True,,none (prespecified sensitivity analysis),
+multiclass,exclude_vt_PD,worsening,logloss,420,253,1.3121,1.29922,-0.012879951,-0.033295156,0.0067508756,2000,0.19790105,lower,False,,none (prespecified sensitivity analysis),

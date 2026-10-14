@@ -1,0 +1,78 @@
+{
+  "bootstrap": "locked: 2000 patient resamples; seed 42 (PFS), 1042 (OS)",
+  "cohort": "locked: one pre-treatment RNA unit per patient, rna_day <= 0, n=674 (L.build_cohort)",
+  "comparator_locked": [
+    "age_at_index (+missing indicator)",
+    "gender",
+    "ISS",
+    "exact first_line regimen"
+  ],
+  "comparator_richer_additions": {
+    "categorical": "none (the comparator keeps the locked ISS and gains no categorical variable)",
+    "numeric": {
+      "albumin": {
+        "source": "data/clinical/labs_deid.csv lab_test=serum_albumin",
+        "transform": "identity",
+        "unit": "g/dl"
+      },
+      "b2m": {
+        "source": "data/clinical/labs_deid.csv lab_test=b2m",
+        "transform": "log1p",
+        "unit": "mg/l"
+      },
+      "calcium": {
+        "source": "data/clinical/labs_deid.csv lab_test=serum_calcium",
+        "transform": "identity",
+        "unit": "mg/dl"
+      },
+      "creatinine": {
+        "source": "data/clinical/labs_deid.csv lab_test=serum_creatinine",
+        "transform": "log1p",
+        "unit": "mg/dl"
+      },
+      "hemoglobin": {
+        "source": "data/clinical/labs_deid.csv lab_test=hemoglobin",
+        "transform": "identity",
+        "unit": "g/dl"
+      },
+      "ldh": {
+        "source": "data/clinical/labs_deid.csv lab_test=serum_ldh",
+        "transform": "log1p",
+        "unit": "u/l"
+      },
+      "plasma_cell_pct_bm": {
+        "source": "sample_features_deid.csv (+ sample_deid.csv dates) pct_plasma_cells_bm",
+        "transform": "identity",
+        "unit": "percent (0-100)"
+      }
+    },
+    "numeric_baseline_rule": "most recent harmonized value with day <= 0 relative to first treatment; no look-back limit; same-day ties -> median; negative/non-finite -> missing",
+    "numeric_missing_handling": "fold-local median imputation + missing indicator (the locked age pattern)",
+    "standardization": "all resulting columns standardized with the training-fold mean/SD (locked rule)"
+  },
+  "endpoints": {
+    "primary": "official PFS",
+    "secondary": "official OS"
+  },
+  "excluded": {
+    "R-ISS": {
+      "handling": "never attached to the analysis frame; cohort coverage recorded descriptively only",
+      "reason": "assessed but EXCLUDED before any fit: composite measure that overlaps with ISS and LDH (already in the comparator) and has substantial missingness (about 57% 'not_reported'/blank in the diagnosis table)",
+      "source": "data/clinical/diagnosis_deid.csv r_iss_stage",
+      "status": "assessed but excluded"
+    },
+    "cytogenetic_FISH_flags": "UNAVAILABLE: no del(17p), t(4;14) or 1q gain/amplification field exists in any ingested table; not searched for elsewhere"
+  },
+  "label": "RICHER-BASELINE SURVIVAL SENSITIVITY (post-hoc, exploratory; internal validation only; not external validation; no causal claim)",
+  "locked_spec_sha256": "fe0792dbcb61ec62d3901aa7b268b7fcb51a5b60291b9dc4b3da75d0317db6e4",
+  "metric": "OOF Harrell C per repeat, averaged; delta = richer C0+RNA - richer C0",
+  "model": "locked ridge Cox PH (Breslow), lambda grid, 5-fold inner CV by Harrell C, tie -> largest lambda",
+  "not_done": [
+    "permutation test",
+    "hypothesis tests",
+    "pathway analysis",
+    "subgroup analysis",
+    "alternative models/penalties"
+  ],
+  "outer_cv": "locked: 5 repeats x 5 folds, KFold(shuffle, seed 42 + repeat) on the sorted patient index"
+}

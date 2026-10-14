@@ -1,0 +1,6 @@
+{
+  "expected_value": -1.829364957752445,
+  "task": "binary",
+  "feature_perturbation": "tree_path_dependent",
+  "shap_values_shape": "n_test_rows, n_features"
+}

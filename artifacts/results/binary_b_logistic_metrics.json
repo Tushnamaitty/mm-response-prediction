@@ -1,0 +1,183 @@
+{
+  "task": "binary",
+  "model_stage": "b",
+  "algorithm": "logistic",
+  "tag": "",
+  "n_train": 8709,
+  "n_val": 1659,
+  "n_test": 1930,
+  "n_patients_train": 709,
+  "n_patients_val": 154,
+  "n_patients_test": 155,
+  "best_params": {
+    "C": 0.01
+  },
+  "cv_results": [
+    {
+      "params": {
+        "C": 0.01
+      },
+      "mean": 0.485535107712529,
+      "std": 0.016995891048968675,
+      "fold_scores": [
+        0.47735391828459467,
+        0.47823502173834187,
+        0.5043091169693416,
+        0.4619092733739607,
+        0.5058682081964061
+      ]
+    },
+    {
+      "params": {
+        "C": 0.1
+      },
+      "mean": 0.4831622703263454,
+      "std": 0.01887714382567903,
+      "fold_scores": [
+        0.47051072526356064,
+        0.47385614630835954,
+        0.5063100142156391,
+        0.46022287040965376,
+        0.5049115954345138
+      ]
+    },
+    {
+      "params": {
+        "C": 1.0
+      },
+      "mean": 0.4820520304647834,
+      "std": 0.020479256474008164,
+      "fold_scores": [
+        0.4651190117195734,
+        0.4734701535416062,
+        0.5066264519605194,
+        0.45872857557607055,
+        0.5063159595261477
+      ]
+    },
+    {
+      "params": {
+        "C": 10.0
+      },
+      "mean": 0.48119088663798026,
+      "std": 0.02117798887232874,
+      "fold_scores": [
+        0.46388323813479326,
+        0.4712811700079729,
+        0.506462778392589,
+        0.4576257145248157,
+        0.5067015321297305
+      ]
+    }
+  ],
+  "seed": 42,
+  "val_metrics": {
+    "auprc": 0.4306498373448717,
+    "auroc": 0.7385034047417864,
+    "brier_score": 0.12861995389674893,
+    "sensitivity": 0.5254237288135594,
+    "specificity": 0.8218475073313783,
+    "precision": 0.38944723618090454,
+    "recall": 0.5254237288135594,
+    "f1": 0.44733044733044736,
+    "threshold_used": 0.3,
+    "confusion_matrix": [
+      [
+        1121,
+        243
+      ],
+      [
+        140,
+        155
+      ]
+    ],
+    "n": 1659
+  },
+  "test_metrics_PRELIMINARY": {
+    "auprc": 0.4748909137260525,
+    "auroc": 0.7841887903485121,
+    "brier_score": 0.12191342388494983,
+    "sensitivity": 0.5269121813031161,
+    "specificity": 0.8649334178820546,
+    "precision": 0.46616541353383456,
+    "recall": 0.5269121813031161,
+    "f1": 0.4946808510638298,
+    "threshold_used": 0.3,
+    "confusion_matrix": [
+      [
+        1364,
+        213
+      ],
+      [
+        167,
+        186
+      ]
+    ],
+    "n": 1930,
+    "PRELIMINARY": true
+  },
+  "test_auprc_bootstrap_ci_PRELIMINARY": {
+    "n_resamples_used": 200,
+    "mean": 0.4800909528533087,
+    "ci_lower_2.5": 0.42723596014461085,
+    "ci_upper_97.5": 0.5238089823939951
+  },
+  "calibration_curve": {
+    "prob_true": [
+      0.06735751295336788,
+      0.046632124352331605,
+      0.04145077720207254,
+      0.06217616580310881,
+      0.08290155440414508,
+      0.14507772020725387,
+      0.18134715025906736,
+      0.2538860103626943,
+      0.3471502590673575,
+      0.6010362694300518
+    ],
+    "prob_pred": [
+      0.03286012462558018,
+      0.057282482604936576,
+      0.07424160448241018,
+      0.09272514503223919,
+      0.1172016859625185,
+      0.14824237357352046,
+      0.19453412496935313,
+      0.26241837213194047,
+      0.3666917854714413,
+      0.5580770930323792
+    ]
+  },
+  "feature_importance_top30": {
+    "ordinal_response__vt_disease_response_ordinal": 0.97045995898062,
+    "numeric__vt_days_to_visit": 0.24374727553023182,
+    "numeric__age_at_diagnosis": 0.13917739869972456,
+    "numeric__hemoglobin_days_since_previous": 0.1130745779903182,
+    "numeric__m_protein_previous": 0.10420182631856698,
+    "numeric__kappa_flc_current": 0.1020586702778223,
+    "numeric__cmmc_number": 0.07068628881350189,
+    "numeric__hemoglobin_change": 0.06856958024025377,
+    "numeric__m_protein_days_since_previous": 0.0677498532620933,
+    "numeric__hemoglobin_pct_change": 0.06640022425374874,
+    "object_boolean__had_ed_visit_False": 0.06569740214651949,
+    "object_boolean__cmmc_detected_True": 0.06536966027037014,
+    "clean_boolean__has_hypertension_or_chf": 0.060533512178878715,
+    "object_boolean__cmmc_detected_missing": 0.05812384534631619,
+    "numeric__albumin_pct_change": 0.056615147471209534,
+    "object_boolean__amyloidosis_True": 0.0565800207546483,
+    "clean_boolean__vt_reported_signs_symptoms": 0.0525471666968305,
+    "numeric__lambda_flc_change": 0.052272887794152866,
+    "numeric__pct_plasma_cells_bm": 0.04819053859680799,
+    "numeric__comorbidity_count_total": 0.046298859298834455,
+    "categorical__ig_heavy_chain_type_igg_igm": 0.04464732445940747,
+    "clean_boolean__has_cva": 0.04441591927743273,
+    "numeric__m_protein_current": 0.04335526256745368,
+    "numeric__b2m_current": 0.043291400358352425,
+    "numeric__qol_side_effects_treatment": 0.042222318462016004,
+    "object_boolean__has_braf_mutation_True": 0.0399827333960991,
+    "object_boolean__cd56_detected_missing": 0.03990179978635572,
+    "numeric__albumin_current": 0.03842583549461874,
+    "numeric__b2m_previous": 0.03838047653683236,
+    "numeric__dna_index": 0.0374627200838127
+  }
+}

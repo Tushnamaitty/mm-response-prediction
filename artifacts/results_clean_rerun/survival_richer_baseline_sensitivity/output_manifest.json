@@ -1,0 +1,29 @@
+{
+  "combined_sha256": "0a779642109e5a2fe5877bc34ae98ebf85804b2817e68bfc35f1bc1e4e7706be",
+  "files": {
+    "cytogenetics_availability.json": "83c839a8969d8d2d54fb68d6de6fb3a5c3a01139c7d3fb02ce1ef13745d78bbc",
+    "final_summary.json": "05c99f8fe5e1bfb6466874d49f78d00e18f177f5ba0e1bea6e27bfca32b3850d",
+    "gate_report.json": "cf967ba4d3c37e5902d88aeafff75c99d02502cb34996cd62defaf234b0d739b",
+    "prespecification.json": "9cd0fec8a954c9cf4379d84a3c643ec0b8b779237c0ee023c0e50b7a4d80db56",
+    "primary_pfs_richer_oof_predictions.csv": "ac24ed6956b340d0cfe702c2337610bc48ffe70b748f79495022df3a4690382c",
+    "primary_pfs_richer_repeat_metrics.csv": "728ad3599584f2aa80d26f4b1b376139f4898c5e266577b5c76c651045162448",
+    "primary_pfs_richer_summary.json": "05f5b983277d13864df0774e84bc4b419ff440e4169cf0f5a23f7816d8479768",
+    "primary_pfs_richer_tuning.csv": "d460d0b80a0c03238c92edb0a3564bc3469b294acd93c3560aa7e35a4c466a7f",
+    "secondary_os_richer_oof_predictions.csv": "8b93e3a47a3ea170d7f3c0cb5628bc1794f87336a502b6ad7243c7b0d3f888fe",
+    "secondary_os_richer_repeat_metrics.csv": "779dbcf0f23121317b6e74db8b95e7fc3a3d6fb9d16b0bb9b22059f918e9dd01",
+    "secondary_os_richer_summary.json": "7298d93ee3b1acc1c3e8aa44c1ef70b3f4a869ea8a9bc599fedfe9ca12e13a10",
+    "secondary_os_richer_tuning.csv": "c9ebd971e7920df98e870b3dfc0647b34e8f0c35a1f715fe0b174a959ef7dda0",
+    "variable_construction_audit.csv": "f1144a8b09adf15c4ce420cb3c0ebdffd00aba43832243f7bd2233bc380a02fc"
+  },
+  "label": "RICHER-BASELINE SURVIVAL SENSITIVITY (post-hoc, exploratory; internal validation only; not external validation; no causal claim)",
+  "locked_spec_sha256": "fe0792dbcb61ec62d3901aa7b268b7fcb51a5b60291b9dc4b3da75d0317db6e4",
+  "this_script_sha256": "bdfa36b0c3b8237914d4789cfc2f153bbd80984a3d23763c46bbbed638bccb09",
+  "versions": {
+    "numpy": "2.4.6",
+    "pandas": "3.0.5",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.13.15",
+    "scikit-learn": "1.9.0",
+    "scipy": "1.18.0"
+  }
+}

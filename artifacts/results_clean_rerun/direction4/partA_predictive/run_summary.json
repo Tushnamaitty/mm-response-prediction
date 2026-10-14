@@ -1,0 +1,40 @@
+{
+  "label": "DIRECTION 4 / PART A | TRAJECTORY-SPECIFIC PREDICTIVE COMPLEMENTARY VALUE",
+  "smoke": false,
+  "completed_utc": "2026-09-30T10:29:06.379989+00:00",
+  "runtime_seconds": 999.1,
+  "observed_models": "reused frozen Direction-3 OOF predictions; no observed refitting",
+  "repeats": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "folds": 5,
+  "n_bootstrap": 2000,
+  "bootstrap_seed": 42,
+  "primary_states": [
+    "stable",
+    "worsening"
+  ],
+  "secondary_states": [
+    "improving",
+    "no_history"
+  ],
+  "reference_state": "stable",
+  "primary_metric": {
+    "binary": "auprc",
+    "multiclass": "rps"
+  },
+  "primary_multiplicity": "Holm over stable+worsening per task on primary metric",
+  "secondary_interactions": "BH per task x metric: worsening-stable and improving-stable",
+  "sensitivities": [
+    "gap_prev_le_180d",
+    "exclude_vt_PD"
+  ],
+  "locked_test": "descriptive only",
+  "negative_control_permutations": 20,
+  "negative_control_seed": "42+1000+permutation index",
+  "note": "RNA is baseline/as-of tumour biology; trajectory uses Vt history only; association/prediction, not causal."
+}

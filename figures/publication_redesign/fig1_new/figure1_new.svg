@@ -1,0 +1,878 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="518.4pt" height="725.76pt" viewBox="0 0 518.4 725.76" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-10-13T23:59:03.592454</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 725.76 
+L 518.4 725.76 
+L 518.4 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="line2d_1">
+    <path d="M 21.6 233.28 
+L 253.44 233.28 
+" clip-path="url(#pb6e78f853d)" style="fill: none; stroke: #c3c2b7; stroke-width: 0.9; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_2">
+    <path d="M 39.6 228.96 
+L 39.6 237.6 
+" clip-path="url(#pb6e78f853d)" style="fill: none; stroke: #c3c2b7; stroke-width: 0.9; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_3">
+    <path d="M 68.4 228.96 
+L 68.4 237.6 
+" clip-path="url(#pb6e78f853d)" style="fill: none; stroke: #c3c2b7; stroke-width: 0.9; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_4">
+    <path d="M 97.2 228.96 
+L 97.2 237.6 
+" clip-path="url(#pb6e78f853d)" style="fill: none; stroke: #c3c2b7; stroke-width: 0.9; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_5">
+    <path d="M 8.64 532.08 
+L 509.76 532.08 
+" clip-path="url(#pb6e78f853d)" style="fill: none; stroke: #c3c2b7; stroke-width: 0.7; stroke-linecap: square"/>
+   </g>
+   <g id="patch_2">
+    <path d="M 9.36 598.32 
+L 507.6 598.32 
+Q 509.76 598.32 509.76 600.48 
+L 509.76 626.4 
+Q 509.76 628.56 507.6 628.56 
+L 9.36 628.56 
+Q 7.2 628.56 7.2 626.4 
+L 7.2 600.48 
+Q 7.2 598.32 9.36 598.32 
+z
+" clip-path="url(#pb6e78f853d)" style="fill: #fbeedd"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 9.36 661.68 
+L 507.6 661.68 
+Q 509.76 661.68 509.76 663.84 
+L 509.76 689.76 
+Q 509.76 691.92 507.6 691.92 
+L 9.36 691.92 
+Q 7.2 691.92 7.2 689.76 
+L 7.2 663.84 
+Q 7.2 661.68 9.36 661.68 
+z
+" clip-path="url(#pb6e78f853d)" style="fill: #fbeedd"/>
+   </g>
+   <g id="line2d_6">
+    <path d="M 8.64 694.08 
+L 509.76 694.08 
+" clip-path="url(#pb6e78f853d)" style="fill: none; stroke: #c3c2b7; stroke-width: 0.7; stroke-linecap: square"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 11.52 37.44 
+L 171.36 37.44 
+Q 174.24 37.44 174.24 40.32 
+L 174.24 136.8 
+Q 174.24 139.68 171.36 139.68 
+L 11.52 139.68 
+Q 8.64 139.68 8.64 136.8 
+L 8.64 40.32 
+Q 8.64 37.44 11.52 37.44 
+z
+" clip-path="url(#pb6e78f853d)" style="fill: #ffffff; stroke: #c3c2b7; stroke-width: 0.7; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 18.72 69.84 
+L 164.16 69.84 
+Q 167.04 69.84 167.04 72.72 
+L 167.04 95.76 
+Q 167.04 98.64 164.16 98.64 
+L 18.72 98.64 
+Q 15.84 98.64 15.84 95.76 
+L 15.84 72.72 
+Q 15.84 69.84 18.72 69.84 
+z
+" clip-path="url(#pb6e78f853d)" style="fill: #cde2fb"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 18.72 103.68 
+L 164.16 103.68 
+Q 167.04 103.68 167.04 106.56 
+L 167.04 131.04 
+Q 167.04 133.92 164.16 133.92 
+L 18.72 133.92 
+Q 15.84 133.92 15.84 131.04 
+L 15.84 106.56 
+Q 15.84 103.68 18.72 103.68 
+z
+" clip-path="url(#pb6e78f853d)" style="fill: #eb6834"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 213.12 37.44 
+L 340.56 37.44 
+Q 343.44 37.44 343.44 40.32 
+L 343.44 92.16 
+Q 343.44 95.04 340.56 95.04 
+L 213.12 95.04 
+Q 210.24 95.04 210.24 92.16 
+L 210.24 40.32 
+Q 210.24 37.44 213.12 37.44 
+z
+" clip-path="url(#pb6e78f853d)" style="fill: #cde2fb"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 213.12 102.24 
+L 340.56 102.24 
+Q 343.44 102.24 343.44 105.12 
+L 343.44 136.8 
+Q 343.44 139.68 340.56 139.68 
+L 213.12 139.68 
+Q 210.24 139.68 210.24 136.8 
+L 210.24 105.12 
+Q 210.24 102.24 213.12 102.24 
+z
+" clip-path="url(#pb6e78f853d)" style="fill: #eb6834"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 371.52 37.44 
+L 506.88 37.44 
+Q 509.76 37.44 509.76 40.32 
+L 509.76 70.56 
+Q 509.76 73.44 506.88 73.44 
+L 371.52 73.44 
+Q 368.64 73.44 368.64 70.56 
+L 368.64 40.32 
+Q 368.64 37.44 371.52 37.44 
+z
+" clip-path="url(#pb6e78f853d)" style="fill: #cde2fb"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 371.52 77.76 
+L 506.88 77.76 
+Q 509.76 77.76 509.76 80.64 
+L 509.76 110.88 
+Q 509.76 113.76 506.88 113.76 
+L 371.52 113.76 
+Q 368.64 113.76 368.64 110.88 
+L 368.64 80.64 
+Q 368.64 77.76 371.52 77.76 
+z
+" clip-path="url(#pb6e78f853d)" style="fill: #cde2fb"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 371.52 118.08 
+L 506.88 118.08 
+Q 509.76 118.08 509.76 120.96 
+L 509.76 144 
+Q 509.76 146.88 506.88 146.88 
+L 371.52 146.88 
+Q 368.64 146.88 368.64 144 
+L 368.64 120.96 
+Q 368.64 118.08 371.52 118.08 
+z
+" clip-path="url(#pb6e78f853d)" style="fill: #f4b393"/>
+   </g>
+   <g id="line2d_7">
+    <path d="M 126 259.2 
+L 126 236.16 
+" clip-path="url(#pb6e78f853d)" style="fill: none; stroke-dasharray: 1.6,1.2; stroke-dashoffset: 0; stroke: #eb6834; stroke-width: 0.8"/>
+   </g>
+   <g id="line2d_8">
+    <path d="M 21.6 203.04 
+L 154.8 203.04 
+" clip-path="url(#pb6e78f853d)" style="fill: none; stroke: #3987e5; stroke-width: 0.9; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_9">
+    <path d="M 21.6 203.04 
+L 21.6 210.24 
+" clip-path="url(#pb6e78f853d)" style="fill: none; stroke: #3987e5; stroke-width: 0.9; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_10">
+    <path d="M 154.8 203.04 
+L 154.8 210.24 
+" clip-path="url(#pb6e78f853d)" style="fill: none; stroke: #3987e5; stroke-width: 0.9; stroke-linecap: square"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 397.44 195.84 
+L 428.998268 195.84 
+L 428.998268 220.32 
+L 397.44 220.32 
+z
+" clip-path="url(#pb6e78f853d)" style="fill: #86b6ef"/>
+   </g>
+   <g id="patch_13">
+    <path d="M 397.44 227.52 
+L 428.998268 227.52 
+L 428.998268 252 
+L 397.44 252 
+z
+" clip-path="url(#pb6e78f853d)" style="fill: #86b6ef"/>
+   </g>
+   <g id="patch_14">
+    <path d="M 429.862268 227.52 
+L 444.378062 227.52 
+L 444.378062 252 
+L 429.862268 252 
+z
+" clip-path="url(#pb6e78f853d)" style="fill: #3987e5"/>
+   </g>
+   <g id="patch_15">
+    <path d="M 397.44 259.2 
+L 428.998268 259.2 
+L 428.998268 283.68 
+L 397.44 283.68 
+z
+" clip-path="url(#pb6e78f853d)" style="fill: #86b6ef"/>
+   </g>
+   <g id="patch_16">
+    <path d="M 429.862268 259.2 
+L 444.378062 259.2 
+L 444.378062 283.68 
+L 429.862268 283.68 
+z
+" clip-path="url(#pb6e78f853d)" style="fill: #3987e5"/>
+   </g>
+   <g id="patch_17">
+    <path d="M 445.242062 259.2 
+L 456.016825 259.2 
+L 456.016825 283.68 
+L 445.242062 283.68 
+z
+" clip-path="url(#pb6e78f853d)" style="fill: #184f95"/>
+   </g>
+   <g id="patch_18">
+    <path d="M 397.44 290.88 
+L 428.998268 290.88 
+L 428.998268 315.36 
+L 397.44 315.36 
+z
+" clip-path="url(#pb6e78f853d)" style="fill: #86b6ef"/>
+   </g>
+   <g id="patch_19">
+    <path d="M 429.862268 290.88 
+L 444.378062 290.88 
+L 444.378062 315.36 
+L 429.862268 315.36 
+z
+" clip-path="url(#pb6e78f853d)" style="fill: #3987e5"/>
+   </g>
+   <g id="patch_20">
+    <path d="M 445.242062 290.88 
+L 456.016825 290.88 
+L 456.016825 315.36 
+L 445.242062 315.36 
+z
+" clip-path="url(#pb6e78f853d)" style="fill: #184f95"/>
+   </g>
+   <g id="patch_21">
+    <path d="M 456.880825 290.88 
+L 477.216 290.88 
+L 477.216 315.36 
+L 456.880825 315.36 
+z
+" clip-path="url(#pb6e78f853d)" style="fill: #eb6834"/>
+   </g>
+   <g id="patch_22">
+    <path d="M 8.64 370.08 
+L 224.255766 370.08 
+L 224.255766 398.88 
+L 8.64 398.88 
+z
+" clip-path="url(#pb6e78f853d)" style="fill: #e6e5df"/>
+   </g>
+   <g id="patch_23">
+    <path d="M 226.415766 370.08 
+L 271.095805 370.08 
+L 271.095805 398.88 
+L 226.415766 398.88 
+z
+" clip-path="url(#pb6e78f853d)" style="fill: #bdbbb3"/>
+   </g>
+   <g id="patch_24">
+    <path d="M 273.255805 370.08 
+L 318.24 370.08 
+L 318.24 398.88 
+L 273.255805 398.88 
+z
+" clip-path="url(#pb6e78f853d)" style="fill: #6f6d68"/>
+   </g>
+   <g id="patch_25">
+    <path d="M 11.52 408.96 
+L 151.2 408.96 
+Q 154.08 408.96 154.08 411.84 
+L 154.08 455.04 
+Q 154.08 457.92 151.2 457.92 
+L 11.52 457.92 
+Q 8.64 457.92 8.64 455.04 
+L 8.64 411.84 
+Q 8.64 408.96 11.52 408.96 
+z
+" clip-path="url(#pb6e78f853d)" style="fill: #ffffff; stroke: #c3c2b7; stroke-width: 0.7; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_26">
+    <path d="M 161.28 408.96 
+L 238.32 408.96 
+Q 241.2 408.96 241.2 411.84 
+L 241.2 455.04 
+Q 241.2 457.92 238.32 457.92 
+L 161.28 457.92 
+Q 158.4 457.92 158.4 455.04 
+L 158.4 411.84 
+Q 158.4 408.96 161.28 408.96 
+z
+" clip-path="url(#pb6e78f853d)" style="fill: #ffffff; stroke: #c3c2b7; stroke-width: 0.7; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_27">
+    <path d="M 248.4 408.96 
+L 317.52 408.96 
+Q 320.4 408.96 320.4 411.84 
+L 320.4 455.04 
+Q 320.4 457.92 317.52 457.92 
+L 248.4 457.92 
+Q 245.52 457.92 245.52 455.04 
+L 245.52 411.84 
+Q 245.52 408.96 248.4 408.96 
+z
+" clip-path="url(#pb6e78f853d)" style="fill: #ffffff; stroke: #c3c2b7; stroke-width: 0.7; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_28">
+    <path d="M 342.72 370.08 
+L 506.88 370.08 
+Q 509.76 370.08 509.76 372.96 
+L 509.76 462.24 
+Q 509.76 465.12 506.88 465.12 
+L 342.72 465.12 
+Q 339.84 465.12 339.84 462.24 
+L 339.84 372.96 
+Q 339.84 370.08 342.72 370.08 
+z
+" clip-path="url(#pb6e78f853d)" style="fill: #ffffff; stroke: #c3c2b7; stroke-width: 0.7; stroke-linejoin: miter"/>
+   </g>
+   <g id="line2d_11">
+    <defs>
+     <path id="md0e6562385" d="M 0 3.25 
+C 0.86191 3.25 1.688635 2.907559 2.298097 2.298097 
+C 2.907559 1.688635 3.25 0.86191 3.25 0 
+C 3.25 -0.86191 2.907559 -1.688635 2.298097 -2.298097 
+C 1.688635 -2.907559 0.86191 -3.25 0 -3.25 
+C -0.86191 -3.25 -1.688635 -2.907559 -2.298097 -2.298097 
+C -2.907559 -1.688635 -3.25 -0.86191 -3.25 0 
+C -3.25 0.86191 -2.907559 1.688635 -2.298097 2.298097 
+C -1.688635 2.907559 -0.86191 3.25 0 3.25 
+z
+" style="stroke: #ffffff; stroke-width: 0.8"/>
+    </defs>
+    <g clip-path="url(#pb6e78f853d)">
+     <use xlink:href="#md0e6562385" x="154.8" y="233.28" style="fill: #3987e5; stroke: #ffffff; stroke-width: 0.8"/>
+    </g>
+   </g>
+   <g id="line2d_12">
+    <defs>
+     <path id="m80a15cb39f" d="M 0 3.25 
+C 0.86191 3.25 1.688635 2.907559 2.298097 2.298097 
+C 2.907559 1.688635 3.25 0.86191 3.25 0 
+C 3.25 -0.86191 2.907559 -1.688635 2.298097 -2.298097 
+C 1.688635 -2.907559 0.86191 -3.25 0 -3.25 
+C -0.86191 -3.25 -1.688635 -2.907559 -2.298097 -2.298097 
+C -2.907559 -1.688635 -3.25 -0.86191 -3.25 0 
+C -3.25 0.86191 -2.907559 1.688635 -2.298097 2.298097 
+C -1.688635 2.907559 -0.86191 3.25 0 3.25 
+z
+" style="stroke: #0b0b0b; stroke-width: 0.9"/>
+    </defs>
+    <g clip-path="url(#pb6e78f853d)">
+     <use xlink:href="#m80a15cb39f" x="237.6" y="233.28" style="fill: #ffffff; stroke: #0b0b0b; stroke-width: 0.9"/>
+    </g>
+   </g>
+   <g id="line2d_13">
+    <defs>
+     <path id="m2cda736eb6" d="M 0 3.535534 
+L 3.535534 0 
+L 0 -3.535534 
+L -3.535534 0 
+z
+" style="stroke: #ffffff; stroke-width: 0.6; stroke-linejoin: miter"/>
+    </defs>
+    <g clip-path="url(#pb6e78f853d)">
+     <use xlink:href="#m2cda736eb6" x="126" y="263.52" style="fill: #eb6834; stroke: #ffffff; stroke-width: 0.6; stroke-linejoin: miter"/>
+    </g>
+   </g>
+   <g id="patch_29">
+    <path d="M 8.64 408.96 
+L 12.24 408.96 
+L 12.24 457.92 
+L 8.64 457.92 
+z
+" clip-path="url(#pb6e78f853d)" style="fill: #e6e5df"/>
+   </g>
+   <g id="patch_30">
+    <path d="M 158.4 408.96 
+L 162 408.96 
+L 162 457.92 
+L 158.4 457.92 
+z
+" clip-path="url(#pb6e78f853d)" style="fill: #bdbbb3"/>
+   </g>
+   <g id="patch_31">
+    <path d="M 245.52 408.96 
+L 249.12 408.96 
+L 249.12 457.92 
+L 245.52 457.92 
+z
+" clip-path="url(#pb6e78f853d)" style="fill: #6f6d68"/>
+   </g>
+   <g id="patch_32">
+    <path d="M 175.68 66.24 
+Q 191.88 66.24 207.073769 66.24 
+" clip-path="url(#pb6e78f853d)" style="fill: none; stroke: #898781; stroke-width: 0.9; stroke-linecap: round"/>
+    <path d="M 204.273769 64.84 
+L 207.073769 66.24 
+L 204.273769 67.64 
+z
+" clip-path="url(#pb6e78f853d)" style="fill: #898781; stroke: #898781; stroke-width: 0.9; stroke-linecap: round"/>
+   </g>
+   <g id="patch_33">
+    <path d="M 175.68 118.8 
+Q 191.88 118.8 207.073769 118.8 
+" clip-path="url(#pb6e78f853d)" style="fill: none; stroke: #898781; stroke-width: 0.9; stroke-linecap: round"/>
+    <path d="M 204.273769 117.4 
+L 207.073769 118.8 
+L 204.273769 120.2 
+z
+" clip-path="url(#pb6e78f853d)" style="fill: #898781; stroke: #898781; stroke-width: 0.9; stroke-linecap: round"/>
+   </g>
+   <g id="patch_34">
+    <path d="M 344.88 66.24 
+Q 355.68 60.84 365.58 55.89 
+" clip-path="url(#pb6e78f853d)" style="fill: none; stroke: #898781; stroke-width: 0.9; stroke-linecap: round"/>
+    <path d="M 362.449505 55.89 
+L 365.58 55.89 
+L 363.701703 58.394396 
+z
+" clip-path="url(#pb6e78f853d)" style="fill: #898781; stroke: #898781; stroke-width: 0.9; stroke-linecap: round"/>
+   </g>
+   <g id="patch_35">
+    <path d="M 344.88 73.44 
+Q 355.68 84.24 365.768488 94.328488 
+" clip-path="url(#pb6e78f853d)" style="fill: none; stroke: #898781; stroke-width: 0.9; stroke-linecap: round"/>
+    <path d="M 364.778538 91.358639 
+L 365.768488 94.328488 
+L 362.798639 93.338538 
+z
+" clip-path="url(#pb6e78f853d)" style="fill: #898781; stroke: #898781; stroke-width: 0.9; stroke-linecap: round"/>
+   </g>
+   <g id="patch_36">
+    <path d="M 344.88 120.96 
+Q 355.68 124.92 365.535274 128.5336 
+" clip-path="url(#pb6e78f853d)" style="fill: none; stroke: #898781; stroke-width: 0.9; stroke-linecap: round"/>
+    <path d="M 363.388377 126.255261 
+L 365.535274 128.5336 
+L 362.424464 128.884114 
+z
+" clip-path="url(#pb6e78f853d)" style="fill: #898781; stroke: #898781; stroke-width: 0.9; stroke-linecap: round"/>
+   </g>
+   <g id="patch_37">
+    <path d="M 162 233.28 
+Q 196.2 233.28 229.393769 233.28 
+" clip-path="url(#pb6e78f853d)" style="fill: none; stroke: #0b0b0b; stroke-width: 0.9; stroke-linecap: round"/>
+    <path d="M 226.593769 231.88 
+L 229.393769 233.28 
+L 226.593769 234.68 
+z
+" clip-path="url(#pb6e78f853d)" style="fill: #0b0b0b; stroke: #0b0b0b; stroke-width: 0.9; stroke-linecap: round"/>
+   </g>
+   <g id="text_1">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #0b0b0b" x="5.76" y="16.503613" transform="rotate(-0 5.76 16.503613)">A</text>
+   </g>
+   <g id="text_2">
+    <text style="font-weight: 700; font-size: 7.5px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #0b0b0b" x="25.92" y="14.133765" transform="rotate(-0 25.92 14.133765)">Data sources and cohorts</text>
+   </g>
+   <g id="text_3">
+    <text style="font-size: 6.5px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #52514e" x="25.92" y="23.402935" transform="rotate(-0 25.92 23.402935)">MMRF CoMMpass, interim analysis 24 (IA24)</text>
+   </g>
+   <g id="text_4">
+    <text style="font-weight: 700; font-size: 6.5px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #0b0b0b" x="15.84" y="47.882935" transform="rotate(-0 15.84 47.882935)">MMRF CoMMpass (IA24)</text>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 6.5px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #52514e" x="15.84" y="59.372974" transform="rotate(-0 15.84 59.372974)">1,143 subject records</text>
+   </g>
+   <g id="text_6">
+    <text style="font-weight: 700; font-size: 6.5px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #0b0b0b" x="20.88" y="78.767349" transform="rotate(-0 20.88 78.767349)">Clinical data</text>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(20.88 88.273682)">diagnosis · laboratory · treatment ·</text>
+    <text style="font-size: 6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(20.88 94.74917)">response · adverse events · symptoms</text>
+   </g>
+   <g id="text_8">
+    <text style="font-weight: 700; font-size: 6.5px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #ffffff" x="20.88" y="111.923325" transform="rotate(-0 20.88 111.923325)">Bulk RNA sequencing</text>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #ffffff" transform="translate(20.88 122.150244)">TPM → ssGSEA (MSigDB Hallmark): 50</text>
+    <text style="font-size: 6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #ffffff" transform="translate(20.88 128.58917)">pathway scores per RNA sample</text>
+   </g>
+   <g id="text_10">
+    <text style="font-weight: 700; font-size: 6.5px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #0b0b0b" x="216" y="47.882935" transform="rotate(-0 216 47.882935)">Visit pairs V(t) → V(t+1)</text>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 6.5px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #0b0b0b" transform="translate(216 64.390059)">13,451 pairs</text>
+    <text style="font-size: 6.5px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #0b0b0b" transform="translate(216 71.710176)">1,025 patients with ≥1 pair</text>
+   </g>
+   <g id="text_12">
+    <text style="font-weight: 700; font-size: 6.5px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #ffffff" x="216" y="111.962935" transform="rotate(-0 216 111.962935)">RNA available at V(t)</text>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #ffffff" transform="translate(216 122.157744)">9,173 pairs · 707 patients</text>
+    <text style="font-size: 6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #ffffff" transform="translate(216 128.625732)">(68% of pairs)</text>
+   </g>
+   <g id="text_14">
+    <text style="font-weight: 700; font-size: 6.5px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #0b0b0b" x="374.4" y="46.485591" transform="rotate(-0 374.4 46.485591)">Six-class response task</text>
+   </g>
+   <g id="text_15">
+    <text style="font-size: 6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(374.4 57.357744)">13,451 pairs · 1,025 patients</text>
+    <text style="font-size: 6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(374.4 64.420576)">IMWG: PD/SD/PR/VGPR/CR/sCR</text>
+   </g>
+   <g id="text_16">
+    <text style="font-weight: 700; font-size: 6.5px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #0b0b0b" x="374.4" y="86.723325" transform="rotate(-0 374.4 86.723325)">Binary improvement task</text>
+   </g>
+   <g id="text_17">
+    <text style="font-size: 6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(374.4 97.677744)">12,298 pairs · 1,018 patients</text>
+    <text style="font-size: 6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(374.4 104.145732)">excludes 1,153 pairs with sCR at V(t)</text>
+   </g>
+   <g id="text_18">
+    <text style="font-weight: 700; font-size: 6.2px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #0b0b0b" x="374.4" y="126.154256" transform="rotate(-0 374.4 126.154256)">Survival cohort: 674 patients</text>
+   </g>
+   <g id="text_19">
+    <text style="font-size: 5.8px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #0b0b0b" x="374.4" y="137.302893" transform="rotate(-0 374.4 137.302893)">RNA by day 0 · PFS 459 events · OS 247 deaths</text>
+   </g>
+   <g id="text_20">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #0b0b0b" x="5.76" y="169.143613" transform="rotate(-0 5.76 169.143613)">B</text>
+   </g>
+   <g id="text_21">
+    <text style="font-weight: 700; font-size: 7.5px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #0b0b0b" x="25.92" y="166.077671" transform="rotate(-0 25.92 166.077671)">Visit-pair construction</text>
+   </g>
+   <g id="text_22">
+    <text style="font-size: 6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #898781" x="68.4" y="247.467012" transform="rotate(-0 68.4 247.467012)">earlier visits</text>
+   </g>
+   <g id="text_23">
+    <text style="font-weight: 700; font-size: 6.5px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #0b0b0b" x="154.8" y="219.720815" transform="rotate(-0 154.8 219.720815)">V(t)</text>
+   </g>
+   <g id="text_24">
+    <text style="font-weight: 700; font-size: 6.5px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #0b0b0b" x="237.6" y="219.720815" transform="rotate(-0 237.6 219.720815)">V(t+1)</text>
+   </g>
+   <g id="text_25">
+    <text style="font-size: 6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(62.777812 262.548838)">latest RNA sample at</text>
+    <text style="font-size: 6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(49.448437 269.025732)">or before V(t) (never later)</text>
+   </g>
+   <g id="text_26">
+    <text style="font-size: 6.5px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #52514e" x="87.84" y="195.482935" transform="rotate(-0 87.84 195.482935)">Inputs: information available at or before V(t)</text>
+   </g>
+   <g id="text_27">
+    <text style="font-size: 6.5px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(227.665156 195.229822)">Target:</text>
+    <text style="font-size: 6.5px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(214.937852 202.284543)">IMWG at V(t+1)</text>
+   </g>
+   <g id="text_28">
+    <text style="font-size: 6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(21.6 284.572559)">Six-class: PD, SD, PR, VGPR, CR or sCR at V(t+1).</text>
+    <text style="font-size: 6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(21.6 291.892676)">Binary: V(t+1) is a better IMWG category than V(t).</text>
+    <text style="font-size: 6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(21.6 299.212793)">Every pair of a patient stays in one data partition.</text>
+   </g>
+   <g id="text_29">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #0b0b0b" x="279.36" y="169.143613" transform="rotate(-0 279.36 169.143613)">C</text>
+   </g>
+   <g id="text_30">
+    <text style="font-weight: 700; font-size: 7.5px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #0b0b0b" x="299.52" y="166.074155" transform="rotate(-0 299.52 166.074155)">Information layers A–D</text>
+   </g>
+   <g id="text_31">
+    <text style="font-size: 6.5px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #52514e" x="299.52" y="176.042935" transform="rotate(-0 299.52 176.042935)">Nested feature sets, not algorithms</text>
+   </g>
+   <g id="text_32">
+    <text style="font-weight: 700; font-size: 6.2px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #0b0b0b" x="286.56" y="202.433568" transform="rotate(-0 286.56 202.433568)">Layer A: Current clinical state</text>
+   </g>
+   <g id="text_33">
+    <text style="font-size: 5.8px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #52514e" x="286.56" y="213.585736" transform="rotate(-0 286.56 213.585736)">labs, response, stage, symptoms</text>
+   </g>
+   <g id="text_34">
+    <text style="font-weight: 700; font-size: 6.5px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #0b0b0b" x="434.182268" y="210.374805" transform="rotate(-0 434.182268 210.374805)">78</text>
+   </g>
+   <g id="text_35">
+    <text style="font-weight: 700; font-size: 6.2px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #0b0b0b" x="286.56" y="234.075787" transform="rotate(-0 286.56 234.075787)">Layer B: Longitudinal history</text>
+   </g>
+   <g id="text_36">
+    <text style="font-size: 5.8px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #52514e" x="286.56" y="245.265736" transform="rotate(-0 286.56 245.265736)">previous values and changes</text>
+   </g>
+   <g id="text_37">
+    <text style="font-weight: 700; font-size: 6.5px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #0b0b0b" x="449.562062" y="242.056328" transform="rotate(-0 449.562062 242.056328)">115</text>
+   </g>
+   <g id="text_38">
+    <text style="font-weight: 700; font-size: 6.2px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #0b0b0b" x="286.56" y="265.793568" transform="rotate(-0 286.56 265.793568)">Layer C: Treatment context</text>
+   </g>
+   <g id="text_39">
+    <text style="font-size: 5.8px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #52514e" x="286.56" y="276.945736" transform="rotate(-0 286.56 276.945736)">line, regimen, drug classes</text>
+   </g>
+   <g id="text_40">
+    <text style="font-weight: 700; font-size: 6.5px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #0b0b0b" x="461.200825" y="273.736328" transform="rotate(-0 461.200825 273.736328)">143</text>
+   </g>
+   <g id="text_41">
+    <text style="font-weight: 700; font-size: 6.2px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #0b0b0b" x="286.56" y="297.435787" transform="rotate(-0 286.56 297.435787)">Layer D: RNA pathway scores</text>
+   </g>
+   <g id="text_42">
+    <text style="font-size: 5.8px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #52514e" x="286.56" y="308.634346" transform="rotate(-0 286.56 308.634346)">50 Hallmark scores + RNA age</text>
+   </g>
+   <g id="text_43">
+    <text style="font-weight: 700; font-size: 6.5px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #0b0b0b" x="482.4" y="305.414805" transform="rotate(-0 482.4 305.414805)">194</text>
+   </g>
+   <g id="text_44">
+    <text style="font-size: 5.8px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(286.56 324.582728)">Bars: cumulative source input features, coloured by the layer that adds them</text>
+    <text style="font-size: 5.8px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(286.56 331.386683)">(D adds 50 pathway scores + RNA age, plus a derived RNA-availability indicator).</text>
+   </g>
+   <g id="text_45">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #0b0b0b" x="5.76" y="343.383613" transform="rotate(-0 5.76 343.383613)">D</text>
+   </g>
+   <g id="text_46">
+    <text style="font-weight: 700; font-size: 7.5px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #0b0b0b" x="25.92" y="340.314155" transform="rotate(-0 25.92 340.314155)">Patient-level partitions and modelling framework</text>
+   </g>
+   <g id="text_47">
+    <text style="font-size: 6.5px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #52514e" x="25.92" y="350.243325" transform="rotate(-0 25.92 350.243325)">Assigned once; shared by every layer and algorithm; no patient is in more than one partition</text>
+   </g>
+   <g id="text_48">
+    <text style="font-weight: 700; font-size: 6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #0b0b0b" transform="translate(12.96 383.213672)">Train</text>
+    <text style="font-weight: 700; font-size: 6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #0b0b0b" transform="translate(12.96 389.422734)">716 patients</text>
+   </g>
+   <g id="text_49">
+    <text style="font-weight: 700; font-size: 6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #0b0b0b" transform="translate(230.735766 383.213672)">Val.</text>
+    <text style="font-weight: 700; font-size: 6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #0b0b0b" transform="translate(230.735766 389.978203)">154</text>
+   </g>
+   <g id="text_50">
+    <text style="font-weight: 700; font-size: 6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #ffffff" transform="translate(277.575805 383.213672)">Test</text>
+    <text style="font-weight: 700; font-size: 6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #ffffff" transform="translate(277.575805 389.978203)">155</text>
+   </g>
+   <g id="text_51">
+    <text style="font-size: 5.8px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #52514e" x="320.4" y="366.10042" transform="rotate(-0 320.4 366.10042)">Patients, six-class task (binary: 709 / 154 / 155). Pairs shown as six-class · binary</text>
+   </g>
+   <g id="text_52">
+    <text style="font-weight: 700; font-size: 6.2px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #0b0b0b" x="17.28" y="417.713568" transform="rotate(-0 17.28 417.713568)">Train: tuning and fitting</text>
+   </g>
+   <g id="text_53">
+    <text style="font-size: 5.8px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(17.28 428.126648)">Preprocessing fitted; hyperparameters chosen by</text>
+    <text style="font-size: 5.8px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(17.28 434.658445)">5-fold patient-grouped CV on these patients only</text>
+    <text style="font-size: 5.8px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(17.28 441.163508)">Pairs: six-class 9,539 · binary 8,709</text>
+   </g>
+   <g id="text_54">
+    <text style="font-weight: 700; font-size: 6.2px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #0b0b0b" x="167.04" y="418.291912" transform="rotate(-0 167.04 418.291912)">Validation</text>
+   </g>
+   <g id="text_55">
+    <text style="font-size: 5.8px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(167.04 428.091305)">Binary decision threshold;</text>
+    <text style="font-size: 5.8px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(167.04 434.657086)">calibration comparison</text>
+    <text style="font-size: 5.8px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(167.04 441.363336)">Pairs: 1,833 · 1,659</text>
+   </g>
+   <g id="text_56">
+    <text style="font-weight: 700; font-size: 6.2px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #0b0b0b" x="254.16" y="418.291912" transform="rotate(-0 254.16 418.291912)">Test</text>
+   </g>
+   <g id="text_57">
+    <text style="font-size: 5.8px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(254.16 428.160633)">Scored once; patient-</text>
+    <text style="font-size: 5.8px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(254.16 434.69243)">level bootstrap CIs</text>
+    <text style="font-size: 5.8px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(254.16 441.363336)">Pairs: 2,079 · 1,930</text>
+   </g>
+   <g id="text_58">
+    <text style="font-weight: 700; font-size: 6.5px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #0b0b0b" x="347.04" y="379.802935" transform="rotate(-0 347.04 379.802935)">Modelling framework</text>
+   </g>
+   <g id="line2d_14">
+    <defs>
+     <path id="m6f941e7e99" d="M 0 2.1 
+C 0.556927 2.1 1.091118 1.878731 1.484924 1.484924 
+C 1.878731 1.091118 2.1 0.556927 2.1 0 
+C 2.1 -0.556927 1.878731 -1.091118 1.484924 -1.484924 
+C 1.091118 -1.878731 0.556927 -2.1 0 -2.1 
+C -0.556927 -2.1 -1.091118 -1.878731 -1.484924 -1.484924 
+C -1.878731 -1.091118 -2.1 -0.556927 -2.1 0 
+C -2.1 0.556927 -1.878731 1.091118 -1.484924 1.484924 
+C -1.091118 1.878731 -0.556927 2.1 0 2.1 
+z
+" style="stroke: #ffffff; stroke-width: 0.4"/>
+    </defs>
+    <g clip-path="url(#pb6e78f853d)">
+     <use xlink:href="#m6f941e7e99" x="352.08" y="395.28" style="fill: #52514e; stroke: #ffffff; stroke-width: 0.4"/>
+    </g>
+   </g>
+   <g id="text_59">
+    <text style="font-size: 6.5px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #0b0b0b" x="362.88" y="397.043325" transform="rotate(-0 362.88 397.043325)">Logistic Regression</text>
+   </g>
+   <g id="line2d_15">
+    <defs>
+     <path id="m3f05f48417" d="M -2.1 2.1 
+L 2.1 2.1 
+L 2.1 -2.1 
+L -2.1 -2.1 
+z
+" style="stroke: #ffffff; stroke-width: 0.4; stroke-linejoin: miter"/>
+    </defs>
+    <g clip-path="url(#pb6e78f853d)">
+     <use xlink:href="#m3f05f48417" x="352.08" y="407.52" style="fill: #52514e; stroke: #ffffff; stroke-width: 0.4; stroke-linejoin: miter"/>
+    </g>
+   </g>
+   <g id="text_60">
+    <text style="font-size: 6.5px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #0b0b0b" x="362.88" y="409.322935" transform="rotate(-0 362.88 409.322935)">LightGBM</text>
+   </g>
+   <g id="line2d_16">
+    <defs>
+     <path id="m9b3f717b7f" d="M 0 2.969848 
+L 2.969848 0 
+L 0 -2.969848 
+L -2.969848 0 
+z
+" style="stroke: #ffffff; stroke-width: 0.4; stroke-linejoin: miter"/>
+    </defs>
+    <g clip-path="url(#pb6e78f853d)">
+     <use xlink:href="#m9b3f717b7f" x="352.08" y="419.76" style="fill: #52514e; stroke: #ffffff; stroke-width: 0.4; stroke-linejoin: miter"/>
+    </g>
+   </g>
+   <g id="text_61">
+    <text style="font-size: 6.5px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #0b0b0b" x="362.88" y="422.207349" transform="rotate(-0 362.88 422.207349)">XGBoost</text>
+   </g>
+   <g id="text_62">
+    <text style="font-weight: 700; font-size: 6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #0b0b0b" x="347.04" y="435.519668" transform="rotate(-0 347.04 435.519668)">4 layers × 3 algorithms × 2 tasks = 24 models</text>
+   </g>
+   <g id="text_63">
+    <text style="font-size: 5.8px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(347.04 446.846648)">Binary: AUPRC (test improvement rate 18.3%)</text>
+    <text style="font-size: 5.8px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(347.04 453.378445)">Six-class: macro-F1 (argmax)</text>
+    <text style="font-size: 5.8px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(347.04 459.912055)">Also AUROC, Brier score, RPS, log loss</text>
+   </g>
+   <g id="text_64">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #0b0b0b" x="5.76" y="496.023613" transform="rotate(-0 5.76 496.023613)">E</text>
+   </g>
+   <g id="text_65">
+    <text style="font-weight: 700; font-size: 7.5px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #0b0b0b" x="25.92" y="492.908452" transform="rotate(-0 25.92 492.908452)">Evaluation, downstream analyses and validation status</text>
+   </g>
+   <g id="text_66">
+    <text style="font-size: 6.5px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #52514e" x="25.92" y="502.961021" transform="rotate(-0 25.92 502.961021)">All evaluations are internal to CoMMpass; no external validation cohort was used</text>
+   </g>
+   <g id="text_67">
+    <text style="font-weight: 700; font-size: 6.2px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #52514e" x="11.52" y="524.955787" transform="rotate(-0 11.52 524.955787)">Analysis</text>
+   </g>
+   <g id="text_68">
+    <text style="font-weight: 700; font-size: 6.2px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #52514e" x="146.88" y="524.955787" transform="rotate(-0 146.88 524.955787)">Patients and design</text>
+   </g>
+   <g id="text_69">
+    <text style="font-weight: 700; font-size: 6.2px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #52514e" x="328.32" y="525.571912" transform="rotate(-0 328.32 525.571912)">Validation status</text>
+   </g>
+   <g id="text_70">
+    <text style="font-weight: 700; font-size: 6.2px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #0b0b0b" transform="translate(11.52 543.509919)">Main prediction (24 models),</text>
+    <text style="font-weight: 700; font-size: 6.2px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #0b0b0b" transform="translate(11.52 550.814476)">calibration and SHAP</text>
+   </g>
+   <g id="text_71">
+    <text style="font-size: 6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(146.88 543.442207)">Test: 155 patients, scored once.</text>
+    <text style="font-size: 6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(146.88 550.042559)">Tuning on train patients only</text>
+   </g>
+   <g id="text_72">
+    <text style="font-size: 6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #0b0b0b" transform="translate(328.32 543.433301)">Internal held-out test split;</text>
+    <text style="font-size: 6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #0b0b0b" transform="translate(328.32 550.114277)">calibration and SHAP descriptive</text>
+   </g>
+   <g id="text_73">
+    <text style="font-weight: 700; font-size: 6.2px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #0b0b0b" transform="translate(11.52 575.152138)">RNA contribution, uncertainty</text>
+    <text style="font-weight: 700; font-size: 6.2px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #0b0b0b" transform="translate(11.52 581.843476)">and subgroup analyses</text>
+   </g>
+   <g id="text_74">
+    <text style="font-size: 6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(146.88 575.114707)">5×5 grouped CV on train + validation</text>
+    <text style="font-size: 6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(146.88 581.722559)">patients; train-tuned hyperparameters</text>
+   </g>
+   <g id="text_75">
+    <text style="font-size: 6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #0b0b0b" transform="translate(328.32 575.114707)">Post hoc, exploratory; CV cohort</text>
+    <text style="font-size: 6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #0b0b0b" transform="translate(328.32 581.722559)">overlaps the tuning patients</text>
+   </g>
+   <g id="text_76">
+    <text style="font-weight: 700; font-size: 6.2px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #0b0b0b" transform="translate(11.52 607.484591)">Proliferation / MYC</text>
+    <text style="font-weight: 700; font-size: 6.2px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #0b0b0b" transform="translate(11.52 614.139601)">association</text>
+   </g>
+   <g id="text_77">
+    <text style="font-size: 6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(146.88 606.758145)">Discovery: train + validation.</text>
+    <text style="font-size: 6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(146.88 613.446621)">Test: 84 patients with RNA</text>
+   </g>
+   <g id="text_78">
+    <text style="font-size: 6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #a4590a" transform="translate(328.32 619.754707)">Pathway family chosen using pooled data</text>
+    <text style="font-size: 6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #a4590a" transform="translate(328.32 626.397715)">that included test patients: not independent</text>
+   </g>
+   <g id="text_79">
+    <text style="font-weight: 700; font-size: 6.2px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #0b0b0b" transform="translate(11.52 638.549919)">Survival (PFS, OS) and</text>
+    <text style="font-weight: 700; font-size: 6.2px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #0b0b0b" transform="translate(11.52 645.241257)">pathway coefficients</text>
+   </g>
+   <g id="text_80">
+    <text style="font-size: 6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(146.88 638.509863)">674 patients, 5×5 CV; includes 101 validation</text>
+    <text style="font-size: 6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(146.88 645.126621)">and 100 test patients</text>
+   </g>
+   <g id="text_81">
+    <text style="font-size: 6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #0b0b0b" transform="translate(328.32 638.474707)">Exploratory internal CV;</text>
+    <text style="font-size: 6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #0b0b0b" transform="translate(328.32 645.117715)">overlaps other partitions</text>
+   </g>
+   <g id="text_82">
+    <text style="font-weight: 700; font-size: 6.2px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #0b0b0b" transform="translate(11.52 670.229919)">Geographic hold-out</text>
+    <text style="font-weight: 700; font-size: 6.2px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #0b0b0b" transform="translate(11.52 676.921257)">(US → Spain, Canada)</text>
+   </g>
+   <g id="text_83">
+    <text style="font-size: 6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(146.88 670.189863)">Fit: 632 US patients; threshold and</text>
+    <text style="font-size: 6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(146.88 676.834277)">calibration: 139 US patients.</text>
+    <text style="font-size: 6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(146.88 683.478691)">Scored once: 116 Spain/Canada patients</text>
+   </g>
+   <g id="text_84">
+    <text style="font-size: 6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #a4590a" transform="translate(328.32 683.114707)">80 of 116 evaluated patients were in the training</text>
+    <text style="font-size: 6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #a4590a" transform="translate(328.32 689.722559)">split used to tune hyperparameters</text>
+   </g>
+   <g id="text_85">
+    <text style="font-size: 5.8px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(8.64 703.302728)">Amber rows: known validation concerns under revision. Hyperparameters were tuned on train patients only in the main models; the scope of excluding validation patients</text>
+    <text style="font-size: 5.8px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(8.64 710.106683)">from all development steps (tuning, pathway selection) is being clarified. Nothing here is externally validated, and CIs are descriptive and unadjusted.</text>
+   </g>
+   <g id="patch_38">
+    <path d="M 330.48 601.2 
+L 445.536 601.2 
+Q 447.696 601.2 447.696 603.36 
+L 447.696 611.28 
+Q 447.696 613.44 445.536 613.44 
+L 330.48 613.44 
+Q 328.32 613.44 328.32 611.28 
+L 328.32 603.36 
+Q 328.32 601.2 330.48 601.2 
+z
+" clip-path="url(#pb6e78f853d)" style="fill: #a4590a; stroke: #a4590a; stroke-width: 0.7; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_39">
+    <path d="M 330.48 664.56 
+L 445.536 664.56 
+Q 447.696 664.56 447.696 666.72 
+L 447.696 674.64 
+Q 447.696 676.8 445.536 676.8 
+L 330.48 676.8 
+Q 328.32 676.8 328.32 674.64 
+L 328.32 666.72 
+Q 328.32 664.56 330.48 664.56 
+z
+" clip-path="url(#pb6e78f853d)" style="fill: #a4590a; stroke: #a4590a; stroke-width: 0.7; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_86">
+    <text style="font-weight: 700; font-size: 6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #ffffff" x="388.008" y="608.835938" transform="rotate(-0 388.008 608.835938)">Not independent; redesign pending</text>
+   </g>
+   <g id="text_87">
+    <text style="font-weight: 700; font-size: 6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #ffffff" x="388.008" y="672.195938" transform="rotate(-0 388.008 672.195938)">Not independent; redesign pending</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pb6e78f853d">
+   <rect x="0" y="0" width="518.4" height="725.76"/>
+  </clipPath>
+ </defs>
+</svg>

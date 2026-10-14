@@ -1,0 +1,55 @@
+{
+  "label": "DIRECTION 2 FOLLOW-UP: POST-HOC INTERNAL SPLIT-SAMPLE REPLICATION of the proliferation/MYC axis (NOT untouched confirmation; NOT external validation)",
+  "accounting": {
+    "test_rows_before_exclusions": 1448,
+    "test_patients_before": 107,
+    "rows_lost_incomplete_covariates": 150,
+    "rows_lost_strata_not_retained_in_discovery": 77,
+    "test_rows": 1221,
+    "test_patients": 84
+  },
+  "support": {
+    "test_rows": 1221,
+    "test_patients": 84,
+    "outcome_class_counts": {
+      "progressive_disease": 154,
+      "stable_disease": 153,
+      "partial_response": 243,
+      "very_good_partial_response": 475,
+      "complete_response": 82,
+      "stringent_complete_response": 114
+    },
+    "all_six_classes_represented": true,
+    "patients_at_least_80": true,
+    "eta_non_degenerate": true
+  },
+  "status": "COMPLETED: single primary directional test run once",
+  "result": {
+    "beta_test": -0.2035164250232188,
+    "se_robust": 0.08872478343737694,
+    "z": -2.2937945536588797,
+    "one_sided_p_H1_beta_lt_0": 0.010901151209399112,
+    "ci95_wald": [
+      -0.3774138050965935,
+      -0.029619044949844076
+    ],
+    "odds_ratio_per_discovery_SD": 0.8158568037456768,
+    "recalibration_slope_b_eta": 0.9600123950334046,
+    "validity_flag_b_eta_positive": true,
+    "discovery_beta": -0.2786100802788457,
+    "discovery_ci95": [
+      -0.3491712279260558,
+      -0.20804893263163557
+    ],
+    "bootstrap_ci95_descriptive": [
+      -0.3841414565370182,
+      -0.019449608884464432
+    ],
+    "bootstrap_n_ok": 2000,
+    "bootstrap_n_failed": 0,
+    "bootstrap_seed": 42,
+    "interpretation": "REPLICATED (95% CI entirely below 0, in the hypothesised direction)"
+  },
+  "hypothesis": "H1: beta < 0 (higher proliferation/MYC composite -> lower next-response class)",
+  "primary_rule": "replicated if the two-sided 95% CI of beta is entirely below 0 (= one-sided p < 0.025)"
+}

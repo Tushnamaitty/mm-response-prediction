@@ -1,0 +1,227 @@
+{
+  "caveats": [
+    "Coefficients describe predictive association inside a penalized prognostic model; they are not causal effects and no pathway is a driver.",
+    "The 25 outer-CV fits share about 80% of their training patients (5 overlapping repeats), so direction agreement across fits is optimistic relative to independent replication.",
+    "Ridge coefficients of correlated Hallmark pathways trade off against each other; individual coefficients are not identifiable as separate effects.",
+    "Coefficients are on the training-fold-standardized scale (HR per training-fold SD of the pathway score); clinical covariates are penalized jointly with the pathways, as in the locked design.",
+    "Exploratory and descriptive: no hypothesis tests, no pathway selection, no alternative models; internal validation only."
+  ],
+  "coefficient_scale": "log-hazard per training-fold SD of the standardized pathway score (HR = exp(beta))",
+  "completed_utc": "20261001T044417Z",
+  "consistent_same_direction_in_both_endpoints": [
+    "Adipogenesis",
+    "Apical Surface",
+    "Apoptosis",
+    "E2F Targets",
+    "G2-M Checkpoint",
+    "IL-6/JAK/STAT3 Signaling",
+    "Inflammatory Response",
+    "KRAS Signaling Dn",
+    "KRAS Signaling Up",
+    "Mitotic Spindle",
+    "Myc Targets V1",
+    "Myc Targets V2",
+    "Notch Signaling",
+    "PI3K/AKT/mTOR  Signaling",
+    "Protein Secretion",
+    "Reactive Oxygen Species Pathway",
+    "Spermatogenesis",
+    "UV Response Dn",
+    "mTORC1 Signaling"
+  ],
+  "direction_rule": "consistently_positive / consistently_negative only if all 25 fits share the sign; else mixed",
+  "endpoints": {
+    "os": {
+      "consistently_negative_pathways": [
+        "Adipogenesis",
+        "Allograft Rejection",
+        "Complement",
+        "IL-6/JAK/STAT3 Signaling",
+        "Inflammatory Response",
+        "Notch Signaling",
+        "Protein Secretion",
+        "UV Response Dn",
+        "Wnt-beta Catenin Signaling",
+        "heme Metabolism"
+      ],
+      "consistently_positive_pathways": [
+        "Apical Surface",
+        "Apoptosis",
+        "DNA Repair",
+        "E2F Targets",
+        "Estrogen Response Early",
+        "G2-M Checkpoint",
+        "Glycolysis",
+        "IL-2/STAT5 Signaling",
+        "KRAS Signaling Dn",
+        "KRAS Signaling Up",
+        "Mitotic Spindle",
+        "Myc Targets V1",
+        "Myc Targets V2",
+        "Myogenesis",
+        "PI3K/AKT/mTOR  Signaling",
+        "Reactive Oxygen Species Pathway",
+        "Spermatogenesis",
+        "UV Response Up",
+        "Unfolded Protein Response",
+        "mTORC1 Signaling",
+        "p53 Pathway"
+      ],
+      "n_consistently_negative": 10,
+      "n_consistently_positive": 21,
+      "n_mixed": 19
+    },
+    "pfs": {
+      "consistently_negative_pathways": [
+        "Adipogenesis",
+        "Coagulation",
+        "Epithelial Mesenchymal Transition",
+        "Hypoxia",
+        "IL-6/JAK/STAT3 Signaling",
+        "Inflammatory Response",
+        "Notch Signaling",
+        "Protein Secretion",
+        "UV Response Dn"
+      ],
+      "consistently_positive_pathways": [
+        "Apical Surface",
+        "Apoptosis",
+        "E2F Targets",
+        "Estrogen Response Late",
+        "G2-M Checkpoint",
+        "KRAS Signaling Dn",
+        "KRAS Signaling Up",
+        "Mitotic Spindle",
+        "Myc Targets V1",
+        "Myc Targets V2",
+        "PI3K/AKT/mTOR  Signaling",
+        "Pperoxisome",
+        "Reactive Oxygen Species Pathway",
+        "Spermatogenesis",
+        "TGF-beta Signaling",
+        "mTORC1 Signaling"
+      ],
+      "n_consistently_negative": 9,
+      "n_consistently_positive": 16,
+      "n_mixed": 25
+    }
+  },
+  "label": "EXPLORATORY SURVIVAL PATHWAY INTERPRETATION (predictive association in the locked ridge-Cox model; not causal; no hypothesis testing)",
+  "locked_manifest_combined_sha256": "6ab539a31f17aa91ca7d3af4bb25a1183a8855a7ba57a1054744c21ea6c7786a",
+  "locked_spec_sha256": "fe0792dbcb61ec62d3901aa7b268b7fcb51a5b60291b9dc4b3da75d0317db6e4",
+  "n_outer_fits_per_endpoint": 25,
+  "n_pathways": 50,
+  "reproduction_gate": {
+    "passed": true,
+    "per_endpoint": {
+      "os": {
+        "endpoint": "os",
+        "locked_summary": {
+          "c_C0": 0.6584694105324611,
+          "c_C0_RNA": 0.7019677535671972,
+          "delta_c": 0.04349834303473617
+        },
+        "max_abs_diff_C0": 9.974659986866641e-17,
+        "max_abs_diff_C0_RNA": 4.440892098500626e-16,
+        "max_abs_diff_repeat_metrics": 9.020562075079397e-17,
+        "max_abs_diff_summary": 0.0,
+        "mean_abs_diff_C0": 4.777576183429171e-17,
+        "mean_abs_diff_C0_RNA": 2.495559937605663e-17,
+        "per_repeat_refit": [
+          {
+            "c_C0": 0.651835539758581,
+            "c_C0_RNA": 0.7025446865502498,
+            "delta_c": 0.050709146791668824,
+            "repeat": 0
+          },
+          {
+            "c_C0": 0.6587381308058174,
+            "c_C0_RNA": 0.6979944710589124,
+            "delta_c": 0.03925634025309499,
+            "repeat": 1
+          },
+          {
+            "c_C0": 0.6625328388193479,
+            "c_C0_RNA": 0.7030855612218616,
+            "delta_c": 0.04055272240251373,
+            "repeat": 2
+          },
+          {
+            "c_C0": 0.6522733906832191,
+            "c_C0_RNA": 0.6986555401019935,
+            "delta_c": 0.04638214941877439,
+            "repeat": 3
+          },
+          {
+            "c_C0": 0.6669671525953399,
+            "c_C0_RNA": 0.7075585089029688,
+            "delta_c": 0.04059135630762889,
+            "repeat": 4
+          }
+        ],
+        "refit_means": {
+          "c_C0": 0.6584694105324611,
+          "c_C0_RNA": 0.7019677535671972,
+          "delta_c": 0.04349834303473617
+        }
+      },
+      "pfs": {
+        "endpoint": "pfs",
+        "locked_summary": {
+          "c_C0": 0.6012024837840428,
+          "c_C0_RNA": 0.6416971104176208,
+          "delta_c": 0.04049462663357797
+        },
+        "max_abs_diff_C0": 9.974659986866641e-17,
+        "max_abs_diff_C0_RNA": 2.220446049250313e-16,
+        "max_abs_diff_repeat_metrics": 7.632783294297951e-17,
+        "max_abs_diff_summary": 0.0,
+        "mean_abs_diff_C0": 4.8324741230218307e-17,
+        "mean_abs_diff_C0_RNA": 2.5114851623943967e-17,
+        "per_repeat_refit": [
+          {
+            "c_C0": 0.5880827359967621,
+            "c_C0_RNA": 0.6378862273535771,
+            "delta_c": 0.049803491356815055,
+            "repeat": 0
+          },
+          {
+            "c_C0": 0.6104522361511998,
+            "c_C0_RNA": 0.641230602093962,
+            "delta_c": 0.030778365942762176,
+            "repeat": 1
+          },
+          {
+            "c_C0": 0.604080350200769,
+            "c_C0_RNA": 0.6441010128982095,
+            "delta_c": 0.040020662697440534,
+            "repeat": 2
+          },
+          {
+            "c_C0": 0.5978416001874554,
+            "c_C0_RNA": 0.6421838554037215,
+            "delta_c": 0.04434225521626611,
+            "repeat": 3
+          },
+          {
+            "c_C0": 0.605555496384028,
+            "c_C0_RNA": 0.6430838543386339,
+            "delta_c": 0.03752835795460596,
+            "repeat": 4
+          }
+        ],
+        "refit_means": {
+          "c_C0": 0.6012024837840428,
+          "c_C0_RNA": 0.6416971104176208,
+          "delta_c": 0.04049462663357797
+        }
+      }
+    },
+    "tolerances": {
+      "c_index": 1e-09,
+      "risk": 1e-09
+    }
+  },
+  "runtime_seconds": 2.8,
+  "status": "gate passed; coefficients exported"
+}

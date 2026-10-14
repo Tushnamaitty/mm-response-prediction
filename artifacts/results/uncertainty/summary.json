@@ -1,0 +1,71 @@
+{
+  "rna_subset_paired_differences": [
+    {
+      "task": "binary",
+      "comparison": "D - A",
+      "metric": "auprc",
+      "mean_diff": 0.0287928175477713,
+      "ci_lower": -0.0070665552415244024,
+      "ci_upper": 0.06191880330282073,
+      "interpretation": "inconclusive (CI includes 0)",
+      "n_rows": 1323,
+      "n_patients": 107
+    },
+    {
+      "task": "binary",
+      "comparison": "D - C",
+      "metric": "auprc",
+      "mean_diff": -0.009463525607204698,
+      "ci_lower": -0.04305157182825592,
+      "ci_upper": 0.01946059707727613,
+      "interpretation": "inconclusive (CI includes 0)",
+      "n_rows": 1323,
+      "n_patients": 107
+    },
+    {
+      "task": "binary",
+      "comparison": "D - A",
+      "metric": "auroc",
+      "mean_diff": 0.010050230875377316,
+      "ci_lower": -0.00580715789945406,
+      "ci_upper": 0.02654030979672545,
+      "interpretation": "inconclusive (CI includes 0)",
+      "n_rows": 1323,
+      "n_patients": 107
+    },
+    {
+      "task": "binary",
+      "comparison": "D - C",
+      "metric": "auroc",
+      "mean_diff": -0.005991370828236755,
+      "ci_lower": -0.015832884877270907,
+      "ci_upper": 0.004047495426616234,
+      "interpretation": "inconclusive (CI includes 0)",
+      "n_rows": 1323,
+      "n_patients": 107
+    },
+    {
+      "task": "multiclass",
+      "comparison": "D - A",
+      "metric": "macro_f1",
+      "mean_diff": -0.010388237643800253,
+      "ci_lower": -0.03752245833187405,
+      "ci_upper": 0.01638929863280214,
+      "interpretation": "inconclusive (CI includes 0)",
+      "n_rows": 1449,
+      "n_patients": 107
+    },
+    {
+      "task": "multiclass",
+      "comparison": "D - C",
+      "metric": "macro_f1",
+      "mean_diff": -0.000555140020883315,
+      "ci_lower": -0.023067686903759262,
+      "ci_upper": 0.021211114148687146,
+      "interpretation": "inconclusive (CI includes 0)",
+      "n_rows": 1449,
+      "n_patients": 107
+    }
+  ],
+  "note": "Freshness CIs and paired differences are blocked - see rna_freshness_cis.csv and rna_freshness_paired_differences.csv for details."
+}

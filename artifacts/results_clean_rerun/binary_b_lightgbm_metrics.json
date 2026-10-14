@@ -1,0 +1,177 @@
+{
+  "task": "binary",
+  "model_stage": "b",
+  "algorithm": "lightgbm",
+  "tag": "",
+  "n_train": 8709,
+  "n_val": 1659,
+  "n_test": 1930,
+  "n_patients_train": 709,
+  "n_patients_val": 154,
+  "n_patients_test": 155,
+  "best_params": {
+    "n_estimators": 100,
+    "num_leaves": 15,
+    "learning_rate": 0.05
+  },
+  "cv_results": [
+    {
+      "params": {
+        "n_estimators": 100,
+        "num_leaves": 15,
+        "learning_rate": 0.05
+      },
+      "mean": 0.5392962531928406,
+      "std": 0.007077192140763153,
+      "fold_scores": [
+        0.5409225382817916,
+        0.5253964421379905,
+        0.5422600473238052,
+        0.5450610883363196,
+        0.542841149884296
+      ]
+    },
+    {
+      "params": {
+        "n_estimators": 200,
+        "num_leaves": 31,
+        "learning_rate": 0.05
+      },
+      "mean": 0.5250183237979494,
+      "std": 0.007013447163954388,
+      "fold_scores": [
+        0.5325361285405034,
+        0.5159045574235565,
+        0.5251249802960652,
+        0.5185088847802478,
+        0.5330170679493741
+      ]
+    },
+    {
+      "params": {
+        "n_estimators": 200,
+        "num_leaves": 15,
+        "learning_rate": 0.1
+      },
+      "mean": 0.520006558756364,
+      "std": 0.008290253612146,
+      "fold_scores": [
+        0.5255907913910679,
+        0.5332065138163244,
+        0.51003899316013,
+        0.5155864042164402,
+        0.5156100911978581
+      ]
+    }
+  ],
+  "seed": 42,
+  "val_metrics": {
+    "auprc": 0.4651793567952428,
+    "auroc": 0.7750211243103534,
+    "brier_score": 0.12130818705924638,
+    "sensitivity": 0.6101694915254238,
+    "specificity": 0.8255131964809385,
+    "precision": 0.430622009569378,
+    "recall": 0.6101694915254238,
+    "f1": 0.5049088359046283,
+    "threshold_used": 0.25,
+    "confusion_matrix": [
+      [
+        1126,
+        238
+      ],
+      [
+        115,
+        180
+      ]
+    ],
+    "n": 1659
+  },
+  "test_metrics_PRELIMINARY": {
+    "auprc": 0.492445141061741,
+    "auroc": 0.8131587030992615,
+    "brier_score": 0.1168456571570903,
+    "sensitivity": 0.6175637393767706,
+    "specificity": 0.8547875713379836,
+    "precision": 0.48769574944071586,
+    "recall": 0.6175637393767706,
+    "f1": 0.545,
+    "threshold_used": 0.25,
+    "confusion_matrix": [
+      [
+        1348,
+        229
+      ],
+      [
+        135,
+        218
+      ]
+    ],
+    "n": 1930,
+    "PRELIMINARY": true
+  },
+  "test_auprc_bootstrap_ci_PRELIMINARY": {
+    "n_resamples_used": 200,
+    "mean": 0.498334147534211,
+    "ci_lower_2.5": 0.44698276938506726,
+    "ci_upper_97.5": 0.5496182840422351
+  },
+  "calibration_curve": {
+    "prob_true": [
+      0.025906735751295335,
+      0.015544041450777202,
+      0.06217616580310881,
+      0.06735751295336788,
+      0.09326424870466321,
+      0.12953367875647667,
+      0.16580310880829016,
+      0.24870466321243523,
+      0.41968911917098445,
+      0.6010362694300518
+    ],
+    "prob_pred": [
+      0.03977401884157488,
+      0.0538862724743908,
+      0.0630842649952885,
+      0.07702628398370101,
+      0.10133191617138476,
+      0.13005481553111947,
+      0.16992191134353873,
+      0.23644774284439268,
+      0.4195388196960518,
+      0.6308796295464684
+    ]
+  },
+  "feature_importance_top30": {
+    "ordinal_response__vt_disease_response_ordinal": 129.0,
+    "numeric__vt_days_to_visit": 68.0,
+    "numeric__m_protein_current": 65.0,
+    "numeric__kappa_flc_pct_change": 55.0,
+    "numeric__age_at_diagnosis": 44.0,
+    "numeric__kappa_flc_current": 37.0,
+    "object_boolean__subject_had_signs_symptoms_missing": 34.0,
+    "numeric__ldh_days_since_previous": 33.0,
+    "numeric__kappa_flc_change": 32.0,
+    "numeric__m_protein_pct_change": 31.0,
+    "numeric__ldh_previous": 30.0,
+    "numeric__ldh_current": 30.0,
+    "numeric__hemoglobin_current": 25.0,
+    "numeric__creatinine_pct_change": 25.0,
+    "numeric__hemoglobin_days_since_previous": 25.0,
+    "numeric__dna_index": 25.0,
+    "numeric__b2m_previous": 25.0,
+    "numeric__cmmc_number": 25.0,
+    "numeric__b2m_current": 24.0,
+    "numeric__calcium_pct_change": 22.0,
+    "numeric__creatinine_previous": 22.0,
+    "numeric__lambda_flc_previous": 22.0,
+    "numeric__m_protein_days_since_previous": 22.0,
+    "numeric__lambda_flc_current": 21.0,
+    "numeric__m_protein_change": 20.0,
+    "numeric__pct_plasma_cells_bm": 19.0,
+    "numeric__bmi_at_diagnosis": 19.0,
+    "numeric__calcium_current": 18.0,
+    "numeric__hemoglobin_change": 18.0,
+    "numeric__hemoglobin_pct_change": 18.0
+  }
+}

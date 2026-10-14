@@ -1,0 +1,307 @@
+{
+  "task": "multiclass",
+  "model_stage": "a",
+  "algorithm": "xgboost",
+  "tag": "",
+  "n_train": 9539,
+  "n_val": 1833,
+  "n_test": 2079,
+  "n_patients_train": 716,
+  "n_patients_val": 154,
+  "n_patients_test": 155,
+  "best_params": {
+    "n_estimators": 100,
+    "max_depth": 3,
+    "learning_rate": 0.05
+  },
+  "cv_results": [
+    {
+      "params": {
+        "n_estimators": 100,
+        "max_depth": 3,
+        "learning_rate": 0.05
+      },
+      "mean": 0.6561369492153113,
+      "std": 0.011171938842527053,
+      "fold_scores": [
+        0.6584101379112597,
+        0.6578852929333512,
+        0.6377691800722397,
+        0.6726790268994733,
+        0.6539411082602324
+      ]
+    },
+    {
+      "params": {
+        "n_estimators": 200,
+        "max_depth": 4,
+        "learning_rate": 0.05
+      },
+      "mean": 0.6509417860043147,
+      "std": 0.011045438048395771,
+      "fold_scores": [
+        0.6524692039479777,
+        0.652528021288922,
+        0.6361724436005963,
+        0.6694009080479493,
+        0.6441383531361283
+      ]
+    },
+    {
+      "params": {
+        "n_estimators": 200,
+        "max_depth": 3,
+        "learning_rate": 0.1
+      },
+      "mean": 0.6425770742747094,
+      "std": 0.016890847274663175,
+      "fold_scores": [
+        0.634276155336522,
+        0.6470461598809897,
+        0.6202518844210348,
+        0.6714213175970651,
+        0.639889854137935
+      ]
+    }
+  ],
+  "seed": 42,
+  "val_metrics": {
+    "accuracy_secondary": 0.701582105837425,
+    "macro_f1": 0.6686734344506626,
+    "macro_precision": 0.6727826313900874,
+    "macro_recall": 0.6752691019861077,
+    "weighted_f1": 0.6964847983038704,
+    "per_class": {
+      "progressive_disease": {
+        "precision": 0.5174418604651163,
+        "recall": 0.332089552238806,
+        "f1": 0.40454545454545454,
+        "support": 268
+      },
+      "stable_disease": {
+        "precision": 0.5477031802120141,
+        "recall": 0.6681034482758621,
+        "f1": 0.6019417475728155,
+        "support": 232
+      },
+      "partial_response": {
+        "precision": 0.5390334572490706,
+        "recall": 0.6473214285714286,
+        "f1": 0.5882352941176471,
+        "support": 224
+      },
+      "very_good_partial_response": {
+        "precision": 0.8040123456790124,
+        "recall": 0.8269841269841269,
+        "f1": 0.8153364632237872,
+        "support": 630
+      },
+      "complete_response": {
+        "precision": 0.8222222222222222,
+        "recall": 0.7708333333333334,
+        "f1": 0.7956989247311828,
+        "support": 288
+      },
+      "stringent_complete_response": {
+        "precision": 0.806282722513089,
+        "recall": 0.806282722513089,
+        "f1": 0.806282722513089,
+        "support": 191
+      }
+    },
+    "confusion_matrix": [
+      [
+        89,
+        77,
+        32,
+        51,
+        8,
+        11
+      ],
+      [
+        30,
+        155,
+        30,
+        15,
+        1,
+        1
+      ],
+      [
+        40,
+        27,
+        145,
+        12,
+        0,
+        0
+      ],
+      [
+        12,
+        19,
+        56,
+        521,
+        17,
+        5
+      ],
+      [
+        1,
+        4,
+        6,
+        35,
+        222,
+        20
+      ],
+      [
+        0,
+        1,
+        0,
+        14,
+        22,
+        154
+      ]
+    ],
+    "n": 1833
+  },
+  "test_metrics_PRELIMINARY": {
+    "accuracy_secondary": 0.697931697931698,
+    "macro_f1": 0.6591491478873354,
+    "macro_precision": 0.6672369553735332,
+    "macro_recall": 0.6597493574635299,
+    "weighted_f1": 0.692180517294708,
+    "per_class": {
+      "progressive_disease": {
+        "precision": 0.4129032258064516,
+        "recall": 0.26229508196721313,
+        "f1": 0.3208020050125313,
+        "support": 244
+      },
+      "stable_disease": {
+        "precision": 0.49838187702265374,
+        "recall": 0.6209677419354839,
+        "f1": 0.5529622980251346,
+        "support": 248
+      },
+      "partial_response": {
+        "precision": 0.6528066528066528,
+        "recall": 0.7072072072072072,
+        "f1": 0.6789189189189189,
+        "support": 444
+      },
+      "very_good_partial_response": {
+        "precision": 0.8091603053435115,
+        "recall": 0.8206451612903226,
+        "f1": 0.8148622677770659,
+        "support": 775
+      },
+      "complete_response": {
+        "precision": 0.782608695652174,
+        "recall": 0.72,
+        "f1": 0.75,
+        "support": 200
+      },
+      "stringent_complete_response": {
+        "precision": 0.8475609756097561,
+        "recall": 0.8273809523809523,
+        "f1": 0.8373493975903614,
+        "support": 168
+      }
+    },
+    "confusion_matrix": [
+      [
+        64,
+        57,
+        47,
+        58,
+        8,
+        10
+      ],
+      [
+        35,
+        154,
+        36,
+        21,
+        2,
+        0
+      ],
+      [
+        43,
+        64,
+        314,
+        22,
+        0,
+        1
+      ],
+      [
+        11,
+        29,
+        74,
+        636,
+        21,
+        4
+      ],
+      [
+        2,
+        4,
+        6,
+        34,
+        144,
+        10
+      ],
+      [
+        0,
+        1,
+        4,
+        15,
+        9,
+        139
+      ]
+    ],
+    "n": 2079,
+    "PRELIMINARY": true
+  },
+  "test_macro_f1_bootstrap_ci_PRELIMINARY": {
+    "n_resamples_used": 200,
+    "mean": 0.6562369546255173,
+    "ci_lower_2.5": 0.6328758214010172,
+    "ci_upper_97.5": 0.6780830586688193
+  },
+  "class_order": [
+    "progressive_disease",
+    "stable_disease",
+    "partial_response",
+    "very_good_partial_response",
+    "complete_response",
+    "stringent_complete_response"
+  ],
+  "feature_importance_top30": {
+    "ordinal_response__vt_disease_response_ordinal": 0.2335677295923233,
+    "object_boolean__subject_had_signs_symptoms_missing": 0.0553688183426857,
+    "object_boolean__had_dialysis_False": 0.04000948369503021,
+    "object_boolean__had_radiation_therapy_False": 0.02041839063167572,
+    "numeric__m_protein_current": 0.018411751836538315,
+    "clean_boolean__has_borderline_diabetes": 0.014922440983355045,
+    "object_boolean__amyloidosis_False": 0.014708636328577995,
+    "numeric__kappa_flc_current": 0.014288865961134434,
+    "numeric__r_iss_stage": 0.012988581322133541,
+    "object_boolean__had_esa_False": 0.01208014041185379,
+    "object_boolean__subject_had_signs_symptoms_False": 0.011836126446723938,
+    "object_boolean__cd56_detected_False": 0.01136161107569933,
+    "numeric__n_lytic_lesions_ordinal": 0.011208965443074703,
+    "object_boolean__had_transfusion_False": 0.011062071658670902,
+    "categorical__ig_heavy_chain_type_igg": 0.010860463604331017,
+    "object_boolean__cd45_typical_detected_missing": 0.010857800953090191,
+    "numeric__lambda_flc_current": 0.010782167315483093,
+    "numeric__iss_stage": 0.010609879158437252,
+    "object_boolean__soft_tissue_plasmacytoma_multi_False": 0.010553507134318352,
+    "categorical__ig_light_chain_type_missing": 0.010202422738075256,
+    "numeric__cd56_pct": 0.010185514576733112,
+    "numeric__vt_ecog_ps_numeric": 0.010117669589817524,
+    "clean_boolean__vt_reported_clinical_event": 0.009775790385901928,
+    "numeric__weight_at_diagnosis_kg": 0.009625134989619255,
+    "numeric__dna_index": 0.009622189216315746,
+    "object_boolean__cd45_typical_detected_True": 0.009550916962325573,
+    "object_boolean__bone_lytic_lesion_present_False": 0.009324032813310623,
+    "object_boolean__had_hospitalization_True": 0.009277782402932644,
+    "numeric__creatinine_current": 0.009161347523331642,
+    "object_boolean__had_bisphosphonate_False": 0.009159764274954796
+  }
+}

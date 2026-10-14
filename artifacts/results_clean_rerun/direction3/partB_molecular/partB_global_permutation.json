@@ -1,0 +1,12 @@
+{
+  "n_permutations": 1000,
+  "seed": 5042,
+  "n_distinct_samples_permuted": 669,
+  "B1_global_stat_observed": 104.13197740160415,
+  "B1_global_p": 0.08591408591408592,
+  "B2_global_stat_observed": 190.74615687943214,
+  "B2_global_p": 0.25674325674325676,
+  "statistic": "sum over pathways of Wald chi-square (B1: 1 df; B2: 3 df); whole RNA vectors permuted across distinct (patient, sample) units",
+  "smoke": false,
+  "n_pathways": 50
+}

@@ -1,0 +1,7 @@
+next_imwg_response,test,train,val
+progressive_disease,244,1134,268
+stable_disease,248,1319,232
+partial_response,444,1340,224
+very_good_partial_response,775,3641,630
+complete_response,200,1180,288
+stringent_complete_response,168,925,191

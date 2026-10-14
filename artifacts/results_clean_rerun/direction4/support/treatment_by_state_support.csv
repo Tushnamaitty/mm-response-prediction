@@ -1,0 +1,41 @@
+population,state,treatment,state_rows,rows_on,share_state_rows_on,patients_on,trainval_rows_on,trainval_patients_on,test_rows_on,test_patients_on,events_on,non_events_on,trainval_events_on,trainval_non_events_on,test_events_on,cell_tier_trainval_same_thresholds_as_direction3,trainval_min_class_count_on,trainval_class_counts_on
+rna_binary,improving,pi,1237,392,0.31689572,248,332,214,60,34,51,341,42,290,9,3,,
+rna_binary,improving,imid,1237,608,0.49151172,329,508,269,100,60,78,530,66,442,12,3,,
+rna_binary,improving,steroid,1237,600,0.48504446,326,503,275,97,51,86,514,71,432,15,3,,
+rna_binary,improving,cd38,1237,163,0.13177041,113,142,97,21,16,31,132,27,115,4,3,,
+rna_binary,improving,chemo,1237,90,0.072756669,70,72,56,18,14,10,80,8,64,2,3,,
+rna_binary,stable,pi,5242,1158,0.22090805,303,972,251,186,52,162,996,135,837,27,2,,
+rna_binary,stable,imid,5242,2577,0.49160626,395,2170,332,407,63,277,2300,232,1938,45,1,,
+rna_binary,stable,steroid,5242,1673,0.319153,369,1426,308,247,61,247,1426,209,1217,38,1,,
+rna_binary,stable,cd38,5242,345,0.065814575,116,308,102,37,14,45,300,44,264,1,3,,
+rna_binary,stable,chemo,5242,177,0.033765738,96,140,79,37,17,44,133,39,101,5,3,,
+rna_binary,worsening,pi,1100,282,0.25636364,185,242,156,40,29,145,137,119,123,26,2,,
+rna_binary,worsening,imid,1100,476,0.43272727,276,411,235,65,41,234,242,201,210,33,1,,
+rna_binary,worsening,steroid,1100,380,0.34545455,235,328,200,52,35,202,178,171,157,31,1,,
+rna_binary,worsening,cd38,1100,89,0.080909091,72,78,63,11,9,49,40,41,37,8,3,,
+rna_binary,worsening,chemo,1100,69,0.062727273,61,56,51,13,10,38,31,29,27,9,3,,
+rna_binary,no_history,pi,682,410,0.60117302,410,356,356,54,54,133,277,120,236,13,2,,
+rna_binary,no_history,imid,682,263,0.3856305,263,223,223,40,40,86,177,77,146,9,2,,
+rna_binary,no_history,steroid,682,478,0.70087977,478,409,409,69,69,148,330,131,278,17,2,,
+rna_binary,no_history,cd38,682,5,0.0073313783,5,4,4,1,1,0,5,0,4,0,3,,
+rna_binary,no_history,chemo,682,153,0.22434018,153,132,132,21,21,43,110,40,92,3,3,,
+rna_multiclass,improving,pi,1421,429,0.30190007,258,362,221,67,37,,,,,,,27,"{""progressive_disease"": 50, ""stable_disease"": 52, ""partial_response"": 72, ""very_good_partial_response"": 130, ""complete_response"": 27, ""stringent_complete_response"": 31}"
+rna_multiclass,improving,imid,1421,685,0.48205489,346,577,286,108,60,,,,,,,64,"{""progressive_disease"": 73, ""stable_disease"": 85, ""partial_response"": 98, ""very_good_partial_response"": 165, ""complete_response"": 92, ""stringent_complete_response"": 64}"
+rna_multiclass,improving,steroid,1421,645,0.4539057,334,542,281,103,53,,,,,,,40,"{""progressive_disease"": 86, ""stable_disease"": 83, ""partial_response"": 116, ""very_good_partial_response"": 157, ""complete_response"": 60, ""stringent_complete_response"": 40}"
+rna_multiclass,improving,cd38,1421,171,0.12033779,114,150,98,21,16,,,,,,,10,"{""progressive_disease"": 23, ""stable_disease"": 13, ""partial_response"": 34, ""very_good_partial_response"": 49, ""complete_response"": 21, ""stringent_complete_response"": 10}"
+rna_multiclass,improving,chemo,1421,91,0.064039409,70,72,56,19,14,,,,,,,0,"{""progressive_disease"": 19, ""stable_disease"": 11, ""partial_response"": 14, ""very_good_partial_response"": 26, ""complete_response"": 2, ""stringent_complete_response"": 0}"
+rna_multiclass,stable,pi,5957,1255,0.21067652,308,1059,256,196,52,,,,,,,94,"{""progressive_disease"": 121, ""stable_disease"": 137, ""partial_response"": 151, ""very_good_partial_response"": 460, ""complete_response"": 96, ""stringent_complete_response"": 94}"
+rna_multiclass,stable,imid,5957,2917,0.48967601,401,2463,337,454,64,,,,,,,175,"{""progressive_disease"": 175, ""stable_disease"": 292, ""partial_response"": 274, ""very_good_partial_response"": 980, ""complete_response"": 434, ""stringent_complete_response"": 308}"
+rna_multiclass,stable,steroid,5957,1779,0.29864026,372,1512,311,267,61,,,,,,,100,"{""progressive_disease"": 173, ""stable_disease"": 239, ""partial_response"": 268, ""very_good_partial_response"": 557, ""complete_response"": 175, ""stringent_complete_response"": 100}"
+rna_multiclass,stable,cd38,5957,364,0.061104583,117,327,103,37,14,,,,,,,21,"{""progressive_disease"": 47, ""stable_disease"": 42, ""partial_response"": 52, ""very_good_partial_response"": 106, ""complete_response"": 59, ""stringent_complete_response"": 21}"
+rna_multiclass,stable,chemo,5957,178,0.029880812,97,141,80,37,17,,,,,,,1,"{""progressive_disease"": 27, ""stable_disease"": 29, ""partial_response"": 33, ""very_good_partial_response"": 50, ""complete_response"": 1, ""stringent_complete_response"": 1}"
+rna_multiclass,worsening,pi,1100,282,0.25636364,185,242,156,40,29,,,,,,,7,"{""progressive_disease"": 68, ""stable_disease"": 62, ""partial_response"": 45, ""very_good_partial_response"": 48, ""complete_response"": 12, ""stringent_complete_response"": 7}"
+rna_multiclass,worsening,imid,1100,476,0.43272727,276,411,235,65,41,,,,,,,15,"{""progressive_disease"": 101, ""stable_disease"": 119, ""partial_response"": 62, ""very_good_partial_response"": 85, ""complete_response"": 29, ""stringent_complete_response"": 15}"
+rna_multiclass,worsening,steroid,1100,380,0.34545455,235,328,200,52,35,,,,,,,8,"{""progressive_disease"": 88, ""stable_disease"": 100, ""partial_response"": 63, ""very_good_partial_response"": 57, ""complete_response"": 12, ""stringent_complete_response"": 8}"
+rna_multiclass,worsening,cd38,1100,89,0.080909091,72,78,63,11,9,,,,,,,2,"{""progressive_disease"": 22, ""stable_disease"": 21, ""partial_response"": 10, ""very_good_partial_response"": 17, ""complete_response"": 6, ""stringent_complete_response"": 2}"
+rna_multiclass,worsening,chemo,1100,69,0.062727273,61,56,51,13,10,,,,,,,0,"{""progressive_disease"": 25, ""stable_disease"": 11, ""partial_response"": 11, ""very_good_partial_response"": 8, ""complete_response"": 1, ""stringent_complete_response"": 0}"
+rna_multiclass,no_history,pi,690,412,0.59710145,412,358,358,54,54,,,,,,,3,"{""progressive_disease"": 15, ""stable_disease"": 45, ""partial_response"": 100, ""very_good_partial_response"": 179, ""complete_response"": 16, ""stringent_complete_response"": 3}"
+rna_multiclass,no_history,imid,690,265,0.38405797,265,225,225,40,40,,,,,,,1,"{""progressive_disease"": 11, ""stable_disease"": 26, ""partial_response"": 58, ""very_good_partial_response"": 115, ""complete_response"": 14, ""stringent_complete_response"": 1}"
+rna_multiclass,no_history,steroid,690,480,0.69565217,480,411,411,69,69,,,,,,,3,"{""progressive_disease"": 18, ""stable_disease"": 54, ""partial_response"": 118, ""very_good_partial_response"": 198, ""complete_response"": 20, ""stringent_complete_response"": 3}"
+rna_multiclass,no_history,cd38,690,5,0.0072463768,5,4,4,1,1,,,,,,,0,"{""progressive_disease"": 1, ""stable_disease"": 0, ""partial_response"": 1, ""very_good_partial_response"": 2, ""complete_response"": 0, ""stringent_complete_response"": 0}"
+rna_multiclass,no_history,chemo,690,154,0.22318841,154,133,133,21,21,,,,,,,2,"{""progressive_disease"": 7, ""stable_disease"": 17, ""partial_response"": 45, ""very_good_partial_response"": 60, ""complete_response"": 2, ""stringent_complete_response"": 2}"

@@ -1,0 +1,21 @@
+{
+  "label": "DIRECTION 1 STEP 1 -- EXPLORATORY POST-HOC ROBUSTNESS ANALYSIS: scrambled-RNA permutation null for the locked binary Q4 interaction (does not make D1 confirmatory)",
+  "smoke": false,
+  "runtime_seconds": 862.9,
+  "completed_utc": "2026-09-30T18:52:18.279887+00:00",
+  "n_permutations": 200,
+  "repeats_per_permutation": 5,
+  "seed_base": 20042,
+  "seeds": "20042 + permutation index (20042..20241)",
+  "locked_input_sha256": {
+    "artifacts/results_clean_rerun/binary_c_xgboost_metrics.json": "288a1b0c5f3062a2173c5f5892a7d61c01a7b55847ca651a9c2ebc778b93cbf4",
+    "artifacts/results_clean_rerun/binary_d_xgboost_metrics.json": "d20850d9e7b95a64e5e394e89f8f4ff5a0b989e83c7c8588d8342f9b10ca59df",
+    "artifacts/results_clean_rerun/multiclass_c_xgboost_metrics.json": "2f3b9a500ccf86bfc968ad184ce2bf8c508e2076289942e6d45e6fd5250ff285",
+    "artifacts/results_clean_rerun/multiclass_d_xgboost_metrics.json": "2982abf0ca3d488dd946016374d6322098e4a8cb9340949408a052738542e626",
+    "artifacts/results_clean_rerun/direction3/partA_predictive/oof_predictions/oof_binary.csv": "2841bca0553b5afd6e8312721eb949ba64f8c958764b641ae9fe70a5cff1f82b"
+  },
+  "code_sha256": "bdfd521bfd927d0671b5862e4ba13b52a57e1af189a80a1d18b263e07f8ff58b",
+  "config_hash": "579b83a3989f914caf35e78f50ead0f888935d90697260d2d2f390c520fa7c3d",
+  "status": "EXPLORATORY POST-HOC ROBUSTNESS ANALYSIS; does not make D1 confirmatory",
+  "stopping": "D1 stops after this sequence; Step 2 only if p<=0.05; no further entropy/freshness searches"
+}

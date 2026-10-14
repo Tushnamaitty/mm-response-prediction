@@ -1,0 +1,28 @@
+{
+  "label": "DIRECTION 4 STEP 1: TRAJECTORY CONSTRUCTION AND SUPPORT AUDIT (no models, no RNA values, no association)",
+  "smoke": false,
+  "input_master_sha256": "7697743bbddb405edc61213c5bfa690eb73154df6b20b6f4f7a1cb5224ea5a58",
+  "assignments_sha256": "5e5ddffdf53d6ab7910b3b4b9674b71753c09ec080d519c33a2b0bffcccbc284",
+  "files": {
+    "ambiguous_accounting.csv": "9083946976f4a062de7ec6fc29e5d8dc4e384f1467e6bdc8a108a229fafbd7cb",
+    "ambiguous_rows.csv": "9523b6f5f0791c7f47576865b3e9153fed985e6e5879bd98c186027e52523536",
+    "audit_reproduction.csv": "bbcfee8896c7f067ae6bccad1abfa2b64f06028b18252128bd671c70f0900f83",
+    "continuity_qa.csv": "7a1bff45540908bc28e195d11ac56de9888131c25709a73f94c3e733a7237f38",
+    "patient_state_overlap.csv": "db6363ae697afe3b35e9d2be1227a44e08a6cbd6df90dd44f24233bf50e2fb9d",
+    "run_summary.json": "35fc5ab867cb6eed2cc4bd7a57e60c290ef304d72fef72ff4b08e2b895cffd3e",
+    "sensitivity_universe_support.csv": "b1e3ee5570f807657a3d6e2ef8ce0c019510aa2a61df3bed1eef4c7e891aed63",
+    "state_counts_by_population_and_split.csv": "ef2fb2e236df838b0d947ca31c64d9af2149c716df3b4ff89f31d9cfbc0d5c8d",
+    "state_support_rule.csv": "45b32c0608961a2a186f400e2e7d2955ea8e6f529364577e8924928bb3ca2bef",
+    "trajectory_assignments.csv": "5e5ddffdf53d6ab7910b3b4b9674b71753c09ec080d519c33a2b0bffcccbc284",
+    "treatment_by_state_support.csv": "13fbb184ac515915952782529aa4929056f7713e2e061293f47abac096aa5b7b"
+  },
+  "combined_sha256": "123a7b44b419657051b9e6a52c121ebc008175dbf1b1a2fc5237da1ca232727e",
+  "versions": {
+    "python": "3.13.15",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "numpy": "2.4.6",
+    "pandas": "3.0.5",
+    "scipy": "1.18.0",
+    "statsmodels": "0.15.0"
+  }
+}

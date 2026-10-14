@@ -1,0 +1,27 @@
+{
+  "label": "RETROSPECTIVE MOLECULAR ASSOCIATION / INTERACTION - NOT PREDICTIVE VALIDATION",
+  "smoke": false,
+  "input_master_sha256": "7697743bbddb405edc61213c5bfa690eb73154df6b20b6f4f7a1cb5224ea5a58",
+  "global_permutation_seed": 5042,
+  "files": {
+    "partB_global_permutation.json": "10ae5c851182e52fce119056bf52aa0dc38f85fd1d7b642db5e6396d29c1e23b",
+    "partB_group_support_used.csv": "737c37c84448d41af3242c27dfe5882d1a07e7f5b5e102465baf465ab16049cb",
+    "partB_results_binary_exploratory_tier2_cd38_interaction.csv": "2938e440bf67185c7cf3f26914ede6da9f79c8ca3466cd532a4886e26e473582",
+    "partB_results_binary_primary.csv": "4558ae99c455d25c868c11a621f9234fd576242a6f261277d86a7433836e1c7b",
+    "partB_results_binary_sens_plasma_cell_pct.csv": "264e893f9ef58958b8116541a9884b561fa73b5b0777f9122042c6e07d6cccb8",
+    "partB_results_binary_sens_prior_treatment_exposure.csv": "a1ea295f3e3c8ad7470b11f44ff521f5f543f11cb70471d881e88b6cef81ba6a",
+    "partB_results_ordinal_secondary_worse_same_better.csv": "438cc1a04ca76844746214947acddb719893f931f9cde0be7bbcdfe9718a8b36",
+    "partB_row_accounting.csv": "eb5316d00b1e0c17d69263ee6ba16a5625171cef724fb8146ebfbd137c481300",
+    "partB_row_accounting.json": "b1dc88000ba61538b2359ba237f04f704524b7c4fae847c8c22388314615d86b",
+    "run_summary.json": "733013f49061d7f914e01327fbe0a5c0aa91b7e99055ad3800c44c4394b9e583"
+  },
+  "combined_sha256": "414120716bc170903bef3b9e1439483df9fadaf790da3246013d563051baaaf2",
+  "versions": {
+    "python": "3.13.15",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "numpy": "2.4.6",
+    "pandas": "3.0.5",
+    "scipy": "1.18.0",
+    "statsmodels": "0.15.0"
+  }
+}

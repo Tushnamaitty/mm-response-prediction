@@ -1,0 +1,57 @@
+{
+  "label": "DIRECTION 1 STEP 1 -- EXPLORATORY POST-HOC ROBUSTNESS ANALYSIS: scrambled-RNA permutation null for the locked binary Q4 interaction (does not make D1 confirmatory)",
+  "smoke": false,
+  "summary": {
+    "auprc": {
+      "observed_interaction": 0.013948030608735174,
+      "null_mean": 0.0004000325070915814,
+      "null_sd": 0.005419757377938746,
+      "null_p2.5": -0.009559800778776318,
+      "null_p97.5": 0.011527080724484667,
+      "standardized_excess": 2.4997425450797937,
+      "n_exceeding_or_equal": 3,
+      "n_permutations": 200,
+      "empirical_one_sided_p": 0.01990049751243781,
+      "p_monte_carlo_95_interval": [
+        0.003104107621553509,
+        0.0432082819177126
+      ],
+      "direction": "higher = RNA benefit larger in uncertain cases",
+      "role": "PRIMARY (AUPRC)"
+    },
+    "auroc": {
+      "observed_interaction": 0.008697182653272795,
+      "null_mean": 0.0013613892118026505,
+      "null_sd": 0.00407357546583347,
+      "null_p2.5": -0.0063972731940242,
+      "null_p97.5": 0.010182675416361826,
+      "standardized_excess": 1.8008242397859227,
+      "n_exceeding_or_equal": 8,
+      "n_permutations": 200,
+      "empirical_one_sided_p": 0.04477611940298507,
+      "p_monte_carlo_95_interval": [
+        0.017424808994480595,
+        0.07729196822601608
+      ],
+      "direction": "higher = RNA benefit larger in uncertain cases",
+      "role": "descriptive"
+    },
+    "logloss": {
+      "observed_interaction": -0.004058418956607102,
+      "null_mean": -0.0003378253583483178,
+      "null_sd": 0.0015258183011362038,
+      "null_p2.5": -0.004171974985442166,
+      "null_p97.5": 0.00217169150888178,
+      "standardized_excess": -2.4384250703299575,
+      "n_exceeding_or_equal": 7,
+      "n_permutations": 200,
+      "empirical_one_sided_p": 0.03980099502487562,
+      "p_monte_carlo_95_interval": [
+        0.014185525898419246,
+        0.0707809983509772
+      ],
+      "direction": "lower (more negative) = RNA benefit larger in uncertain cases",
+      "role": "descriptive"
+    }
+  }
+}

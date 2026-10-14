@@ -1,0 +1,8 @@
+{
+  "one_fixed_lambda_outer_rna_fold_seconds": 0.03222298622131348,
+  "one_nested_outer_rna_fold_seconds": 3.5318796634674072,
+  "rough_all_observed_analyses_seconds": 529.7819495201111,
+  "rough_primary_permutation_seconds": 161.11493110656738,
+  "rough_total_hours": 0.19191580017407736,
+  "spec_sha256": "fe0792dbcb61ec62d3901aa7b268b7fcb51a5b60291b9dc4b3da75d0317db6e4"
+}

@@ -1,0 +1,168 @@
+{
+  "cis": [
+    {
+      "task": "binary",
+      "cutoff": "cutoff_365d",
+      "metric": "auprc",
+      "point_estimate": 0.5218229858587389,
+      "ci_lower": 0.4713629586969224,
+      "ci_upper": 0.578803601620469
+    },
+    {
+      "task": "binary",
+      "cutoff": "cutoff_365d",
+      "metric": "auroc",
+      "point_estimate": 0.8175687691873802,
+      "ci_lower": 0.7908559536108594,
+      "ci_upper": 0.8437649204675159
+    },
+    {
+      "task": "binary",
+      "cutoff": "cutoff_545d",
+      "metric": "auprc",
+      "point_estimate": 0.49419756854646524,
+      "ci_lower": 0.4442919482062411,
+      "ci_upper": 0.5504949298411672
+    },
+    {
+      "task": "binary",
+      "cutoff": "cutoff_545d",
+      "metric": "auroc",
+      "point_estimate": 0.8114979674176055,
+      "ci_lower": 0.7835722471986168,
+      "ci_upper": 0.838025736307895
+    },
+    {
+      "task": "binary",
+      "cutoff": "cutoff_730d",
+      "metric": "auprc",
+      "point_estimate": 0.49573670957407034,
+      "ci_lower": 0.44695731268946376,
+      "ci_upper": 0.5540071615408616
+    },
+    {
+      "task": "binary",
+      "cutoff": "cutoff_730d",
+      "metric": "auroc",
+      "point_estimate": 0.8119838830497178,
+      "ci_lower": 0.7833110322997209,
+      "ci_upper": 0.8390498561520899
+    },
+    {
+      "task": "multiclass",
+      "cutoff": "cutoff_365d",
+      "metric": "macro_f1",
+      "point_estimate": 0.649122452775159,
+      "ci_lower": 0.6173734586547628,
+      "ci_upper": 0.6730371237700501
+    },
+    {
+      "task": "multiclass",
+      "cutoff": "cutoff_545d",
+      "metric": "macro_f1",
+      "point_estimate": 0.6599424135856947,
+      "ci_lower": 0.6277527992460891,
+      "ci_upper": 0.6837752004083435
+    },
+    {
+      "task": "multiclass",
+      "cutoff": "cutoff_730d",
+      "metric": "macro_f1",
+      "point_estimate": 0.6499651287682228,
+      "ci_lower": 0.6189173778845772,
+      "ci_upper": 0.6733890592087056
+    }
+  ],
+  "paired_differences": [
+    {
+      "task": "binary",
+      "comparison": "365d - 545d",
+      "metric": "auprc",
+      "observed_diff": 0.027625417312273637,
+      "ci_lower": 0.008485302194472617,
+      "ci_upper": 0.045824968422939406,
+      "n_rows": 1930,
+      "n_patients": 155
+    },
+    {
+      "task": "binary",
+      "comparison": "365d - 545d",
+      "metric": "auroc",
+      "observed_diff": 0.006070801769774703,
+      "ci_lower": -0.000567744083661495,
+      "ci_upper": 0.013052401362606185,
+      "n_rows": 1930,
+      "n_patients": 155
+    },
+    {
+      "task": "binary",
+      "comparison": "365d - 730d",
+      "metric": "auprc",
+      "observed_diff": 0.02608627628466853,
+      "ci_lower": 0.004180539544493212,
+      "ci_upper": 0.04490190349577331,
+      "n_rows": 1930,
+      "n_patients": 155
+    },
+    {
+      "task": "binary",
+      "comparison": "365d - 730d",
+      "metric": "auroc",
+      "observed_diff": 0.005584886137662393,
+      "ci_lower": -0.001202769659870395,
+      "ci_upper": 0.013270598715452473,
+      "n_rows": 1930,
+      "n_patients": 155
+    },
+    {
+      "task": "binary",
+      "comparison": "545d - 730d",
+      "metric": "auprc",
+      "observed_diff": -0.0015391410276051065,
+      "ci_lower": -0.011285551372352464,
+      "ci_upper": 0.006424660393527727,
+      "n_rows": 1930,
+      "n_patients": 155
+    },
+    {
+      "task": "binary",
+      "comparison": "545d - 730d",
+      "metric": "auroc",
+      "observed_diff": -0.00048591563211231037,
+      "ci_lower": -0.0030506539896808737,
+      "ci_upper": 0.002142315889630111,
+      "n_rows": 1930,
+      "n_patients": 155
+    },
+    {
+      "task": "multiclass",
+      "comparison": "365d - 545d",
+      "metric": "macro_f1",
+      "observed_diff": -0.010819960810535711,
+      "ci_lower": -0.02051745136624478,
+      "ci_upper": -0.0010097878156917095,
+      "n_rows": 2079,
+      "n_patients": 155
+    },
+    {
+      "task": "multiclass",
+      "comparison": "365d - 730d",
+      "metric": "macro_f1",
+      "observed_diff": -0.0008426759930637573,
+      "ci_lower": -0.012509381469576733,
+      "ci_upper": 0.009815827206348892,
+      "n_rows": 2079,
+      "n_patients": 155
+    },
+    {
+      "task": "multiclass",
+      "comparison": "545d - 730d",
+      "metric": "macro_f1",
+      "observed_diff": 0.009977284817471954,
+      "ci_lower": -0.00024192208723177448,
+      "ci_upper": 0.02014083079099602,
+      "n_rows": 2079,
+      "n_patients": 155
+    }
+  ]
+}

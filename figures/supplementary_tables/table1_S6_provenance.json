@@ -1,0 +1,21 @@
+{
+  "script": "figures/supplementary_tables/build_table1_and_S6.py",
+  "inputs_sha256": {
+    "data\\clinical\\visit_pairs_with_rna.csv": "7697743bbddb405edc61213c5bfa690eb73154df6b20b6f4f7a1cb5224ea5a58",
+    "data\\clinical\\subject_deid.csv": "a37a20222ade8a45634f734b00a25369c96dff69f84a60a68abeb45d5364bff3",
+    "data\\splits\\patient_split_assignments.csv": "f3427678baf4a9aa0c8b215a72cc42c0ecc93294ee73f7ca09232a18e60f76ff",
+    "data\\splits\\task_eligibility.csv": "3f4c5bfb5257ad0f944802b4f05e892aad2bb03dc0c2717b66b2b42fd1a93727",
+    "figures\\data\\Fig1\\fig1_cohort_task_counts.csv": "00997dd9d87b21e4a67288397ff41a89ee80e53d6d7446d39edd9a14e204c631",
+    "figures\\data\\Fig1\\fig1_survival_cohort_counts.csv": "b3e9461e44a9853c4facf60aceb58107340835b0cc550b4a8eb44f4dea9761dc",
+    "artifacts\\results_clean_rerun\\survival_incremental\\primary_pfs_oof_predictions.csv": "4c33bb0fc50fd04c4ceeff4a60c42c649f53a97d6626361155bbd178cfafd49e",
+    "artifacts\\results_clean_rerun\\uncertainty\\main_model_cis.csv": "d1e55b5e42ec5847540e59320028f42f5e7504a083b4cfcfefef3d3bd98f0eef",
+    "modeling\\regenerate_main_model_cis_clean_rerun.py": "56e8296c35d98573145a900c266444ae8fc579b6851f9d8753d1b2e3147194a0"
+  },
+  "outputs": [
+    "Table_1_cohort_characteristics.csv",
+    "Table_1_cohort_characteristics.md",
+    "Table_S6_full_figure2_performance.csv",
+    "Table_S6_full_figure2_performance.md"
+  ],
+  "smallest_cell_count_table1": 0
+}

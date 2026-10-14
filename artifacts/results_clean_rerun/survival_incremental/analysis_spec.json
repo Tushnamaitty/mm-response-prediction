@@ -1,0 +1,36 @@
+{
+  "spec": {
+    "bootstrap": "2000 patient resamples; repeat-averaged OOF predictions",
+    "comparator": [
+      "age_at_index",
+      "gender",
+      "ISS",
+      "exact first_line regimen"
+    ],
+    "inner_cv": "5 folds; choose lambda by mean validation Harrell C-index",
+    "interpretation": "exploratory internal validation; not external validation; no causal claim",
+    "label": "POST-HOC EXPLORATORY PRETREATMENT-RNA LONG-TERM PROGNOSIS EXTENSION",
+    "lambda_grid": [
+      0.0,
+      0.0001,
+      0.001,
+      0.01,
+      0.1,
+      1.0,
+      10.0,
+      100.0
+    ],
+    "model": "ridge Cox PH; Breslow ties",
+    "outer_cv": "5 repeats x 5 folds; shuffled KFold at patient level",
+    "permutation": "200 one-sided whole-RNA-vector patient permutations; clinical/treatment/outcomes/timing fixed; outer-fold RNA-model lambdas are frozen to the values selected in the observed nested-CV run; success direction is null delta C-index >= observed",
+    "preprocessing": "fit within training fold only; age median imputation + missing indicator; ISS not_reported treated as missing category; gender/ISS/first_line one-hot; unknown validation categories map to all-zero; all resulting columns standardized using training-fold mean/SD before ridge fitting",
+    "primary_cohort": "one pre-treatment RNA unit per patient; inferred RNA day <= 0",
+    "primary_endpoint": "official supplied PFS",
+    "primary_metric": "OOF Harrell C-index; delta = RNA - comparator",
+    "rna_increment": "fixed 50 Hallmark pathways used by existing Model D",
+    "secondary_endpoint": "official supplied OS",
+    "secondary_metric": "IPCW IBS over 365-1095 days; delta = RNA - comparator",
+    "timing_sensitivity": "inferred RNA day in [-30, 0]"
+  },
+  "spec_sha256": "fe0792dbcb61ec62d3901aa7b268b7fcb51a5b60291b9dc4b3da75d0317db6e4"
+}

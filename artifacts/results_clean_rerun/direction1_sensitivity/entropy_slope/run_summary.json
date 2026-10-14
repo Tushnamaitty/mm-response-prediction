@@ -1,0 +1,41 @@
+{
+  "label": "DIRECTION 1 EXPLORATORY SENSITIVITY: continuous Model-C entropy vs RNA log-loss benefit (binary)",
+  "smoke": false,
+  "status": "EXPLORATORY SENSITIVITY (post hoc; follows the locked D1 result)",
+  "completed_utc": "2026-09-30T16:16:16.013035+00:00",
+  "runtime_seconds": 4.9,
+  "n_bootstrap": 2000,
+  "bootstrap_seed": 42,
+  "design": "b_i = mean over 5 locked OOF repeats of logloss_C - logloss_D (positive = Model D better); WLS slope on Model-C entropy rank percentile; patient-cluster bootstrap with visit-pair weights equal to the patient's resample count; no cutoff, no retraining, no test split",
+  "primary": {
+    "slope": 0.0033935634760163163,
+    "ci": [
+      -0.0009804440942732236,
+      0.007582798744768353
+    ],
+    "p_boot_two_sided": 0.12093953023488256,
+    "cr1_p_t": 0.12201198628294153
+  },
+  "secondary_raw_entropy": {
+    "slope": 0.004798529954645624,
+    "p_boot_two_sided": 0.08895552223888056
+  },
+  "sanity_checks_passed": true,
+  "d1_files_verified_unchanged": [
+    "direction1_multiclass_macro_f1_descriptive.csv",
+    "direction1_uncertainty_assignments.csv",
+    "direction1_uncertainty_interactions.csv",
+    "direction1_within_uncertainty_groups.csv",
+    "run_summary.json"
+  ],
+  "d1_files_not_present_locally": [],
+  "d1_assignments_crosscheck": {
+    "checked": true,
+    "reason": "matches the D1 assignments file"
+  },
+  "locked_inputs": {
+    "oof_path": "artifacts/results_clean_rerun/direction3/partA_predictive/oof_predictions/oof_binary.csv",
+    "oof_sha256": "2841bca0553b5afd6e8312721eb949ba64f8c958764b641ae9fe70a5cff1f82b"
+  },
+  "limitation": "a slope does not by itself identify RNA-specific signal (no row-level permuted-RNA null); exploratory, outside D1's Holm family"
+}

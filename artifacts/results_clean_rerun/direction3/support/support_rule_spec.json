@@ -1,0 +1,24 @@
+{
+  "labels": [
+    "PREDICTIVE INCREMENTAL-VALUE ANALYSIS (out-of-fold; Vt-side inputs only)",
+    "RETROSPECTIVE MOLECULAR ASSOCIATION / INTERACTION - NOT PREDICTIVE VALIDATION"
+  ],
+  "interpretation": "RNA = baseline / as-of-sample tumour biology (latest sample at or before Vt), NOT current-state RNA and NOT causal. Treatment = class active AT Vt.",
+  "declared_roles": {
+    "primary": [
+      "pi",
+      "imid",
+      "steroid"
+    ],
+    "exploratory": [
+      "cd38",
+      "chemo"
+    ],
+    "unsupported": [
+      "slamf7",
+      "bcma"
+    ]
+  },
+  "rule": "primary >=150 pts & >=150 events & >=150 non-events (group AND complement); exploratory >=80 pts & >=75 events & >=75 non-events; multiclass >=20 rows/class",
+  "all_declared_roles_reproduced": true
+}

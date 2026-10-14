@@ -1,0 +1,28 @@
+{
+  "conclusion": "no FISH/cytogenetic field found: UNAVAILABLE (not searched for elsewhere)",
+  "hits": [],
+  "keyword_pattern": "fish|cytogen|transloc|del_?17|17p|t_?4_?14|4;14|14;16|1q|amp1q|gain",
+  "tables_scanned": [
+    "administered_agent_deid.csv",
+    "administered_line_deid.csv",
+    "administered_regimen_line_deid.csv",
+    "administered_sc_transplant_deid.csv",
+    "adverse_event_deid.csv",
+    "bone_assessment_deid.csv",
+    "diagnosis_deid.csv",
+    "family_history_deid.csv",
+    "followup_deid.csv",
+    "labs_deid.csv",
+    "other_clinical_attributes_deid.csv",
+    "qol_deid.csv",
+    "sample_cmmc_deid.csv",
+    "sample_deid.csv",
+    "sample_features_deid.csv",
+    "signs_symptoms_deid.csv",
+    "subject_deid.csv",
+    "supportive_care_deid.csv",
+    "survival_pfs_deid.csv",
+    "survival_pfs_response_deid.csv"
+  ],
+  "used_in_model": false
+}

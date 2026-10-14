@@ -1,0 +1,62 @@
+{
+  "combined_sha256": "6ab539a31f17aa91ca7d3af4bb25a1183a8855a7ba57a1054744c21ea6c7786a",
+  "files": {
+    "analysis_spec.json": "cf8f5a7aabd9fb4c849f92bccb372f539de337a35602e2686e329a84b60a74d3",
+    "final_summary.json": "b2c165d40dab3b8342a39a3a7badb4f365d7b342c3c9cab66ea1d8428e1a27f5",
+    "primary_pfs_oof_predictions.csv": "4c33bb0fc50fd04c4ceeff4a60c42c649f53a97d6626361155bbd178cfafd49e",
+    "primary_pfs_repeat_metrics.csv": "4f68e6de234a40a253545cf5b1ac07c51d32e2b46ce5652bc48690091d496255",
+    "primary_pfs_summary.json": "cf024da4518ad8e5313d08511bf6080329935fa0896471737e1cf3704f9aa12b",
+    "primary_pfs_tuning.csv": "28851b695a767773ae19194bb81213f27e651594e531342ea522f3f1abf50330",
+    "secondary_os_oof_predictions.csv": "c4afe0ca800f5e7cdf75c172dee9a8eb5a9c89854adaec3351752400d38a2ac0",
+    "secondary_os_repeat_metrics.csv": "d841c5804229178f4c0a274a704fc6bb57226288999260bac230c7508719e6f1",
+    "secondary_os_summary.json": "2befa6357c1fcacb841be6cbbf2f8b3b92ddc0f4ca2c8c67e332ce0e21173b2f",
+    "secondary_os_tuning.csv": "c59581d35336ecddf82d5e385fc31bb28e1ef63f9972ead8f9f13754ea76816c",
+    "sensitivity_m30_0_pfs_oof_predictions.csv": "fcb337965935a88dadda25fcb0a1ee51732fbb74369bc40f5732beda31d4ea29",
+    "sensitivity_m30_0_pfs_repeat_metrics.csv": "55d9298a884cdbedf974c763c22fb7faed08d88a9a91398d6e9731de28ae4439",
+    "sensitivity_m30_0_pfs_summary.json": "c8f1ee33d98ae2f6fb5dbdacdb03ec3605416d3e8645145f696b10b710d75ee8",
+    "sensitivity_m30_0_pfs_tuning.csv": "e12889a6b76fc88ff744299fe27693a15835c8cd56d01a8feb2d84224efedf95",
+    "timing_pilot.json": "02f827e1efc2bf530bf9b7791f178727dc2dcaba5f3fce0b015741423a1e751a"
+  },
+  "spec": {
+    "bootstrap": "2000 patient resamples; repeat-averaged OOF predictions",
+    "comparator": [
+      "age_at_index",
+      "gender",
+      "ISS",
+      "exact first_line regimen"
+    ],
+    "inner_cv": "5 folds; choose lambda by mean validation Harrell C-index",
+    "interpretation": "exploratory internal validation; not external validation; no causal claim",
+    "label": "POST-HOC EXPLORATORY PRETREATMENT-RNA LONG-TERM PROGNOSIS EXTENSION",
+    "lambda_grid": [
+      0.0,
+      0.0001,
+      0.001,
+      0.01,
+      0.1,
+      1.0,
+      10.0,
+      100.0
+    ],
+    "model": "ridge Cox PH; Breslow ties",
+    "outer_cv": "5 repeats x 5 folds; shuffled KFold at patient level",
+    "permutation": "200 one-sided whole-RNA-vector patient permutations; clinical/treatment/outcomes/timing fixed; outer-fold RNA-model lambdas are frozen to the values selected in the observed nested-CV run; success direction is null delta C-index >= observed",
+    "preprocessing": "fit within training fold only; age median imputation + missing indicator; ISS not_reported treated as missing category; gender/ISS/first_line one-hot; unknown validation categories map to all-zero; all resulting columns standardized using training-fold mean/SD before ridge fitting",
+    "primary_cohort": "one pre-treatment RNA unit per patient; inferred RNA day <= 0",
+    "primary_endpoint": "official supplied PFS",
+    "primary_metric": "OOF Harrell C-index; delta = RNA - comparator",
+    "rna_increment": "fixed 50 Hallmark pathways used by existing Model D",
+    "secondary_endpoint": "official supplied OS",
+    "secondary_metric": "IPCW IBS over 365-1095 days; delta = RNA - comparator",
+    "timing_sensitivity": "inferred RNA day in [-30, 0]"
+  },
+  "spec_sha256": "fe0792dbcb61ec62d3901aa7b268b7fcb51a5b60291b9dc4b3da75d0317db6e4",
+  "versions": {
+    "numpy": "2.4.6",
+    "pandas": "3.0.5",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.13.15",
+    "scikit-learn": "1.9.0",
+    "scipy": "1.18.0"
+  }
+}

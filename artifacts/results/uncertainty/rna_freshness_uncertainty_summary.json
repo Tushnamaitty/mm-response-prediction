@@ -1,0 +1,177 @@
+{
+  "cis": [
+    {
+      "task": "binary",
+      "cutoff": "cutoff_365d",
+      "metric": "auprc",
+      "point_estimate": 0.49838130289181637,
+      "ci_lower": 0.4486830335969357,
+      "ci_upper": 0.553009923917683
+    },
+    {
+      "task": "binary",
+      "cutoff": "cutoff_365d",
+      "metric": "auroc",
+      "point_estimate": 0.8120386720581445,
+      "ci_lower": 0.7840865754236958,
+      "ci_upper": 0.8381642311841976
+    },
+    {
+      "task": "binary",
+      "cutoff": "cutoff_545d",
+      "metric": "auprc",
+      "point_estimate": 0.49419756854646524,
+      "ci_lower": 0.4442919482062411,
+      "ci_upper": 0.5504949298411672
+    },
+    {
+      "task": "binary",
+      "cutoff": "cutoff_545d",
+      "metric": "auroc",
+      "point_estimate": 0.8114979674176055,
+      "ci_lower": 0.7835722471986168,
+      "ci_upper": 0.838025736307895
+    },
+    {
+      "task": "binary",
+      "cutoff": "cutoff_730d",
+      "metric": "auprc",
+      "point_estimate": 0.49573670957407034,
+      "ci_lower": 0.44695731268946376,
+      "ci_upper": 0.5540071615408616
+    },
+    {
+      "task": "binary",
+      "cutoff": "cutoff_730d",
+      "metric": "auroc",
+      "point_estimate": 0.8119838830497178,
+      "ci_lower": 0.7833110322997209,
+      "ci_upper": 0.8390498561520899
+    },
+    {
+      "task": "multiclass",
+      "cutoff": "cutoff_365d",
+      "metric": "macro_f1",
+      "point_estimate": 0.6621948484755928,
+      "ci_lower": 0.6308261940229026,
+      "ci_upper": 0.6848999621223063
+    },
+    {
+      "task": "multiclass",
+      "cutoff": "cutoff_545d",
+      "metric": "macro_f1",
+      "point_estimate": 0.6599424135856947,
+      "ci_lower": 0.6277527992460891,
+      "ci_upper": 0.6837752004083435
+    },
+    {
+      "task": "multiclass",
+      "cutoff": "cutoff_730d",
+      "metric": "macro_f1",
+      "point_estimate": 0.6524488306063574,
+      "ci_lower": 0.6207813449130534,
+      "ci_upper": 0.6757268244854397
+    }
+  ],
+  "paired_differences": [
+    {
+      "task": "binary",
+      "comparison": "365d - 545d",
+      "metric": "auprc",
+      "observed_diff": 0.004183734345351131,
+      "ci_lower": -0.004910807990492157,
+      "ci_upper": 0.014871954442012844,
+      "interpretation": "inconclusive (CI includes 0)",
+      "n_rows": 1930,
+      "n_patients": 155
+    },
+    {
+      "task": "binary",
+      "comparison": "365d - 545d",
+      "metric": "auroc",
+      "observed_diff": 0.0005407046405390137,
+      "ci_lower": -0.0020160057668120596,
+      "ci_upper": 0.0032444565540394542,
+      "interpretation": "inconclusive (CI includes 0)",
+      "n_rows": 1930,
+      "n_patients": 155
+    },
+    {
+      "task": "binary",
+      "comparison": "365d - 730d",
+      "metric": "auprc",
+      "observed_diff": 0.0026445933177460246,
+      "ci_lower": -0.009112973368923685,
+      "ci_upper": 0.011980675969698163,
+      "interpretation": "inconclusive (CI includes 0)",
+      "n_rows": 1930,
+      "n_patients": 155
+    },
+    {
+      "task": "binary",
+      "comparison": "365d - 730d",
+      "metric": "auroc",
+      "observed_diff": 5.478900842670331e-05,
+      "ci_lower": -0.0025711451738866823,
+      "ci_upper": 0.0024199811332497236,
+      "interpretation": "inconclusive (CI includes 0)",
+      "n_rows": 1930,
+      "n_patients": 155
+    },
+    {
+      "task": "binary",
+      "comparison": "545d - 730d",
+      "metric": "auprc",
+      "observed_diff": -0.0015391410276051065,
+      "ci_lower": -0.011285551372352464,
+      "ci_upper": 0.006424660393527727,
+      "interpretation": "inconclusive (CI includes 0)",
+      "n_rows": 1930,
+      "n_patients": 155
+    },
+    {
+      "task": "binary",
+      "comparison": "545d - 730d",
+      "metric": "auroc",
+      "observed_diff": -0.00048591563211231037,
+      "ci_lower": -0.0030506539896808737,
+      "ci_upper": 0.002142315889630111,
+      "interpretation": "inconclusive (CI includes 0)",
+      "n_rows": 1930,
+      "n_patients": 155
+    },
+    {
+      "task": "multiclass",
+      "comparison": "365d - 545d",
+      "metric": "macro_f1",
+      "observed_diff": 0.002252434889898125,
+      "ci_lower": -0.010031111652883123,
+      "ci_upper": 0.014998381395887288,
+      "interpretation": "inconclusive (CI includes 0)",
+      "n_rows": 2079,
+      "n_patients": 155
+    },
+    {
+      "task": "multiclass",
+      "comparison": "365d - 730d",
+      "metric": "macro_f1",
+      "observed_diff": 0.009746017869235457,
+      "ci_lower": -0.0032169096453220193,
+      "ci_upper": 0.022013180725389048,
+      "interpretation": "inconclusive (CI includes 0)",
+      "n_rows": 2079,
+      "n_patients": 155
+    },
+    {
+      "task": "multiclass",
+      "comparison": "545d - 730d",
+      "metric": "macro_f1",
+      "observed_diff": 0.007493582979337332,
+      "ci_lower": -0.0018776062792977136,
+      "ci_upper": 0.015723284154109514,
+      "interpretation": "inconclusive (CI includes 0)",
+      "n_rows": 2079,
+      "n_patients": 155
+    }
+  ]
+}

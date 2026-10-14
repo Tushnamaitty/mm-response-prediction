@@ -1,0 +1,27 @@
+{
+  "analysis": "secondary_richer_baseline",
+  "bootstrap_delta_c": {
+    "bootstrap_mean": 0.04867337247600439,
+    "ci_lower": 0.021710373146108842,
+    "ci_upper": 0.07584158614007878,
+    "n_boot": 2000,
+    "seed": 1042
+  },
+  "c_C0_richer": 0.6556173698037397,
+  "c_C0_richer_RNA": 0.7042943731863528,
+  "comparison_with_locked": {
+    "delta_c_richer_minus_locked": 0.00517866034787684,
+    "delta_c_richer_over_locked": 1.1190541980815534,
+    "locked_bootstrap_ci": [
+      0.012143686163121094,
+      0.07449073673410617
+    ],
+    "locked_c_C0": 0.6584694105324611,
+    "locked_c_C0_RNA": 0.7019677535671972,
+    "locked_delta_c": 0.04349834303473617,
+    "note": "descriptive comparison only",
+    "richer_minus_locked_c_C0": -0.002852040728721361
+  },
+  "delta_c": 0.04867700338261301,
+  "endpoint": "os"
+}
