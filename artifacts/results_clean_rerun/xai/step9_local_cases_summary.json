@@ -1,0 +1,249 @@
+{
+  "binary_cases": [
+    {
+      "case_name": "correct_improvement",
+      "key": "binary_d_lightgbm",
+      "pair_id": "13364",
+      "label": "Correctly predicted: improvement",
+      "top_features": [
+        {
+          "original_column": "subject_had_signs_symptoms",
+          "shap_value": 2.293299336066521,
+          "raw_output_value": 0.0
+        },
+        {
+          "original_column": "vt_days_to_visit",
+          "shap_value": 0.4777947469262768,
+          "raw_output_value": 85.0
+        },
+        {
+          "original_column": "current_regimen_categories",
+          "shap_value": 0.1694085213542303,
+          "raw_output_value": 0.0
+        },
+        {
+          "original_column": "had_esa",
+          "shap_value": 0.15809221976986834,
+          "raw_output_value": 0.0
+        },
+        {
+          "original_column": "vt_disease_response",
+          "shap_value": -0.1572366373323955,
+          "raw_output_value": 3.0
+        },
+        {
+          "original_column": "had_transfusion",
+          "shap_value": 0.12071155880726404,
+          "raw_output_value": 0.0
+        },
+        {
+          "original_column": "m_protein_current",
+          "shap_value": 0.09783578416311073,
+          "raw_output_value": 0.119
+        },
+        {
+          "original_column": "Apoptosis",
+          "shap_value": 0.055309187089540475,
+          "raw_output_value": 13724.364871063925
+        }
+      ]
+    },
+    {
+      "case_name": "correct_non_improvement",
+      "key": "binary_d_lightgbm",
+      "pair_id": "12028",
+      "label": "Correctly predicted: non-improvement",
+      "top_features": [
+        {
+          "original_column": "vt_disease_response",
+          "shap_value": -0.8383510525730132,
+          "raw_output_value": 4.0
+        },
+        {
+          "original_column": "m_protein_current",
+          "shap_value": -0.5120065069782741,
+          "raw_output_value": 7.0
+        },
+        {
+          "original_column": "vt_days_to_visit",
+          "shap_value": -0.08893000362049835,
+          "raw_output_value": 1535.0
+        },
+        {
+          "original_column": "b2m_current",
+          "shap_value": -0.053454359213899426,
+          "raw_output_value": 1.11
+        },
+        {
+          "original_column": "days_since_last_transplant",
+          "shap_value": -0.048046085204852616,
+          "raw_output_value": 824.0
+        },
+        {
+          "original_column": "b2m_pct_change",
+          "shap_value": -0.04545581286841595,
+          "raw_output_value": -0.5647058823529411
+        },
+        {
+          "original_column": "current_regimen_categories",
+          "shap_value": -0.04396931625727581,
+          "raw_output_value": 0.0
+        },
+        {
+          "original_column": "subject_had_signs_symptoms",
+          "shap_value": -0.042602025946378824,
+          "raw_output_value": 1.0
+        }
+      ]
+    }
+  ],
+  "multiclass_cases": [
+    {
+      "case_name": "correct_pd",
+      "key": "multiclass_d_xgboost",
+      "pair_id": "6471",
+      "label": "Correctly predicted: progressive disease",
+      "explained_class": "progressive_disease",
+      "top_features": [
+        {
+          "original_column": "vt_disease_response",
+          "shap_value": 0.47318536043167114,
+          "raw_output_value": 0.0
+        },
+        {
+          "original_column": "m_protein_change",
+          "shap_value": 0.466606080532074,
+          "raw_output_value": 0.6000000000000001
+        },
+        {
+          "original_column": "Notch Signaling",
+          "shap_value": 0.16486504673957825,
+          "raw_output_value": 10099.990585113206
+        },
+        {
+          "original_column": "lambda_flc_change",
+          "shap_value": 0.1390366405248642,
+          "raw_output_value": 16.0
+        },
+        {
+          "original_column": "Myc Targets V1",
+          "shap_value": 0.09910456091165543,
+          "raw_output_value": 18660.392460368446
+        },
+        {
+          "original_column": "b2m_current",
+          "shap_value": 0.08819321542978287,
+          "raw_output_value": 7.56
+        },
+        {
+          "original_column": "Spermatogenesis",
+          "shap_value": 0.08286496996879578,
+          "raw_output_value": 5749.290014956201
+        },
+        {
+          "original_column": "PI3K/AKT/mTOR  Signaling",
+          "shap_value": 0.07578373700380325,
+          "raw_output_value": 13614.267011597538
+        }
+      ]
+    },
+    {
+      "case_name": "correct_scr",
+      "key": "multiclass_d_xgboost",
+      "pair_id": "1802",
+      "label": "Correctly predicted: stringent complete response",
+      "explained_class": "stringent_complete_response",
+      "top_features": [
+        {
+          "original_column": "vt_disease_response",
+          "shap_value": 2.7321527004241943,
+          "raw_output_value": 5.0
+        },
+        {
+          "original_column": "days_since_last_transplant",
+          "shap_value": 0.2514350712299347,
+          "raw_output_value": 104.0
+        },
+        {
+          "original_column": "m_protein_days_since_previous",
+          "shap_value": 0.1905636489391327,
+          "raw_output_value": 56.0
+        },
+        {
+          "original_column": "kappa_flc_current",
+          "shap_value": 0.1316344290971756,
+          "raw_output_value": 1.5
+        },
+        {
+          "original_column": "albumin_pct_change",
+          "shap_value": 0.12329954653978348,
+          "raw_output_value": 0.081081081081081
+        },
+        {
+          "original_column": "Notch Signaling",
+          "shap_value": -0.10684653371572495,
+          "raw_output_value": 9463.627120895406
+        },
+        {
+          "original_column": "DNA Repair",
+          "shap_value": 0.10428192466497421,
+          "raw_output_value": 15115.78439371804
+        },
+        {
+          "original_column": "bmi_at_diagnosis",
+          "shap_value": 0.10049916058778763,
+          "raw_output_value": 39.09
+        }
+      ]
+    },
+    {
+      "case_name": "informative_error",
+      "key": "multiclass_d_xgboost",
+      "pair_id": "7763",
+      "label": "Informative error: true=complete_response, predicted=stable_disease (margin gap 4.838)",
+      "explained_class": "stable_disease",
+      "top_features": [
+        {
+          "original_column": "vt_disease_response",
+          "shap_value": 1.4754917621612549,
+          "raw_output_value": 1.0
+        },
+        {
+          "original_column": "PI3K/AKT/mTOR  Signaling",
+          "shap_value": 0.20986276865005493,
+          "raw_output_value": 14116.035813231969
+        },
+        {
+          "original_column": "kappa_flc_previous",
+          "shap_value": 0.14418263733386993,
+          "raw_output_value": 7.4
+        },
+        {
+          "original_column": "prior_exposure_chemo",
+          "shap_value": -0.13294866681098938,
+          "raw_output_value": 1.0
+        },
+        {
+          "original_column": "hemoglobin_previous",
+          "shap_value": 0.11097206175327301,
+          "raw_output_value": 13.5
+        },
+        {
+          "original_column": "Androgen Response",
+          "shap_value": -0.09604328870773315,
+          "raw_output_value": 13823.685634706562
+        },
+        {
+          "original_column": "lambda_flc_current",
+          "shap_value": 0.07345744222402573,
+          "raw_output_value": 21.3
+        },
+        {
+          "original_column": "creatinine_current",
+          "shap_value": -0.07051610201597214,
+          "raw_output_value": 0.7
+        }
+      ]
+    }
+  ]
+}
