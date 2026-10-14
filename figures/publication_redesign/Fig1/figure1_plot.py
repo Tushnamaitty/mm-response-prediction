@@ -1,5 +1,5 @@
 """
-Figure 1 - Study design: predicting the next IMWG response from nested information layers.
+Figure 2 - Study design: predicting the next IMWG response from nested information layers.
 
 Run from the repository root:
     python figures/publication_redesign/Fig1/figure1_plot.py
@@ -21,7 +21,7 @@ Every number drawn is read from these files; the script stops if any value diffe
 locked value verified in Step 2A, so no figure is produced from unverified data.
 
 The STYLE block and helpers (panel_letter, clean_axis, fig_box) are the shared visual
-conventions for Figures 1-5: layer colours, ink colours, font sizes and panel-letter placement.
+conventions for Figures 2-6: layer colours, ink colours, font sizes and panel-letter placement.
 """
 
 import argparse
@@ -42,7 +42,7 @@ OUT_DIR = Path("figures/publication_redesign/Fig1")
 STEM = "figure1"
 
 # ----------------------------------------------------------------------------------------------
-# Shared style (Figures 1-5)
+# Shared style (Figures 2-6)
 # ----------------------------------------------------------------------------------------------
 INK = "#0b0b0b"         # primary text
 INK2 = "#52514e"        # secondary text
@@ -57,7 +57,7 @@ LAYER_TEXT = {"A": INK, "B": "#ffffff", "C": "#ffffff", "D": "#ffffff"}
 RNA_LIGHT = "#f4b393"   # lighter RNA step (secondary RNA quantities)
 TASK_FILL = "#cde2fb"   # prediction-task visit pairs (blue step 100)
 EXCL_FILL = "#e6e5df"   # excluded / not-available remainder (neutral)
-# Algorithm markers (used from Figure 2 onward).
+# Algorithm markers (used from Figure 3 onward).
 ALGO_MARKER = {"Logistic Regression": "o", "LightGBM": "s", "XGBoost": "D"}
 # Patient-split shades (neutral; always direct-labelled).
 SPLIT_COLOR = {"train": "#e6e5df", "val": "#bdbbb3", "test": "#6f6d68"}
@@ -127,7 +127,7 @@ def fmt(n):
 
 def require(cond, msg):
     if not cond:
-        sys.exit(f"Figure 1 data check failed: {msg}")
+        sys.exit(f"Figure 2 data check failed: {msg}")
 
 
 # ----------------------------------------------------------------------------------------------
@@ -284,7 +284,7 @@ def panel_a_patients(ax, d):
              right="MMRF CoMMpass (IA24)"),
         dict(label="RNA available for ≥1 visit pair", n=n_rna, fill=LAYER_COLOR["D"], rest=n_all - n_rna,
              inside=f"{fmt(n_rna)} patients", inside_color="white"),
-        dict(label="Survival cohort (Figures 4–5)", n=n_s, fill=RNA_LIGHT, rest=n_all - n_s,
+        dict(label="Survival cohort (Figures 5–6)", n=n_s, fill=RNA_LIGHT, rest=n_all - n_s,
              inside=f"{fmt(n_s)} patients with pre-treatment RNA", inside_color=INK,
              right=f"PFS {fmt(surv.loc['PFS_primary', 'n_events'])} events · OS "
                    f"{fmt(surv.loc['OS_secondary', 'n_events'])} deaths"),

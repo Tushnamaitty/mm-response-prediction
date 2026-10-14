@@ -26,7 +26,7 @@ import pandas as pd  # noqa: E402
 DIR = Path("figures/data/FigS_calibration")
 OUT = Path("figures/publication_redesign/FigS_calibration/figureS1A.png")
 
-# ---- shared style (identical to Figure 1) ----
+# ---- shared style (identical to Figure 2) ----
 INK, INK2, MUTED, GRID, AXIS = "#0b0b0b", "#52514e", "#898781", "#e1e0d9", "#c3c2b7"
 LAYER_COLOR = {"A": "#86b6ef", "B": "#3987e5", "C": "#184f95", "D": "#eb6834"}
 FS = {"panel": 10, "title": 7.5, "body": 6.5, "small": 6.0, "tick": 6}
@@ -70,7 +70,7 @@ def main():
     fig.text(0.047, 0.983, "Calibration of binary next-visit improvement predictions (XGBoost, Layer C vs Layer D)",
              fontsize=FS["title"], fontweight="bold", color=INK, ha="left", va="top")
     fig.text(0.047, 0.935, "Held-out test set · 155 patients · 1,930 visit pairs · uncalibrated "
-             "probabilities (selected on the validation set)", fontsize=FS["small"], color=INK2,
+             "probabilities (no recalibration applied)", fontsize=FS["small"], color=INK2,
              fontweight="bold", ha="left", va="top")
 
     W = 2.0

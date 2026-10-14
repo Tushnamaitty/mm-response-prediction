@@ -1,0 +1,4 @@
+f93323a3eb58a22cc601f9d93d6d33bf746d7fc42f09b0395b05bdf871dd9f0e  RNA_CONTRIBUTION_TRAINONLY_PROTOCOL.md
+# SHA-256 of explainability/RNA_CONTRIBUTION_TRAINONLY_PROTOCOL.md after replacing CRLF with LF (git on Windows may convert line endings).
+# Verify (Python): import hashlib; t = open('explainability/RNA_CONTRIBUTION_TRAINONLY_PROTOCOL.md', 'rb').read().replace(bytes([13, 10]), bytes([10])); print(hashlib.sha256(t).hexdigest())
+# Written 2026-10-14 before any model of this redesign was fitted or any held-out outcome was read.

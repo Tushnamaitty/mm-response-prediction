@@ -1,6 +1,6 @@
 # Table 1. Characteristics of the MMRF CoMMpass cohort used for next-visit prediction
 
-Patient-level characteristics are per patient; visit-pair rows count consecutive visit pairs. Training, validation and test are the patient-grouped partitions used for all next-visit models. RNA available = at least one visit pair with an RNA sample collected on or before V(t). Survival cohort = patients with one RNA sample collected on or before the start of first treatment (CoMMpass index date), used in Figures 4–5. Age is age at diagnosis (identical to age at the CoMMpass index date where both are recorded; age at index was used for 2 patients without a recorded age at diagnosis). Treatment line varies over follow-up and is summarised at the patient's first visit pair and as the highest line reached during follow-up. Percentages use the column denominator unless stated. IQR, interquartile range; IMWG, International Myeloma Working Group.
+Patient-level characteristics are per patient; visit-pair rows count consecutive visit pairs. Training, validation and test are the patient-grouped partitions used for all next-visit models. RNA available = at least one visit pair with an RNA sample collected on or before V(t). Survival cohort = patients with one RNA sample collected on or before the start of first treatment (CoMMpass index date), used in Figures 5–6. Age is age at diagnosis (identical to age at the CoMMpass index date where both are recorded; age at index was used for 2 patients without a recorded age at diagnosis). Treatment line varies over follow-up and is summarised at the patient's first visit pair and as the highest line reached during follow-up. Percentages use the column denominator unless stated. IQR, interquartile range; IMWG, International Myeloma Working Group.
 
 **Patients**
 
@@ -91,4 +91,4 @@ Patient-level characteristics are per patient; visit-pair rows count consecutive
 | Complete response (CR) | 1,668 (12.4%) | 1,180 (12.4%) | 288 (15.7%) | 200 (9.6%) | 1,051 (11.3%) | 617 (14.8%) | 1,025 (11.5%) |
 | Stringent complete response (sCR) | 1,284 (9.5%) | 925 (9.7%) | 191 (10.4%) | 168 (8.1%) | 1,008 (10.9%) | 276 (6.6%) | 979 (11.0%) |
 
-Smallest cell count shown: 0. Sources: `data/clinical/visit_pairs_with_rna.csv` (SHA-256 matches the locked file), `data/clinical/subject_deid.csv`, `data/splits/`; counts cross-checked against Figure 1 data.
+Smallest cell count shown: 0. Sources: `data/clinical/visit_pairs_with_rna.csv` (SHA-256 matches the locked file), `data/clinical/subject_deid.csv`, `data/splits/`; counts cross-checked against Figure 2 data.

@@ -25,7 +25,7 @@ import pandas as pd  # noqa: E402
 DIR = Path("figures/data/FigS_calibration")
 OUT = Path("figures/publication_redesign/FigS_calibration/figureS1B.png")
 
-# ---- shared style (identical to Figure 1) ----
+# ---- shared style (identical to Figure 2) ----
 INK, INK2, MUTED, GRID, AXIS = "#0b0b0b", "#52514e", "#898781", "#e1e0d9", "#c3c2b7"
 LAYER_COLOR = {"A": "#86b6ef", "B": "#3987e5", "C": "#184f95", "D": "#eb6834"}
 FS = {"panel": 10, "title": 7.5, "body": 6.5, "small": 6.0, "tick": 6}

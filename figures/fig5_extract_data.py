@@ -43,9 +43,14 @@ SRC = {
     "done": D / "DONE.json",
     "script": Path("explainability/survival_pathway_interpretation.py"),
 }
-LABELLED = ["E2F Targets", "G2-M Checkpoint", "Mitotic Spindle", "Myc Targets V1", "Myc Targets V2",
-            "Notch Signaling", "mTORC1 Signaling"]
-PROLIF_MYC = LABELLED[:5]
+# Pathways labelled in panel A (figures/publication_redesign/Fig5/figure5A_plot.py LABELS; the earlier 7-name list here did not match
+# the plot or the caption, which name these four).
+LABELLED = ["E2F Targets", "G2-M Checkpoint", "Myc Targets V1", "Notch Signaling"]
+# Five-pathway family selected in train patients only (Stage 1 of the train-only redesign; replaces the earlier pooled family, which
+# had Myc Targets V2 in place of Spermatogenesis). Read from the hashed selection artifact; not typed here.
+SEL = Path("artifacts/results_clean_rerun/direction2_replication_trainonly")
+TRAIN_SELECTED = json.load(open(SEL / "selection_artifact.json", encoding="utf-8"))["family"]
+VAR_EXPL = json.load(open(SEL / "discovery_report.json", encoding="utf-8"))["composite"]["variance_explained"]
 DISPLAY_FIX = {"PI3K/AKT/mTOR  Signaling": "PI3K/AKT/mTOR Signaling", "Pperoxisome": "Peroxisome",
                "heme Metabolism": "Heme Metabolism"}
 BETA_DEF = ("beta = ridge-Cox log-hazard coefficient per training-fold SD of the pathway score in the "
@@ -122,6 +127,10 @@ def main():
     for p in LABELLED:
         check(f"labelled pathway present and concordant: {p}", bool(b.set_index("pathway").loc[p, "consistent_same_direction_both_endpoints"]),
               True, SRC["both"])
+    check("train-selected family: five pathways, all present in the 50", (len(TRAIN_SELECTED), bool(set(TRAIN_SELECTED) <= set(b.pathway))),
+          (5, True), SEL / "selection_artifact.json")
+    check("train-selected family pathways concordant in survival (descriptive context only)",
+          sorted(set(TRAIN_SELECTED) & set(summ["consistent_same_direction_in_both_endpoints"])), sorted(TRAIN_SELECTED), SRC["summary"])
 
     # ---- correlation (only derived statistic) ----
     r = float(np.corrcoef(b.pfs_beta_mean, b.os_beta_mean)[0, 1])
@@ -144,7 +153,7 @@ def main():
         "pfs_HR_of_mean_beta": b.pfs_HR_of_mean_beta, "os_HR_of_mean_beta": b.os_HR_of_mean_beta,
         "pfs_direction_label": b.pfs_direction_label, "os_direction_label": b.os_direction_label,
         "concordant_both_endpoints": conc, "concordance_group": b.apply(group, axis=1),
-        "label_in_panel": b.pathway.isin(LABELLED), "proliferation_myc_family": b.pathway.isin(PROLIF_MYC),
+        "label_in_panel": b.pathway.isin(LABELLED), "train_selected_pathway_family": b.pathway.isin(TRAIN_SELECTED),
     })
     a.to_csv(OUT / "fig5A_pfs_vs_os_coefficients.csv", index=False)
 
@@ -196,13 +205,13 @@ def main():
         "direction_rule": summ["direction_rule"],
         "concordance_rule": "consistently directed (25/25 fits) in BOTH endpoints with the same sign",
         "range_definition": "min-max of beta across the 25 outer CV fits; NOT a confidence interval",
-        "labelled_pathways": LABELLED,
+        "labelled_pathways": LABELLED, "train_selected_pathway_family": TRAIN_SELECTED,
         "display_name_fixes": DISPLAY_FIX,
         "limitations": summ["caveats"] + [
             "The 25 fits come from 5 repeats of 5-fold CV and share ~80% of training patients: agreement across fits is not independent replication.",
-            "Correlated pathways (e.g. the five proliferation/MYC scores share 71.5% of variance; Figure 3D) have non-independent ridge coefficients.",
+            f"Correlated pathways (e.g. the five train-selected pathway scores of Figure 3D share {VAR_EXPL:.1%} of their variance in their first principal component) have non-independent ridge coefficients.",
             "No pathway-level confidence intervals, p-values, q-values or causal effects exist.",
-            "Overlaps the patients used in Figures 3 and 4; agreement with Figure 3D is not independent evidence.",
+            "Overlaps the patients used in Figures 3 and 4; agreement with Figure 3D is not independent evidence. All analyses are post hoc and exploratory.",
         ],
     }
     json.dump(defs, open(OUT / "fig5_definitions.json", "w"), indent=2)

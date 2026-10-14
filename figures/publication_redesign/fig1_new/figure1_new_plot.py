@@ -18,7 +18,7 @@ Numbers that are not in those files (1,143 subject records; the geographic-analy
 constants below. When the private data/ directory is present the script re-derives them and stops on
 any mismatch; otherwise it prints a notice and uses the constants (see README.md for provenance).
 
-The STYLE block follows figures/publication_redesign/Fig1/figure1_plot.py (shared Figure 1-5 style).
+The STYLE block follows figures/publication_redesign/Fig1/figure1_plot.py (shared Figure 2-6 style).
 """
 
 import argparse
@@ -38,7 +38,7 @@ OUT_DIR = Path("figures/publication_redesign/fig1_new")
 STEM = "figure1_new"
 
 # ----------------------------------------------------------------------------------------------
-# Shared style (identical values to the existing Figure 1)
+# Shared style (identical values to the existing Figure 2)
 # ----------------------------------------------------------------------------------------------
 INK = "#0b0b0b"
 INK2 = "#52514e"
@@ -71,10 +71,19 @@ plt.rcParams.update({
     "savefig.facecolor": SURFACE,
 })
 
-# Constants not stored in the tracked Figure 1 data files (sources in README.md).
+# Constants not stored in the tracked Figure 2 data files (sources in README.md).
 N_SUBJECT_RECORDS = 1143              # data/clinical/subject_deid.csv
-GEO = {"us_train": 632, "us_val": 139, "evaluated": 116, "overlap_with_train": 80,
-       "spain": 80, "canada": 36}      # modeling-country-robustness audit + patient_split_assignments.csv
+GEO = {"fit": 439, "calibration": 96, "excluded_us": 236, "evaluated": 116,
+       "spain": 80, "canada": 36}      # original-train-only geographic run (audit JSON) + patient_split_assignments.csv
+GEO_AUDIT = Path("artifacts/results_clean_rerun/geographic_origtrain/full_run_audit_and_summary.json")
+# Train-only pathway redesign (selection + discovery in train patients; evaluation in validation + test patients).
+PATHWAY = {"dev_patients": 371, "heldout_patients": 160, "heldout_val": 76, "heldout_test": 84}
+PATHWAY_DIR = Path("artifacts/results_clean_rerun/direction2_replication_trainonly")
+# Train-only RNA-contribution (Figures 4A-C, Table S1, add-on) and survival (Figures 5-6) redesigns.
+RNAC = {"dev_patients": 716, "heldout_patients": 213}
+RNAC_DIR = Path("artifacts/results_clean_rerun/rna_contribution_trainonly")
+SURVT = {"dev_patients": 473, "heldout_patients": 201, "heldout_val": 101, "heldout_test": 100}
+SURVT_DIR = Path("artifacts/results_clean_rerun/survival_trainonly")
 
 
 def require(cond, msg):
@@ -126,6 +135,7 @@ def load():
     require(cnt("multiclass", "all", "n_visit_pairs") - cnt("binary", "all", "n_visit_pairs") == 1153,
             "binary exclusions")
     verify_private_constants()
+    verify_result_constants()
     return {"cnt": cnt, "prev": prev, "layers": layers, "surv": surv, "overlap": overlap, "timing": timing}
 
 
@@ -140,10 +150,49 @@ def verify_private_constants():
     sp = pd.read_csv(split_p).merge(subj[["public_id", "country_of_residence_at_enrollment"]], on="public_id")
     sc = sp[sp.country_of_residence_at_enrollment.isin(["spain", "canada"])]
     require(len(sc) == GEO["evaluated"], "Spain+Canada patients")
-    require(int((sc.split == "train").sum()) == GEO["overlap_with_train"], "Spain/Canada patients in original train split")
     require(int((sc.country_of_residence_at_enrollment == "spain").sum()) == GEO["spain"], "Spain patients")
     require(int((sc.country_of_residence_at_enrollment == "canada").sum()) == GEO["canada"], "Canada patients")
     print("Private constants re-verified against data/.")
+
+
+def verify_result_constants():
+    """Check the geographic and pathway counts against the (tracked-eligible) result JSONs when present."""
+    if GEO_AUDIT.exists():
+        a = json.load(open(GEO_AUDIT, encoding="utf-8"))["audit"]
+        require((a["n_us_train_patients"], a["n_us_val_patients"], a["n_us_excluded_not_original_train"],
+                 a["n_spain_canada_patients"], a["n_spain_patients"], a["n_canada_patients"])
+                == (GEO["fit"], GEO["calibration"], GEO["excluded_us"], GEO["evaluated"], GEO["spain"], GEO["canada"]),
+                "geographic counts differ from the audit JSON")
+        require(a["n_fit_or_calibration_overlap_with_original_val_or_test"] == 0, "geographic fit/calibration overlap")
+        print("Geographic counts verified against", GEO_AUDIT)
+    else:
+        print("NOTE: geographic audit JSON not found - geographic counts not re-verified.")
+    dr, hr = PATHWAY_DIR / "discovery_report.json", PATHWAY_DIR / "heldout_report.json"
+    if dr.exists() and hr.exists():
+        d, h = json.load(open(dr, encoding="utf-8")), json.load(open(hr, encoding="utf-8"))
+        by = h["accounting"]["heldout_patients_by_split"]
+        require((d["accounting"]["discovery_patients"], h["accounting"]["heldout_patients"], by["val"], by["test"])
+                == (PATHWAY["dev_patients"], PATHWAY["heldout_patients"], PATHWAY["heldout_val"], PATHWAY["heldout_test"]),
+                "pathway counts differ from the result JSONs")
+        print("Pathway counts verified against", PATHWAY_DIR)
+    else:
+        print("NOTE: train-only pathway reports not found - pathway counts not re-verified.")
+    rr, rd = RNAC_DIR / "heldout_report.json", RNAC_DIR / "frozen_development.json"
+    if rr.exists() and rd.exists():
+        require((json.load(open(rr, encoding="utf-8"))["heldout"]["rna_patients"], json.load(open(rd, encoding="utf-8"))["n_development"])
+                == (RNAC["heldout_patients"], RNAC["dev_patients"]), "RNA-contribution counts differ from the result JSONs")
+        print("RNA-contribution counts verified against", RNAC_DIR)
+    else:
+        print("NOTE: train-only RNA-contribution reports not found - counts not re-verified.")
+    sr, sd = SURVT_DIR / "heldout_report.json", SURVT_DIR / "devcv_pfs_summary.json"
+    if sr.exists() and sd.exists():
+        h = json.load(open(sr, encoding="utf-8"))["heldout"]
+        require((h["patients"], h["validation"], h["test"], json.load(open(sd, encoding="utf-8"))["n_patients"])
+                == (SURVT["heldout_patients"], SURVT["heldout_val"], SURVT["heldout_test"], SURVT["dev_patients"]),
+                "survival counts differ from the result JSONs")
+        print("Survival counts verified against", SURVT_DIR)
+    else:
+        print("NOTE: train-only survival reports not found - counts not re-verified.")
 
 
 # ----------------------------------------------------------------------------------------------
@@ -297,7 +346,7 @@ def panel_c(ax, d, y0):
     xl, xb, wmax, h, gap = 3.98, 5.52, 1.12, 0.34, 0.10
     ytop = y0 + 0.50
     nmax = int(L.loc["D", "source_input_features"])
-    seg = {"A": 78, "B": 37, "C": 28, "D": 51}   # added source features per layer (Figure 1 data)
+    seg = {"A": 78, "B": 37, "C": 28, "D": 51}   # added source features per layer (Figure 2 data)
     for i, (k, name, sub) in enumerate(rows):
         y = ytop + i * (h + gap)
         text(ax, xl, y + 0.02, f"Layer {k}: {name}", weight="bold", size=FS["small"] + 0.2)
@@ -342,7 +391,7 @@ def panel_d(ax, d, y0):
          "Preprocessing fitted; hyperparameters chosen by\n5-fold patient-grouped CV on these patients only\n"
          f"Pairs: six-class {fmt(cnt('multiclass', 'train', 'n_visit_pairs'))} · binary {fmt(cnt('binary', 'train', 'n_visit_pairs'))}"),
         ("val", 2.20, 1.15, "Validation",
-         "Binary decision threshold;\ncalibration comparison\n"
+         "Descriptive only: no tuning,\nthreshold or calibration\n"
          f"Pairs: {fmt(cnt('multiclass', 'val', 'n_visit_pairs'))} · {fmt(cnt('binary', 'val', 'n_visit_pairs'))}"),
         ("test", 3.41, 1.04, "Test",
          "Scored once; patient-\nlevel bootstrap CIs\n"
@@ -384,21 +433,26 @@ def panel_e(ax, d, y0):
          "Test: 155 patients, scored once.\nTuning on train patients only",
          "Internal held-out test split;\ncalibration and SHAP descriptive", False),
         ("RNA contribution, uncertainty\nand subgroup analyses",
-         "5×5 grouped CV on train + validation\npatients; train-tuned hyperparameters",
-         "Post hoc, exploratory; CV cohort\noverlaps the tuning patients", False),
-        ("Proliferation / MYC\nassociation",
-         "Discovery: train + validation.\nTest: 84 patients with RNA",
-         "Pathway family chosen using pooled data\nthat included test patients: not independent", True),
+         f"Development: {RNAC['dev_patients']} train patients (CV reference).\n"
+         f"Evaluation: {RNAC['heldout_patients']} validation + test patients\n"
+         "with RNA; locked models, scored once",
+         "Post hoc, exploratory; earlier pooled\nresults were seen first; not independent", False),
+        ("Train-selected pathway\ncomposite (association)",
+         f"Selection and discovery: {PATHWAY['dev_patients']} train patients.\n"
+         f"Evaluation: {PATHWAY['heldout_patients']} validation + test patients\n"
+         f"with RNA ({PATHWAY['heldout_val']} + {PATHWAY['heldout_test']})",
+         "Post hoc, exploratory; earlier pooled\nresults were seen first; not independent", False),
         (f"Survival (PFS, OS) and\npathway coefficients",
-         f"{fmt(d['surv'].loc['PFS_primary', 'n_patients'])} patients, 5×5 CV; includes "
-         f"{ov['val']} validation\nand {ov['test']} test patients",
-         "Exploratory internal CV;\noverlaps other partitions", False),
+         f"Development: {SURVT['dev_patients']} train patients (CV; Fig. 6).\n"
+         f"Evaluation: {SURVT['heldout_patients']} validation + test patients\n"
+         f"({ov['val']} + {ov['test']}); frozen models, scored once",
+         "Post hoc, exploratory; earlier pooled\nresults were seen first; not independent", False),
         ("Geographic hold-out\n(US → Spain, Canada)",
-         f"Fit: {GEO['us_train']} US patients; threshold and\n"
-         f"calibration: {GEO['us_val']} US patients.\n"
-         f"Scored once: {GEO['evaluated']} Spain/Canada patients",
-         f"{GEO['overlap_with_train']} of {GEO['evaluated']} evaluated patients were in the training\n"
-         "split used to tune hyperparameters", True),
+         f"Tuning and fit: {GEO['fit']} US train-partition\n"
+         f"patients; threshold, calibration: {GEO['calibration']} such\n"
+         f"patients. Scored once: {GEO['evaluated']} Spain/Canada",
+         f"Post hoc, exploratory; {GEO['excluded_us']} US validation/test-\n"
+         "partition patients and Italy excluded", False),
     ]
     rh, y = 0.44, hy + 0.24
     for i, (a, p, s, flagged) in enumerate(rows):
@@ -407,16 +461,21 @@ def panel_e(ax, d, y0):
         text(ax, cols[0] + 0.04, y + 0.02, a, weight="bold", size=FS["small"] + 0.2, ls=1.15)
         text(ax, cols[1] + 0.04, y + 0.02, p, size=FS["small"], color=INK2, ls=1.18)
         if flagged:
-            w = flag_tag(ax, cols[2] + 0.04, y + 0.01, "Not independent; redesign pending")
+            w = flag_tag(ax, cols[2] + 0.04, y + 0.01, "Not independent")
             text(ax, cols[2] + 0.04, y + 0.20, s, size=FS["small"], color=FLAG, ls=1.18)
         else:
             text(ax, cols[2] + 0.04, y + 0.02, s, size=FS["small"], color=INK, ls=1.18)
         y += rh
     ax.plot([0.12, 7.08], [y - 0.02, y - 0.02], color=AXIS, lw=0.7, zorder=1)
     text(ax, 0.12, y + 0.04,
-         "Amber rows: known validation concerns under revision. Hyperparameters were tuned on train patients only in the "
-         "main models; the scope of excluding validation patients\nfrom all development steps (tuning, pathway selection) "
-         "is being clarified. Nothing here is externally validated, and CIs are descriptive and unadjusted.",
+         "Main models and every redesigned analysis (RNA contribution, pathway composite, survival, geographic): tuning, selection, fitting and "
+         "preprocessing use train-partition patients only; held-out\n"
+         "patients are scored once. No decision threshold or recalibration enters any reported metric of the main models (probabilities are "
+         "shown raw; validation patients are descriptive only);\n"
+         "the geographic model's threshold and calibration use train-partition patients. The RNA-contribution, pathway, survival and "
+         "geographic analyses are\n"
+         "post hoc and exploratory (earlier pooled results were seen first); nothing here is externally validated, and CIs are "
+         "descriptive and unadjusted.",
          size=FS["small"] - 0.2, color=INK2, ls=1.25)
     return y + 0.35
 

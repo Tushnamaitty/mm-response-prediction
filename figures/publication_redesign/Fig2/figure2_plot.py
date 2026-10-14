@@ -1,5 +1,5 @@
 """
-Figure 2 - Next-visit prediction performance across nested information layers A-D.
+Figure 3 - Next-visit prediction performance across nested information layers A-D.
 
 Run from the repository root:
     python figures/publication_redesign/Fig2/figure2_plot.py
@@ -14,7 +14,7 @@ Outputs (three independent PNGs): 2A binary AUPRC, 2B six-class macro-F1, 2C pai
 treatment context (C-B) and RNA pathway scores (D-C). Full locked test set only; the RNA-available-subset
 analyses are separate and not drawn here. No algorithm is ranked or called best.
 
-Style block follows figures/publication_redesign/Fig1/figure1_plot.py (shared across Figures 1-5).
+Style block follows figures/publication_redesign/Fig1/figure1_plot.py (shared across Figures 2-6).
 """
 
 import sys
@@ -35,7 +35,7 @@ OUT_DIR = Path("figures/publication_redesign/Fig2")
 STEM = "figure2"
 
 # ----------------------------------------------------------------------------------------------
-# Shared style (identical to Figure 1)
+# Shared style (identical to Figure 2)
 # ----------------------------------------------------------------------------------------------
 INK = "#0b0b0b"
 INK2 = "#52514e"
@@ -87,7 +87,7 @@ def heading(fig, text, top_in, x, sub=None):
 
 def require(cond, msg):
     if not cond:
-        sys.exit(f"Figure 2 data check failed: {msg}")
+        sys.exit(f"Figure 3 data check failed: {msg}")
 
 
 # ----------------------------------------------------------------------------------------------
@@ -197,7 +197,7 @@ def delta_panel(ax, dl, task, show_ylabels):
 
 # ----------------------------------------------------------------------------------------------
 def new_fig(w, h):
-    """Each Figure 2 panel is its own figure; y_in/add_ax read the current size."""
+    """Each Figure 3 panel is its own figure; y_in/add_ax read the current size."""
     global FIG_W, FIG_H
     FIG_W, FIG_H = w, h
     return plt.figure(figsize=(w, h), dpi=100)
@@ -265,13 +265,13 @@ def main():
     ci, dl, prevalence, mx = load()  # verifies all numbers drawn below
     fig_layer(ci, "binary", "A", "Binary improvement: AUPRC", "1,930 visit pairs \u00b7 155 test patients (locked test set)",
               "AUPRC (higher is better)", (0.15, 0.62), "figure2A_binary_auprc.png",
-              "A\u2013D: nested information layers (Figure 1); marker colour = layer. Whiskers: 95% patient-bootstrap CI "
+              "A\u2013D: nested information layers (Figure 2); marker colour = layer. Whiskers: 95% patient-bootstrap CI "
               "(1,000 resamples). Dotted line: test improvement prevalence, 0.183 (353/1,930). AUPRC: area under the "
               "precision\u2013recall curve.", prevalence=prevalence)
     fig_layer(ci, "multiclass", "B", "Six-class response: macro-F1", "2,079 visit pairs \u00b7 155 test patients (locked test set)",
               "Macro-F1 (higher is better)", (0.28, 0.75), "figure2B_multiclass_macrof1.png",
-              "A\u2013D: nested information layers (Figure 1); marker colour = layer. Whiskers: 95% patient-bootstrap CI "
-              "(1,000 resamples). Macro-F1: mean F1 over the six IMWG classes; not comparable with AUPRC in Figure 2A "
+              "A\u2013D: nested information layers (Figure 2); marker colour = layer. Whiskers: 95% patient-bootstrap CI "
+              "(1,000 resamples). Macro-F1: mean F1 over the six IMWG classes; not comparable with AUPRC in Figure 3A "
               "(different evaluation pairs).", baseline_note=True)
     fig_delta(dl)
 

@@ -1,0 +1,12 @@
+# Supplementary Table S4. Internal geographic hold-out within MMRF CoMMpass (Figure S2), original-train-only revision
+
+XGBoost information Layer C developed only on US patients in the original training partition of the main analysis. The check is specific to this algorithm and layer (no a priori rationale for choosing them is recorded). Of 771 US patients, the earlier random 82/18 US split (seed 42) was kept but restricted to original-training-partition patients: 439 for hyperparameter tuning, preprocessing and model fitting, and 96 for the calibration method and binary threshold (cross-fitted within them, then frozen). The 236 US patients in the original validation (110) and test (126) partitions, all 138 Italian patients and the 116 evaluated Spain/Canada patients took no part in any development step. Hyperparameters were tuned by 5-fold patient-grouped cross-validation over the main analysis's three-configuration grid on the fit set (438 patients, 6,133 pairs for the binary task; 439 patients, 6,746 pairs for six-class). Selected hyperparameters: binary 100 trees, depth 3, learning rate 0.05; six-class 100 trees, depth 3, learning rate 0.05. The model was evaluated once on patients enrolled in Spain and Canada. This is a post hoc, exploratory internal robustness check, not independent external validation: earlier versions of the experiment had been seen before this redesign. No statistical comparison between cohorts was performed. Italy was excluded post hoc, after inspecting its outcome distribution.
+
+| Cohort | Patients | Visit pairs (binary / six-class) | Improvement events (rate) | AUPRC (95% CI) | AUROC (95% CI) | Macro-F1 (95% CI) |
+|---|---|---|---|---|---|---|
+| Spain + Canada (pooled) | 116 | 1,588 / 1,694 | 283 (17.8%) | 0.426 (0.374 to 0.484) | 0.769 (0.731 to 0.805) | 0.629 (0.585 to 0.658) |
+| Spain | 80 | 949 / 1,034 | 185 (19.5%) | 0.432 (0.375 to 0.514) | 0.755 (0.711 to 0.802) | 0.617 (0.568 to 0.655) |
+| Canada | 36 | 639 / 660 | 98 (15.3%) | 0.430 (0.362 to 0.523) | 0.785 (0.722 to 0.849) | 0.634 (0.491 to 0.688) |
+| US calibration set (reference) | 96 | 1,342 / 1,467 | 255 (19.0%) | 0.558 (no CI) | 0.817 (no CI) | 0.632 (no CI) |
+
+AUROC is for the binary task. The event rate is the AUPRC of a non-informative model in each cohort. The US calibration set is a descriptive reference only: it informed the calibration and threshold choices. Source: `figures/data/FigS_country_origtrain/`, cross-checked against `artifacts/results_clean_rerun/geographic_origtrain/`.

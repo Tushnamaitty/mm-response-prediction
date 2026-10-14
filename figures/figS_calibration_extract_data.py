@@ -156,7 +156,7 @@ def main():
             s = tm[(tm.model == MODEL_KEY[m]) & (tm.method == "uncalibrated") & (tm.metric == k)].iloc[0]
             check(f"{m.upper()} recomputed {k} = summary", round(val, 6), round(float(s.estimate), 6), f"{BRANCH}:{SUMMARY_GIT}", 2e-6)
             metric_rows.append({"layer": m.upper(), "layer_label": LAYER[m], "algorithm": "XGBoost",
-                                "calibration": "uncalibrated (selected on validation)", "metric": k,
+                                "calibration": "uncalibrated (raw probabilities; no recalibration applied)", "metric": k,
                                 "estimate": float(s.estimate), "ci_lower": float(s.ci_lower), "ci_upper": float(s.ci_upper),
                                 "recomputed_from_probabilities": val})
         b = reliability_bins(y, p)
@@ -210,10 +210,12 @@ def main():
     defs = {
         "evidence_level": "held-out test set (155 patients, 1,930 binary visit pairs); descriptive calibration assessment",
         "task": "binary improvement at the next visit; test improvement rate 18.3% (353/1,930)",
-        "models": "XGBoost Layer C and Layer D (locked clean-rerun models; reporting reference algorithm)",
-        "calibration_method": ("Candidates (uncalibrated, Platt, isotonic) compared by 5-fold patient-grouped cross-fitting "
-                               "on the validation set; uncalibrated selected for both C and D, so S1 shows raw model "
-                               "probabilities with no validation-fitted transformation"),
+        "models": "XGBoost Layer C and Layer D (locked clean-rerun models; XGBoost alone is shown for this figure, not because it was selected as best)",
+        "calibration_method": ("Raw (uncalibrated) probabilities are reported; no recalibration, threshold or other validation-fitted "
+                               "transformation enters any reported number. An earlier EXPLORATORY comparison (uncalibrated, Platt, isotonic; "
+                               "5-fold patient-grouped cross-fitting within the validation patients) had favoured uncalibrated for both C and D, so "
+                               "the choice to show raw probabilities is not blind to validation data. That comparison is documented in "
+                               "figures/SUPERSEDED_ANALYSES.md and is not a reported result"),
         "reliability_bins": "10 equal-count quantile bins (193 visit pairs each) of the test probabilities; same rule as the original script",
         "bin_uncertainty": "none computed (no bin-level intervals exist in the locked outputs)",
         "slope_intercept": "logistic recalibration of the outcome on logit(p): slope (ideal 1) and intercept with logit(p) as offset (ideal 0)",

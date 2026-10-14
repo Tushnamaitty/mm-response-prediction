@@ -5,7 +5,8 @@ models (binary improvement; six-class IMWG response), held-out test set.
 Run from the repository root:
     python figures/publication_redesign/FigS_shap/figureS3A_plot.py
 
-Input (verified by figures/data/FigS_shap/figS_shap_extend.py; read-only):
+Input (written by figures/data/FigS_shap/figS_shap_extend.py; SHA-256 recorded in figS3_ext_provenance.json and
+supplementary_tables_provenance.json; read-only):
     figures/data/FigS_shap/figS3A_ext_component_shares.csv
         (measure = net_family_magnitude, analysis = primary). Bar widths use the exact share_pct;
         every label uses share_pct_display (largest-remainder rounding to 0.1 pp), so the six
@@ -27,7 +28,7 @@ import pandas as pd  # noqa: E402
 DATA = Path("figures/data/FigS_shap/figS3A_ext_component_shares.csv")
 OUT = Path("figures/publication_redesign/FigS_shap/figureS3A.png")
 
-# ---- shared style (identical to Figure 1) ----
+# ---- shared style (identical to Figure 2) ----
 INK, INK2, MUTED, GRID, AXIS = "#0b0b0b", "#52514e", "#898781", "#e1e0d9", "#c3c2b7"
 LAYER_COLOR = {"A": "#86b6ef", "B": "#3987e5", "C": "#184f95", "D": "#eb6834"}
 RNA_LIGHT = "#f4b393"
@@ -119,8 +120,8 @@ def main():
                                          ec="white" if hatch else "none", hatch=hatch, lw=0))
         fig.text(x + 0.024, y, lab.replace("\n", " ") if False else lab, fontsize=FS["small"], color=INK, va="center",
                  linespacing=1.1)
-    fig.text(0.047, 0.045, "Letters = information layer. Locked XGBoost layer D (reporting reference algorithm, not a "
-             "validation-selected best model).", fontsize=FS["small"], color=MUTED, va="center")
+    fig.text(0.047, 0.045, "Letters = information layer. Locked XGBoost layer D, used as a single fixed model; "
+             "no algorithm is claimed to perform better.", fontsize=FS["small"], color=MUTED, va="center")
     OUT.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(OUT, dpi=600)
     print(f"Saved {OUT}")

@@ -1,6 +1,6 @@
 # Supplementary Table S3. SHAP attribution shares for XGBoost information Layer D
 
-Held-out test set (155 patients; 1,930 binary and 2,079 six-class visit pairs). Two different measures, not interchangeable: **net family magnitude** (Figure S3A) = mean over pairs of |sum of signed source SHAP within the family|; **total source-feature importance** = sum over the family's features of mean |source SHAP|. Total importance is larger for groups whose features push in opposite directions (notably RNA pathways). Six-class values are raw class scores averaged equally over classes (class average) or shown per class. Shares are of model attribution, not accuracy, variance explained or causation. Shares use largest-remainder rounding (each column sums to 100.0%, as in Figure S3A); CIs are from the exact shares. 95% patient-level bootstrap CIs (1,000 resamples).
+Held-out test set (155 patients; 1,930 binary and 2,079 six-class visit pairs). The attributions describe the XGBoost models only (no a priori rationale for using XGBoost alone is recorded) and do not transfer to Logistic Regression or LightGBM. Two different measures, not interchangeable: **net family magnitude** (Figure S3A) = mean over pairs of |sum of signed source SHAP within the family|; **total source-feature importance** = sum over the family's features of mean |source SHAP|. Total importance is larger for groups whose features push in opposite directions (notably RNA pathways). Six-class values are raw class scores averaged equally over classes (class average) or shown per class. Shares are of model attribution, not accuracy, variance explained or causation. Shares use largest-remainder rounding (each column sums to 100.0%, as in Figure S3A); CIs are from the exact shares. 95% patient-level bootstrap CIs (1,000 resamples).
 
 ## Net family magnitude (Figure S3A) — all test pairs
 Binary 1,930 pairs / 155 patients; six-class 2,079 / 155.
@@ -85,4 +85,4 @@ Binary 1,323 pairs / 107 patients; six-class 1,449 / 107.
 | RNA pathway scores | 11.9% | 9.0% | 6.0% | 5.9% | 5.9% | 6.8% |
 | RNA timing / availability | 0.8% | 0.7% | 0.8% | 2.9% | 0.4% | 1.8% |
 
-Per-class CIs and the total-importance measure per class are in the CSV. Source: `figures/data/FigS_shap/figS3A_ext_component_shares*.csv` (cross-checked against `figS3A_family_shares.csv`).
+Per-class CIs and the total-importance measure per class are in the CSV. Source: `figures/data/FigS_shap/figS3A_ext_component_shares*.csv` (SHA-256 recorded in `supplementary_tables_provenance.json`; cross-checked against `figS3A_family_shares.csv`).

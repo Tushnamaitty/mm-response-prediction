@@ -272,8 +272,7 @@ def table_s2():
     sel = summ["results"]["binary"]["selected_method_on_validation"]
     check(T, "uncalibrated selected for C and D", sel == {"C-XGBoost": "uncalibrated", "D-XGBoost": "uncalibrated"})
     md = ["# Supplementary Table S2. Calibration of binary next-visit improvement predictions, all test pairs and RNA-available test pairs", "",
-          "XGBoost information Layer C and Layer D on the held-out test set; uncalibrated probabilities (selected on the "
-          "validation set for both layers). Layer D − Layer C differences are paired on identical visit pairs with 95% paired "
+          "XGBoost information Layer C and Layer D on the held-out test set (XGBoost only: no a priori rationale for using it alone is recorded, and the other algorithms were not assessed); raw (uncalibrated) probabilities (no recalibration applied; an earlier exploratory comparison within the validation patients had favoured uncalibrated, see Supplementary Figure S1). Layer D − Layer C differences are paired on identical visit pairs with 95% paired "
           "patient-level bootstrap CIs (1,000 resamples; calibrators fixed). For RNA-available pairs, per-layer values are point "
           "estimates recomputed from stored test probabilities with the locked formulas (their D − C equals the locked paired "
           "difference); per-layer CIs are not available. Intervals are unadjusted. Descriptive.", ""]
@@ -314,7 +313,8 @@ def table_s3():
                                           "summed_source_feature_importance": "Total source-feature importance (not Figure S3A)"})
     df["units"] = df.task.map({"binary": "log-odds SHAP", "multiclass": "raw class-score SHAP"})
     md = ["# Supplementary Table S3. SHAP attribution shares for XGBoost information Layer D", "",
-          "Held-out test set (155 patients; 1,930 binary and 2,079 six-class visit pairs). Two different measures, not "
+          "Held-out test set (155 patients; 1,930 binary and 2,079 six-class visit pairs). The attributions describe the XGBoost models only (no a priori "
+          "rationale for using XGBoost alone is recorded) and do not transfer to Logistic Regression or LightGBM. Two different measures, not "
           "interchangeable: **net family magnitude** (Figure S3A) = mean over pairs of |sum of signed source SHAP within the "
           "family|; **total source-feature importance** = sum over the family's features of mean |source SHAP|. Total "
           "importance is larger for groups whose features push in opposite directions (notably RNA pathways). Six-class "
@@ -354,7 +354,7 @@ def table_s3():
     md += ["## Six-class net family magnitude share by class (all test pairs)", "",
            md_table(pv, ["Component"] + cls, ["Component"] + [short[c] for c in cls]), "",
            "Per-class CIs and the total-importance measure per class are in the CSV. Source: "
-           "`figures/data/FigS_shap/figS3A_ext_component_shares*.csv` (cross-checked against `figS3A_family_shares.csv`)."]
+           "`figures/data/FigS_shap/figS3A_ext_component_shares*.csv` (SHA-256 recorded in `supplementary_tables_provenance.json`; cross-checked against `figS3A_family_shares.csv`)."]
     write("Table_S3_shap_attribution", df, "\n".join(md))
 
 

@@ -1,0 +1,4 @@
+8e26e0a13123389a2952b4b4819c65147517d292f488e120c310ab8920e63db4  SURVIVAL_TRAINONLY_PROTOCOL.md
+# SHA-256 of explainability/SURVIVAL_TRAINONLY_PROTOCOL.md after replacing CRLF with LF (git on Windows may convert line endings).
+# Verify (Python): import hashlib; t = open('explainability/SURVIVAL_TRAINONLY_PROTOCOL.md', 'rb').read().replace(bytes([13, 10]), bytes([10])); print(hashlib.sha256(t).hexdigest())
+# Written 2026-10-14 before any model of this redesign was fitted or any held-out survival outcome was read.

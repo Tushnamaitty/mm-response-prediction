@@ -5,7 +5,8 @@ XGBoost information layer D models (binary improvement; six-class IMWG response)
 Run from the repository root:
     python figures/publication_redesign/FigS_shap/figureS3B_plot.py
 
-Input (verified by figures/data/FigS_shap/figS_shap_compute.py; read-only):
+Input (written by figures/data/FigS_shap/figS_shap_compute.py, which is absent from this copy; the file's SHA-256 is recorded in
+figS3_ext_provenance.json and its values and whiskers are recomputed by figures/verify_figS3_inputs.py; read-only):
     figures/data/FigS_shap/figS3B_top15_source_features.csv
 
 Style follows figures/publication_redesign/Fig1/figure1_plot.py. The script stops if a plotted
@@ -24,7 +25,7 @@ import pandas as pd  # noqa: E402
 DATA = Path("figures/data/FigS_shap/figS3B_top15_source_features.csv")
 OUT = Path("figures/publication_redesign/FigS_shap/figureS3B.png")
 
-# ---- shared style (identical to Figure 1) ----
+# ---- shared style (identical to Figure 2) ----
 INK, INK2, MUTED, GRID, AXIS = "#0b0b0b", "#52514e", "#898781", "#e1e0d9", "#c3c2b7"
 LAYER_COLOR = {"A": "#86b6ef", "B": "#3987e5", "C": "#184f95", "D": "#eb6834"}
 RNA_LIGHT = "#f4b393"

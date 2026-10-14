@@ -1,6 +1,6 @@
 # Supplementary Table S2. Calibration of binary next-visit improvement predictions, all test pairs and RNA-available test pairs
 
-XGBoost information Layer C and Layer D on the held-out test set; uncalibrated probabilities (selected on the validation set for both layers). Layer D − Layer C differences are paired on identical visit pairs with 95% paired patient-level bootstrap CIs (1,000 resamples; calibrators fixed). For RNA-available pairs, per-layer values are point estimates recomputed from stored test probabilities with the locked formulas (their D − C equals the locked paired difference); per-layer CIs are not available. Intervals are unadjusted. Descriptive.
+XGBoost information Layer C and Layer D on the held-out test set (XGBoost only: no a priori rationale for using it alone is recorded, and the other algorithms were not assessed); raw (uncalibrated) probabilities (no recalibration applied; an earlier exploratory comparison within the validation patients had favoured uncalibrated, see Supplementary Figure S1). Layer D − Layer C differences are paired on identical visit pairs with 95% paired patient-level bootstrap CIs (1,000 resamples; calibrators fixed). For RNA-available pairs, per-layer values are point estimates recomputed from stored test probabilities with the locked formulas (their D − C equals the locked paired difference); per-layer CIs are not available. Intervals are unadjusted. Descriptive.
 
 ## All test pairs (1,930 pairs; 155 patients)
 
