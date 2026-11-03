@@ -1,0 +1,12 @@
+# Supplementary Table S4. Internal geographic hold-out within MMRF CoMMpass (Figure S2), US-tuned revision
+
+XGBoost information Layer C refit on US patients only (new random patient-level 82/18 split: 632 training, 139 validation). Hyperparameters were re-tuned by 5-fold patient-grouped cross-validation over the main analysis's three-configuration grid, using only US patients in the original training partition and in the US training set (438 patients, 6,133 pairs for the binary task; 439 patients, 6,746 pairs for six-class). No Spain, Canada, Italy, US-validation, original-validation or original-test patient entered tuning. Preprocessing and fitting used US training patients; calibration method and binary threshold were chosen on US validation; the model was evaluated once on patients enrolled in Spain and Canada. Selected hyperparameters: binary 100 trees, depth 3, learning rate 0.05 (same as the earlier version); six-class 100 trees, depth 3, learning rate 0.05 (earlier version: 200 trees, depth 4, learning rate 0.05). This is a post hoc, exploratory internal robustness check, not independent external validation: the earlier version of the experiment had been seen before this redesign. No statistical comparison between cohorts was performed. Italy (138 patients) was excluded post hoc, after inspecting its outcome distribution.
+
+| Cohort | Patients | Visit pairs (binary / six-class) | Improvement events (rate) | AUPRC (95% CI) | AUROC (95% CI) | Macro-F1 (95% CI) |
+|---|---|---|---|---|---|---|
+| Spain + Canada (pooled) | 116 | 1,588 / 1,694 | 283 (17.8%) | 0.451 (0.401 to 0.507) | 0.770 (0.729 to 0.808) | 0.644 (0.596 to 0.675) |
+| Spain | 80 | 949 / 1,034 | 185 (19.5%) | 0.463 (0.407 to 0.532) | 0.761 (0.718 to 0.809) | 0.638 (0.588 to 0.675) |
+| Canada | 36 | 639 / 660 | 98 (15.3%) | 0.443 (0.369 to 0.541) | 0.773 (0.700 to 0.847) | 0.632 (0.491 to 0.683) |
+| US validation (reference) | 139 | 1,911 / 2,076 | 351 (18.4%) | 0.525 (no CI) | 0.805 (no CI) | 0.649 (no CI) |
+
+AUROC is for the binary task. The event rate is the AUPRC of a non-informative model in each cohort. Binary results are identical to the earlier version because re-tuning selected the same hyperparameters. Source: `figures/data/FigS_country_ustuned/`, cross-checked against `artifacts/results_clean_rerun/geographic_us_tuned/`.
