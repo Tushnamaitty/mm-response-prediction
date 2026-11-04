@@ -1,6 +1,8 @@
-# Supplementary Table S2. Calibration of binary next-visit improvement predictions, all test pairs and RNA-available test pairs
+# Supplementary Table S2. Calibration and discrimination for binary next-visit improvement: full and RNA-available held-out test cohorts
 
-XGBoost information Layer C and Layer D on the held-out test set; uncalibrated probabilities (selected on the validation set for both layers). Layer D − Layer C differences are paired on identical visit pairs with 95% paired patient-level bootstrap CIs (1,000 resamples; calibrators fixed). For RNA-available pairs, per-layer values are point estimates recomputed from stored test probabilities with the locked formulas (their D − C equals the locked paired difference); per-layer CIs are not available. Intervals are unadjusted. Descriptive.
+**Study design.** Locked XGBoost information Layers C and D were assessed on identical held-out test visit pairs using raw, uncalibrated probabilities. Reporting raw probabilities followed an exploratory validation-set comparison with calibration alternatives; no test-set recalibration or decision threshold was applied. Layer D − Layer C differences have 95% *paired patient-level bootstrap* confidence intervals (1,000 resamples; fitted models held fixed). In the full-test rows, parentheses beside each layer estimate give that layer’s 95% bootstrap CI. For the RNA-available subset, only per-layer point estimates were available; **do not interpret the absence of per-layer CIs as a zero-width interval**. Intervals are unadjusted, and subset comparisons are descriptive.
+
+**Interpretation.** Calibration slope has ideal value 1 and calibration intercept has ideal value 0; lower Brier score and log loss are better, while higher scaled Brier, AUROC and AUPRC are better. The last two metrics describe discrimination rather than calibration. Confidence intervals including zero for a paired difference do not establish equivalence. This table supports Supplementary Figure S1 and its RNA-available subset sensitivity analysis.
 
 ## All test pairs (1,930 pairs; 155 patients)
 
@@ -28,4 +30,6 @@ XGBoost information Layer C and Layer D on the held-out test set; uncalibrated p
 | AUROC (higher better) | 0.801 | 0.798 | −0.004 | −0.009 to 0.001 | yes |
 | AUPRC (higher better) | 0.474 | 0.487 | +0.013 | −0.010 to 0.029 | yes |
 
-On RNA-available pairs, the intercept difference (−0.026) and mean-predicted difference (+0.003) have CIs excluding 0; these are small, unadjusted and descriptive. Observed improvement rate: 0.183 (all pairs), 0.186 (RNA-available pairs). Source: `figures/data/FigS_calibration/`, `artifacts/results_clean_rerun/calibration/probabilities/`.
+**Interpretation and limitations.** In the RNA-available subset, the intercept difference (−0.026) and mean-predicted-probability difference (+0.0034) have bootstrap confidence intervals excluding zero; these are small, unadjusted, descriptive comparisons rather than evidence of an overall calibration advantage. Observed improvement rates were 0.183 (all pairs) and 0.186 (RNA-available pairs). No multiplicity-adjusted subgroup inference or equivalence test was performed. Source: `figures/data/FigS_calibration/`, `artifacts/results_clean_rerun/calibration/probabilities/`.
+
+**Manuscript cross-reference.** Cite this table in the supplementary calibration Results as *Supplementary Table S2*. Its all-pair estimates correspond to Supplementary Figure S1; RNA-available subset rows provide additional descriptive detail not plotted in the figure.

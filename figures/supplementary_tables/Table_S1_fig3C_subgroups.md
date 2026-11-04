@@ -1,6 +1,8 @@
-# Supplementary Table S1. RNA contribution by treatment class and response trajectory (Figure 3C)
+# Supplementary Table S1. Exploratory treatment-class and response-trajectory subgroup analyses in repeated patient-grouped cross-validation
 
-XGBoost information Layer D − Layer C, out-of-fold predictions from 5 repeats × 5-fold patient-grouped cross-validation on training and validation patients (not the held-out test set). AUPRC: higher is better. RPS (ranked probability score): lower is better, so ΔRPS > 0 means RNA worsened predictions. 95% patient-cluster bootstrap CIs (2,000 resamples). Multiplicity: Holm across the three primary treatments (PI, IMiD, corticosteroid) and, separately, the two primary trajectory states (stable, worsening), per task on its primary metric; Benjamini–Hochberg (BH) for exploratory treatments and secondary states; complement rows and the reference row are unadjusted. Treatment strata overlap. Exploratory, post hoc.
+**Study design and relationship to Figure 4C.** This table reports a development-stage sensitivity analysis using out-of-fold XGBoost predictions from five repeats of five-fold patient-grouped cross-validation in the combined training and validation cohort. It is **not** the locked held-out validation-plus-test subgroup analysis shown in manuscript **Figure 4C**. The table retains its original source filename (`Table_S1_fig3C_subgroups`) for traceability; that filename reflects an earlier figure-numbering convention. The two analyses have different patient sets and evaluation procedures and must not be presented as interchangeable.
+
+**Measures and interpretation.** Values are differences for RNA-augmented information Layer D minus clinical information Layer C. Binary ΔAUPRC: positive favours Layer D. Six-class ΔRPS (ranked probability score): **negative** favours Layer D, whereas **positive** indicates worse prediction after adding RNA. Estimates use 95% patient-cluster bootstrap confidence intervals (2,000 resamples). Holm adjustment was applied separately across primary treatment groups (PI, IMiD and corticosteroid) and primary trajectory states (stable and worsening) for each task’s primary metric. Benjamini–Hochberg (BH) adjustment was applied within exploratory-treatment and secondary-state families; complement and reference rows are unadjusted. Treatment-class strata can overlap, and subgroup sample counts must not be summed. All analyses are post hoc and exploratory; significant within-stratum results do not establish a treatment-specific benefit or a significant interaction.
 
 ## Binary improvement
 
@@ -40,7 +42,7 @@ XGBoost information Layer D − Layer C, out-of-fold predictions from 5 repeats 
 | Response trajectory at V(t) | Worsening (lower category than previous visit) | primary | ΔRPS | 928 / 385 | +0.00043 | −0.00090 to 0.00177 | 0.500 | 0.500 (Holm) | no |
 | Response trajectory at V(t) | No previous visit (first visit pair) | secondary | ΔRPS | 587 / 587 | −0.00042 | −0.00231 to 0.00149 | 0.709 | 0.957 (BH) | no |
 
-## Secondary interaction contrasts (difference in D − C between strata)
+## Secondary interaction contrasts (differences between strata in the Layer D − Layer C effect)
 
 | Analysis | Contrast | Task | Metric | Interaction | 95% CI | Raw p | Adjusted p | Adjustment |
 |---|---|---|---|---|---|---|---|---|
@@ -78,8 +80,10 @@ XGBoost information Layer D − Layer C, out-of-fold predictions from 5 repeats 
 | Direction 4 | Improving - stable (D - C differences) | Six-class IMWG response | rps | −0.00108 | −0.00252 to 0.00031 | 0.131 | 0.262 | BH (multiclass|rps|state interaction contrasts (secondary)) |
 | Direction 4 | Improving - stable (D - C differences) | Six-class IMWG response | logloss | −0.0181 | −0.0306 to −0.0060 | 0.005 | 0.010 | BH (multiclass|logloss|state interaction contrasts (secondary)) |
 
-Six-class chemotherapy stratum not evaluated (stratum support rule: too few CR/sCR outcomes). AUROC and log-loss rows (secondary metrics) are in the CSV. After BH adjustment, secondary metrics gave two kinds of significant result, which answer different questions:
+**Interpretation and limitations.** The six-class chemotherapy stratum was not evaluated because it did not meet the minimum response-category support rule (too few CR/sCR outcomes). AUROC and log-loss rows (secondary metrics) are in the CSV. After BH adjustment, secondary metrics gave two kinds of significant result, which answer different questions:
 - **Subgroup effects (within-stratum Layer D − Layer C; two rows)**, both in the direction of RNA worsening: On Anti-CD38 antibody at V(t) (Six-class IMWG response) Δlog loss +0.0211 [0.0021 to 0.0431], BH p = 0.026; Improving (higher category than previous visit) (Binary improvement) ΔAUROC −0.0075 [−0.0133 to −0.0013], BH p = 0.036.
 - **Interaction contrasts (difference in D − C between strata; three rows)**: IMiD vs not (Binary improvement) AUPRC −0.0164 [−0.0262 to −0.0051], BH p = 0.035; corticosteroid vs not (Binary improvement) log loss +0.0029 [0.0008 to 0.0050], BH p = 0.035; improving − stable (Six-class IMWG response) log loss −0.0181 [−0.0306 to −0.0060], BH p = 0.010. A significant contrast means the RNA effect differed between strata; it does not by itself show that RNA helped or harmed within either stratum.
 
 All of these are secondary, post hoc and exploratory; BH controls the false discovery rate within each secondary family only, not across the many families in this table. Source: `figures/data/Fig3/fig3C_*.csv`, cross-checked against `artifacts/results_clean_rerun/direction3|direction4/partA_predictive/`.
+
+**Manuscript cross-reference.** Refer to this as *Supplementary Table S1 (development-stage repeated-cross-validation subgroup analyses)* when discussing sensitivity analyses. Use manuscript Figure 4C for the separate locked held-out subgroup evaluation. Do not cite Table S1 as the source of Figure 4C’s estimates.
