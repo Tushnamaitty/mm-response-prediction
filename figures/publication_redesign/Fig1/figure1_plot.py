@@ -17,6 +17,14 @@ Inputs (verified by figures/fig1_extract_data.py; read-only here):
     figures/data/Fig1/fig1_survival_split_overlap.json
     figures/data/Fig1/fig1_verification_checks.csv
 
+(fig1_rna_samples_distinct.csv and fig1_rna_age_by_visit_pair.csv are patient-level, are not tracked and must
+never be committed; rebuild them locally with figures/fig1_extract_data.py, which needs the private data/ folder.)
+
+Terminology used on the figure: an "RNA sample" is one collection day for one patient; a "linked" RNA sample is the
+latest RNA sample at or before V(t) for at least one visit pair (751 samples, 707 patients). The 1,143 subject
+records are the MMRF CoMMpass IA24 records (data/clinical/subject_deid.csv); the 1,025 patients are those with at
+least one visit pair.
+
 Every number drawn is read from these files; the script stops if any value differs from the
 locked value verified in Step 2A, so no figure is produced from unverified data.
 
@@ -40,6 +48,7 @@ from matplotlib.patches import FancyArrowPatch, Rectangle  # noqa: E402
 DATA = Path("figures/data/Fig1")
 OUT_DIR = Path("figures/publication_redesign/Fig1")
 STEM = "figure1"
+N_SUBJECT_RECORDS = 1143   # MMRF CoMMpass IA24 subject records (data/clinical/subject_deid.csv); re-checked in load() when data/ is present
 
 # ----------------------------------------------------------------------------------------------
 # Shared style (Figures 2-6)
@@ -175,7 +184,8 @@ def load():
     require(feats.layer_added.value_counts().to_dict() == {"A": 78, "B": 37, "C": 28, "D": 51},
             "features added per layer")
     for k, v in {"n_distinct_rna_samples": 751, "n_patients_1_sample": 669, "n_patients_ge2_samples": 38,
-                 "n_samples_within_30d_of_index": 636, "rna_age_median_days": 866.0,
+                 "n_samples_within_30d_of_index": 636, "n_patients_first_sample_within_30d_of_index": 636,
+                 "rna_age_median_days": 866.0,
                  "rna_age_q1_days": 380.0, "rna_age_q3_days": 1465.0, "n_rna_visit_pairs": 9173,
                  "n_patients_first_sample_on_or_before_index": 674}.items():
         require(timing[k] == v, f"timing {k} = {timing[k]}, expected {v}")
@@ -183,6 +193,11 @@ def load():
     require((int(surv.loc["PFS_primary", "n_patients"]), int(surv.loc["PFS_primary", "n_events"]),
              int(surv.loc["OS_secondary", "n_events"])) == (674, 459, 247), "survival cohort")
     require(overlap == {"train": 473, "val": 101, "test": 100}, "survival split overlap")
+    require(round(timing["pct_patients_first_sample_within_30d_of_index"], 1) == 90.0, "636/707 = 90.0%")
+    subj_path = Path("data/clinical/subject_deid.csv")
+    if subj_path.exists():   # private data folder; skipped on a clone
+        n_subj = pd.read_csv(subj_path, usecols=["public_id"]).public_id.nunique()
+        require(n_subj == N_SUBJECT_RECORDS, f"subject records {n_subj} != {N_SUBJECT_RECORDS}")
     # nesting shown in panel A: every survival patient is one of the 707 RNA-available patients
     require(int(checks.loc["survival patients that are in the visit-pair RNA subset", "observed"]) == 674,
             "survival cohort nested in RNA-available patients")
@@ -280,13 +295,13 @@ def panel_a_patients(ax, d):
     n_rna = cnt("multiclass", "all", "n_patients_rna_available")
     n_s = int(surv.loc["PFS_primary", "n_patients"])
     rows = [
-        dict(label="All patients", n=n_all, fill=TASK_FILL, inside=f"{fmt(n_all)} patients",
-             right="MMRF CoMMpass (IA24)"),
+        dict(label="Patients with ≥1 visit pair", n=n_all, fill=TASK_FILL, inside=f"{fmt(n_all)} patients",
+             right=f"of {fmt(N_SUBJECT_RECORDS)} MMRF CoMMpass\n(IA24) subject records"),
         dict(label="RNA available for ≥1 visit pair", n=n_rna, fill=LAYER_COLOR["D"], rest=n_all - n_rna,
              inside=f"{fmt(n_rna)} patients", inside_color="white"),
         dict(label="Survival cohort (Figures 5–6)", n=n_s, fill=RNA_LIGHT, rest=n_all - n_s,
-             inside=f"{fmt(n_s)} patients with pre-treatment RNA", inside_color=INK,
-             right=f"PFS {fmt(surv.loc['PFS_primary', 'n_events'])} events · OS "
+             inside=f"{fmt(n_s)} patients with RNA on or before day 0", inside_color=INK,
+             right=f"(RNA sample linked to a visit pair)\nPFS {fmt(surv.loc['PFS_primary', 'n_events'])} events · OS "
                    f"{fmt(surv.loc['OS_secondary', 'n_events'])} deaths"),
     ]
     nested_bars(ax, rows, n_all, "Patients")
@@ -395,6 +410,9 @@ def panel_c1(ax, d):
     require(n_first == tm["n_rna_patients"] == 707 and sum(c[1] for c in cats) == 707, "first samples")
     require(n_extra == 751 - 707 == 44, "additional samples")
     require(cats[1][1] + cats[2][1] == tm["n_samples_within_30d_of_index"] == 636, "within +/-30 d")
+    n_in30, pct_in30 = tm["n_patients_first_sample_within_30d_of_index"], tm["pct_patients_first_sample_within_30d_of_index"]
+    require(n_in30 == cats[1][1] + cats[2][1] and abs(pct_in30 - 100 * n_in30 / n_first) < 1e-9,
+            "first-sample patients within +/-30 d (636/707)")
     require(((extra >= -30) & (extra <= 30)).sum() == 0, "no additional sample within +/-30 d")
     require(int(extra.min()) > 30, "additional samples all after day 30")
 
@@ -407,9 +425,9 @@ def panel_c1(ax, d):
             hatch="//////")
     ax.text(n_extra + 12, y_extra, f"{n_extra}  ({tm['n_patients_ge2_samples']} patients)", va="center",
             ha="left", fontsize=FS["body"], color=INK)
-    ax.text(0, 0.05, f"First RNA sample per patient (n = {n_first})", fontsize=FS["body"], color=INK,
+    ax.text(0, 0.05, f"First linked RNA sample per patient (n = {n_first})", fontsize=FS["body"], color=INK,
             fontweight="bold", ha="left", va="center")
-    ax.text(0, 5.45, f"Additional samples (n = {n_extra})", fontsize=FS["body"], color=INK,
+    ax.text(0, 5.45, f"Additional linked samples (n = {n_extra})", fontsize=FS["body"], color=INK,
             fontweight="bold", ha="left", va="center")
     ax.set_yticks(y_first + [y_extra])
     ax.set_yticklabels([c[0] for c in cats] + ["After day 30"], fontsize=FS["body"], color=INK)
@@ -419,15 +437,15 @@ def panel_c1(ax, d):
     ax.spines["bottom"].set_bounds(0, 650)
     clean_axis(ax, keep=("bottom",))
     ax.tick_params(axis="y", length=0, pad=4)
-    ax.set_xlabel("RNA samples (n = 751)", fontsize=FS["body"], labelpad=1.5)
+    ax.set_xlabel("Linked RNA samples (n = 751)", fontsize=FS["body"], labelpad=1.5)
     ax.xaxis.set_label_coords(325 / 1000, -0.25)
     # bracket for the +/-30-day window (rows "day -30 to 0" and "day 1 to 30")
     xb = 735
     ax.plot([xb, xb], [1.7, 3.3], color=INK2, lw=0.7)
     for yy in (1.7, 3.3):
         ax.plot([xb - 14, xb], [yy, yy], color=INK2, lw=0.7)
-    ax.text(xb + 18, 2.5, f"{tm['n_samples_within_30d_of_index']}/751\n"
-            f"({tm['pct_samples_within_30d_of_index']:.1f}%)\nwithin\n±30 days",
+    ax.text(xb + 18, 2.5, f"{n_in30}/{n_first}\n"
+            f"({pct_in30:.1f}%)\nwithin\n±30 days",
             ha="left", va="center", fontsize=FS["small"], color=INK, linespacing=1.15)
 
 

@@ -56,7 +56,8 @@ results were seen first); all evaluations are internal to CoMMpass and none is e
 **(A)** Next-visit prediction framework and cohort. Each observation is a consecutive visit pair: input features available at
 or before the current visit, V(t), are used to predict the International Myeloma Working Group (IMWG) response at the next
 visit, V(t+1). The six-class task (progressive disease [PD], stable disease [SD], partial response [PR], very good partial
-response [VGPR], complete response [CR], stringent complete response [sCR]) comprised 1,025 patients and 13,451 visit pairs.
+response [VGPR], complete response [CR], stringent complete response [sCR]) comprised 1,025 patients (the patients with at least one
+visit pair, out of 1,143 MMRF CoMMpass interim analysis 24 subject records) and 13,451 visit pairs.
 The binary task (improvement to a better IMWG category at V(t+1)) comprised 1,018 patients and 12,298 pairs after excluding
 1,153 pairs with sCR at V(t), which cannot improve. An RNA sample collected on or before V(t) was available for 9,173
 six-class pairs (707 patients) and 8,262 binary pairs (703 patients). Patients were assigned once to patient-grouped
@@ -64,8 +65,9 @@ training, validation and test partitions (716, 154 and 155 patients; binary task
 information layer and algorithm, so that no patient contributes to more than one partition. Hyperparameters were tuned by
 patient-grouped cross-validation within training patients; no decision threshold or recalibration enters any reported metric,
 validation patients are reported descriptively only, and test patients were scored once. The survival cohort (Figures 5 and
-6) comprised the 674 patients with an RNA sample collected on or before day 0 (459 progression-free survival [PFS] events;
-247 deaths).
+6) comprised the 674 patients with an RNA sample linked to a visit pair (defined in panel C) on or before day 0 (459
+progression-free survival [PFS] events; 247 deaths). A further two patients had a dated RNA sample on or before day 0 (676 in
+total), but it was superseded by a later sample before their first visit V(t) and was therefore never linked or used.
 
 **(B)** Nested information layers A–D are input-feature sets, not algorithms; each layer contains all features of the
 previous layer. Layer A, current clinical state (78 source input features); B, A + longitudinal history (115); C, B +
@@ -75,9 +77,18 @@ one-hot encoding of categorical features and addition of missing-value indicator
 302 and 354 model-input columns, respectively. Each layer was fitted with Logistic Regression, LightGBM and XGBoost.
 Cohort characteristics by partition, RNA availability and survival cohort are given in Table 1.
 
-**(C)** RNA timing. Left: collection day of the 751 distinct RNA samples relative to day 0, shown separately for the
-first sample of each of 707 patients and for 44 additional (later) samples from 38 patients; 636 of 751 samples (84.7%),
-all first samples, were collected within ±30 days of day 0. Middle: RNA age at V(t), the number of days from the latest
+**(C)** RNA timing. An RNA sample is one collection day for one patient; a linked RNA sample is the latest sample collected on
+or before V(t) for at least one visit pair (751 linked samples from 707 patients). Left: collection day of the 751 linked
+samples relative to day 0 (the CoMMpass index date, recorded as the first-treatment date), shown separately for the first
+linked sample of each of 707 patients and for 44 additional (later) linked samples from 38 patients. Of the 707 first linked
+samples, 636 (90.0%) were collected within ±30 days of day 0 (50 before day −30, 624 from day −30 to 0, 12 from day 1 to 30
+and 21 after day 30); all 44 additional samples were collected after day 30. The 1,025 patients have 770 dated RNA samples in
+total (711 patients; 778 RNA-sequencing files); 19 were never linked (17 collected after the patient's last V(t), 2
+superseded by a later sample). Linked samples are bone-marrow CD138+ RNA-sequencing samples, except 6 peripheral-blood CD138+
+samples. For 7 linked samples (6 patients, 55 visit pairs) both a bone-marrow and a peripheral-blood file existed for the
+same patient and day; the matching step used one of them (4 bone-marrow and 3 peripheral-blood files) according to the sort
+order of the matching procedure, not a tissue rule, and the effect of the alternative file on any reported result was not
+assessed (see Unresolved items). Middle: RNA age at V(t), the number of days from the latest
 RNA sample collected on or before V(t) to V(t), across the 9,173 six-class RNA-available pairs (median 866 days;
 interquartile range 380–1,465). Right: alignment rule; only the latest sample collected on or before V(t) is used, and a
 later sample is never used for an earlier visit. Pairs without such a sample are RNA-unavailable.
@@ -421,6 +432,18 @@ six-class shares by class: Supplementary Table S3.
    least 30 days' notice before publication, and the full terms sit behind the Researcher Gateway or Virtual Lab agreement. Nothing was suppressed or merged. Decision for the authors:
    check the IA24 data-use agreement or ask the MMRF data-access team, then either keep the table as is or report such cells as "<5" or merge categories (the Table 1 builder prints the
    smallest displayed count, so a change is a one-line edit there).
+10. **Same-day bone-marrow and peripheral-blood RNA files [documented; effect not assessed; decision needed]:** the RNA
+   files (859 in the GDC download: 844 bone-marrow and 15 peripheral-blood CD138+) are scored one by one by ssGSEA
+   (`tools/rna-seq/pathway_scores.py`) and joined to visit pairs by patient and collection day with a backward as-of join
+   (`data_pipeline/build_rna_features.py`). In the 1,025 patients, 8 sample-days (7 patients; 7 sample-days and 6 patients linked to
+   55 visit pairs) have both a bone-marrow and a peripheral-blood file with materially different pathway scores (mean absolute
+   difference 0.35–0.75 and maximum 1.5–2.2 bone-marrow-sample SD per pathway). The code has no tissue rule: the file used is the last row
+   of a day-only unstable sort, so it follows the tie order of the sort, not a stated preference (4 bone-marrow and 3
+   peripheral-blood files used; a stable sort would change 5 of the 7). Under a bone-marrow-first rule 23 pairs (3 patients, none in the test
+   partition) would change; under a peripheral-blood-first rule 32 pairs (3 patients, 2 in the test partition). The reported
+   Layer D, pathway-composite and survival results were not re-scored and are unchanged; the frozen `visit_pairs_with_rna.csv`
+   (SHA-256 `7697743b…`) was not altered. Decision for the authors: keep and disclose (as in the Figure 2 legend), or add a
+   labelled post hoc sensitivity analysis that rescores the frozen models once with the bone-marrow file (or excludes these patients).
 
 Notes: Table 1 and Supplementary Tables S1–S6 are in `figures/supplementary_tables/`; Supplementary Figures and Supplementary
 Tables are numbered independently. "Days since index at V(t)" (Figure S3B) is the number of days from the start of first
